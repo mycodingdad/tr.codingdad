@@ -5,12 +5,12 @@
 		<meta property="og:image:width" content="1024">
 		<meta property="og:image:height" content="512">
 		<meta property="og:image" content="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/tutorial-image.jpg">
-		<meta property="og:title" content="Spotlight Shadows">
+		<meta property="og:title" content="&#xC2A4;&#xD3EC;&#xD2B8;&#xB77C;&#xC774;&#xD2B8; &#xADF8;&#xB9BC;&#xC790;">
 		<meta property="og:description" content="A Unity Scriptable Render Pipeline tutorial about spotlight shadows for sigle-pass forward rendering.">
 		<meta property="twitter:card" content="summary_large_image">
 		<meta property="twitter:creator" content="@catlikecoding">
 		<meta name="viewport" content="width=768">
-		<title>Spotlight Shadows</title>
+		<title>&#xC2A4;&#xD3EC;&#xD2B8;&#xB77C;&#xC774;&#xD2B8; &#xADF8;&#xB9BC;&#xC790;</title>
 		<link href="../../tutorials.css" rel="stylesheet">
 		<link rel="publisher" href="https://plus.google.com/+CatlikeCoding">
 		<link rel="manifest" href="https://catlikecoding.com/site.webmanifest">
@@ -52,14 +52,15 @@
 		</script>
 	</head>
 	<body>
+		<div style="text-align:center;padding:10px 0px;background-color:gray;"><a href="https://catlikecoding.com">catlikecoding.com</a> &#xC0AC;&#xC774;&#xD2B8;&#xB97C; <a href="https://codingdad.me/2018/12/25/catlike-rendering-part-1">codingdad</a>&#xC774; &#xD55C;&#xAE00;&#xB85C; &#xBC88;&#xC5ED;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.</div>
 		<header>
-			<a href="https://catlikecoding.com"><img src="../../../../catlike-coding-logo.svg" alt="Catlike Coding" width="45" height="45"></a>
+			<a href="https://catlikecoding.com"><img src="../../../../catlike-coding-logo.svg" alt="Catlike Coding" width="45" height="45"><sup>&#x1F517;</sup></a>
 			<nav>
 				<ol>
-					<li><a href="https://catlikecoding.com">Catlike Coding</a></li>
-					<li><a href="https://catlikecoding.com/unity/">&#xC720;&#xB2C8;&#xD2F0;</a></li>
-					<li><a href="https://catlikecoding.com/unity/tutorials/">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</a></li>
-					<li><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/">&#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;</a></li>
+					<li><a href="https://catlikecoding.com">Catlike Coding<sup>&#x1F517;</sup></a></li>
+					<li><a href="https://catlikecoding.com/unity/">&#xC720;&#xB2C8;&#xD2F0;<sup>&#x1F517;</sup></a></li>
+					<li><a href="https://catlikecoding.com/unity/tutorials/">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;<sup>&#x1F517;</sup></a></li>
+					<li><a href="/catlikecoding.com/unity/tutorials/scriptable-render-pipeline/">&#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;</a></li>
 				</ol>
 			</nav>
 		</header>
@@ -67,7 +68,7 @@
 		<main>
 			<article>
 				<header>
-					<h1>Spotlight Shadows</h1>
+					<h1>&#xC2A4;&#xD3EC;&#xD2B8;&#xB77C;&#xC774;&#xD2B8; &#xADF8;&#xB9BC;&#xC790;</h1>
 					<p>Shadow Maps</p>
 					<ul>
 						<li>Both render to and read from a texture.</li>
@@ -79,7 +80,7 @@
 					</ul>
 				</header>
 				
-				<p>This is the fourth installment of a tutorial series covering Unity&apos;s <a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/">scriptable render pipeline</a>. In it, we&apos;ll add support for up to sixteen spotlights with shadows.</p>
+				<p>This is the fourth installment of a tutorial series covering Unity&apos;s <a href="/catlikecoding.com/unity/tutorials/scriptable-render-pipeline/">scriptable render pipeline</a>. In it, we&apos;ll add support for up to sixteen spotlights with shadows.</p>
 				
 				<p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xC720;&#xB2C8;&#xD2F0; 2018.3.0f2&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 				
@@ -93,7 +94,7 @@
 					
 					<p>Shadows are very important, both to increase realism and to make the spatial relationship between objects more obvious. Without shadows, it can be hard to tell whether something floats about a surface or sits on top of it.</p>
 					
-					<p>The <a href="https://catlikecoding.com/unity/tutorials/rendering/part-7/">Rendering 7, Shadows</a> tutorial explains how shadows work in Unity&apos;s default render pipeline, but that exact same approach doesn&apos;t work for our single-pass forward renderer. It is still useful to skim to get the gist of shadow maps though. In this tutorial we&apos;ll limit ourselves to shadows for spotlights, are they&apos;re the least complicated.</p>
+					<p>The <a href="https://catlikecoding.com/unity/tutorials/rendering/part-7/">Rendering 7, Shadows<sup>&#x1F517;</sup></a> tutorial explains how shadows work in Unity&apos;s default render pipeline, but that exact same approach doesn&apos;t work for our single-pass forward renderer. It is still useful to skim to get the gist of shadow maps though. In this tutorial we&apos;ll limit ourselves to shadows for spotlights, are they&apos;re the least complicated.</p>
 					
 					<p>We start with supporting exactly one shadowed light, so make a scene that contains a few objects and a single spotlight. A plane object is useful to receive shadows. All objects should use our <em>Lit Opaque</em> material.</p>
 					
@@ -667,7 +668,7 @@ SAMPLER_CMP(sampler_ShadowMap);
 					<section>
 						<h3>Shadow Bias</h3>
 						
-						<p>Shadow acne is caused by texels of the shadow map poking out of surfaces. For a more detailed explanation, see <a href="https://catlikecoding.com/unity/tutorials/rendering/part-7/">Rendering 7, Shadows</a>. We&apos;ll support the simplest way to mitigate acne, which is by adding a small depth offset when rendering to the shadow map. This shadow bias is configured per light, so we must send it to the GPU. We&apos;ll do that via a <em>_ShadowBias</em> shader property, so keep track of its identifier.</p>
+						<p>Shadow acne is caused by texels of the shadow map poking out of surfaces. For a more detailed explanation, see <a href="https://catlikecoding.com/unity/tutorials/rendering/part-7/">Rendering 7, Shadows<sup>&#x1F517;</sup></a>. We&apos;ll support the simplest way to mitigate acne, which is by adding a small depth offset when rendering to the shadow map. This shadow bias is configured per light, so we must send it to the GPU. We&apos;ll do that via a <em>_ShadowBias</em> shader property, so keep track of its identifier.</p>
 						
 						<pre>	<ins>static int shadowBiasId = Shader.PropertyToID(&quot;_ShadowBias&quot;);</ins></pre>
 						
@@ -767,7 +768,7 @@ float ShadowAttenuation (float3 worldPos) {
 						<aside>
 							<h3>How does a tent filter work?</h3>
 							<div>
-								<p>The <a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/bloom/">Bloom</a> tutorial covers filter kernels that take advantage of bilinear texture sampling, while the <a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/depth-of-field/">Depth of Field</a> tutorial contains an example of a 3&#xD7;3 tent filter.</p>
+								<p>The <a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/bloom/">Bloom<sup>&#x1F517;</sup></a> tutorial covers filter kernels that take advantage of bilinear texture sampling, while the <a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/depth-of-field/">Depth of Field<sup>&#x1F517;</sup></a> tutorial contains an example of a 3&#xD7;3 tent filter.</p>
 							</div>
 						</aside>
 						
@@ -1502,18 +1503,18 @@ float ShadowAttenuation (int index, float3 worldPos) {
 					</section>
 					
 					<a href="https://bitbucket.org/catlikecodingunitytutorials/scriptable-render-pipeline-04-spotlight-shadows/" class="repository">repository</a>
-					<a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/Spotlight-Shadows.pdf" download="" rel="nofollow">PDF</a>
+					<a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/Spotlight-Shadows.pdf" download="" rel="nofollow">PDF<sup>&#x1F517;</sup></a>
 				</section>
 				
 			</article>
 		</main>
 
 		<footer>
-			<p><a href="https://catlikecoding.com/unity/tutorials/">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</a>&#xC744; &#xC990;&#xAE30;&#xACE0; &#xACC4;&#xC138;&#xC694;? &#xB3C4;&#xC6C0;&#xC774; &#xB418;&#xB098;&#xC694;? &#xB354; &#xC6D0;&#xD558;&#xC138;&#xC694;?</p>
+			<p><a href="https://catlikecoding.com/unity/tutorials/">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;<sup>&#x1F517;</sup></a>&#xC744; &#xC990;&#xAE30;&#xACE0; &#xACC4;&#xC138;&#xC694;? &#xB3C4;&#xC6C0;&#xC774; &#xB418;&#xB098;&#xC694;? &#xB354; &#xC6D0;&#xD558;&#xC138;&#xC694;?</p>
 			<p><b><a href="https://www.patreon.com/catlikecoding">Patreon&#xC5D0;&#xC11C; &#xC800;&#xB97C; &#xC9C0;&#xC6D0;&#xD574;&#xC8FC;&#xC138;&#xC694;!</a></b></p>
 			<p><a href="https://www.patreon.com/catlikecoding"><img src="../../become-a-patron.png" alt="&#xC800;&#xC758; &#xD6C4;&#xC6D0;&#xC790;&#xAC00; &#xB418;&#xC5B4; &#xC8FC;&#xC138;&#xC694;!" width="217" height="51"></a></p>
-			<p><b><a href="https://catlikecoding.com/unity/tutorials/donating.html">&#xD639;&#xC740; &#xC9C1;&#xC811; &#xAE30;&#xBD80;&#xD574; &#xC8FC;&#xC138;&#xC694;</a>!</b></p>
-			<p><a href="https://catlikecoding.com/jasper-flick/" rel="author">Jasper Flick</a>&#xC5D0; &#xC758;&#xD574; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;</p>
+			<p><b><a href="https://catlikecoding.com/unity/tutorials/donating.html">&#xD639;&#xC740; &#xC9C1;&#xC811; &#xAE30;&#xBD80;&#xD574; &#xC8FC;&#xC138;&#xC694;<sup>&#x1F517;</sup></a>!</b></p>
+			<p><a href="https://catlikecoding.com/jasper-flick/" rel="author">Jasper Flick<sup>&#x1F517;</sup></a>&#xC5D0; &#xC758;&#xD574; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;</p>
 		</footer>
 		
 		<script src="../../jquery.js"></script>
