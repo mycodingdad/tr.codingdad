@@ -1,18 +1,16 @@
-<!DOCTYPE html>
-<html lang="ko">
-	<head prefix="og: http://ogp.me/ns#">
+<!DOCTYPE html><html lang="ko"><head prefix="og: http://ogp.me/ns#">
 		<meta charset="utf-8">
-		<meta property="og:url" content="https://catlikecoding.codingdad.me/unity/tutorials/scriptable-render-pipeline/custom-pipeline/">
-		<meta property="og:type" content="글">
+		<meta property="og:url" content="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/">
+		<meta property="og:type" content="&#xAE00;">
 		<meta property="og:image:width" content="1024">
 		<meta property="og:image:height" content="512">
-		<meta property="og:image" content="https://catlikecoding.codingdad.me/unity/tutorials/scriptable-render-pipeline/custom-pipeline/tutorial-image.jpg">
-		<meta property="og:title" content="커스텀 파이프라인">
-		<meta property="og:description" content="커스텀 파이프라인 생성에 대한 유니티 스크립터블 렌더 파이프라인 튜토리얼">
+		<meta property="og:image" content="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/tutorial-image.jpg">
+		<meta property="og:title" content="&#xCEE4;&#xC2A4;&#xD140; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;">
+		<meta property="og:description" content="&#xCEE4;&#xC2A4;&#xD140; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC0DD;&#xC131;&#xC5D0; &#xB300;&#xD55C; &#xC720;&#xB2C8;&#xD2F0; &#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;">
 		<meta property="twitter:card" content="summary_large_image">
 		<meta property="twitter:creator" content="@catlikecoding">
 		<meta name="viewport" content="width=768">
-		<title>커스텀 파이프라인</title>
+		<title>&#xCEE4;&#xC2A4;&#xD140; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;</title>
 		<link href="../../tutorials.css" rel="stylesheet">
 		<link rel="publisher" href="https://plus.google.com/+CatlikeCoding">
 		<link rel="manifest" href="https://catlikecoding.com/site.webmanifest">
@@ -50,16 +48,55 @@
 				MyPipelineAsset: 1
 			};
 		</script>
-	</head>
-	<body>
+	<style class="codingdad_header_css">  .codingdad_header
+  {
+    padding:10px 10px 10px 100px; 
+    background-color:#36c46f; 
+    color:#f4f0f4; 
+    border-radius:15px; 
+    margin:10px;
+  }
+  .codingdad_header a
+  {
+    text-decoration:underline;
+    color:#f4f0f4;
+  }
+  .codingdad_header_title
+  {
+    font-size:25px; 
+    font-weight:bold;
+  }
+  .codingdad_header_desc
+  {
+    font-size:13px; 
+    line-height:1.2em; 
+    margin-top:10px;
+  }
+  .codingdad_header_desc ul
+  {
+    margin-bottom:0px;
+    margin-left:-40px;
+  }</style></head>
+	<body><div class="codingdad_header_html"><div class="codingdad_header"> 
+  <div class="codingdad_header_title">
+    <a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/">Catlike Coding</a>&#xC758; &#xBA4B;&#xC9C4; &#xAE00;&#xC744; 
+    <a href="undefined/2018/12/25/catlike-rendering-part-1">Coding Dad</a>&#xC774; &#xBC88;&#xC5ED;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.
+  </div>
+  <div class="codingdad_header_desc">
+    <ul>
+      <li>&#xB9C1;&#xD06C;&#xB97C; &#xD1B5;&#xD574; <a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/">catlikecoding.com</a>&#xC758; &#xC6D0;&#xBCF8;&#xAE00;&#xC744; &#xBCF4;&#xC2DC;&#xAC70;&#xB098;, <a href="undefined/2018/12/25/catlike-rendering-part-1">codingdad.me</a>&#xC5D0;&#xC11C; &#xD53C;&#xB4DC;&#xBC31;&#xC744; &#xB0A8;&#xAE30;&#xC2E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </li>
+      <li>&#xD6C4;&#xC6D0; &#xBC0F; &#xAE30;&#xBD80; &#xB9C1;&#xD06C;&#xB294; Catlike Coding&#xC5D0; &#xC5F0;&#xACB0;&#xB429;&#xB2C8;&#xB2E4;. &#xD6CC;&#xB96D;&#xD55C; &#xAE00;&#xC744; &#xCC3D;&#xC791;&#xD55C; &#xBD84;&#xC5D0;&#xAC8C; &#xAC10;&#xC0AC;&#xC758; &#xB9C8;&#xC74C;&#xC744; &#xC804;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+    </ul>
+  </div>
+</div></div>
 		<header>
-			<a href="https://catlikecoding.com"><img src="../../../../catlike-coding-logo.svg" alt="Catlike Coding" width="45" height="45"></a>
+			<a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/catlikecoding.com/"><img src="../../../../catlike-coding-logo.svg" alt="Catlike Coding" width="45" height="45"><sup class="codingdad_ext_link">&#x1F517;</sup></a>
 			<nav>
 				<ol>
-					<li><a href="https://catlikecoding.com">Catlike Coding</a></li>
-					<li><a href="https://catlikecoding.com/unity/">유니티</a></li>
-					<li><a href="https://catlikecoding.com/unity/tutorials/">튜토리얼</a></li>
-					<li><a href="../index.html">스크립터블 렌더 파잎</a></li>
+					<li><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/catlikecoding.com/">Catlike Coding<sup class="codingdad_ext_link">&#x1F517;</sup></a></li>
+					<li><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/catlikecoding.com/unity/">&#xC720;&#xB2C8;&#xD2F0;<sup class="codingdad_ext_link">&#x1F517;</sup></a></li>
+					<li><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/catlikecoding.com/unity/tutorials/">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;<sup class="codingdad_ext_link">&#x1F517;</sup></a></li>
+					<li><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/catlikecoding.com/unity/tutorials/scriptable-render-pipeline/">&#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;<sup class="codingdad_ext_link">&#x1F517;</sup></a></li>
 				</ol>
 			</nav>
 		</header>
@@ -67,85 +104,83 @@
 		<main>
 			<article>
 				<header>
-					<h1>커스텀 파이프라인</h1>
-					<p>Taking Control of Rendering</p>
+					<h1>&#xCEE4;&#xC2A4;&#xD140; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;</h1>
+					<p>&#xB80C;&#xB354;&#xB9C1;&#xC758; &#xC81C;&#xC5B4;&#xAD8C;&#xC744; &#xC5BB;&#xAE30;</p>
 					<ul>
-						<li>Create a pipeline asset and instance.</li>
-						<li>Cull, filter, sort, render.</li>
-						<li>Keep memory clean.</li>
-						<li>Provide a good editing experience.</li>
+						<li>&#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC560;&#xC14B;&#xACFC; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xC758; &#xC0DD;&#xC131;</li>
+						<li>&#xCEEC;&#xB9C1;, &#xD544;&#xD130;&#xB9C1;, &#xC815;&#xB82C;, &#xB80C;&#xB354;&#xB9C1;</li>
+						<li>&#xBA54;&#xBAA8;&#xB9AC;&#xB97C; &#xAE68;&#xB057;&#xD558;&#xAC8C; &#xC720;&#xC9C0;&#xD558;&#xAE30;</li>
+						<li>&#xC88B;&#xC740; &#xC5D0;&#xB514;&#xD305; &#xACBD;&#xD5D8;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xAE30;</li>
 					</ul>
 				</header>
 				
-				<p>This is the first installment of a tutorial series covering Unity's <a href="../index.html">scriptable render pipeline</a>. This tutorial assumes you've gone through the <a href="https://catlikecoding.com/unity/tutorials/basics/">Basics</a> series first, and the <a href="https://catlikecoding.com/unity/tutorials/procedural-grid/">Procedural Grid</a> tutorial. The first few parts of the <a href="https://catlikecoding.com/unity/tutorials/rendering/">Rendering</a> series are also useful.
+				<p>&#xC720;&#xB2C8;&#xD2F0;&#xC758; <a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/catlikecoding.com/unity/tutorials/scriptable-render-pipeline/">&#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;<sup class="codingdad_ext_link">&#x1F517;</sup></a>&#xC744; &#xB2E4;&#xB8E8;&#xB294; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xC5F0;&#xC7AC;&#xC758; &#xCCAB;&#xBC88;&#xC9F8; &#xD3B8;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xC5EC;&#xB7EC;&#xBD84;&#xC774; <a href="https://catlikecoding.com/unity/tutorials/basics/">&#xAE30;&#xBCF8;<sup class="codingdad_ext_link">&#x1F517;</sup></a> &#xC5F0;&#xC7AC;&#xC640; <a href="https://catlikecoding.com/unity/tutorials/procedural-grid/">&#xC808;&#xCC28;&#xC801; &#xADF8;&#xB9AC;&#xB4DC;<sup class="codingdad_ext_link">&#x1F517;</sup></a> &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC744; &#xC77D;&#xC5C8;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. <a href="https://catlikecoding.com/unity/tutorials/rendering/">&#xB80C;&#xB354;&#xB9C1;<sup class="codingdad_ext_link">&#x1F517;</sup></a>&#xC758; &#xCC98;&#xC74C; &#xBA87; &#xAC1C;&#xC758; &#xD30C;&#xD2B8; &#xB610;&#xD55C; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
 				
-				
-				
-				<p>This tutorial is made with Unity 2018.3.0f2.</p>
+				</p><p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xC720;&#xB2C8;&#xD2F0; 2018.3.0f2&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 				
 				<figure>
 					<img src="tutorial-image.jpg" width="512" height="256">
-					<figcaption>The birth of a new render pipeline.</figcaption>
+					<figcaption>&#xC0C8;&#xB85C;&#xC6B4; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC758; &#xD0C4;&#xC0DD;</figcaption>
 				</figure>
 				
 				<section>
-					<h2>Creating a Pipeline</h2>
+					<h2>&#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC0DD;&#xC131;&#xD558;&#xAE30;</h2>
 					
-					<p>To render anything, Unity has to determine what shapes have to be drawn, where, when, and with what settings. This can get very complex, depending on how many effects are involved. Lights, shadows, transparency, image effects, volumetric effects, and so on all have to be dealt with in the correct order to arrive at the final image. This process is known as a render pipeline.</p>
+					<p>&#xBB34;&#xC5C7;&#xC778;&#xAC00;&#xB97C; &#xADF8;&#xB9AC;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xC720;&#xB2C8;&#xD2F0;&#xB294; &#xC5B4;&#xB5A4; &#xBAA8;&#xC591;&#xB4E4;&#xC774; &#xC5B8;&#xC81C;, &#xC5B4;&#xB514;&#xC11C;, &#xC5B4;&#xB5A4; &#xC124;&#xC815;&#xC73C;&#xB85C; &#xADF8;&#xB824;&#xC9C8;&#xC9C0; &#xACB0;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xC5BC;&#xB9C8;&#xB098; &#xB9CE;&#xC740; &#xD6A8;&#xACFC;&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294;&#xC9C0;&#xC5D0; &#xB530;&#xB77C;&#xC11C; &#xB9E4;&#xC6B0; &#xBCF5;&#xC7A1;&#xD574;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB77C;&#xC774;&#xD2B8;, &#xADF8;&#xB9BC;&#xC790;, &#xD22C;&#xBA85;&#xB3C4;, &#xC774;&#xBBF8;&#xC9C0; &#xC774;&#xD399;&#xD2B8;, &#xBCFC;&#xB968; &#xD6A8;&#xACFC; &#xB4F1;&#xC740; &#xBAA8;&#xB450; &#xC62C;&#xBC14;&#xB978; &#xC21C;&#xC11C;&#xB85C; &#xCC98;&#xB9AC;&#xD574;&#xC57C; &#xCD5C;&#xC885; &#xC774;&#xBBF8;&#xC9C0;&#xC5D0; &#xB3C4;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xACFC;&#xC815;&#xC740; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC774;&#xB77C;&#xACE0; &#xC54C;&#xB824;&#xC838; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 					
-					<p>Unity 2017 supports two predefined render pipelines, one for forward rendering and one for deferred rendering. It also still supports an older deferred rendering approach introduced in Unity 5. These pipelines are fixed. You are able to enable, disable, or override certain parts of the pipelines, but it's not possible to drastically deviate from their design.</p>
+					<p>&#xC720;&#xB2C8;&#xD2F0; 2017&#xC740; &#xB450; &#xAC1C;&#xC758; &#xBBF8;&#xB9AC; &#xC815;&#xC758;&#xB41C; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xB294;&#xB370;, &#xAC01;&#xAC01; &#xD3EC;&#xC6CC;&#xB4DC; &#xB80C;&#xB354;&#xB9C1;&#xACFC; &#xB514;&#xD37C;&#xB4DC;(&#xC9C0;&#xC5F0;&#xB41C;) &#xB80C;&#xB354;&#xB9C1;&#xC785;&#xB2C8;&#xB2E4;. &#xC720;&#xB2C8;&#xD2F0; 5&#xC5D0;&#xC11C; &#xC18C;&#xAC1C;&#xB418;&#xC5C8;&#xB358; &#xC880; &#xB354; &#xC624;&#xB798;&#xB41C; &#xB514;&#xD37C;&#xB4DC; &#xB80C;&#xB354;&#xB9C1;&#xB3C4; &#xC5EC;&#xC804;&#xD788; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB7F0; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xB4E4;&#xC740; &#xACE0;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC758; &#xD2B9;&#xC815; &#xBD80;&#xBD84;&#xC744; &#xD65C;&#xC131;&#xD654; &#xD558;&#xAC70;&#xB098; &#xBE44;&#xD65C;&#xC131;&#xD654; &#xD558;&#xAC70;&#xB098; &#xC624;&#xBC84;&#xB77C;&#xC774;&#xB4DC; &#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC;, &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xC124;&#xACC4;&#xC5D0;&#xC11C; &#xD06C;&#xAC8C; &#xBC97;&#xC5B4;&#xB0A0; &#xC218;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 					
-					<p>Unity 2018 added support for scriptable render pipelines, making it possible to design pipelines from scratch, though you still have to rely on Unity for many individual steps, like culling. Unity 2018 introduced two new pipelines made with this new approach, the lightweight pipeline and the high-definition pipeline. Both pipelines are still in the preview stage and the scriptable render pipeline API is still marked as experimental technology. But at this point it is stable enough for us to go ahead and create our own pipeline.</p>
+					<p>&#xC720;&#xB2C8;&#xD2F0; 2018&#xC740; &#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC5D0; &#xB300;&#xD55C; &#xC9C0;&#xC6D0;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC5EC; &#xCC98;&#xC74C;&#xBD80;&#xD130; &#xC0C8;&#xB85C; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xC124;&#xACC4;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xD558;&#xC600;&#xC9C0;&#xB9CC; &#xCEEC;&#xB9C1;&#xACFC; &#xAC19;&#xC740; &#xC5EC;&#xB7EC; &#xAC1C;&#xBCC4;&#xC801;&#xC778; &#xB2E8;&#xACC4;&#xC5D0;&#xC11C;&#xB294; &#xC5EC;&#xC804;&#xD788; &#xC720;&#xB2C8;&#xD2F0;&#xC5D0; &#xC758;&#xC874;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.  &#xC720;&#xB2C8;&#xD2F0; 2018&#xC5D0;&#xC11C;&#xB294; &#xC774;&#xB7F0; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C4; &#xB450; &#xAC1C;&#xC758; &#xC0C8;&#xB85C;&#xC6B4; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC774; &#xC18C;&#xAC1C;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xACBD;&#xB7C9;(lightweight) &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xACFC; &#xACE0;&#xD654;&#xC9C8;(high-definition) &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC785;&#xB2C8;&#xB2E4;.  &#xB450; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xBAA8;&#xB450; &#xC544;&#xC9C1; &#xD504;&#xB9AC;&#xBDF0; &#xB2E8;&#xACC4;&#xC774;&#xACE0; &#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; API&#xB3C4; &#xC544;&#xC9C1; &#xC2E4;&#xD5D8;&#xC801;&#xC778; &#xAE30;&#xC220;&#xB85C; &#xD45C;&#xC2DC;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xADF8;&#xB7EC;&#xB098; &#xC774; &#xC2DC;&#xC810;&#xC5D0;&#xC11C;&#xB3C4; &#xC6B0;&#xB9AC;&#xB9CC;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xB9CC;&#xB4E4; &#xC815;&#xB3C4;&#xB85C; &#xCDA9;&#xBD84;&#xD788; &#xC548;&#xC815;&#xC801;&#xC785;&#xB2C8;&#xB2E4;. </p>
 					
-					<p>In this tutorial we will setup a minimal render pipeline that draws unlit shapes. Once that's working, we can extend our pipeline in later tutorials, adding lighting, shadows, and more advanced features.</p>
+					<p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC5D0;&#xC11C; &#xC6B0;&#xB9AC;&#xB294; &#xB77C;&#xC774;&#xD305; &#xB418;&#xC9C0; &#xC54A;&#xC740;(unlit) &#xBAA8;&#xC591;&#xB4E4;&#xC744; &#xADF8;&#xB9AC;&#xB294; &#xCD5C;&#xC18C;&#xD55C;&#xC758; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xC124;&#xC815;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC77C;&#xB2E8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC774; &#xB3D9;&#xC791;&#xD558;&#xBA74;, &#xC774;&#xD6C4;&#xC758; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC5D0;&#xC11C; &#xB77C;&#xC774;&#xD305;, &#xADF8;&#xB9BC;&#xC790;, &#xBCF4;&#xB2E4; &#xC2EC;&#xD654;&#xB41C; &#xAE30;&#xB2A5;&#xB4E4;&#xC744; &#xB123;&#xC73C;&#xBA74;&#xC11C; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xD655;&#xC7A5;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 					
 					<section>
-						<h3>Project Setup</h3>
+						<h3>&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xC124;&#xC815;</h3>
 						
-						<p>Open Unity 2018 and create a new project. I'm using Unity 2018.2.9f1, but any 2018.2 version or higher should also work. Create a standard 3D project, with analytics disabled. We'll create our own pipeline, so don't select one of the pipeline options.</p>
+						<p>&#xC720;&#xB2C8;&#xD2F0; 2018&#xC744; &#xC5F4;&#xACE0; &#xC0C8; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xB9CC;&#xB4DC;&#xC138;&#xC694;. &#xC800;&#xB294; &#xC720;&#xB2C8;&#xD2F0; 2018.2.9f1&#xC744; &#xC0AC;&#xC6A9;&#xC911;&#xC774;&#xC9C0;&#xB9CC;, 2018.2 &#xBC84;&#xC804; &#xC774;&#xC0C1;&#xC774;&#xB77C;&#xBA74; &#xC798; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;. &#xC5B4;&#xB0BC;&#xB9AC;&#xD2F1;&#xC2A4;&#xB97C; &#xB048; &#xCC44;&#xB85C;, &#xD45C;&#xC900; 3D &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xB9CC;&#xB4E4;&#xC138;&#xC694;. &#xC6B0;&#xB9AC;&#xB294; &#xC6B0;&#xB9AC;&#xB9CC;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xB9CC;&#xB4E4; &#xC608;&#xC815;&#xC774;&#xB2C8;, &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC635;&#xC158;&#xC740; &#xC120;&#xD0DD;&#xD558;&#xC9C0; &#xB9C8;&#xC138;&#xC694;.</p>
 						
-						<p>Once the project is open, go the package manager via <em>Window / Package Manager</em> and remove all the packages that were included by default, as we won't need them. Only keep the <em>Package Manager UI</em>, which cannot be removed.</p>
+						<p>&#xC77C;&#xB2E8; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xAC00; &#xC5F4;&#xB9AC;&#xBA74;, <em>Window / Package Manager</em> &#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xD328;&#xD0A4;&#xC9C0; &#xB9E4;&#xB2C8;&#xC800;&#xB85C; &#xAC00;&#xC11C; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xD3EC;&#xD568;&#xB41C; &#xBAA8;&#xB4E0; &#xD328;&#xD0A4;&#xC9C0;&#xB4E4;&#xC744; &#xC81C;&#xAC70;&#xD558;&#xC138;&#xC694;. &#xC6B0;&#xB9AC;&#xC5D0;&#xAC8C;&#xB294; &#xD544;&#xC694;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. <em>Package manager UI</em> &#xB9CC; &#xADF8;&#xB300;&#xB85C; &#xB450;&#xC138;&#xC694;. &#xC81C;&#xAC70;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<figure>
 							<img src="creating-a-pipeline/project-start.png" width="200" height="88">
-							<figcaption>Starting project.</figcaption>
+							<figcaption>&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xC2DC;&#xC791;&#xD558;&#xAE30;.</figcaption>
 						</figure>
 						
-						<p>We're going to work in linear color space, but Unity 2018 still uses gamma space as the default. So go to the player settings via <em>Edit / Project Settings / Player</em> and switch <em>Color Space</em> in the <em>Other Settings</em> section to <em>Linear</em>.</p>
+						<p>&#xC120;&#xD615; &#xC0C9; &#xACF5;&#xAC04;&#xC5D0;&#xC11C; &#xC791;&#xC5C5;&#xD560; &#xC608;&#xC815;&#xC778;&#xB370;, &#xC720;&#xB2C8;&#xD2F0; 2018&#xC740; &#xC544;&#xC9C1; &#xAC10;&#xB9C8; &#xACF5;&#xAC04;&#xC744; &#xAE30;&#xBCF8;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB2C8; <em>Edit / Project Settings / Player</em> &#xB97C; &#xD1B5;&#xD574; &#xD50C;&#xB808;&#xC774;&#xC5B4; &#xC124;&#xC815;&#xC73C;&#xB85C; &#xAC00;&#xC11C; <em>Other Settings</em>&#xC758; <em>Color Space</em>&#xB97C; <em>Linear</em> &#xB85C; &#xBC14;&#xAFB8;&#xC138;&#xC694;.</p>
 						
 						<figure>
 							<img src="creating-a-pipeline/linear-color-space.png" width="315" height="68">
-							<figcaption>Linear color space.</figcaption>
+							<figcaption>&#xC120;&#xD615; &#xC0C9; &#xACF5;&#xAC04;</figcaption>
 						</figure>
 						
-						<p>We'll need a few simple materials to test our pipeline. I've created four materials. First, a default standard opaque material with a red albedo. Second, the same material but with <em>Rendering Mode</em> set to <em>Transparent</em> and a blue albedo with decreased alpha. Third, a material using the <em>Unlit/Color</em> shader with its color set to yellow. And finally a material using the <em>Unlit/Transparent</em> shader without any changes, so it appears solid white.</p>
+						<p>&#xC6B0;&#xB9AC;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xD14C;&#xC2A4;&#xD2B8;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xBA87; &#xAC1C;&#xC758; &#xAC04;&#xB2E8;&#xD55C; &#xC7AC;&#xC9C8;&#xC774; &#xD544;&#xC694;&#xD560; &#xAC81;&#xB2C8;&#xB2E4;. &#xB124; &#xAC1C;&#xC758; &#xC7AC;&#xC9C8;&#xC744; &#xB9CC;&#xB4E4;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCCAB; &#xBC88;&#xC9F8;, &#xBE68;&#xAC04;&#xC0C9;&#xC758; &#xAE30;&#xBCF8; &#xC2A4;&#xD0E0;&#xB2E4;&#xB4DC; &#xBD88;&#xD22C;&#xBA85; &#xC7AC;&#xC9C8;. &#xB450; &#xBC88;&#xC9F8;, &#xAC19;&#xC740; &#xC7AC;&#xC9C8;&#xC774;&#xC9C0;&#xB9CC; <em>Rendering Mode</em> &#xAC00; <em>Transparent</em> &#xB85C; &#xC138;&#xD305;&#xB418;&#xACE0; &#xC54C;&#xD30C;&#xB97C; &#xC904;&#xC5EC;&#xB193;&#xC740; &#xD30C;&#xB780;&#xC0C9; &#xC7AC;&#xC9C8;. &#xC138; &#xBC88;&#xC9F8;, <em>Unlit/Color</em> &#xC250;&#xC774;&#xB354;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC0C9;&#xC744; &#xB178;&#xB780;&#xC0C9;&#xC73C;&#xB85C; &#xC9C0;&#xC815;&#xD55C; &#xC7AC;&#xC9C8;. &#xADF8;&#xB9AC;&#xACE0; &#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; &#xC544;&#xBB34; &#xBCC0;&#xACBD; &#xC5C6;&#xC774;<em>Unlit/Transparent</em> &#xC250;&#xC774;&#xB354; &#xC368;&#xC11C;, &#xC21C;&#xC218;&#xD55C; &#xD770;&#xC0C9;&#xC73C;&#xB85C; &#xBCF4;&#xC774;&#xB294; &#xC7AC;&#xC9C8;. </p>
 						
 						<figure>
 							<img src="creating-a-pipeline/materials.png" width="200" height="100">
-							<figcaption>Test materials.</figcaption>
+							<figcaption>&#xD14C;&#xC2A4;&#xD2B8; &#xC7AC;&#xC9C8;&#xB4E4;</figcaption>
 						</figure>
 						
-						<p>Fill the scene with a few objects, making use of all four materials.</p>
+						<p>&#xB124; &#xAC1C;&#xC758; &#xC7AC;&#xC9C8;&#xB4E4; &#xBAA8;&#xB450;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC11C;, &#xBA87; &#xAC1C;&#xC758; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB85C; &#xC52C;&#xC744; &#xCC44;&#xC6B0;&#xC138;&#xC694;.</p>
 						
 						<figure>
 							<img src="creating-a-pipeline/scene.jpg" width="360" height="140">
-							<figcaption>Scene displaying four materials.</figcaption>
+							<figcaption>&#xB124; &#xAC1C;&#xC758; &#xC7AC;&#xC9C8;&#xB4E4;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xB294; &#xC52C;</figcaption>
 						</figure>
 					</section>
 					
 					<section>
-						<h3>Pipeline Asset</h3>
+						<h3>&#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC560;&#xC14B;</h3>
 						
-						<p>Currently, Unity uses the default forward rendering pipeline. To use a custom pipeline, we have to select one in the graphics settings, which can be found via <em>Edit / Project Settings / Graphics</em>.</p>
+						<p>&#xD604;&#xC7AC;&#xB294;, &#xC720;&#xB2C8;&#xD2F0;&#xAC00; &#xAE30;&#xBCF8; &#xD3EC;&#xC6CC;&#xB4DC; &#xB80C;&#xB354;&#xB9C1; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xCEE4;&#xC2A4;&#xD140; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;, &#xADF8;&#xB798;&#xD53D;&#xC2A4; &#xC124;&#xC815;&#xC5D0;&#xC11C; &#xC120;&#xD0DD;&#xD574;&#xC57C; &#xD558;&#xB294;&#xB370;, <em>Edit / Project Settings / Graphics</em> &#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<figure>
 							<img src="creating-a-pipeline/default-pipeline.png" width="320" height="98">
-							<figcaption>Using the default pipeline.</figcaption>
+							<figcaption>&#xAE30;&#xBCF8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC0AC;&#xC6A9;&#xC911;</figcaption>
 						</figure>
 						
-						<p>To setup our own pipeline, we have to assign a pipeline asset to the <em>Scriptable Render Pipeline Settings</em> field. Such assets have to extend <code>RenderPipelineAsset</code>, which is a <code>ScriptableObject</code> type.</p>
+						<p>&#xC6B0;&#xB9AC; &#xC790;&#xC2E0;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xC124;&#xC815;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;, <em>Scriptable Render Pipeline Settings</em> &#xD544;&#xB4DC;&#xC5D0; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC560;&#xC14B;&#xC744; &#xC9C0;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7F0; &#xC560;&#xC14B;&#xB4E4;&#xC740;  <code>ScriptableObject</code> &#xD0C0;&#xC785;&#xC778; <code>RenderPipelineAsset</code> &#xC744; &#xD655;&#xC7A5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>Create a new script for our custom pipeline asset. We'll simply name our pipeline <em>My Pipeline</em>. Its asset type will thus be <code>MyPipelineAsset</code> and it has to extend <code>RenderPipelineAsset</code>, which is defined in the <code>UnityEngine.Experimental.Rendering</code> namespace.</p>
+						<p>&#xC6B0;&#xB9AC;&#xC758; &#xCEE4;&#xC2A4;&#xD140; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC560;&#xC14B;&#xC744; &#xC704;&#xD55C; &#xC0C8; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xC138;&#xC694;. &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC758; &#xC774;&#xB984;&#xC744; &#xB2E8;&#xC21C;&#xD558;&#xAC8C; <em>My Pipeline</em> &#xC774;&#xB77C;&#xACE0; &#xC9D3;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; &#xC560;&#xC14B; &#xD0C0;&#xC785;&#xC740; <code>MyPipelineAsset</code> &#xC774; &#xB418;&#xACE0; <code>RenderPipelineAsset</code> &#xC744; &#xD655;&#xC7A5;&#xD574;&#xC57C; &#xD558;&#xB294;&#xB370;, <code>UnityEngine.Experimental.Rendering</code> &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xC815;&#xC758;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre><ins>using UnityEngine;</ins>
 <ins>using UnityEngine.Experimental.Rendering;</ins>
@@ -153,15 +188,15 @@
 <ins>public class MyPipelineAsset : RenderPipelineAsset {}</ins></pre>
 						
 						<aside>
-							<h3>Will it always be in the experimental namespace?</h3>
+							<h3>&#xACC4;&#xC18D;&#xD574;&#xC11C; Experimental &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xC788;&#xAC8C; &#xB418;&#xB098;&#xC694;?</h3>
 							<div>
-								<p>It will move out of the experimental namespace at some point, either to <code>UnityEngine.Rendering</code> or to another namespace. When that happens, it's just a matter of updating the <code>using</code> statement, unless the API also gets changed.</p>
+								<p>&#xC5B4;&#xB290; &#xC2DC;&#xC810;&#xC5D0;&#xB294; <code>UnityEngine.Rendering</code> &#xD639;&#xC740; &#xB2E4;&#xB978; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB85C; &#xC62E;&#xACA8;&#xC9C8; &#xAC81;&#xB2C8;&#xB2E4;. &#xADF8; &#xB54C;&#xB294;, API&#xB3C4; &#xBCC0;&#xACBD;&#xB418;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xBA74;, &#xB2E8;&#xC9C0; <code>using</code> &#xBB38;&#xB9CC; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 						
-						<p>The main purpose of the pipeline asset is to give Unity a way to get a hold of a pipeline object instance that is responsible for rendering. The asset itself is just a handle and a place to store pipeline settings. We don't have any settings yet, so all we have to do is give Unity a way to get our pipeline object instance. This is done by overriding the <code>InternalCreatePipeline</code> method. But we haven't defined our pipeline object type yet, so at this point we'll just return <code>null</code>.</p>
+						<p>&#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC560;&#xC14B;&#xC758; &#xC8FC; &#xBAA9;&#xC801;&#xC740; &#xC720;&#xB2C8;&#xD2F0;&#xAC00; &#xB80C;&#xB354;&#xB9C1;&#xC744; &#xCC45;&#xC784;&#xC9C0;&#xB294; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC720;&#xC9C0;&#xD560; &#xC218; &#xC788;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.  &#xC560;&#xC14B; &#xC790;&#xCCB4;&#xB294; &#xB2E8;&#xC9C0; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC124;&#xC815;&#xC744; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xC7A5;&#xC18C;&#xC774;&#xC790; &#xD578;&#xB4E4;&#xC785;&#xB2C8;&#xB2E4;. &#xC544;&#xC9C1; &#xC544;&#xBB34;&#xB7F0; &#xC124;&#xC815;&#xB3C4; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xC720;&#xB2C8;&#xD2F0;&#xAC00; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xC81C;&#xACF5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. <code>InternalCreatePipeline</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC624;&#xBC84;&#xB77C;&#xC774;&#xB4DC; &#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xC544;&#xC9C1; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC624;&#xC81D;&#xD2B8;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC815;&#xC758;&#xD558;&#xC9C0; &#xC54A;&#xC558;&#xC73C;&#xBBC0;&#xB85C;, &#xD604;&#xC7AC;&#xB85C;&#xC11C;&#xB294; &#xADF8;&#xB0E5; <code>null</code> &#xC744; &#xB9AC;&#xD134;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>The return type of <code>InternalCreatePipeline</code> is <code>IRenderPipeline</code>. The <em>I</em> prefix of the type name indicates that it is an interface type.</p>
+						<p><code>InternalCreatePipeline</code> &#xC758; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC740; <code>IRenderPipeline</code> &#xC785;&#xB2C8;&#xB2E4;. &#xD0C0;&#xC785; &#xC774;&#xB984;&#xC758; <em>I</em> &#xC811;&#xB450;&#xC0AC;&#xB294; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xD0C0;&#xC785;&#xC784;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>public class MyPipelineAsset : RenderPipelineAsset {
 
@@ -171,75 +206,75 @@
 }</pre>
 						
 						<aside>
-							<h3>What's an interface?</h3>
+							<h3>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB780; &#xBB34;&#xC5C7;&#xC778;&#xAC00;&#xC694;?</h3>
 							<div>
-								<p>An interface is like a class, except that it defines a functionality contract without providing an implementation of it. It only defines properties, events, indexers, and method signatures, which are all public by definition. Any type that extends an interface is required to contain implementations of what the interface defines. The convention is to prefix interface types names with an I.</p>
+								<p>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xC640; &#xC720;&#xC0AC;&#xD558;&#xC9C0;&#xB9CC;, &#xAD6C;&#xD604;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xAE30;&#xB2A5;&#xC758; &#xACC4;&#xC57D;&#xC744; &#xC815;&#xC758;&#xD55C;&#xB2E4;&#xB294; &#xC810;&#xB9CC; &#xB2E4;&#xB985;&#xB2C8;&#xB2E4;.  &#xD504;&#xB85C;&#xD37C;&#xD2F0;, &#xC774;&#xBCA4;&#xD2B8;, &#xC778;&#xB371;&#xC11C; &#xBC0F; &#xBA54;&#xC18C;&#xB4DC; &#xC6D0;&#xD615;&#xB9CC; &#xC81C;&#xACF5;&#xD558;&#xBA70;, &#xB2F9;&#xC5F0;&#xD788; &#xBAA8;&#xB450; &#xD37C;&#xBE14;&#xB9AD;&#xC774; &#xB429;&#xB2C8;&#xB2E4;. &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xD655;&#xC7A5;&#xD558;&#xB294; &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC740; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xC815;&#xC758;&#xD55C; &#xAC83;&#xB4E4;&#xC5D0; &#xB300;&#xD55C; &#xAD6C;&#xD604;&#xC744; &#xD3EC;&#xD568;&#xD574;&#xC57C;&#xB9CC; &#xD569;&#xB2C8;&#xB2E4;. &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xD0C0;&#xC785;&#xC758; &#xC774;&#xB984; &#xC55E;&#xC5D0;&#xB294; I &#xB97C; &#xBD99;&#xC774;&#xB294; &#xAC83;&#xC774; &#xAD00;&#xD589;&#xC785;&#xB2C8;&#xB2E4;.</p>
 								
-								<p>Because interfaces do not contain concrete implementations, it is possible for classes and even structs to extend more than one interface. If multiple interfaces happen to defined the same thing, they just agree that the functionality should be there. This is not possible with classes—even when abstract—because that could lead to conflicting implementations.</p>
+								<p>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xAD6C;&#xCCB4;&#xC801;&#xC778; &#xAD6C;&#xD604;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xD074;&#xB798;&#xC2A4; &#xADF8;&#xB9AC;&#xACE0; &#xAD6C;&#xC870;&#xCCB4;&#xB3C4; &#xD558;&#xB098; &#xC774;&#xC0C1;&#xC758; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xD655;&#xC7A5;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5EC;&#xB7EC; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xAC19;&#xC740; &#xAC83;&#xC744; &#xC815;&#xC758;&#xD55C; &#xACBD;&#xC6B0;&#xC5D0;, &#xADF8; &#xAE30;&#xB2A5;&#xC774; &#xC788;&#xC5B4;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC5D0; &#xB3D9;&#xC758;???? &#xD5C8;&#xC6A9;????  &#xD074;&#xB798;&#xC2A4;&#xC758; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xCD94;&#xC0C1; &#xD074;&#xB798;&#xC2A4;&#xB77C;&#xACE0; &#xD558;&#xB354;&#xB77C;&#xB3C4; &#xC774;&#xAC83;&#xC774; &#xBD88;&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;. &#xAD6C;&#xD604;&#xC758; &#xCDA9;&#xB3CC;&#xB85C; &#xC774;&#xC5B4;&#xC9C8; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 						
-						<p>Now we need to add an asset of this type to our project. To make that possible, add a <code>CreateAssetMenu</code> attribute to <code>MyPipelineAsset</code>.</p>
+						<p>&#xC774;&#xC81C; &#xC774; &#xD0C0;&#xC785;&#xC758; &#xC560;&#xC14B;&#xC744; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; &#xCD94;&#xAC00;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xAC00;&#xB2A5;&#xD558;&#xAC8C; &#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;, <code>MyPipelineAsset</code> &#xC5D0; <code>CreateAssetMenu</code> &#xC18D;&#xC131;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC138;&#xC694;.</p>
 						
 						<pre><ins>[CreateAssetMenu]</ins>
 public class MyPipelineAsset : RenderPipelineAsset {}</pre>
 						
-						<p>That puts an entry in the <em>Asset / Create</em> menu. Let's be tidy and put it in a <em>Rendering</em> submenu. We do this by setting the <code>nemuName</code> property of the attribute to <em>Rendering/My Pipeline</em>. The property can be set directly after the attribute type, within round brackets.</p>
+						<p>&#xC774;&#xB807;&#xAC8C; &#xD558;&#xBA74; <em>Asset / Create</em> &#xBA54;&#xB274;&#xC5D0; &#xD56D;&#xBAA9;&#xC774; &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4;. &#xAE54;&#xB054;&#xD558;&#xAC8C; &#xC815;&#xB9AC;&#xD558;&#xACE0; <em>Rendering</em> &#xC11C;&#xBE0C;&#xBA54;&#xB274;&#xC5D0; &#xB123;&#xC73C;&#xC138;&#xC694;. &#xC18D;&#xC131;&#xC758; <code>nemuName</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; <em>Rendering/My Pipeline</em>&#xC73C;&#xB85C; &#xC124;&#xC815;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB294; &#xC18D;&#xC131; &#xD0C0;&#xC785; &#xBC14;&#xB85C; &#xB4A4;&#xC5D0; &#xB465;&#xADFC; &#xAD04;&#xD638; &#xC548;&#xC5D0; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
-						<pre>[CreateAssetMenu<ins>(menuName = "Rendering/My Pipeline")</ins>]
+						<pre>[CreateAssetMenu<ins>(menuName = &quot;Rendering/My Pipeline&quot;)</ins>]
 public class MyPipelineAsset : RenderPipelineAsset {}</pre>
 						
-						<p>Use the new menu item to add the asset to the project, naming it <em>My Pipeline</em>.</p>
+						<p>&#xC0C8; &#xBA54;&#xB274; &#xD56D;&#xBAA9;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; &#xC560;&#xC14B;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xACE0;, &#xC774;&#xB984;&#xC744; <em>My Pipeline</em>&#xC73C;&#xB85C; &#xD558;&#xC138;&#xC694;.</p>
 						
 						<figure>
 							<img src="creating-a-pipeline/pipeline-asset.png" width="200" height="86">
-							<figcaption>Pipeline asset and its script.</figcaption>
+							<figcaption>&#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC560;&#xC14B;&#xACFC; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;</figcaption>
 						</figure>
 						
-						<p>Then assign it to <em>Scriptable Render Pipeline Settings</em>.</p>
+						<p>&#xADF8; &#xB2E4;&#xC74C;&#xC5D0; <em>Scriptable Render Pipeline Settings</em>&#xC5D0; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<figure>
 							<img src="creating-a-pipeline/asset-in-use.png" width="320" height="90">
-							<figcaption>Asset in use.</figcaption>
+							<figcaption>&#xC0AC;&#xC6A9;&#xC911;&#xC778; &#xC560;&#xC14B;</figcaption>
 						</figure>
 						
-						<p>We have now replaced the default pipeline, which changes a few things. First, a lot of options have disappeared from the graphics settings, which Unity also mentions in an info panel. Second, as we've bypassed the default pipeline without providing a valid replacement, nothing gets rendered anymore. The game window, scene window, and material previews are no longer functional, although the scene window still shows the skybox. If you open the frame debugger—via <em>Window / Analysis / Frame Debugger</em>—and enable it, you will see that indeed nothing gets drawn in the game window.</p>
+						<p>&#xC774;&#xC81C; &#xAE30;&#xBCF8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xB300;&#xCCB4;&#xD588;&#xC73C;&#xBA70;, &#xC774;&#xB294; &#xBA87; &#xAC00;&#xC9C0;&#xB97C; &#xBCC0;&#xACBD;&#xD569;&#xB2C8;&#xB2E4;. &#xCCAB;&#xC9F8;, &#xADF8;&#xB798;&#xD53D;&#xC2A4; &#xC124;&#xC815;&#xC5D0;&#xC11C; &#xB9CE;&#xC740; &#xC635;&#xC158;&#xC774; &#xC0AC;&#xB77C;&#xC9C0;&#xBA70;, &#xC774;&#xB294; &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xC815;&#xBCF4; &#xD328;&#xB110;&#xC5D0;&#xB3C4; &#xC5B8;&#xAE09;&#xB429;&#xB2C8;&#xB2E4;. &#xB458;&#xC9F8;, &#xC720;&#xD6A8;&#xD55C; &#xB300;&#xCCB4;&#xBB3C;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xAE30;&#xBCF8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xAC74;&#xB108;&#xB6F0;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xB354; &#xC774;&#xC0C1; &#xC544;&#xBB34;&#xAC83;&#xB3C4; &#xB80C;&#xB354;&#xB9C1;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAC8C;&#xC784; &#xC708;&#xB3C4;&#xC6B0;, &#xC52C; &#xC708;&#xB3C4;&#xC6B0;, &#xC7AC;&#xC9C8; &#xBBF8;&#xB9AC;&#xBCF4;&#xAE30;&#xB294; &#xB354; &#xC774;&#xC0C1; &#xB3D9;&#xC791;&#xD558;&#xC9C0; &#xC54A;&#xACE0;, &#xC52C; &#xC708;&#xB3C4;&#xC6B0;&#xB9CC;&#xC774; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xB97C; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.  <em>Window / Analysis / Frame Debugger</em> &#xC744; &#xD1B5;&#xD574; &#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;&#xB97C; &#xC5F4;&#xACE0; &#xD65C;&#xC131;&#xD654; &#xC2DC;&#xD0A4;&#xBA74;, &#xAC8C;&#xC784; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0; &#xC544;&#xBB34;&#xAC83;&#xB3C4; &#xADF8;&#xB824;&#xC9C0;&#xC9C0; &#xC54A;&#xB294; &#xAC83;&#xC744; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 					</section>
 					
 					<section>
-						<h3>Pipeline Instance</h3>
+						<h3>&#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC778;&#xC2A4;&#xD134;&#xC2A4;</h3>
 						
-						<p>To create a valid pipeline, we have to provide an object instance that implements <code>IRenderPipeline</code> and is responsible for the rendering process. So create a class for that, naming it <code>MyPipeline</code>.</p>
+						<p>&#xC720;&#xD6A8;&#xD55C; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xB824;&#xBA74;,  <code>IRenderPipeline</code> &#xB97C; &#xAD6C;&#xD604;&#xD558;&#xACE0; &#xB80C;&#xB354;&#xB9C1; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xB2F4;&#xB2F9;&#xD558;&#xB294; &#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.  &#xADF8;&#xB7EC;&#xB2C8; &#xADF8;&#xB97C; &#xC704;&#xD55C; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xACE0;, &#xC774;&#xB984;&#xC744; <code>MyPipeline</code>&#xC73C;&#xB85C; &#xD558;&#xC138;&#xC694;.</p>
 						
 						<pre><ins>using UnityEngine;</ins>
 <ins>using UnityEngine.Experimental.Rendering;</ins>
 
 <ins>public class MyPipeline : IRenderPipeline {}</ins></pre>
 						
-						<p>Although we can implement <code>IRenderPipeline</code> ourselves, it is more convenient to extend the abstract <code>RenderPipeline</code> class instead. That type already provides a basic implementation of <code>IRenderPipeline</code> that we can build on.</p>
+						<p><code>IRenderPipeline</code> &#xC744; &#xC6B0;&#xB9AC;&#xAC00; &#xC9C1;&#xC811; &#xAD6C;&#xD604;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC;, &#xB300;&#xC2E0; <code>RenderPipeline</code> &#xCD94;&#xC0C1; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xD655;&#xC7A5;&#xD558;&#xB294; &#xAC83;&#xC774; &#xB354; &#xD3B8;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xD0C0;&#xC785;&#xC740; &#xC6B0;&#xB9AC;&#xAC00; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD560; &#xC788;&#xB294; <code>IRenderPipeline</code> &#xC758; &#xAE30;&#xBCF8; &#xAD6C;&#xD604;&#xC744; &#xC774;&#xBBF8; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>public class MyPipeline : <ins>RenderPipeline</ins> {}</pre>
 						
-						<p>Now we can return a new instance of <code>MyPipeline</code> in <code>InternalCreatePipeline</code>. This means that we technically have a valid pipeline, although it still doesn't render anything.</p>
+						<p>&#xC774;&#xC81C; <code>InternalCreatePipeline</code> &#xC5D0;&#xC11C; <code>MyPipeline</code>&#xC758; &#xC0C8; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xBC18;&#xD658;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBE44;&#xB85D; &#xC544;&#xC9C1; &#xC544;&#xBB34;&#xAC83;&#xB3C4; &#xB80C;&#xB354;&#xB9C1; &#xD558;&#xC9C0; &#xC54A;&#xC9C0;&#xB9CC;, &#xC774;&#xB294; &#xAE30;&#xC220;&#xC801;&#xC73C;&#xB85C; &#xC6B0;&#xB9AC;&#xAC00; &#xC720;&#xD6A8;&#xD55C; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xB294; &#xC758;&#xBBF8;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>	protected override IRenderPipeline InternalCreatePipeline () {
 		return <ins>new MyPipeline()</ins>;
 	}</pre>
 					</section>
 					
-					<a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/creating-a-pipeline/creating-a-pipeline.unitypackage" download rel="nofollow">unitypackage</a>
+					<a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/creating-a-pipeline/creating-a-pipeline.unitypackage/" download="" rel="nofollow">&#xC720;&#xB2C8;&#xD2F0; &#xD328;&#xD0A4;&#xC9C0;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
 				</section>
 				
 				<section>
-					<h2>Rendering</h2>
+					<h2>&#xB80C;&#xB354;&#xB9C1;</h2>
 					
-					<p>The pipeline object takes care of rendering each frame. All Unity does is invoke the pipeline's <code>Render</code> method with a context and the cameras that are active. This is done for the game window, but also for the scene window and material previews in the editor. It is up to us to configure things appropriately, figure out what needs to be rendered, and do everything in the correct order.</p>
+					<p>&#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB294; &#xB9E4; &#xD504;&#xB808;&#xC784; &#xB80C;&#xB354;&#xB9C1;&#xC744; &#xCC98;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;. &#xC720;&#xB2C8;&#xD2F0;&#xAC00; &#xD558;&#xB294; &#xC77C;&#xC740; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xC640; &#xD65C;&#xC131;&#xD654;&#xB41C; &#xCE74;&#xBA54;&#xB77C;&#xB4E4;&#xACFC; &#xD568;&#xAED8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC758; <code>Render</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xAC8C;&#xC784; &#xC708;&#xB3C4;&#xC6B0; &#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; &#xC5D0;&#xB514;&#xD130;&#xC758; &#xC52C; &#xC708;&#xB3C4;&#xC6B0;&#xACFC; &#xC7AC;&#xC9C8; &#xBBF8;&#xB9AC;&#xBCF4;&#xAE30;&#xC5D0;&#xC11C;&#xB3C4; &#xC218;&#xD589;&#xB429;&#xB2C8;&#xB2E4;. &#xC5EC;&#xB7EC;&#xAC00;&#xC9C0; &#xC124;&#xC815;&#xC744; &#xC798; &#xD558;&#xACE0;, &#xB80C;&#xB354;&#xB9C1;&#xD560; &#xAC83;&#xB4E4;&#xC744; &#xD30C;&#xC545;&#xD55C; &#xB2E4;&#xC74C;, &#xBAA8;&#xB4E0; &#xAC83;&#xC744; &#xC62C;&#xBC14;&#xB978; &#xC21C;&#xC11C;&#xB85C; &#xC218;&#xD589;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC6B0;&#xB9AC;&#xC5D0;&#xAC8C; &#xB2EC;&#xB824;&#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 					
 					<section>
-						<h3>Context</h3>
+						<h3>&#xCF58;&#xD14D;&#xC2A4;&#xD2B8;</h3>
 						
-						<p><code>RenderPipeline</code> contains an implementation of the <code>Render</code> method defined in the <code>IRenderPipeline</code> interface. Its first argument is the render context, which is a <code>ScriptableRenderContext</code> struct, acting as a facade for native code. Its second argument is an array containing all cameras that need to be rendered.</p>
-						<p><code>RenderPipeline.Render</code> doesn't draw anything, but checks whether the pipeline object is valid to use for rendering. If not, it will raise an exception. We will override this method and invoke the base implementation, to keep this check.</p>
+						<p><code>RenderPipeline</code> &#xC740; <code>IRenderPipeline</code> &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xC815;&#xC758;&#xB41C; <code>Render</code> &#xBA54;&#xC18C;&#xB4DC;&#xC758; &#xAD6C;&#xD604;&#xC744; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;. &#xCCAB; &#xBC88;&#xC9F8; &#xC778;&#xC218;&#xB294; &#xB80C;&#xB354; &#xCEE8;&#xD14D;&#xC2A4;&#xC778;&#xB370;, &#xC774;&#xB294; <code>ScriptableRenderContext</code> &#xAD6C;&#xC870;&#xCCB4;&#xC774;&#xBA70;, &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xCF54;&#xB4DC;&#xC5D0; &#xB300;&#xD55C; &#xD30C;&#xC0AC;&#xB4DC;(facade) &#xC5ED;&#xD560;&#xC744; &#xD569;&#xB2C8;&#xB2E4;. &#xB450; &#xBC88;&#xC9F8; &#xC778;&#xC218;&#xB294; &#xB80C;&#xB354;&#xB9C1;&#xC774; &#xD544;&#xC694;&#xD55C; &#xBAA8;&#xB4E0; &#xCE74;&#xBA54;&#xB77C;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xBC30;&#xC5F4;&#xC785;&#xB2C8;&#xB2E4;.</p>
+						<p><code>RenderPipeline.Render</code> &#xB294; &#xC544;&#xBB34; &#xAC83;&#xB3C4; &#xADF8;&#xB9AC;&#xC9C0; &#xC54A;&#xC9C0;, &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xAC00; &#xB80C;&#xB354;&#xB9C1;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; &#xAC80;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74;, &#xC608;&#xC678;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;. &#xC6B0;&#xB9AC;&#xB294; &#xC774; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC624;&#xBC84;&#xB77C;&#xC774;&#xB4DC; &#xD558;&#xACE0; &#xC774; &#xAC80;&#xC0AC;&#xB97C; &#xC720;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xBD80;&#xBAA8;&#xC758; &#xAD6C;&#xD604;&#xC744; &#xD638;&#xCD9C;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>public class MyPipeline : RenderPipeline {
 
@@ -250,36 +285,36 @@ public class MyPipelineAsset : RenderPipelineAsset {}</pre>
 	<ins>}</ins>
 }</pre>
 						
-						<p>It is through the render context that we issue commands to the Unity engine to render things and control render state. One of the simplest examples is drawing the skybox, which can be done by invoking the <code>DrawSkyBox</code> method.</p>
+						<p>&#xB80C;&#xB354; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xC720;&#xB2C8;&#xD2F0; &#xC5D4;&#xC9C4;&#xC5D0; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xC5EC; &#xC0AC;&#xBB3C;&#xC744; &#xB80C;&#xB354;&#xB9C1;&#xD558;&#xACE0; &#xB80C;&#xB354; &#xC2A4;&#xD14C;&#xC774;&#xD2B8;&#xB97C; &#xC81C;&#xC5B4;&#xD569;&#xB2C8;&#xB2E4;. &#xAC00;&#xC7A5; &#xAC04;&#xB2E8;&#xD55C; &#xC608;&#xC81C; &#xC911; &#xD558;&#xB098;&#xB294; <code>DrawSkyBox</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xC5EC; skybox&#xB97C; &#xADF8;&#xB9AC;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		base.Render(renderContext, cameras);
 
 		<ins>renderContext.DrawSkybox();</ins></pre>
 						
-						<p><code>DrawSkybox</code> requires a camera as a argument. We'll simply use the first element of <code>cameras</code>.</p>
+						<p><code>DrawSkybox</code> &#xB294; &#xC778;&#xC218;&#xB85C; &#xCE74;&#xBA54;&#xB77C;&#xB97C; &#xD544;&#xC694;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;. &#xB2E8;&#xC21C;&#xD788; <code>cameras</code> &#xCCAB; &#xBC88;&#xC9F8; &#xC694;&#xC18C;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 						
 						<pre>		renderContext.DrawSkybox(<ins>cameras[0]</ins>);</pre>
 						
-						<p>We still don't see the skybox appear in the game window. That's because the commands that we issue to the context are buffered. The actual works happens after we submit it for execution, via the <code>Submit</code> method.</p>
+						<p>&#xC544;&#xC9C1;&#xB3C4; &#xAC8C;&#xC784; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0;&#xC11C; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xB97C; &#xBCF4;&#xC774;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xC5D0; &#xC804;&#xB2EC;&#xD55C; &#xBA85;&#xB839;&#xB4E4;&#xC774; &#xBC84;&#xD37C;&#xB9C1; &#xB418;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.  &#xC2E4;&#xC81C; &#xC791;&#xC5C5;&#xC740; <code>Submit</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xC2E4;&#xD589;&#xC744; &#xC694;&#xCCAD;&#xD55C; &#xD6C4;&#xC5D0; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;. </p>
 						
 						<pre>		renderContext.DrawSkybox(cameras[0]);
 
 		<ins>renderContext.Submit();</ins></pre>
 						
-						<p>The skybox finally appears in the game window, and you can also see it appear in the frame debugger.</p>
+						<p>&#xB9C8;&#xCE68;&#xB0B4; &#xAC8C;&#xC784; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xAC00; &#xB098;&#xD0C0;&#xB0AC;&#xACE0;, &#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;&#xC5D0;&#xC11C;&#xB3C4; &#xBCF4;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
 						<figure>
 							<img src="rendering/frame-debugger-skybox.png" width="208" height="34">
-							<figcaption>Frame debugger showing skybox gets drawn.</figcaption>
+							<figcaption>&#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xAC00; &#xADF8;&#xB824;&#xC9C0;&#xB294; &#xAC83;&#xC744; &#xBCF4;&#xC5EC;&#xC8FC;&#xB294; &#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;</figcaption>
 						</figure>
 					</section>
 					
 					<section>
-						<h3>Cameras</h3>
+						<h3>&#xCE74;&#xBA54;&#xB77C;</h3>
 						
-						<p>We are supplied with an array of cameras, because there can exist multiple in the scene that all have to be rendered. Example uses for multiple-camera setups are split-screen multiplayer, mini maps, and rear-view mirrors. Each camera needs to be handled separately.</p>
+						<p>&#xCE74;&#xBA54;&#xB77C;&#xC758; &#xBC30;&#xC5F4;&#xC774; &#xC804;&#xB2EC;&#xB418;&#xB294; &#xAC83;&#xC740;, &#xC52C;&#xC5D0; &#xB80C;&#xB354;&#xB9C1; &#xB420; &#xCE74;&#xBA54;&#xB77C;&#xAC00; &#xC5EC;&#xB7EC; &#xAC1C; &#xC788;&#xC744; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC911; &#xCE74;&#xBA54;&#xB77C; &#xC124;&#xC815;&#xC758; &#xC608;&#xC5D0;&#xB294; &#xBD84;&#xD560; &#xD654;&#xBA74; &#xBA40;&#xD2F0; &#xD50C;&#xB808;&#xC774;&#xC5B4;, &#xBBF8;&#xB2C8; &#xB9F5; &#xBC0F; &#xBC31;&#xBBF8;&#xB7EC;&#xC785;&#xB2C8;&#xB2E4;. &#xAC01; &#xCE74;&#xBA54;&#xB77C;&#xB294; &#xBCC4;&#xB3C4;&#xB85C; &#xCC98;&#xB9AC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>We won't worry about multi-camera support for our pipeline at this point. We'll simply create an alternative <code>Render</code> method that acts on a single camera. Have it draw the skybox and then submit. So we submit per camera.</p>
+						<p>&#xC774; &#xC2DC;&#xC810;&#xC5D0;&#xC11C;&#xB294; &#xC6B0;&#xB9AC;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC5D0;&#xC11C; &#xC5EC;&#xB7EC; &#xCE74;&#xBA54;&#xB77C;&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC2E0;&#xACBD;&#xC4F0;&#xC9C0; &#xC54A;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E8;&#xC21C;&#xD788; &#xB610; &#xB2E4;&#xB978; <code>Render</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xD558;&#xB098;&#xC758; &#xCE74;&#xBA54;&#xB77C;&#xC5D0;&#xC11C; &#xB3D9;&#xC791;&#xD558;&#xAC8C; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xB97C; &#xADF8;&#xB9AC;&#xACE0; &#xC11C;&#xBE0C;&#xBC0B;(submit) &#xD558;&#xC138;&#xC694;. &#xADF8;&#xB798;&#xC11C; &#xC6B0;&#xB9AC;&#xB294; &#xCE74;&#xBA54;&#xB77C; &#xB2F9; &#xC11C;&#xBE0C;&#xBC0B; &#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>	<ins>void Render (ScriptableRenderContext context, Camera camera) {</ins>
 		<ins>context.DrawSkybox(camera);</ins>
@@ -287,7 +322,7 @@ public class MyPipelineAsset : RenderPipelineAsset {}</pre>
 		<ins>context.Submit();</ins>
 	<ins>}</ins></pre>
 						
-						<p>Invoke the new method for each element of the <code>cameras</code> array. I use a <code>foreach</code> loop in this case, as Unity's pipelines also use this approach to loop through the cameras.</p>
+						<p><code>cameras</code> &#xBC30;&#xC5F4;&#xC758; &#xAC01; &#xC694;&#xC18C;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC0C8; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xC138;&#xC694;. &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xB3C4; &#xCE74;&#xBA54;&#xB77C;&#xB4E4;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xB8E8;&#xD504;&#xB97C; &#xB3CC; &#xB54C; &#xC774; &#xBC29;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBBC0;&#xB85C;, &#xC800;&#xB294; &#xC774; &#xACBD;&#xC6B0;&#xC5D0; <code>foreach</code> &#xB8E8;&#xD504;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. </p>
 						
 						<pre>	public override void Render (
 		ScriptableRenderContext renderContext, Camera[] cameras
@@ -304,21 +339,21 @@ public class MyPipelineAsset : RenderPipelineAsset {}</pre>
 	}</pre>
 						
 						<aside>
-							<h3>How does <code>foreach</code> work?</h3>
+							<h3><code>foreach</code> &#xB294; &#xC5B4;&#xB5BB;&#xAC8C; &#xB3D9;&#xC791;&#xD558;&#xB098;&#xC694;?</h3>
 							<div>
-								<p><code>foreach (var e in a) { … }</code> works like <code>for (int i = 0; i &lt; a.Length; a++) { var e = a[i]; … }</code> assuming that <code>a</code> is an array. The only functional difference is that we do not have access to the iterator variable <code>i</code>.</p>
+								<p><code>a</code> &#xAC00; &#xBC30;&#xC5F4;&#xC774;&#xB77C;&#xACE0; &#xAC00;&#xC815;&#xD558;&#xBA74;, <code>foreach (var e in a) { &#x2026; }</code> &#xB294; <code>for (int i = 0; i &lt; a.Length; a++) { var e = a[i]; &#x2026; }</code> &#xC640; &#xAC19;&#xC774; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;. &#xAE30;&#xB2A5;&#xC801;&#xC73C;&#xB85C; &#xC720;&#xC77C;&#xD558;&#xAC8C; &#xB2E4;&#xB978; &#xC810;&#xC740; &#xC774;&#xD130;&#xB808;&#xC774;&#xD130; &#xBCC0;&#xC218; <code>i</code>&#xC5D0; &#xC811;&#xADFC; &#xD560; &#xC218; &#xC5C6;&#xB2E4;&#xB294; &#xC810;&#xC785;&#xB2C8;&#xB2E4;.</p>
 								
-								<p>When <code>a</code> isn't an array but something else that is enumerable, then iterators come into play and you might end up with temporary object creation, which is best avoided. But using <code>foreach</code> with arrays is safe.</p>
+								<p><code>a</code> &#xAC00; &#xBC30;&#xC5F4;&#xC774; &#xC544;&#xB2C8;&#xACE0; &#xC5F4;&#xAC70; &#xAC00;&#xB2A5;&#xD55C; &#xC5B4;&#xB5A4; &#xAC83;&#xC774;&#xB77C;&#xBA74;, &#xBC18;&#xBCF5;&#xC790;(Iterator)&#xAC00; &#xC791;&#xB3D9;&#xD558;&#xACE0; &#xC784;&#xC2DC; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xAC00; &#xC0DD;&#xC131;&#xB420; &#xC218; &#xC788;&#xB294;&#xB370;, &#xC774;&#xB294; &#xD53C;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xBC30;&#xC5F4;&#xACFC; &#xD568;&#xAED8; <code>foreach</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC548;&#xC804;&#xD569;&#xB2C8;&#xB2E4;.</p>
 								
-								<p>The use of <code>var</code> to define the element variable is common, so I use it as well. Its type is the element type of <code>a</code>.</p>
+								<p>&#xBC30;&#xC5F4; &#xC694;&#xC18C; &#xBCC0;&#xC218;&#xB97C; &#xC815;&#xC758;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; <code>var</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC77C;&#xBC18;&#xC801;&#xC774;&#xBBC0;&#xB85C; &#xADF8;&#xAC83;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.  &#xD0C0;&#xC785;&#xC740; <code>a</code> &#xC758; &#xC694;&#xC18C;&#xC758; &#xD0C0;&#xC785;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 						
-						<p>Note that the orientation of the camera currently doesn't affect how the skybox gets rendered. We pass the camera to <code>DrawSkybox</code>, but that's only used to determine whether the skybox should be drawn at all, which is controlled via the camera clear flags.</p>
+						<p>&#xCE74;&#xBA54;&#xB77C;&#xC758; &#xBC29;&#xD5A5;&#xC740; &#xD604;&#xC7AC;&#xB85C;&#xC11C; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xC758; &#xB80C;&#xB354;&#xB9C1;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCE74;&#xBA54;&#xB77C;&#xB97C; <code>DrawSkybox</code> &#xC5D0; &#xB118;&#xAE30;&#xACE0; &#xC788;&#xC9C0;&#xB9CC;, &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xAC00; &#xADF8;&#xB824;&#xC838;&#xC57C; &#xD558;&#xB294;&#xC9C0;&#xB97C; &#xACB0;&#xC815;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xB420; &#xBFD0;&#xC774;&#xACE0;, &#xC774;&#xB294; &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xD074;&#xB9AC;&#xC5B4; &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xD1B5;&#xD574; &#xC81C;&#xC5B4;&#xB429;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>To correctly render the skybox—and the entire scene—we have to setup the view-projection matrix. This transformation matrix combines the camera's position and orientation—the view matrix— with the camera's perspective or orthographic projection—the projection matrix. You can see this matrix in the frame debugger. It is <em>unity_MatrixVP</em>, one of the shader properties used when something is drawn.</p>
+						<p>&#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xC640; &#xC804;&#xCCB4; &#xC52C;&#xC744; &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xB80C;&#xB354;&#xB9C1;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xBDF0;-&#xD22C;&#xC601; &#xD589;&#xB82C;&#xC744; &#xC124;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xBCC0;&#xD658; &#xD589;&#xB82C;&#xC740; &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xC704;&#xCE58;&#xC640; &#xBC29;&#xD5A5; (&#xBDF0; &#xD589;&#xB82C;)&#xC744; &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xC6D0;&#xADFC; &#xD639;&#xC740; &#xC9C1;&#xAD50;&#xD22C;&#xC601; (&#xD22C;&#xC601;&#xD589;&#xB82C;)&#xACFC; &#xACB0;&#xD569;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xD589;&#xB82C;&#xC740; &#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. <em>unity_MatrixVP</em>&#xB85C;, &#xBB34;&#xC5B8;&#xAC00;&#xB97C; &#xADF8;&#xB9B4; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xC170;&#xC774;&#xB354; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC911; &#xD558;&#xB098;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>At the moment, the <em>unity_MatrixVP</em> matrix is always the same. We have to apply the camera's properties to the context, via the <code>SetupCameraProperties</code> method. That sets up the matrix as well as some other properties.</p>
+						<p>&#xD604;&#xC7AC;, <em>unity_MatrixVP</em> &#xD589;&#xB82C;&#xC740; &#xD56D;&#xC0C1; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; <code>SetupCameraProperties</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xC5D0; &#xC801;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xD589;&#xB82C;&#xBFD0; &#xC544;&#xB2C8;&#xB77C; &#xB2E4;&#xB978; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB4E4;&#xB3C4; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>	void Render (ScriptableRenderContext context, Camera camera) {
 		<ins>context.SetupCameraProperties(camera);</ins>
@@ -328,15 +363,15 @@ public class MyPipelineAsset : RenderPipelineAsset {}</pre>
 		context.Submit();
 	}</pre>
 						
-						<p>Now the skybox gets rendered correctly, taking the camera properties into account, both in the game window and in the scene window.</p>
+						<p>&#xC774;&#xC81C; &#xC2A4;&#xCE74;&#xC774;&#xC2A4;&#xB294; &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xACE0;&#xB824;&#xD558;&#xC5EC; &#xAC8C;&#xC784; &#xC708;&#xB3C4;&#xC6B0;&#xC640; &#xC52C; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0; &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xB80C;&#xB354;&#xB9C1; &#xB429;&#xB2C8;&#xB2E4;.</p>
 					</section>
 					
 					<section>
-						<h3>Command Buffers</h3>
+						<h3>&#xBA85;&#xB839; &#xBC84;&#xD37C;</h3>
 						
-						<p>The context delays the actual rendering until we submit it. Before that, we configure it and add commands to it for later execution. Some tasks—like drawing the skybox—can be issued via a dedicated method, but other commands have to be issued indirectly, via a separate command buffer.</p>
+						<p>&#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xB294; &#xC6B0;&#xB9AC;&#xAC00; &#xC11C;&#xBE0C;&#xBC0B;&#xD560; &#xB54C;&#xAE4C;&#xC9C0; &#xC2E4;&#xC81C; &#xB80C;&#xB354;&#xB9C1;&#xC744; &#xC9C0;&#xC5F0;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;. &#xADF8; &#xC804;&#xC5D0;, &#xB098;&#xC911;&#xC758; &#xC2E4;&#xD589;&#xC744; &#xC704;&#xD574;&#xC11C; &#xC124;&#xC815;&#xC744; &#xD558;&#xACE0; &#xBA85;&#xB839;&#xB4E4;&#xC744; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;. &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xB97C; &#xADF8;&#xB9AC;&#xB294; &#xAC83;&#xACFC; &#xAC19;&#xC740; &#xC77C;&#xBD80; &#xC791;&#xC5C5;&#xC740; &#xC804;&#xC6A9;&#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC;, &#xB2E4;&#xB978; &#xBA85;&#xB839;&#xB4E4;&#xC740; &#xBCC4;&#xB3C4;&#xC758; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB97C; &#xD1B5;&#xD574; &#xAC04;&#xC811;&#xC801;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>A command buffer can be created by instantiating a new <code>CommandBuffer</code> object, which is defined in the <code>UnityEngine.Rendering</code> namespace. Command buffers already existed before the scriptable rendering pipeline was added, so they aren't experimental. Create such a buffer before we draw the skybox.</p>
+						<p>&#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB294; &#xC0C8;&#xB85C;&#xC6B4; <code>CommandBuffer</code> &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xC5EC; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xC73C;&#xBA70;, <code>UnityEngine.Rendering</code> &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xC815;&#xC758;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB4E4;&#xC740; &#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354;&#xB9C1; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC774; &#xCD94;&#xAC00;&#xB418;&#xAE30; &#xC804;&#xC5D0; &#xC774;&#xBBF8; &#xC788;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xC2E4;&#xD5D8;&#xC801;&#xC778;(experimental) &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;. &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xB97C; &#xADF8;&#xB9AC;&#xAE30; &#xC804;&#xC5D0; &#xBC84;&#xD37C;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xC138;&#xC694;.</p>
 						
 						<pre>using UnityEngine;
 <ins>using UnityEngine.Rendering;</ins>
@@ -344,7 +379,7 @@ using UnityEngine.Experimental.Rendering;
 
 public class MyPipeline : RenderPipeline {
 
-	…
+	&#x2026;
 
 	void Render (ScriptableRenderContext context, Camera camera) {
 		context.SetupCameraProperties(camera);
@@ -357,34 +392,34 @@ public class MyPipeline : RenderPipeline {
 	}
 }</pre>
 						
-						<p>We can instruct the context to execute the buffer via its <code>ExecuteCommandBuffer</code> method. Once again, this doesn't immediately execute the commands, but copies them to the internal buffer of the context.</p>
+						<p><code>ExecuteCommandBuffer</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xC5D0;&#xAC8C; &#xBC84;&#xD37C;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB77C;&#xACE0; &#xC9C0;&#xC2DC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC2DC; &#xD55C; &#xBC88;, &#xC774;&#xB294; &#xBA85;&#xB839;&#xB4E4;&#xC744; &#xBC14;&#xB85C; &#xC2E4;&#xD589;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC544;&#xB2C8;&#xB77C;, &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xC758; &#xB0B4;&#xBD80; &#xBC84;&#xD37C;&#xB85C; &#xBCF5;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		var buffer = new CommandBuffer();
 		<ins>context.ExecuteCommandBuffer(buffer);</ins></pre>
 						
-						<p>Command buffers claim resources to store their commands at the native level of the Unity engine. If we no longer need these resources, it is best to release them immediately. This can be done by invoking the buffer's <code>Release</code> method, directly after invoking <code>ExecuteCommandBuffer</code>.</p>
+						<p>&#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB4E4;&#xC740; &#xC720;&#xB2C8;&#xD2F0; &#xC5D4;&#xC9C4;&#xC758; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xC218;&#xC900;&#xC5D0;&#xC11C; &#xBA85;&#xB839;&#xC744; &#xC800;&#xC7A5;&#xD560; &#xB9AC;&#xC18C;&#xC2A4;&#xB97C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB7F0; &#xB9AC;&#xC18C;&#xC2A4;&#xAC00; &#xB354; &#xC774;&#xC0C1; &#xD544;&#xC694;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xC989;&#xC2DC; &#xB9AC;&#xC18C;&#xC2A4;&#xB97C; &#xD574;&#xC81C;&#xD558;&#xB294; &#xAC83;&#xC774; &#xAC00;&#xC7A5; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;. <code>ExecuteCommandBuffer</code> &#xB97C; &#xD638;&#xCD9C;&#xD55C; &#xC9C1;&#xD6C4;&#xC5D0;, &#xBC84;&#xD37C;&#xC758; <code>Release</code>&#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		var buffer = new CommandBuffer();
 		context.ExecuteCommandBuffer(buffer);
 		<ins>buffer.Release();</ins></pre>
 						
-						<p>Executing an empty command buffer does nothing. We added it so that we can clear the render target, to make sure that rendering isn't influenced by what was drawn earlier. This is possible via a command buffer, but not directly via the context.</p>
+						<p>&#xBE48; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xC544;&#xBB34; &#xC77C;&#xB3C4; &#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB80C;&#xB354; &#xD0C0;&#xAC9F;&#xC744; &#xC9C0;&#xC6B8; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xCD94;&#xAC00;&#xD558;&#xC5EC;, &#xB80C;&#xB354;&#xB9C1;&#xC774; &#xC774; &#xC804;&#xC5D0; &#xADF8;&#xB824;&#xC9C4; &#xAC83;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xBC1B;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xAC00;&#xB2A5;&#xD558;&#xC9C0;&#xB9CC;, &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xC9C1;&#xC811;&#xC801;&#xC73C;&#xB85C;&#xB294; &#xBD88;&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>A clear command can be added to the buffer by invoking <code>ClearRenderTarget</code>. It requires three arguments: two booleans and a color. The first argument controls whether the depth information is cleared, the second whether the color is cleared, and the third is the clear color, if used. For example, let's clear the depth data, ignore color data, and use <code>Color.clear</code> as the clear color.</p>
+						<p><code>ClearRenderTarget</code> &#xC744; &#xD638;&#xCD9C;&#xD574;&#xC11C; &#xD074;&#xB9AC;&#xC5B4; &#xBA85;&#xB839;&#xC744; &#xBC84;&#xD37C;&#xC5D0; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC774;&#xB294; 3 &#xAC1C;&#xC758; &#xC778;&#xC218;&#xB97C; &#xD544;&#xC694;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;. 2&#xAC1C;&#xC758; &#xBD80;&#xC6B8;&#xACFC; &#xD558;&#xB098;&#xC758; &#xC0C9;&#xC0C1;&#xC785;&#xB2C8;&#xB2E4;. &#xCCAB; &#xBC88;&#xC9F8; &#xC778;&#xC218;&#xB294; &#xAE4A;&#xC774; &#xC815;&#xBCF4;&#xB97C; &#xC9C0;&#xC6B8;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; &#xC81C;&#xC5B4;&#xD558;&#xACE0;, &#xB450; &#xBC88;&#xC9F8;&#xB294; &#xC0C9;&#xC0C1; &#xC815;&#xBCF4;&#xB97C; &#xC9C0;&#xC6B8;&#xC9C0; &#xC5EC;&#xBD80;, &#xADF8;&#xB9AC;&#xACE0; &#xD544;&#xC694;&#xD55C; &#xACBD;&#xC6B0;, &#xC138; &#xBC88;&#xC9F8;&#xB294; &#xD074;&#xB9AC;&#xC5B4; &#xC0C9;&#xC0C1;&#xC785;&#xB2C8;&#xB2E4;.  &#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xAE4A; &#xB370;&#xC774;&#xD0C0;&#xB97C; &#xC9C0;&#xC6B0;&#xACE0;, &#xC0C9;&#xC0C1; &#xB370;&#xC774;&#xD0C0;&#xB97C; &#xBB34;&#xC2DC;&#xD558;&#xACE0;, <code>Color.clear</code> &#xB97C; &#xD074;&#xB9AC;&#xC5B4; &#xC0C9;&#xC0C1;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD569;&#xC2DC;&#xB2E4;. </p>
 						
 						<pre>		var buffer = new CommandBuffer();
 		<ins>buffer.ClearRenderTarget(true, false, Color.clear);</ins>
 		context.ExecuteCommandBuffer(buffer);
 		buffer.Release();</pre>
 						
-						<p>The frame debugger will now show us that a command buffer get executed, which clears the render target. In this case, it indicated that Z and stencil get cleared. Z refers to the depth buffer, and the stencil buffer always gets cleared.</p>
+						<p>&#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;&#xB294; &#xC774;&#xC81C; &#xBA85;&#xB839; &#xBC84;&#xD30C;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xC5B4; &#xB80C;&#xB354; &#xD0C0;&#xAC9F;&#xC744; &#xC9C0;&#xC6B0;&#xB294; &#xAC83;&#xC744; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;. &#xC774; &#xACBD;&#xC6B0;, Z&#xC640; &#xC2A4;&#xD150;&#xC2E4;&#xC774; &#xC9C0;&#xC6CC;&#xC9C0;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xB098;&#xD0C0;&#xB0AC;&#xC2B5;&#xB2C8;&#xB2E4;. Z&#xB294; &#xAE4A;&#xC774; &#xBC84;&#xD37C;&#xB97C; &#xC758;&#xBBF8;&#xD558;&#xACE0;, &#xC2A4;&#xD150;&#xC2E4; &#xBC84;&#xD37C;&#xB294; &#xD56D;&#xC0C1; &#xC9C0;&#xC6CC;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
 						
 						<figure>
 							<img src="rendering/frame-debugger-clear-command.png" width="208" height="52">
-							<figcaption>Clearing the depth and stencil buffers.</figcaption>
+							<figcaption>&#xAE4A;&#xC774;&#xC640; &#xC2A4;&#xD150;&#xC2E4; &#xBC84;&#xD37C; &#xC9C0;&#xC6B0;&#xAE30;</figcaption>
 						</figure>
 						
-						<p>What gets cleared is configured per camera, via its clear flags and background color. We can use those instead of hard-coding how we clear the render target.</p>
+						<p>&#xBB34;&#xC5C7;&#xC744; &#xC9C0;&#xC6B8;&#xC9C0;&#xB294; &#xD074;&#xB9AC;&#xC5B4; &#xD50C;&#xB798;&#xADF8;&#xC640; &#xBC30;&#xACBD; &#xC0C9;&#xC744; &#xD1B5;&#xD574;&#xC11C; &#xCE74;&#xBA54;&#xB77C;&#xBCC4;&#xB85C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. &#xB80C;&#xB354; &#xD0C0;&#xAC9F;&#xC744; &#xC5B4;&#xB5BB;&#xAC8C; &#xC9C0;&#xC6B8;&#xC9C0; &#xD558;&#xB4DC;&#xCF54;&#xB529; &#xD558;&#xB294; &#xB300;&#xC2E0;&#xC5D0; &#xADF8; &#xC815;&#xBCF4;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		<ins>CameraClearFlags clearFlags = camera.clearFlags;</ins>
 		buffer.ClearRenderTarget(
@@ -394,15 +429,15 @@ public class MyPipeline : RenderPipeline {
 		);</pre>
 						
 						<aside>
-							<h3>How do the clear flags work?</h3>
+							<h3>&#xD074;&#xB9AC;&#xC5B4; &#xD50C;&#xB798;&#xADF8;&#xB294; &#xC5B4;&#xB5BB;&#xAC8C; &#xB3D9;&#xC791;&#xD558;&#xB098;&#xC694;?</h3>
 							<div>
-								<p><code>CameraClearFlags</code> is an enumeration that can be used as a set of bit flags. Each bit of the value is used to indicate whether a certain feature is enabled or not.</p>
+								<p><code>CameraClearFlags</code> &#xB294; &#xBE44;&#xD2B8; &#xD50C;&#xB798;&#xADF8;&#xC758; &#xC138;&#xD2B8;&#xB85C; &#xC0AC;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xB294; &#xC5F4;&#xAC70;&#xD615;&#xC785;&#xB2C8;&#xB2E4;. &#xAC12;&#xC758; &#xAC01; &#xBE44;&#xD2B8;&#xB294; &#xD2B9;&#xC815; &#xAE30;&#xB2A5;&#xC744; &#xC0AC;&#xC6A9;&#xD560;&#xC9C0; &#xB9D0;&#xC9C0;&#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 								
-								<p>To extract a bit flag from the entire value, combine the value with the desired flag using the bitwise AND operator <code>&amp;</code>. If the result is not zero, then the flag is set.</p>
+								<p>&#xC804;&#xCCB4; &#xAC12;&#xC758; &#xBE44;&#xD2B8; &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xCD94;&#xCDA9;&#xD558;&#xB824;&#xBA74;, &#xBE44;&#xD2B8;&#xB2E8;&#xC704; AND &#xC5F0;&#xC0B0;&#xC790; <code>&amp;</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xD574;&#xB2F9; &#xAC12;&#xC744; &#xC6D0;&#xD558;&#xB294; &#xD50C;&#xB798;&#xADF8;&#xC640; &#xACB0;&#xD569;&#xD558;&#xC138;&#xC694;. &#xACB0;&#xACFC;&#xAC00; 0&#xC774; &#xC544;&#xB2C8;&#xB77C;&#xBA74;, &#xD50C;&#xB798;&#xADF8;&#xB294; &#xC124;&#xC815;&#xB41C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 						
-						<p>Because we haven't given the command buffer a name, the debugger displays the default name, which is <em>Unnamed command buffer</em>. Let's use the camera's name instead, by assigning it to the buffer's <code>name</code> property. We'll use object initializer syntax to do this.</p>
+						<p>&#xBA85;&#xB839; &#xBC84;&#xD37C;&#xC5D0; &#xC774;&#xB984;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xC9C0; &#xC54A;&#xC558;&#xC73C;&#xBBC0;&#xB85C;, &#xB514;&#xBC84;&#xAC70;&#xC5D0;&#xB294; &#xAE30;&#xBCF8; &#xC774;&#xB984;&#xC778; <em>Unnamed command buffer</em>&#xAC00; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;. &#xB300;&#xC2E0; &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xC774;&#xB984;&#xC744; &#xBC84;&#xD37C;&#xC758; <code>name</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xC9C0;&#xC815;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD569;&#xC2DC;&#xB2E4;. &#xC774;&#xB97C; &#xC704;&#xD574;&#xC11C; &#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xC774;&#xB2C8;&#xC15C;&#xB77C;&#xC774;&#xC800; &#xBB38;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 						
 						<pre>		var buffer = new CommandBuffer <ins>{</ins>
 			<ins>name = camera.name</ins>
@@ -410,60 +445,60 @@ public class MyPipeline : RenderPipeline {
 						
 						<figure>
 							<img src="rendering/frame-debugger-camera-name.png" width="208" height="52">
-							<figcaption>Using camera name for the command buffer.</figcaption>
+							<figcaption>&#xBA85;&#xB839; &#xBC84;&#xD37C;&#xC5D0; &#xCE74;&#xBA54;&#xB77C; &#xC774;&#xB984; &#xC0AC;&#xC6A9;&#xD558;</figcaption>
 						</figure>
 						
 						<aside>
-							<h3>How does object initializer syntax work?</h3>
+							<h3>&#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xC774;&#xB2C8;&#xC15C;&#xB77C;&#xC774;&#xC800; &#xBB38;&#xBC95;&#xC740; &#xC5B4;&#xB5BB;&#xAC8C; &#xB3D9;&#xC791;&#xD558;&#xB098;&#xC694;?</h3>
 							<div>
-								<p>We could've also written <code>buffer.name = camera.name;</code> as a separate statement after invoking the constructor. But when creating a new object, you can append a code block to the constructor's invocation. Then you can set the object's fields and properties in the block, without having to reference the object instance explicitly. Also, it makes explicit that the instances should only be used after those fields and properties have been set. Besides that, it makes initialization possible where only a single statement is allowed, without requiring constructors with many parameter variants.</p>
+								<p>&#xC0DD;&#xC131;&#xC790;&#xB97C; &#xD638;&#xCD9C;&#xD55C; &#xD6C4;&#xC5D0; &#xBCC4;&#xB3C4; &#xBA85;&#xB839;&#xBB38;&#xC73C;&#xB85C; <code>buffer.name = camera.name;</code> &#xC774;&#xB77C;&#xACE0; &#xC791;&#xC131;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xADF8;&#xB7EC;&#xB098; &#xC0C8; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xB9CC;&#xB4E4;&#xB54C;, &#xC0DD;&#xC131;&#xC790;&#xC758; &#xD638;&#xCD9C;&#xC5D0; &#xCF54;&#xB4DC; &#xBE14;&#xB85D;&#xC744; &#xB367;&#xBD99;&#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8; &#xB2E4;&#xC74C; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xCC38;&#xC870;&#xD560; &#xD544;&#xC694; &#xC5C6;&#xC774;, &#xBE14;&#xB85D;&#xC5D0;&#xC11C; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC758; &#xD544;&#xB4DC;&#xC640; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C;, &#xC774;&#xB294; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xADF8;&#xB7F0; &#xD544;&#xB4DC;&#xC640; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; &#xC124;&#xC815;&#xB41C; &#xD6C4;&#xC5D0;&#xB9CC; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD55C;&#xB2E4;&#xACE0; &#xBA85;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8; &#xC678;&#xC5D0;&#xB3C4;, &#xD558;&#xB098;&#xC758; &#xBA85;&#xB839;&#xBB38;&#xB9CC; &#xD5C8;&#xC6A9;&#xB418;&#xB294; &#xC0C1;&#xD669;&#xC5D0;&#xC11C;, &#xB2E4;&#xC591;&#xD55C; &#xB9E4;&#xACA8;&#xBCC0;&#xC218;&#xB97C; &#xAC16;&#xB294; &#xC0DD;&#xC131;&#xC790;&#xB4E4;&#xC774; &#xC5C6;&#xC5B4;&#xB3C4; &#xCD08;&#xAE30;&#xD654;&#xAC00; &#xAC00;&#xB2A5;&#xD574;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
 								
-								<p>Note that we omitted the empty parameter list of the constructor invocation, which is allowed when object initializer syntax is used.</p>
+								<p>&#xC0DD;&#xC131;&#xC790; &#xD638;&#xCD9C;&#xC2DC;  &#xBE48; &#xD30C;&#xB77C;&#xBBF8;&#xD130; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; &#xC0DD;&#xB7B5;&#xD588;&#xB294;&#xB370;, &#xC774;&#xB294; &#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xC774;&#xB2C8;&#xC15C;&#xB77C;&#xC774;&#xC800; &#xBB38;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xD5C8;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 					</section>
 					
 					<section>
-						<h3>Culling</h3>
+						<h3>&#xCEEC;&#xB9C1;</h3>
 						
-						<p>We're able to render the skybox, but not yet any of the objects that we put in the scene. Rather than rendering every object, we're only going to render those that the camera can see. We do that by starting with all renderers in the scene and then culling those that fall outside of the view frustum of the camera.</p>
+						<p>&#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xB97C; &#xB80C;&#xB354;&#xB9C1; &#xD560; &#xC218;&#xB294; &#xC788;&#xC9C0;&#xB9CC;, &#xC52C;&#xC5D0; &#xB123;&#xC740; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB4E4;&#xC740; &#xC544;&#xC9C1; &#xB80C;&#xB354;&#xB9C1; &#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBAA8;&#xB4E0; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xB80C;&#xB354;&#xB9C1; &#xD558;&#xB294; &#xB300;&#xC2E0;&#xC5D0;, &#xCE74;&#xBA54;&#xB77C;&#xAC00; &#xBCFC; &#xC218; &#xC788;&#xB294; &#xAC83;&#xB4E4;&#xB9CC; &#xB80C;&#xB354;&#xB9C1; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xC52C;&#xC758; &#xBAA8;&#xB4E0; &#xB80C;&#xB354;&#xB7EC;&#xB85C; &#xC2DC;&#xC791;&#xD574;&#xC11C; &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xBDF0; &#xD504;&#xB7EC;&#xC2A4;&#xD140;(&#xC808;&#xB450;&#xCCB4;) &#xBC14;&#xAE65;&#xC5D0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;&#xB4E4;&#xC744; &#xCEEC;&#xB9C1;&#xD558;&#xB294; &#xC2DD;&#xC73C;&#xB85C; &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<aside>
-							<h3>What are renderers?</h3>
+							<h3>&#xB80C;&#xB354;&#xB7EC;&#xB780; &#xBB34;&#xC5C7;&#xC778;&#xAC00;&#xC694;?</h3>
 							<div>
-								<p>It are components attached to game objects that turn them into something that can be rendered. Typically, a <code>MeshRenderer</code> component.</p>
+								<p>&#xAC8C;&#xC784; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC5D0; &#xCD94;&#xAC00;&#xB418;&#xB294; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB85C; &#xAC8C;&#xC784;&#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xB80C;&#xB354;&#xB9C1; &#xD560; &#xC218; &#xC788;&#xB294; &#xBB34;&#xC5C7;&#xC778;&#xAC00;&#xB85C; &#xBC14;&#xAFC9;&#xB2C8;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; <code>MeshRenderer</code> &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8; &#xC785;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 						
-						<p>Figuring out what can be culled requires us to keep track of multiple camera settings and matrices, for which we can use the <code>ScriptableCullingParameters</code> struct. Instead of filling it ourselves, we can delegate that work to the static <code>CullResults.GetCullingParameters</code> method. It takes a camera as input and produces the culling parameters as output. However, it doesn't return the parameters struct. Instead, we have to supply it as a second output parameter, writing <code>out</code> in front of it.</p>
+						<p>&#xC5B4;&#xB5A4; &#xAC83;&#xC744; &#xCEEC;&#xB9C1;&#xD560; &#xC218; &#xC788;&#xC744;&#xC9C0; &#xC54C;&#xC544;&#xB0B4;&#xB824;&#xBA74; &#xC5EC;&#xB7EC; &#xCE74;&#xBA54;&#xB77C; &#xC124;&#xC815;&#xACFC; &#xD589;&#xB82C;&#xC744; &#xCD94;&#xC801;&#xD574;&#xC57C; &#xD558;&#xB294;&#xB370;, &#xC774;&#xB97C; &#xC704;&#xD574;&#xC11C; <code>ScriptableCullingParameters</code> &#xAD6C;&#xC870;&#xCCB4;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC6B0;&#xB9AC;&#xAC00; &#xC9C1;&#xC811; &#xCC44;&#xC6B0;&#xB294; &#xB300;&#xC2E0;&#xC5D0;, <code>CullResult.GetCullingParameters</code> &#xC815;&#xC801; &#xBA54;&#xC18C;&#xB4DC;&#xC5D0;&#xAC8C; &#xBD80;&#xD0C1;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC785;&#xB825;&#xC73C;&#xB85C; &#xCE74;&#xBA54;&#xB77C;&#xB97C; &#xBC1B;&#xACE0;, &#xCD9C;&#xB825;&#xC73C;&#xB85C; &#xCEEC;&#xB9C1; &#xD30C;&#xB77C;&#xBA54;&#xD0C0;&#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xD30C;&#xB77C;&#xBBF8;&#xD130; &#xAD6C;&#xC870;&#xCCB4;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xC9C0;&#xB294; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB300;&#xC2E0;, &#xB450; &#xBC88;&#xC9F8; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC758; &#xC55E;&#xC5D0; <code>out</code> &#xC744; &#xBD99;&#xC5EC;&#xC11C; &#xCD9C;&#xB825; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB85C; &#xB118;&#xACA8;&#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. </p>
 						
 						<pre>	void Render (ScriptableRenderContext context, Camera camera) {
 		<ins>ScriptableCullingParameters cullingParameters;</ins>
 		<ins>CullResults.GetCullingParameters(camera, out cullingParameters);</ins>
 
-		…
+		&#x2026;
 	}</pre>
 						
 						<aside>
-							<h3>Why do we have to write <code>out</code>?</h3>
+							<h3>&#xC65C; <code>out</code> &#xC744; &#xBD99;&#xC5EC;&#xC918;&#xC57C; &#xD558;&#xB098;&#xC694;?</h3>
 							<div>
-								<p>Structs are value types, so they're treated like simple values. They aren't objects with an identity, with variables and fields only holding references to their location in memory. So passing the struct as an argument provides a method with a copy of that value. The method can change the copy, but that has no effect on the value that was copied.</p>
+								<p>&#xAD6C;&#xC870;&#xCCB4;&#xB294; &#xAC12; &#xD0C0;&#xC785;&#xC774;&#xBBC0;&#xB85C; &#xB2E8;&#xC21C;&#xD55C; &#xAC12;&#xCC98;&#xB7FC; &#xCDE8;&#xAE09;&#xB429;&#xB2C8;&#xB2E4;. &#xB3C5;&#xC790;&#xC801;&#xC778; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xAC00; &#xC544;&#xB2C8;&#xBA70;, &#xBCC0;&#xC218;&#xB098; &#xD544;&#xB4DC;&#xB85C; &#xBA54;&#xBAA8;&#xB9AC;&#xC0C1;&#xC758; &#xC704;&#xCE58;&#xC5D0; &#xB300;&#xD55C; &#xCC38;&#xC870;&#xB9CC; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xAD6C;&#xC870;&#xCCB4;&#xB97C; &#xC778;&#xC218;&#xB85C; &#xB118;&#xAE30;&#xBA74; &#xBA54;&#xC18C;&#xB4DC;&#xC5D0;&#xB294; &#xBCF5;&#xC0AC;&#xBCF8;&#xC774; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;. &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xBCF5;&#xC0AC;&#xBCF8;&#xC744; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC;, &#xC6D0;&#xBCF8;&#xC5D0;&#xB294; &#xC544;&#xBB34; &#xC601;&#xD5A5;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 								
-								<p>When a struct parameter is defined as an output parameter, it acts like an object reference, but pointing to the place on the memory stack where the argument resides. When the method changes that argument, it affects that value, not a copy.</p>
+								<p>&#xAD6C;&#xC870;&#xCCB4; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xAC00; &#xCD9C;&#xB825; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB85C; &#xC815;&#xC758;&#xB418;&#xBA74;, &#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xCC38;&#xC870;&#xCC98;&#xB7FC; &#xB3D9;&#xC791;&#xD558;&#xC9C0;&#xB9CC;, &#xC778;&#xC218;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xBA54;&#xBAA8;&#xB9AC; &#xC2A4;&#xD0DD;&#xC0C1;&#xC758; &#xC704;&#xCE58;&#xB97C; &#xAC00;&#xB9AC;&#xD0B5;&#xB2C8;&#xB2E4;. &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xC778;&#xC218;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xBA74;, &#xBCF5;&#xC0AC;&#xBCF8;&#xC774; &#xC544;&#xB2CC;, &#xC6D0;&#xBCF8;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xC90D;&#xB2C8;&#xB2E4;.</p>
 								
-								<p>The <code>out</code> keyword tells us that the method is responsible for correctly setting the parameter, replacing the previous value.</p>
+								<p><code>out</code> &#xD0A4;&#xC6CC;&#xB4DC;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xC774;&#xC804; &#xAC12;&#xC744; &#xB300;&#xCCB4;&#xD574;&#xC11C;, &#xC62C;&#xBC14;&#xB978; &#xAC12;&#xC744; &#xC124;&#xC815;&#xD560; &#xCC45;&#xC784;&#xC774; &#xC788;&#xC74C;&#xC744; &#xC54C;&#xB824;&#xC90D;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 						
-						<p>Besides the output parameter, <code>GetCullingParameters</code> also returns whether it was able to create valid parameters. Not all camera settings are valid, resulting in degenerate results that cannot be used for culling. So if it fails, we have nothing to render and can exit from <code>Render</code>.</p>
+						<p>&#xCD9C;&#xB825; &#xD30C;&#xB77C;&#xBBF8;&#xD130; &#xC678;&#xC5D0;&#xB3C4;, <code>GetCullingParameters</code> &#xB294; &#xC720;&#xD6A8;&#xD55C; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xC218; &#xC788;&#xC5C8;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;&#xB3C4; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.  &#xBAA8;&#xB4E0; &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xC124;&#xC815;&#xC774; &#xC720;&#xD6A8;&#xD558;&#xC9C0;&#xB294; &#xC54A;&#xC73C;&#xBBC0;&#xB85C;, &#xCEEC;&#xB801;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xB294; &#xC798;&#xBABB;&#xB41C; &#xACB0;&#xACFC;&#xAC00; &#xB098;&#xC62C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; &#xC2E4;&#xD328;&#xD558;&#xBA74;, &#xB80C;&#xB354;&#xB9C1;&#xD560; &#xAC83;&#xC774; &#xC5C6;&#xC73C;&#xBBC0;&#xB85C; <code>Render</code> &#xC5D0;&#xC11C; &#xB098;&#xAC08; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		<ins>if (!</ins>CullResults.GetCullingParameters(camera, out cullingParameters)<ins>) {</ins>
 			<ins>return;</ins>
 		<ins>}</ins></pre>
 						
-						<p>Once we have the culling parameters, we can use them to cull. This is done by invoking the static <code>CullResults.Cull</code> method with both the culling parameters and the context as arguments. The result is a <code>CullResults</code> struct, which contains information about what is visible.</p>
+						<p>&#xCEEC;&#xB9C1; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xAD6C;&#xD588;&#xB2E4;&#xBA74;, &#xCEEC;&#xB9C1;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCEEC;&#xB9C1; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC640; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xC778;&#xC218;&#xB85C; <code>CullResults.Cull</code> &#xC815;&#xC801; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.  &#xACB0;&#xACFC;&#xB294; <code>CullResults</code> &#xAD6C;&#xC870;&#xCCB4;&#xC774;&#xBA70;, &#xBB34;&#xC5C7;&#xC774; &#xBCF4;&#xC774;&#xB294;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>In this case, we have to supply the culling parameters as a reference parameter, by writing <code>ref</code> in front of it.</p>
+						<p>&#xC774; &#xACBD;&#xC6B0;, &#xCEEC;&#xB9C1; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xCC38;&#xC870; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB85C; &#xB118;&#xACA8;&#xC57C; &#xD558;&#xBBC0;&#xB85C; &#xC55E;&#xC5D0; <code>ref</code> &#xB97C; &#xBD99;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		if (!CullResults.GetCullingParameters(camera, out cullingParameters)) {
 			return;
@@ -472,25 +507,25 @@ public class MyPipeline : RenderPipeline {
 		<ins>CullResults cull = CullResults.Cull(ref cullingParameters, context);</ins></pre>
 						
 						<aside>
-							<h3>Why do we have to write <code>ref</code>?</h3>
+							<h3>&#xC65C; <code>ref</code> &#xB97C; &#xBD99;&#xC5EC;&#xC57C; &#xD558;&#xB098;&#xC694;?</h3>
 							<div>
-								<p>It works just like <code>out</code>, except in this case the method is not required to assign something to the value. And whoever invokes the method is responsible for properly initializing the value first. So it can be used for input, and optionally for output.</p>
+								<p><code>out</code> &#xACFC; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xB3D9;&#xC791;&#xD558;&#xC9C0;&#xB9CC;, &#xC774; &#xACBD;&#xC6B0; &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xC5B4;&#xB5A4; &#xAC12;&#xC744; &#xD560;&#xB2F9;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xCABD;&#xC5D0;&#xC11C; &#xBA3C;&#xC800; &#xAC12;&#xC744; &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xCD08;&#xAE30;&#xD654; &#xD560; &#xCC45;&#xC784;&#xC744; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC785;&#xB825;&#xC744; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB420; &#xC218;&#xB3C4; &#xC788;&#xACE0;, &#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C; &#xCD9C;&#xB825;&#xC744; &#xC704;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 						
 						
 						<aside>
-							<h3>Why is <code>ScriptableCullingParameters</code> a struct?</h3>
+							<h3>&#xC65C; <code>ScripatableCullingParameters</code> &#xB294; &#xAD6C;&#xC870;&#xCCB4; &#xC778;&#xAC00;&#xC694;?</h3>
 							<div>
-								<p>It's probably an optimization attempt, the idea being that you can create multiple parameter structs without having to worry about memory allocations. However, <code>ScriptableCullingParameters</code> is very large for a struct, which is why a reference parameter is used here, again for performance reasons. Maybe it started small but grew into a huge struct over time. Reusable object instances might be a better approach now, but we have to work with whatever Unity Technologies decides to use.</p>
+								<p>&#xC544;&#xB9C8;&#xB3C4; &#xCD5C;&#xC801;&#xD654;&#xB97C; &#xC704;&#xD55C; &#xAC83;&#xC73C;&#xB85C;, &#xBA54;&#xBAA8;&#xB9AC; &#xD560;&#xB2F9;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xAC71;&#xC815;&#xD560; &#xD544;&#xC694; &#xC5C6;&#xC774; &#xC5EC;&#xB7EC; &#xD30C;&#xB77C;&#xBBF8;&#xD130; &#xAD6C;&#xC870;&#xCCB4;&#xB97C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xAC8C; &#xD558;&#xB824;&#xB294; &#xC0DD;&#xAC01;&#xC774;&#xC5C8;&#xC744; &#xAC81;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098;, <code>ScriptableCullingParameters</code> &#xB294; &#xAD6C;&#xC870;&#xCCB4;&#xB85C; &#xB9CC;&#xB4E4;&#xAE30;&#xC5D0;&#xB294; &#xB9E4;&#xC6B0; &#xD07D;&#xB2C8;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; &#xB2E4;&#xC2DC; &#xC131;&#xB2A5;&#xC0C1;&#xC758; &#xC774;&#xC720;&#xB85C;, &#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xCC38;&#xC870; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB85C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xC5B4;&#xCA4C;&#xBA74; &#xCC98;&#xC74C;&#xC5D0;&#xB294; &#xC791;&#xC558;&#xB294;&#xB370; &#xC810;&#xC810; &#xB354; &#xCEE4;&#xB2E4;&#xB780; &#xAD6C;&#xC870;&#xCCB4;&#xAC00; &#xB418;&#xC5C8;&#xC744;&#xC9C0;&#xB3C4; &#xBAA8;&#xB985;&#xB2C8;&#xB2E4;. &#xC7AC;&#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD55C; &#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xB354; &#xB098;&#xC740; &#xC811;&#xADFC;&#xBC29;&#xC2DD;&#xC77C; &#xC218;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC;, &#xC720;&#xB2C8;&#xD2F0;&#xAC00; &#xACB0;&#xC815;&#xD55C; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xC791;&#xC5C5;&#xC744; &#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 					</section>
 					
 					<section>
-						<h3>Drawing</h3>
+						<h3>&#xB4DC;&#xB85C;&#xC789;</h3>
 						
-						<p>Once we know what is visible, we can move on to rendering those shapes. This is done by invoking <code>DrawRenderers</code> on the context, with <code>cull.visibleRenderers</code> as an argument, telling it which renderers to use. Besides that, we have to supply draw settings and filter settings. Both are structs—<code>DrawRendererSettings</code> and <code>FilterRenderersSettings</code>—for which we'll initially use their default values. The draw settings have to be passed as a reference.</p>
+						<p>&#xBB34;&#xC5C7;&#xC774; &#xBCF4;&#xC774;&#xB294;&#xC9C0; &#xC54C;&#xC558;&#xB2E4;&#xBA74;, &#xADF8; &#xBAA8;&#xC591;&#xB4E4;&#xC744; &#xB80C;&#xB354;&#xB9C1;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5B4;&#xB5A4; &#xB80C;&#xB354;&#xB7EC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560;&#xC9C0; &#xC54C;&#xB824;&#xC8FC;&#xAE30; &#xC704;&#xD574;&#xC11C;, &#xC778;&#xC218;&#xB85C; <code>cull.visibleRenderers</code> &#xB97C; &#xB118;&#xACA8;&#xC11C; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xC758; <code>DrawRenders</code> &#xC744; &#xD638;&#xCD9C;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8; &#xC678;&#xC5D0;&#xB3C4;, &#xB4DC;&#xB85C;&#xC789; &#xC124;&#xC815;&#xACFC; &#xD544;&#xD130; &#xC124;&#xC815;&#xC744; &#xC81C;&#xACF5;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;. <code>DrawRendererSettings</code> &#xC640; <code>FilterRenderersSettings</code> &#xBAA8;&#xB450; &#xAD6C;&#xC870;&#xCCB4;&#xB85C; &#xCC98;&#xC74C;&#xC5D0;&#xB294; &#xAE30;&#xBCF8;&#xAC12;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB4DC;&#xB85C;&#xC789; &#xC124;&#xC815;&#xC740; &#xCC38;&#xC870;&#xB85C; &#xC804;&#xB2EC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		buffer.Release();
 
@@ -505,39 +540,39 @@ public class MyPipeline : RenderPipeline {
 		context.DrawSkybox(camera);</pre>
 						
 						<aside>
-							<h3>Why <code>FilterRenderersSettings</code> and not <code>FilterRendererSettings</code>?</h3>
+							<h3>&#xC65C; <code>FilterRendererSettings</code> &#xAC00; &#xC544;&#xB2C8;&#xB77C; <code>FilterRenderersSettings</code> &#xC778;&#xAC00;&#xC694;?</h3>
 							<div>
-								<p>No idea. Maybe it's a typo.</p>
+								<p>&#xBAA8;&#xB974;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5B4;&#xCA4C;&#xBA74; &#xC624;&#xD0C0;&#xC77C; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 							</div>
 						</aside>
 						
-						<p>We're not seeing any objects yet, because the default filter settings include nothing. We can instead include everything by providing <code>true</code> as an argument for the <code>FilterRenderersSettings</code> constructor. This tells it to initialize itself so it includes everything.</p>
+						<p>&#xAE30;&#xBCF8; &#xD544;&#xD130; &#xC124;&#xC815;&#xC5D0;&#xB294; &#xC544;&#xBB34;&#xAC83;&#xB3C4; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C;, &#xC544;&#xC9C1; &#xC5B4;&#xB5A4; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB3C4; &#xBCFC; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB300;&#xC2E0;&#xC5D0; <code>FilterRenderersSettings</code> &#xC0DD;&#xC131;&#xC790;&#xC758; &#xC778;&#xC218;&#xB85C; <code>true</code> &#xB97C; &#xC81C;&#xACF5;&#xD568;&#xC73C;&#xB85C;&#xC368; &#xBAA8;&#xB4E0; &#xAC83;&#xC744; &#xD3EC;&#xD568;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xBAA8;&#xB4E0; &#xAC83;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB3C4;&#xB85D; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xB77C;&#xACE0; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		var filterSettings = new FilterRenderersSettings(<ins>true</ins>);</pre>
 						
-						<p>Also, we have to configure the draw settings by providing its constructor with the camera and a shader pass as arguments. The camera is used to setup sorting and culling layers, while the pass controls which shader pass is used for rendering.</p>
+						<p>&#xB610;&#xD55C; &#xCE74;&#xBA54;&#xB77C;&#xC640; &#xC170;&#xC774;&#xB354; &#xD328;&#xC2A4;&#xB97C; &#xC0DD;&#xC131;&#xC790;&#xC758; &#xC778;&#xC218;&#xB85C; &#xC81C;&#xACF5;&#xD558;&#xC5EC; &#xB4DC;&#xB85C;&#xC789; &#xC124;&#xC815;&#xC744; &#xAD6C;&#xC131;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xCE74;&#xBA54;&#xB77C;&#xB294; &#xC815;&#xB82C; &#xBC0F; &#xCEEC;&#xB9C1; &#xB808;&#xC774;&#xC5B4; &#xC124;&#xC815;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xBA70;, &#xD328;&#xC2A4;&#xB294; &#xB80C;&#xB354;&#xB9C1;&#xC5D0; &#xC5B4;&#xB5A4; &#xC170;&#xC774;&#xB354; &#xD328;&#xC2A4;&#xB97C; &#xC0AC;&#xC6A9;&#xD560;&#xC9C0; &#xC81C;&#xC5B4;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>The shader pass is identified via a string, which has to be wrapped in a <code>ShaderPassName</code> struct. As we're only supporting unlit materials in our pipeline, we'll use Unity's default unlit pass, identified with <em>SRPDefaultUnlit</em>.</p>
+						<p>&#xC170;&#xC774;&#xB354; &#xD328;&#xC2A4;&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xD1B5;&#xD574; &#xAD6C;&#xBCC4;&#xB418;&#xBA70;, <code>ShaderPassName</code>  &#xAD6C;&#xC870;&#xCCB4;&#xC5D0; &#xB798;&#xD551;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC6B0;&#xB9AC; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC740; &#xC5B8;&#xB9BF; &#xC7AC;&#xC9C8;&#xB9CC; &#xC9C0;&#xC6D0;&#xD558;&#xBBC0;&#xB85C;, <em>SRPDefaultUnlit</em> &#xC73C;&#xB85C; &#xC2DD;&#xBCC4;&#xB418;&#xB294; &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xAE30;&#xBCF8; &#xC5B8;&#xB9BF; &#xD328;&#xC2A4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		var drawSettings = new DrawRendererSettings(
-			<ins>camera, new ShaderPassName("SRPDefaultUnlit")</ins>
+			<ins>camera, new ShaderPassName(&quot;SRPDefaultUnlit&quot;)</ins>
 		);</pre>
 						
 						<figure>
 							<img src="rendering/opaque-only.jpg" width="250" height="90">
-							<figcaption>Opaque spheres are visible.</figcaption>
+							<figcaption>&#xBD88;&#xD22C;&#xBA85;&#xD55C; &#xAD6C;&#xAC00; &#xBCF4;&#xC784;</figcaption>
 						</figure>
 						
-						<p>We see the opaque unlit shapes appear, but not the transparent ones. However, the frame debugger indicates that the unlit shapes get drawn too.</p>
+						<p>&#xBD88;&#xD22C;&#xBA85;&#xD55C; &#xC5B8;&#xB9BF; &#xBAA8;&#xC591;&#xB4E4;&#xC740; &#xB098;&#xD0C0;&#xB098;&#xC9C0;&#xB9CC;, &#xD22C;&#xBA85;&#xD55C; &#xAC83;&#xB4E4;&#xC740; &#xBCF4;&#xC774;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098;, &#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;&#xB294; &#xADF8; &#xC5B8;&#xB9BF; &#xBAA8;&#xC591;&#xB4E4;&#xB3C4; &#xADF8;&#xB824;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xACE0; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<figure>
 							<img src="rendering/frame-debugger-draw.png" width="250" height="130">
-							<figcaption>All unlit renderers are drawn.</figcaption>
+							<figcaption>&#xBAA8;&#xB4E0; &#xC5B8;&#xB9BF; &#xB80C;&#xB354;&#xB7EC;&#xAC00; &#xADF8;&#xB824;&#xC9D0;</figcaption>
 						</figure>
 						
-						<p>They do get drawn, but because the transparent shader pass does not write to the depth buffer they end up getting drawn over by the skybox. The solution is to delay drawing transparent renderers until after the skybox.</p>
+						<p>&#xADF8;&#xB824;&#xC9C0;&#xACE0;&#xB294; &#xC788;&#xC9C0;&#xB9CC;, &#xD22C;&#xBA85; &#xC170;&#xC774;&#xB354; &#xD328;&#xC2A4;&#xC5D0;&#xC11C; &#xAE4A;&#xC774; &#xBC84;&#xD37C;&#xC5D0; &#xC4F0;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xC5D0; &#xC758;&#xD574;&#xC11C; &#xB36E;&#xC5B4;&#xC11C; &#xADF8;&#xB824;&#xC9C0;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. &#xD574;&#xACB0; &#xBC29;&#xBC95;&#xC740; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xAC00; &#xADF8;&#xB824;&#xC9C8; &#xB54C;&#xAE4C;&#xC9C0; &#xD22C;&#xBA85;&#xD55C; &#xB80C;&#xB354;&#xB7EC;&#xC758; &#xB4DC;&#xB85C;&#xC789;&#xC744; &#xC9C0;&#xC5F0;&#xC2DC;&#xD0A4;&#xB294; &#xAC83; &#xC785;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>First, limit the draw before the skybox to only the opaque renderers. This is done by setting the <code>renderQueueRange</code> of the filter settings to <code>RenderQueueRange.opaque</code>, which covers the render queues from 0 up to and including 2500.</p>
+						<p>&#xC6B0;&#xC120;, &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4; &#xC55E;&#xCABD;&#xC758; &#xB4DC;&#xB85C;&#xC789;&#xC744; &#xBD88;&#xD22C;&#xBA85;&#xD55C; &#xB80C;&#xB354;&#xB7EC;&#xB85C; &#xC81C;&#xD55C;&#xD558;&#xC138;&#xC694;. &#xD544;&#xD130; &#xC124;&#xC815;&#xC758; <code>renderQueueRange</code> &#xB97C; <code>RenderQueueRange.opaque</code>&#xB85C; &#xC124;&#xC815;&#xD558;&#xBA74; &#xB418;&#xBA70;, &#xC774;&#xB294; 0&#xC5D0;&#xC11C; 2500 &#xAE4C;&#xC9C0;&#xC758; &#xB80C;&#xB354; &#xD050;&#xB97C; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;. </p>
 						
 						<pre>		var filterSettings = new FilterRenderersSettings(true) <ins>{</ins>
 			<ins>renderQueueRange = RenderQueueRange.opaque</ins>
@@ -545,10 +580,10 @@ public class MyPipeline : RenderPipeline {
 						
 						<figure>
 							<img src="rendering/frame-debugger-opaque.png" width="250" height="98">
-							<figcaption>Only opaque renderers are drawn.</figcaption>
+							<figcaption>&#xBD88;&#xD22C;&#xBA85;&#xD55C; &#xB80C;&#xB354;&#xB7EC;&#xB9CC; &#xADF8;&#xB824;&#xC9D0;.</figcaption>
 						</figure>
 						
-						<p>Next, change the queue range to <code>RenderQueueRange.transparent</code>—from 2501 up to and including 5000—after rendering the skybox, and render again.</p>
+						<p>&#xB2E4;&#xC74C;&#xC73C;&#xB85C;, &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xB97C; &#xB80C;&#xB354;&#xB9C1;&#xD55C; &#xD6C4;&#xC5D0; &#xD050;&#xC758; &#xBC94;&#xC704;&#xB97C;  <code>RenderQueueRange.transparent</code> (2501&#xC5D0;&#xC11C; 5000&#xAE4C;&#xC9C0;) &#xB85C; &#xBC14;&#xAFD4;&#xC11C; &#xB2E4;&#xC2DC; &#xB80C;&#xB354;&#xB9C1; &#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		var filterSettings = new FilterRenderersSettings(true) {
 			renderQueueRange = RenderQueueRange.opaque
@@ -566,23 +601,23 @@ public class MyPipeline : RenderPipeline {
 		<ins>);</ins></pre>
 						
 						<figure>
-							<img src="rendering/opaque-then-transparent.jpg" width="250" height="100" alt="scene"><br>
-							<img src="rendering/frame-debugger-transparent.png" width="250" height="146" alt="frame debugger">
-							<figcaption>Opaque, skybox, then transparent.</figcaption>
+							<img src="rendering/opaque-then-transparent.jpg" width="250" height="100" alt="&#xC52C;"><br>
+							<img src="rendering/frame-debugger-transparent.png" width="250" height="146" alt="&#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;">
+							<figcaption>&#xBD88;&#xD22C;&#xBA85;, &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;, &#xADF8; &#xB2E4;&#xC74C; &#xBD88;&#xD22C;&#xBA85;.</figcaption>
 						</figure>
 						
-						<p>We draw the opaque renderers before the skybox to prevent overdraw. As the shapes will always be in front of the skybox, we avoid work by drawing them first. That's because the opaque shader pass writes to the depth buffer, which is used to skip anything that's drawn later that ends up further away.</p>
+						<p>&#xC624;&#xBC84;&#xB4DC;&#xB85C;&#xC6B0;&#xB97C; &#xBC29;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4; &#xC55E;&#xC5D0; &#xBD88;&#xD22C;&#xBA85;&#xD55C; &#xB80C;&#xB354;&#xB7EC;&#xB4E4;&#xC744; &#xADF8;&#xB9BD;&#xB2C8;&#xB2E4;. &#xBAA8;&#xC591;&#xB4E4;&#xC774; &#xD56D;&#xC0C1; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4; &#xC55E;&#xC5D0; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xBAA8;&#xC591;&#xB4E4;&#xC744; &#xBA3C;&#xC800; &#xADF8;&#xB9BC;&#xC73C;&#xB85C;&#xC11C; &#xC624;&#xBC84;&#xB4DC;&#xB85C;&#xC6B0;&#xB97C; &#xD53C;&#xD569;&#xB2C8;&#xB2E4;.  &#xC774;&#xB294; &#xBD88;&#xD22C;&#xBA85;&#xD55C; &#xC170;&#xC774;&#xB354; &#xD328;&#xC2A4;&#xAC00; &#xAE4A;&#xC774; &#xBC84;&#xD37C;&#xC5D0; &#xC4F0;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xBA70;, &#xAE4A;&#xC774; &#xBC84;&#xD37C;&#xB294; &#xBA40;&#xB9AC; &#xC788;&#xC5B4; &#xB098;&#xC911;&#xC5D0; &#xADF8;&#xB824;&#xC9C0;&#xB294; &#xAC83;&#xB4E4;&#xC744; &#xAC74;&#xB108; &#xB6F0;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>Besides covering parts of the sky, opaque renderers can also end up obscuring each other. Ideally, only the one closest to the camera is drawn for each fragment of the frame buffer. So to reduce overdraw as much as possible, we should draw the nearest shapes first. That can be done by sorting the renderers before drawing, which is controlled via sorting flags.</p>
+						<p>&#xD558;&#xB298;&#xC758; &#xC77C;&#xBD80;&#xB97C; &#xAC00;&#xB9AC;&#xB294; &#xAC83; &#xC678;&#xC5D0;&#xB3C4;, &#xBD88;&#xD22C;&#xBA85;&#xD55C; &#xB80C;&#xB354;&#xB7EC;&#xB4E4;&#xC740; &#xC11C;&#xB85C;&#xB97C; &#xAC00;&#xB9AC;&#xAC8C; &#xB420; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xC0C1;&#xC801;&#xC73C;&#xB85C;, &#xD504;&#xB808;&#xC784; &#xBC84;&#xD37C;&#xC758; &#xAC01; &#xD504;&#xB798;&#xADF8;&#xBA3C;&#xD2B8;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xCE74;&#xBA54;&#xB77C;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xAC00;&#xAE4C;&#xC6B4; &#xAC83;&#xB4E4;&#xB9CC; &#xADF8;&#xB824;&#xC9D1;&#xB2C8;&#xB2E4;. &#xCD5C;&#xB300;&#xD55C; &#xC624;&#xBC84;&#xB4DC;&#xB85C;&#xC6B0;&#xB97C; &#xC904;&#xC774;&#xB824;&#xBA74;, &#xAC00;&#xC7A5; &#xAC00;&#xAE4C;&#xC6B4; &#xBAA8;&#xC591;&#xC744; &#xBA3C;&#xC800; &#xADF8;&#xB824;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xB4DC;&#xB85C;&#xC789; &#xC804;&#xC5D0; &#xB80C;&#xB354;&#xB7EC;&#xB4E4;&#xC744; &#xC815;&#xB82C;&#xD558;&#xBA74; &#xB418;&#xACE0;, &#xC815;&#xB82C; &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xD1B5;&#xD574; &#xC81C;&#xC5B4;&#xB429;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>The draw settings contain a <code>sorting</code> struct of type <code>DrawRendererSortSettings</code>, which contains the sort flags. Set it to <code>SortFlags.CommonOpaque</code> before drawing the opaque shapes. This instructs Unity to sort the renderers by distance, from front to back, plus a few other criteria.</p>
+						<p>&#xB4DC;&#xB85C;&#xC789; &#xC124;&#xC815;&#xC740; <code>DrawRendererSortSettings</code> &#xD0C0;&#xC785;&#xC758; <code>sorting</code> &#xAD6C;&#xC870;&#xCCB4;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xACE0;, &#xC774;&#xB294; &#xC815;&#xB82C; &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;. &#xBD88;&#xD22C;&#xBA85;&#xD55C; &#xBAA8;&#xC591;&#xB4E4;&#xC744; &#xADF8;&#xB9AC;&#xAE30; &#xC804;&#xC5D0; <code>SortFlags.CommonOpaque</code> &#xB85C; &#xC124;&#xC815;&#xD558;&#xC138;&#xC694;.  &#xC774;&#xB294; &#xC720;&#xB2C8;&#xD2F0;&#xAC00; &#xB80C;&#xB354;&#xB7EC;&#xB4E4;&#xC744; &#xAC70;&#xB9AC; (&#xC55E;&#xC5D0;&#xC11C; &#xB4A4;&#xB85C;) &#xBC0F; &#xCD94;&#xAC00;&#xC801;&#xC778; &#xBA87; &#xAC00;&#xC9C0; &#xAE30;&#xC900;&#xC5D0; &#xC758;&#xD574;&#xC11C; &#xC815;&#xB82C;&#xD558;&#xB3C4;&#xB85D; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		var drawSettings = new DrawRendererSettings(
-			camera, new ShaderPassName("SRPDefaultUnlit")
+			camera, new ShaderPassName(&quot;SRPDefaultUnlit&quot;)
 		);
 		<ins>drawSettings.sorting.flags = SortFlags.CommonOpaque;</ins></pre>
 						
-						<p>However, transparent rendering works differently. It combines the color of what's being drawn with what has been drawn before, so the result appears transparent. That requires the reverse draw order, from back to front. We can use <code>SortFlags.CommonTransparent</code> for that.</p>
+						<p>&#xADF8;&#xB7EC;&#xB098; &#xD22C;&#xBA85;&#xD55C; &#xB80C;&#xB354;&#xB9C1;&#xC740; &#xB2E4;&#xB974;&#xAC8C; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xC804;&#xC5D0; &#xADF8;&#xB824;&#xC9C4; &#xC0C9;&#xACFC; &#xC9C0;&#xAE08; &#xADF8;&#xB824;&#xC9C0;&#xB294; &#xC0C9;&#xC744; &#xACB0;&#xD569;&#xD574;&#xC11C;, &#xACB0;&#xACFC;&#xAC00; &#xD22C;&#xBA85;&#xD558;&#xAC8C; &#xB098;&#xD0C0;&#xB0A9;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xB4A4;&#xC5D0;&#xC11C; &#xC55E;&#xC73C;&#xB85C; &#xBC18;&#xB300;&#xC758; &#xC21C;&#xC11C;&#xB85C; &#xADF8;&#xB824;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xC704;&#xD574; <code>SortFlags.CommonTransparent</code> &#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		context.DrawSkybox(camera);
 
@@ -595,103 +630,103 @@ public class MyPipeline : RenderPipeline {
 						<p>Our pipeline is now able to render both opaque and transparent unlit objects correctly.</p>
 					</section>
 					
-					<a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/rendering/rendering.unitypackage" download rel="nofollow">unitypackage</a>
+					<a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/rendering/rendering.unitypackage/" download="" rel="nofollow">&#xC720;&#xB2C8;&#xD2F0; &#xD328;&#xD0A4;&#xC9C0;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
 				</section>
 				
 				<section>
-					<h2>Polishing</h2>
+					<h2>&#xB2E4;&#xB4EC;&#xAE30;</h2>
 					
-					<p>Being able to render correctly is only part of having a functional pipeline. There are other things to consider, such as whether it is fast enough, doesn't allocate unneeded temporary objects, and integrates well with the Unity editor.</p>
+					<p>&#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xB80C;&#xB354;&#xB9C1; &#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC740; &#xB3D9;&#xC791;&#xD558;&#xB294; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC758; &#xC77C;&#xBD80;&#xC77C; &#xBFD0;&#xC785;&#xB2C8;&#xB2E4;.  &#xCDA9;&#xBD84;&#xD788; &#xBE60;&#xB978;&#xC9C0;, &#xBD88;&#xD544;&#xC694;&#xD55C; &#xC784;&#xC2DC; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xD560;&#xB2F9;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xC9C0;, &#xC720;&#xB2C8;&#xD2F0; &#xC5D0;&#xB514;&#xD130;&#xC640; &#xC798; &#xD1B5;&#xD569;&#xB3E0;&#xB294;&#xC9C0; &#xB4F1; &#xACE0;&#xB824;&#xD574;&#xC57C; &#xD560; &#xAC83;&#xC774; &#xB354; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 					
 					<section>
-						<h3>Memory Allocations</h3>
+						<h3>&#xBA54;&#xBAA8;&#xB9AC; &#xD560;&#xB2F9;</h3>
 						
-						<p>Let's check whether our pipeline behaves well in terms of memory management, or if it allocates memory every frame, which will trigger frequent memory garbage collection runs. This is done by opening the profiler via <em>Window / Analysis / Profiler</em> and inspecting the <em>CPU Usage</em> data in <em>Hierarchy</em> mode. While you can do this in play mode in the editor, it is also a good idea to profile a build, by making sure you create a development build and having it attach to the profiler automatically, although deep profiling isn't possible in that case.</p>
+						<p>&#xC6B0;&#xB9AC;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC774; &#xBA54;&#xBAA8;&#xB9AC; &#xAD00;&#xB9AC; &#xCE21;&#xBA74;&#xC5D0;&#xC11C; &#xC798; &#xC791;&#xB3D9;&#xD558;&#xB294;&#xC9C0;, &#xB610;&#xB294; &#xB9E4; &#xD504;&#xB808;&#xC784; &#xBA54;&#xBAA8;&#xB9AC;&#xB97C; &#xD560;&#xB2F9;&#xD574;&#xC11C; &#xAC00;&#xBE44;&#xC9C0; &#xCEEC;&#xB809;&#xC158;&#xC774; &#xC790;&#xC8FC; &#xBC1C;&#xC0DD;&#xD558;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD574; &#xBD05;&#xC2DC;&#xB2E4;. <em>Window / Analysis / Profiler</em> &#xB97C; &#xD1B5;&#xD574; &#xD504;&#xB85C;&#xD30C;&#xC77C;&#xB7EC;&#xB97C; &#xC5F4;&#xACE0; <em>Hierarchy</em> &#xBAA8;&#xB4DC;&#xC5D0;&#xC11C; <em>CPU Usage</em> &#xB370;&#xC774;&#xD0C0;&#xB97C; &#xC810;&#xAC80;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.  &#xC5D0;&#xB514;&#xD130;&#xC5D0;&#xC11C; &#xD50C;&#xB808;&#xC774; &#xBAA8;&#xB4DC;&#xB85C; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC;, &#xAC1C;&#xBC1C; &#xBE4C;&#xB4DC;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0; &#xD504;&#xB85C;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC5F0;&#xACB0;&#xD558;&#xAC8C; &#xD574;&#xC11C;, &#xBE4C;&#xB4DC;&#xB97C; &#xD504;&#xB85C;&#xD30C;&#xC77C; &#xD558;&#xB294; &#xAC83;&#xB3C4; &#xC88B;&#xC740; &#xC0DD;&#xAC01;&#xC785;&#xB2C8;&#xB2E4;. &#xB2E4;&#xB9CC; &#xC774; &#xACBD;&#xC6B0; &#xB525; &#xD504;&#xB85C;&#xD30C;&#xC77C;&#xB9C1;&#xC740; &#xBD88;&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>Sort by <em>GC Alloc</em> and you'll see that memory indeed gets allocated each frame. Some of it is out of our control, but quite a few bytes are allocated inside our pipeline's <code>Render</code> method.</p>
+						<p><em>GC Alloc</em> &#xC744; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xC815;&#xB82C;&#xD558;&#xBA74; &#xBA54;&#xBAA8;&#xB9AC;&#xAC00; &#xC2E4;&#xC81C;&#xB85C; &#xB9E4; &#xD504;&#xB808;&#xC784; &#xD560;&#xB2F9;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xADF8; &#xC911; &#xC77C;&#xBD80;&#xB294; &#xC6B0;&#xB9AC;&#xAC00; &#xC81C;&#xC5B4;&#xD560; &#xC218; &#xC5C6;&#xC9C0;&#xB9CC;, &#xAF64; &#xB9CE;&#xC740; &#xBC14;&#xC774;&#xD2B8;&#xAC00; &#xC6B0;&#xB9AC; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC758; <code>Render</code> &#xBA54;&#xC18C;&#xB4DC; &#xC548;&#xC5D0;&#xC11C; &#xD560;&#xB2F9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>It turns out that culling allocates the most memory. The reason for this is that although <code>CullResults</code> is a struct, it contains three lists, which are objects. Each time we ask for a new cull result, we end up allocating memory for new lists. So there isn't much benefit to <code>CullResults</code> being a struct.</p>
+						<p>&#xCEEC;&#xB9C1;&#xC774; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xBA54;&#xBAA8;&#xB9AC;&#xB97C; &#xD560;&#xB2F9;&#xD558;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xBC1D;&#xD600;&#xC84C;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8; &#xC774;&#xC720;&#xB294; <code>CullResults</code> &#xAC00; &#xAD6C;&#xC870;&#xCCB4;&#xC774;&#xC9C0;&#xB9CC;, 3 &#xAC1C;&#xC758; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xACE0;, &#xC774;&#xB4E4;&#xC774; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;. &#xB9E4;&#xBC88; &#xC6B0;&#xB9AC;&#xAC00; &#xC0C8;&#xB85C;&#xC6B4; &#xCEEC;&#xB9C1; &#xACB0;&#xACFC;&#xB97C; &#xC694;&#xAD6C;&#xD560; &#xB54C;&#xB9C8;&#xB2E4;, &#xC0C8; &#xB9AC;&#xC2A4;&#xD2B8;&#xB4E4;&#xC744; &#xC704;&#xD574;&#xC11C; &#xBA54;&#xBAA8;&#xB9AC;&#xB97C; &#xD560;&#xB2F9;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; <code>CullResults</code> &#xAC00; &#xAD6C;&#xC870;&#xCCB4;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC5BB;&#xB294; &#xC774;&#xC810;&#xC774; &#xD06C;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>Fortunately, <code>CullResults</code> has an alternative <code>Cull</code> method that accepts a struct as a reference parameter, instead of returning a new one. That makes it possible to reuse the lists. All we have to do is turn <code>cull</code> into a field and provide it as an additional argument to <code>CullResults.Cull</code>, instead of assigning to it.</p>
+						<p>&#xB2E4;&#xD589;&#xD788;&#xB3C4;, <code>CullResults</code>&#xB294; &#xB300;&#xCCB4; &#xAC00;&#xB2A5;&#xD55C; <code>Cull</code> &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xC788;&#xC73C;&#xBA70;, &#xC774; &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xC0C8; &#xAD6C;&#xC870;&#xCCB4;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB294; &#xB300;&#xC2E0;&#xC5D0; &#xCC38;&#xC870; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB85C; &#xAD6C;&#xC870;&#xCCB4;&#xB97C; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC774;&#xB807;&#xAC8C;&#xD558;&#xBA74; &#xB9AC;&#xC2A4;&#xD2B8;&#xB4E4;&#xC758; &#xC7AC;&#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;&#xD574;&#xC9D1;&#xB2C8;&#xB2E4;. <code>cull</code> &#xC744; &#xD544;&#xB4DC;&#xB85C; &#xBC14;&#xAFD4;&#xACE0;, &#xB300;&#xC785;&#xD558;&#xB294; &#xB300;&#xC2E0;&#xC5D0; <code>CullResults.Cull</code> &#xC758; &#xC778;&#xC218;&#xB85C; &#xCD94;&#xAC00;&#xD574; &#xC8FC;&#xAE30;&#xB9CC; &#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>	<ins>CullResults cull;</ins>
 
-	…
+	&#x2026;
 
 	void Render (ScriptableRenderContext context, Camera camera) {
-		…
+		&#x2026;
 
 		<del>//CullResults cull = CullResults.Cull(ref cullingParameters, context);</del>
 		<ins>CullResults.Cull(ref cullingParameters, context, ref cull);</ins>
 		
-		…
+		&#x2026;
 	}</pre>
 						
-						<p>Another source of continuous memory allocation is our use of the camera's name property. Each time we get its value, it fetches the name data from native code, which necessitates the creation of a new string, which is an object. So let's always name our command buffer <em>Render Camera</em> instead.</p>
+						<p>&#xC5F0;&#xC18D;&#xC801;&#xC778; &#xBA54;&#xBAA8;&#xB9AC; &#xD560;&#xB2F9;&#xC758; &#xB610; &#xB2E4;&#xB978; &#xC6D0;&#xC778;&#xC740; &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xC774;&#xB984; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC758; &#xC0AC;&#xC6A9;&#xC5D0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9E4;&#xBC88; &#xADF8; &#xAC12;&#xC744; &#xC5BB;&#xC744; &#xB54C;&#xB9C8;&#xB2E4;, &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xC774;&#xB984;&#xC744; &#xAC00;&#xC838;&#xC624;&#xBBC0;&#xB85C;, &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC778; &#xC0C8; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xC0DD;&#xC131;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB2C8; &#xB300;&#xC2E0;&#xC5D0; <em>Render Camera</em> &#xB97C; &#xC6B0;&#xB9AC;&#xC758; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xC758; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD569;&#xC2DC;&#xB2E4;.</p>
 						
 						<pre>		var buffer = new CommandBuffer() {
-			name = <ins>"Render Camera"</ins>
+			name = <ins>&quot;Render Camera&quot;</ins>
 		};</pre>
 						
 						<figure>
 							<img src="polishing/constant-buffer-name.png" width="250" height="82">
-							<figcaption>Using a constant buffer name.</figcaption>
+							<figcaption>&#xACE0;&#xC815;&#xB41C; &#xBC84;&#xD37C; &#xC774;&#xB984; &#xC0AC;&#xC6A9;</figcaption>
 						</figure>
 						
-						<p>Finally, the command buffer itself is an object too. Fortunately, we can create a command buffer once and reuse it. Replace the local variable with a <code>cameraBuffer</code> field. Thanks to the object initialization syntax, we can create a named command buffer as its default value. The only other change is that we have to clear the command buffer instead of releasing it, for which we can use its <code>Clear</code> method.</p>
+						<p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C;, &#xBA85;&#xB839; &#xBC84;&#xD37C; &#xC790;&#xCCB4;&#xB3C4; &#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xC785;&#xB2C8;&#xB2E4;. &#xB2E4;&#xD589;&#xD788;, &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB97C; &#xD55C; &#xBC88; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xC7AC;&#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC9C0;&#xC5ED; &#xBCC0;&#xC218;&#xB97C; <code>cameraBuffer</code> &#xD544;&#xB4DC;&#xB85C; &#xAD50;&#xCCB4;&#xD558;&#xC138;&#xC694;. &#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xCD08;&#xAE30;&#xD654; &#xBB38;&#xBC95; &#xB355;&#xC5D0;,  &#xC774;&#xB984;&#xC788;&#xB294; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB97C; &#xAE30;&#xBCF8;&#xAC12;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9C8;&#xC9C0;&#xB9C9; &#xBCC0;&#xACBD;&#xC0AC;&#xD56D;&#xC740; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB97C; &#xD574;&#xC81C;&#xD558;&#xB294; &#xB300;&#xC2E0; <code>Clear</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD574; &#xC9C0;&#xC6CC;&#xC8FC;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>	<ins>CommandBuffer cameraBuffer = new CommandBuffer {</ins>
-		<ins>name = "Render Camera"</ins>
+		<ins>name = &quot;Render Camera&quot;</ins>
 	<ins>};</ins>
 
-	…
+	&#x2026;
 
 	void Render (ScriptableRenderContext context, Camera camera) {
-		…
+		&#x2026;
 
 		<del>//var buffer = new CommandBuffer() {</del>
-		<del>//	name = "Render Camera"</del>
+		<del>//	name = &quot;Render Camera&quot;</del>
 		<del>//};</del>
 		<ins>cameraBuffer</ins>.ClearRenderTarget(true, false, Color.clear);
 		context.ExecuteCommandBuffer(<ins>cameraBuffer</ins>);
 		<del>//buffer.Release();</del>
 		<ins>cameraBuffer.Clear();</ins>
 
-		…
+		&#x2026;
 	}</pre>
 						
-						<p>After these changes our pipeline no longer creates temporary objects every frame.</p>
+						<p>&#xC774;&#xB7F0; &#xBCC0;&#xACBD; &#xD6C4;&#xC5D0; &#xC6B0;&#xB9AC;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC740; &#xB354; &#xC774;&#xC0C1; &#xB9E4; &#xD504;&#xB808;&#xC784; &#xC784;&#xC2DC; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 					</section>
 					
 					<section>
-						<h3>Frame Debugger Sampling</h3>
+						<h3>&#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70; &#xC0D8;&#xD50C;&#xB9C1;</h3>
 						
-						<p>Another thing that we can do is improve the data shown by the frame debugger. Unity's pipelines display a nested hierarchy of events, but ours are all at the root level. We can build a hierarchy by using our command buffer to begin and end profiler samples.</p>
+						<p>&#xB354; &#xD574;&#xBCFC; &#xC218; &#xC788;&#xB294; &#xAC83;&#xC740; &#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;&#xC5D0; &#xD45C;&#xC2DC;&#xB418;&#xB294; &#xB370;&#xC774;&#xD130;&#xB97C; &#xAC1C;&#xC120;&#xD558;&#xB294; &#xAC83; &#xC785;&#xB2C8;&#xB2E4;. &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC740; &#xC774;&#xBCA4;&#xD2B8;&#xC758; &#xC911;&#xCCA9;&#xB41C; &#xACC4;&#xCE35; &#xAD6C;&#xC870;&#xB97C; &#xBCF4;&#xC5EC;&#xC8FC;&#xC9C0;&#xB9CC;, &#xC6B0;&#xB9AC; &#xAC83;&#xC740; &#xBAA8;&#xB450; &#xCD5C;&#xC0C1;&#xC704; &#xB2E8;&#xACC4;&#xC5D0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.   &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB85C; &#xD504;&#xB85C;&#xD30C;&#xC77C;&#xB7EC; &#xC0D8;&#xD50C;&#xC744; &#xC2DC;&#xC791;&#xD558;&#xACE0; &#xB05D;&#xB0B4;&#xB294; &#xC2DD;&#xC73C;&#xB85C; &#xACC4;&#xCE35; &#xAD6C;&#xC870;&#xB97C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>Let's start by invoking <code>BeginSample</code> right before <code>ClearRenderTarget</code>, immediately followed by an invocation of <code>EndSample</code>. Each sample must have both a begin and an end, and both must be provided with the exact same name. Besides that, I have found that it is best to use the same name as the command buffer that defines the sampling. The command buffer's name often gets used anyway.</p>
+						<p><code>ClearRenderTarget</code> &#xBC14;&#xB85C; &#xC55E;&#xC5D0;&#xC11C; <code>BeginSample</code> &#xC744; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xC2DC;&#xC791;&#xD574;&#xC11C;, &#xC9C1;&#xD6C4;&#xC5D0; <code>EndSample</code> &#xC744; &#xD638;&#xCD9C;&#xD569;&#xC2DC;&#xB2E4;. &#xBAA8;&#xB4E0; &#xC0D8;&#xD50C;&#xC740; &#xC2DC;&#xC791;&#xACFC; &#xB05D;&#xC744; &#xAC00;&#xC838;&#xC57C; &#xD558;&#xBA70;, &#xB458; &#xB2E4; &#xC815;&#xD655;&#xD788; &#xAC19;&#xC740; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xC81C;&#xACF5;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.  &#xC774; &#xC678;&#xC5D0;&#xB3C4;, &#xC0D8;&#xD50C;&#xB9C1;&#xC744; &#xC815;&#xC758;&#xD558;&#xB294; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xC640; &#xB3D9;&#xC77C;&#xD55C; &#xC774;&#xB984;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xAC00;&#xC7A5; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xC758; &#xC774;&#xB984;&#xC740; &#xC885;&#xC885; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 						
-						<pre>		<ins>cameraBuffer.BeginSample("Render Camera");</ins>
+						<pre>		<ins>cameraBuffer.BeginSample(&quot;Render Camera&quot;);</ins>
 		cameraBuffer.ClearRenderTarget(true, false, Color.clear);
-		<ins>cameraBuffer.EndSample("Render Camera");</ins>
+		<ins>cameraBuffer.EndSample(&quot;Render Camera&quot;);</ins>
 		context.ExecuteCommandBuffer(cameraBuffer);
 		cameraBuffer.Clear();</pre>
 						
 						<figure>
 							<img src="polishing/sampling.png" width="250" height="98">
-							<figcaption>Sampling creates a hierarchy.</figcaption>
+							<figcaption>&#xC0D8;&#xD50C;&#xB9C1;&#xC774; &#xACC4;&#xCE35; &#xAD6C;&#xC870;&#xB97C;  &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</figcaption>
 						</figure>
 						
-						<p>We now see a <em>Render Camera</em> level nested inside the original <em>Render Camera</em> of the command buffer, which in turn contains the clear operation. But it is possible to go a step further, nesting all other actions related to the camera inside it as well. This requires us to delay the ending of the sample until right before we submit the context. So we have to insert an additional <code>ExecuteCommandBuffer</code> at that point, only containing the instruction to end the sample. Use the same command buffer for this, again clearing it after we are done.</p>
+						<p><em>Render Camera</em> &#xB2E8;&#xACC4;&#xAC00; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xC758; &#xC6D0;&#xB798; <em>Render Camera</em> &#xC548;&#xCABD;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xACE0;, &#xCC28;&#xB840;&#xB85C; &#xC9C0;&#xC6B0;&#xAE30; &#xC5F0;&#xC0B0;&#xC774; &#xD3EC;&#xD568;&#xB41C; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xADF8;&#xB7EC;&#xB098; &#xD55C; &#xB2E8;&#xACC4; &#xB354; &#xB098;&#xC544;&#xAC00;&#xC11C;, &#xCE74;&#xBA54;&#xB77C;&#xC640; &#xAD00;&#xB828;&#xB41C; &#xBAA8;&#xB4E0; &#xB3D9;&#xC791;&#xB3C4; &#xADF8; &#xC548;&#xC5D0; &#xD3EC;&#xD568;&#xC2DC;&#xD0AC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xC704;&#xD574;&#xC11C;&#xB294; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xC11C;&#xBE0C;&#xBC0B; &#xD558;&#xAE30; &#xC9C1;&#xC804;&#xAE4C;&#xC9C0; &#xC0D8;&#xD50C;&#xC758; &#xC885;&#xB8CC;&#xB97C; &#xC9C0;&#xC5F0;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; &#xADF8; &#xC2DC;&#xC810;&#xC5D0; &#xCD94;&#xAC00;&#xB85C;  &#xC0D8;&#xD50C;&#xC744; &#xB05D;&#xB0B4;&#xB294; &#xBA85;&#xB839;&#xB9CC; &#xD3EC;&#xD568;&#xD55C; <code>ExecuteCommandBuffer</code> &#xB97C; &#xB123;&#xC5B4;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;. &#xB3D9;&#xC77C;&#xD55C; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0;, &#xC791;&#xC5C5;&#xC774; &#xB05D;&#xB09C; &#xD6C4; &#xB2E4;&#xC2DC; &#xC9C0;&#xC6B0;&#xC138;&#xC694;.</p>
 						
-						<pre>		cameraBuffer.BeginSample("Render Camera");
+						<pre>		cameraBuffer.BeginSample(&quot;Render Camera&quot;);
 		cameraBuffer.ClearRenderTarget(true, false, Color.clear);
-		<del>//cameraBuffer.EndSample("Render Camera");</del>
+		<del>//cameraBuffer.EndSample(&quot;Render Camera&quot;);</del>
 		context.ExecuteCommandBuffer(cameraBuffer);
 		cameraBuffer.Clear();
 
-		…
+		&#x2026;
 
-		<ins>cameraBuffer.EndSample("Render Camera");</ins>
+		<ins>cameraBuffer.EndSample(&quot;Render Camera&quot;);</ins>
 		<ins>context.ExecuteCommandBuffer(cameraBuffer);</ins>
 		<ins>cameraBuffer.Clear();</ins>
 
@@ -699,30 +734,30 @@ public class MyPipeline : RenderPipeline {
 						
 						<figure>
 							<img src="polishing/nested-sampling.png" width="250" height="98">
-							<figcaption>Nested sampling.</figcaption>
+							<figcaption>&#xC911;&#xCCA9;&#xB41C; &#xC0D8;&#xD50C;&#xB9C1;</figcaption>
 						</figure>
 						
-						<p>This looks good, except that the clear action gets nested inside a redundant <em>Render Camera</em> level, while all other actions are directly below the root level. I'm not sure why this happens, but it can be avoided by beginning the sample after clearing.</p>
+						<p>&#xB2E4;&#xB978; &#xBAA8;&#xB4E0; &#xB3D9;&#xC791;&#xB4E4;&#xC740; &#xCD5C;&#xC0C1;&#xC704; &#xB2E8;&#xACC4;&#xC758; &#xBC14;&#xB85C; &#xBC11;&#xC5D0; &#xC788;&#xB294; &#xBC18;&#xBA74;&#xC5D0;, &#xC9C0;&#xC6B0;&#xAE30; &#xB3D9;&#xC791;&#xB9CC; &#xC911;&#xBCF5;&#xB418;&#xB294; <em>Render Camera</em> &#xB2E8;&#xACC4;&#xC758; &#xC548;&#xCABD;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xAC83;&#xC744; &#xC81C;&#xC678;&#xD558;&#xBA74;, &#xC88B;&#xC544; &#xBCF4;&#xC785;&#xB2C8;&#xB2E4;.  &#xC65C; &#xC774;&#xB7F0; &#xC77C;&#xC774; &#xBC1C;&#xC0DD;&#xD558;&#xB294;&#xC9C0; &#xD655;&#xC2E0;&#xD560; &#xC218; &#xC5C6;&#xC9C0;&#xB9CC;, &#xC9C0;&#xC6B4; &#xD6C4;&#xC5D0; &#xC0D8;&#xD50C;&#xC744; &#xC2DC;&#xC791;&#xD558;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xD53C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 						
-						<pre>		<del>//cameraBuffer.BeginSample("Render Camera");</del>
+						<pre>		<del>//cameraBuffer.BeginSample(&quot;Render Camera&quot;);</del>
 		cameraBuffer.ClearRenderTarget(true, false, Color.clear);
-		<ins>cameraBuffer.BeginSample("Render Camera");</ins>
+		<ins>cameraBuffer.BeginSample(&quot;Render Camera&quot;);</ins>
 		context.ExecuteCommandBuffer(cameraBuffer);
 		cameraBuffer.Clear();</pre>
 						
 						<figure>
 							<img src="polishing/without-redundancy.png" width="250" height="84">
-							<figcaption>No redundant nesting.</figcaption>
+							<figcaption>&#xBC18;&#xBCF5;&#xB418;&#xB294; &#xC911;&#xCCA9;&#xC774; &#xC5C6;&#xC74C;. </figcaption>
 						</figure>
 					</section>
 					
 					<section>
-						<h3>Rendering the Default Pipeline</h3>
+						<h3>&#xAE30;&#xBCF8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC758; &#xB80C;&#xB354;&#xB9C1;</h3>
 						
-						<p>Because our pipeline only supports unlit shaders, objects that use different shaders are not rendered, making them invisible. While this is correct, it hides the fact that some objects use the wrong shader. It would be nice if we visualized those objects with Unity's error shader, so they show up as obviously incorrect magenta shapes. Let's add a dedicated <code>DrawDefaultPipeline</code> method for this, with a context and a camera parameter. We'll invoke it at the end, after drawing the transparent shapes.</p>
+						<p>&#xC6B0;&#xB9AC;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC740; &#xC5B8;&#xB9BF; &#xC170;&#xC774;&#xB354;&#xB9CC; &#xC9C0;&#xC6D0;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xB2E4;&#xB978; &#xC170;&#xC774;&#xB354;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB294; &#xB80C;&#xB354;&#xB9C1; &#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C;, &#xBCF4;&#xC774;&#xC9C0; &#xC54A;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.  &#xC62C;&#xBC14;&#xB978; &#xB3D9;&#xC791;&#xC774;&#xC9C0;&#xB9CC;, &#xC774;&#xB294; &#xC77C;&#xBD80; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xAC00; &#xC798;&#xBABB;&#xB41C; &#xC170;&#xC774;&#xB354;&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xB294; &#xC0AC;&#xC2E4;&#xC744; &#xC228;&#xAE41;&#xB2C8;&#xB2E4;. &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xC5D0;&#xB7EC; &#xC170;&#xC774;&#xB354;&#xB85C; &#xADF8;&#xB7EC;&#xD55C; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xC2DC;&#xAC01;&#xD654;&#xD574;&#xC11C;, &#xBA85;&#xBC31;&#xD788; &#xC798;&#xBABB;&#xB41C; &#xB9C8;&#xC820;&#xD0C0; &#xBAA8;&#xC591;&#xC73C;&#xB85C; &#xB098;&#xD0C0;&#xB098;&#xAC8C; &#xB41C;&#xB2E4;&#xBA74; &#xC88B;&#xC744; &#xAC83; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xC704;&#xD574; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xC640; &#xCE74;&#xBA54;&#xB77C; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC804;&#xC6A9;&#xC758; <code>DrawDefaultPipeline</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xCD94;&#xAC00;&#xD574; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD22C;&#xBA85;&#xD55C; &#xBAA8;&#xC591;&#xB4E4;&#xC744; &#xADF8;&#xB9B0; &#xD6C4;&#xC5D0;, &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; &#xD638;&#xCD9C;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>	void Render (ScriptableRenderContext context, Camera camera) {
-		…
+		&#x2026;
 
 		drawSettings.sorting.flags = SortFlags.CommonTransparent;
 		filterSettings.renderQueueRange = RenderQueueRange.transparent;
@@ -732,7 +767,7 @@ public class MyPipeline : RenderPipeline {
 
 		<ins>DrawDefaultPipeline(context, camera);</ins>
 
-		cameraBuffer.EndSample("Render Camera");
+		cameraBuffer.EndSample(&quot;Render Camera&quot;);
 		context.ExecuteCommandBuffer(cameraBuffer);
 		cameraBuffer.Clear();
 
@@ -741,11 +776,11 @@ public class MyPipeline : RenderPipeline {
 
 	<ins>void DrawDefaultPipeline(ScriptableRenderContext context, Camera camera) {}</ins></pre>
 						
-						<p>Unity's default surface shader has a <em>ForwardBase</em> pass that is used as the first forward rendering pass. We can use this to identify objects that have a material that works with the default pipeline. Select that pass via new draw settings and use that for rendering, together with new default filter settings. We don't care about sorting or separating opaque and transparent renderers, because they're invalid anyway.</p>
+						<p>&#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xAE30;&#xBCF8; &#xC11C;&#xD53C;&#xC2A4; &#xC170;&#xC774;&#xB354;&#xB294; &#xCCAB;&#xBC88;&#xC9F8; &#xD3EC;&#xC6CC;&#xB4DC; &#xB80C;&#xB354;&#xB9C1; &#xD328;&#xC2A4;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; <em>ForwardBase</em> &#xD328;&#xC2A4;&#xB97C; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC774;&#xB97C; &#xD65C;&#xC6A9;&#xD574;&#xC11C; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xAC00; &#xAE30;&#xBCF8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xACFC; &#xD568;&#xAED8; &#xC791;&#xB3D9;&#xD558;&#xB294; &#xC7AC;&#xC9C8;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB294;&#xC9C0; &#xC2DD;&#xBCC4;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC0C8;&#xB85C;&#xC6B4; &#xB4DC;&#xB85C;&#xC789; &#xC124;&#xC815;&#xC744; &#xD1B5;&#xD574;&#xC11C; &#xD574;&#xB2F9; &#xD328;&#xC2A4;&#xB97C; &#xC120;&#xD0DD;&#xD558;&#xACE0; &#xB80C;&#xB354;&#xB9C1;&#xC744; &#xC704;&#xD574; &#xC0C8;&#xB85C;&#xC6B4; &#xAE30;&#xBCF8; &#xD544;&#xD130; &#xC124;&#xC815;&#xACFC; &#xD568;&#xAED8; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;. &#xC815;&#xB82C;&#xC774;&#xB098; &#xD22C;&#xBA85;&#xACFC; &#xBD88;&#xD22C;&#xBA85; &#xB80C;&#xB354;&#xB7EC;&#xB97C; &#xAD6C;&#xBD84;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC2E0;&#xACBD;&#xC4F0;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5B4;&#xCA0C;&#xB4E0; &#xD6A8;&#xACFC;&#xAC00; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>	void DrawDefaultPipeline(ScriptableRenderContext context, Camera camera) {
 		<ins>var drawSettings = new DrawRendererSettings(</ins>
-			<ins>camera, new ShaderPassName("ForwardBase")</ins>
+			<ins>camera, new ShaderPassName(&quot;ForwardBase&quot;)</ins>
 		<ins>);</ins>
 		
 		<ins>var filterSettings = new FilterRenderersSettings(true);</ins>
@@ -757,109 +792,109 @@ public class MyPipeline : RenderPipeline {
 						
 						<figure>
 							<img src="polishing/forward-base-pass.jpg" width="250" height="98">
-							<figcaption>Rendering forward base pass.</figcaption>
+							<figcaption>&#xD3EC;&#xC6CC;&#xB4DC; &#xBCA0;&#xC774;&#xC2A4; &#xD328;&#xC2A4;&#xC758; &#xB80C;&#xB354;&#xB9C1;</figcaption>
 						</figure>
 						
-						<p>The objects that use the default shader now show up. They're also visible in the frame debugger.</p>
+						<p>&#xC774;&#xC81C; &#xAE30;&#xBCF8; &#xC170;&#xC774;&#xB354;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xB098;&#xD0C0;&#xB0A9;&#xB2C8;&#xB2E4;. &#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;&#xC5D0;&#xC11C;&#xB3C4; &#xBCF4;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
 						<figure>
 							<img src="polishing/frame-debugger-forward-base.png" width="288" height="210">
-							<figcaption>Everything gets drawn.</figcaption>
+							<figcaption>&#xBAA8;&#xB4E0; &#xAC83;&#xC778; &#xADF8;&#xB824;&#xC9D1;&#xB2C8;&#xB2E4;.</figcaption>
 						</figure>
 						
-						<p>Because our pipeline does not support a forward base pass they do not get rendered correctly. The necessary data isn't setup, so everything that depends on lighting ends up as black. Instead, we should render them with an error shader. To do this, we need an error material. Add a field for that. Then, at the start of <code>DrawDefaultPipeline</code>, create the error material if it doesn't already exist. This is done by retrieving the <em>Hidden/InternalErrorShader</em> via <code>Shader.Find</code>, then creating a new material with that shader. Also, set the material's hide flags to <code>HideFlags.HideAndDontSave</code> so it doesn't show up in the project window and doesn't get saved along with all other assets.</p>
+						<p>&#xC6B0;&#xB9AC;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC740; &#xD3EC;&#xC6CC;&#xB4DC; &#xBCA0;&#xC774;&#xC2A4; &#xD328;&#xC2A4;&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xB80C;&#xB354;&#xB9C1; &#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xD544;&#xC694;&#xD55C; &#xB370;&#xC774;&#xD0C0;&#xAC00; &#xC124;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC544;&#xC11C;, &#xB77C;&#xC774;&#xD305;&#xC5D0; &#xC758;&#xC874;&#xD558;&#xB294; &#xBAA8;&#xB4E0; &#xAC83;&#xC774; &#xAC80;&#xC740;&#xC0C9;&#xC774; &#xB418;&#xC5B4; &#xBC84;&#xB9BD;&#xB2C8;&#xB2E4;. &#xB300;&#xC2E0;, &#xC5D0;&#xB7EC; &#xC170;&#xC774;&#xB354;&#xB97C; &#xC0AC;&#xC6A9;&#xD574; &#xB80C;&#xB354;&#xB9C1; &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.  &#xC774;&#xB807;&#xAC8C; &#xD558;&#xB824;&#xBA74;, &#xC5D0;&#xB7EC; &#xC7AC;&#xC9C8;&#xC774; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xAC83;&#xC744; &#xC704;&#xD574;&#xC11C; &#xD544;&#xB4DC;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC138;&#xC694;. &#xADF8; &#xB2E4;&#xC74C;, <code>DrawDefaultPipeline</code> &#xC758; &#xC2DC;&#xC791; &#xBD80;&#xBD84;&#xC5D0;, &#xC544;&#xC9C1; &#xC5C6;&#xC73C;&#xBA74; &#xC5D0;&#xB7EC; &#xC7AC;&#xC9C8;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xC138;&#xC694;. <code>Shader.Find</code> &#xB97C; &#xD1B5;&#xD574; <em>Hidden/InternalErrorShader</em>  &#xB97C; &#xC5BB;&#xC740; &#xB2E4;&#xC74C;&#xC5D0;, &#xADF8; &#xC170;&#xC774;&#xB354;&#xB85C; &#xC0C8; &#xC7AC;&#xC9C8;&#xC744; &#xB9CC;&#xB4E4;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C;, &#xC7AC;&#xC9C8;&#xC758; &#xC228;&#xAE40; &#xD50C;&#xB798;&#xADF8;&#xB97C; <code>HideFlags.HideAndDontSave</code> &#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0;&#xB3C4; &#xBCF4;&#xC774;&#xC9C0; &#xC54A;&#xACE0; &#xB2E4;&#xB978; &#xBAA8;&#xB4E0; &#xC560;&#xC14B;&#xACFC; &#xD568;&#xAED8; &#xC800;&#xC7A5;&#xB418;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xD558;&#xC138;&#xC694;.</p>
 						
 						<pre>	<ins>Material errorMaterial;</ins>
 
-	…
+	&#x2026;
 
 	void DrawDefaultPipeline(ScriptableRenderContext context, Camera camera) {
 		<ins>if (errorMaterial == null) {</ins>
-			<ins>Shader errorShader = Shader.Find("Hidden/InternalErrorShader");</ins>
+			<ins>Shader errorShader = Shader.Find(&quot;Hidden/InternalErrorShader&quot;);</ins>
 			<ins>errorMaterial = new Material(errorShader) {</ins>
 				<ins>hideFlags = HideFlags.HideAndDontSave</ins>
 			<ins>};</ins>
 		<ins>}</ins>
 		
-		…
+		&#x2026;
 	}</pre>
 						
-						<p>One option of the draw settings is to override the material used when rendering, by invoking <code>SetOverrideMaterial</code>. Its first parameter is the material to use. Its second parameter is the index of the pass of the material's shader to be used for rendering. As the error shader only has a single pass, use zero.</p>
+						<p>&#xB4DC;&#xB85C;&#xC789; &#xC124;&#xC815;&#xC758; &#xD55C; &#xAC00;&#xC9C0; &#xC635;&#xC158;&#xC740; <code>SetOverrideMaterial</code>&#xC744; &#xD638;&#xCD9C;&#xD574;&#xC11C; &#xB80C;&#xB354;&#xB9C1;&#xC5D0; &#xC0AC;&#xC6A9;&#xB420; &#xC7AC;&#xC9C8;&#xC744; &#xC7AC;&#xC815;&#xC758; &#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xCCAB; &#xBC88;&#xC9F8; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294; &#xC0AC;&#xC6A9;&#xD560; &#xC7AC;&#xC9C8;&#xC785;&#xB2C8;&#xB2E4;. &#xB450; &#xBC88;&#xC9F8; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294; &#xB80C;&#xB354;&#xB9C1;&#xC5D0; &#xC0AC;&#xC6A9;&#xB420; &#xC7AC;&#xC9C8;&#xC758; &#xC170;&#xC774;&#xB354; &#xD328;&#xC2A4;&#xC758; &#xC778;&#xB371;&#xC2A4; &#xC785;&#xB2C8;&#xB2E4;. &#xC5D0;&#xB7EC; &#xC170;&#xC774;&#xB354;&#xB294; &#xB2E8;&#xC77C; &#xD328;&#xC2A4;&#xB9CC; &#xAC00;&#xC9C0;&#xBBC0;&#xB85C; 0&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</p>
 						
 						<pre>		var drawSettings = new DrawRendererSettings(
-			camera, new ShaderPassName("ForwardBase")
+			camera, new ShaderPassName(&quot;ForwardBase&quot;)
 		);
 		<ins>drawSettings.SetOverrideMaterial(errorMaterial, 0);</ins></pre>
 						
 						<figure>
 							<img src="polishing/error-material.jpg" width="250" height="98">
-							<figcaption>Using the error shader.</figcaption>
+							<figcaption>&#xC5D0;&#xB7EC; &#xC170;&#xC774;&#xB354;&#xC758; &#xC0AC;&#xC6A9;</figcaption>
 						</figure>
 						
-						<p>Objects that use an unsupported material now clearly show up as incorrect. But this is only true for materials of Unity's default pipeline, whose shaders have a <code>ForwardBase</code> pass. There are other built-in shaders that we can identify with different passes, specifically <em>PrepassBase</em>, <em>Always</em>, <em>Vertex</em>, <em>VertexLMRGBM</em>, and <em>VertexLM</em>.</p>
+						<p>&#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xC7AC;&#xC9C8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB4E4;&#xC740; &#xC774;&#xC81C; &#xD655;&#xC2E4;&#xD788; &#xC798;&#xBABB;&#xB41C; &#xAC83;&#xCC98;&#xB7FC; &#xBCF4;&#xC785;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xC774;&#xB294; &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xAE30;&#xBCF8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC758; &#xC7AC;&#xC9C8;&#xB4E4;&#xC5D0;&#xB9CC; &#xD574;&#xB2F9;&#xB418;&#xBA70;, &#xC774; &#xC170;&#xC774;&#xB354;&#xB4E4;&#xC740; <code>ForwardBase</code> &#xD328;&#xC2A4;&#xB97C; &#xAC00;&#xC9D1;&#xB2C8;&#xB2E4;. &#xB2E4;&#xB978; &#xD328;&#xC2A4;&#xB85C; &#xC2DD;&#xBCC4;&#xD560; &#xC218; &#xC788;&#xB294; &#xB0B4;&#xC7A5; &#xC170;&#xC774;&#xB354;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xD2B9;&#xBCC4;&#xD788; <em>PrepassBase</em>, <em>Always</em>, <em>Vertex</em>, <em>VertexLMRGBM</em>, <em>VertexLM</em>  &#xB4F1;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>Fortunately, it is possible to add multiple passes to the draw settings, by invoking <code>SetShaderPassName</code>. The name is the second parameter of this method. Its first parameter is an index that controls the order in which the passes are drawn. We don't care about that, so any order is fine. The pass provided via the constructor always has index zero, just increment the index for additional passes.</p>
+						<p>&#xB2E4;&#xD589;&#xD788;&#xB3C4;, <code>SetShaderPassName</code> &#xC744; &#xD638;&#xCD9C;&#xD574;&#xC11C;, &#xB4DC;&#xB85C;&#xC789; &#xC124;&#xC815;&#xC5D0; &#xC5EC;&#xB7EC; &#xD328;&#xC2A4;&#xB97C; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB984;&#xC740; &#xC774; &#xBA54;&#xC18C;&#xB4DC;&#xC758; &#xB450; &#xBC88;&#xC9F8; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC785;&#xB2C8;&#xB2E4;. &#xCCAB; &#xBC88;&#xC9F8; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294; &#xD574;&#xB2F9; &#xD328;&#xC2A4;&#xAC00; &#xADF8;&#xB824;&#xC9C0;&#xB294; &#xC21C;&#xC11C;&#xB97C; &#xC81C;&#xC5B4;&#xD558;&#xB294; &#xC778;&#xB371;&#xC2A4;&#xC785;&#xB2C8;&#xB2E4;. &#xBB34;&#xC5C7;&#xC774;&#xB4E0; &#xC0C1;&#xAD00;&#xC5C6;&#xC73C;&#xB2C8;, &#xC544;&#xBB34; &#xC21C;&#xC11C;&#xB098; &#xB123;&#xC5B4;&#xB3C4; &#xAD1C;&#xCC2E;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC0DD;&#xC131;&#xC790;&#xB97C; &#xD1B5;&#xD574; &#xC81C;&#xACF5;&#xB41C; &#xD328;&#xC2A4;&#xB294; &#xC5B8;&#xC81C;&#xB098; &#xC778;&#xB371;&#xC2A4; 0&#xC744; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCD94;&#xAC00;&#xC801;&#xC778; &#xD328;&#xC2A4;&#xB97C; &#xC704;&#xD574; &#xC778;&#xB371;&#xC2A4;&#xB97C; &#xD558;&#xB098;&#xC529; &#xC99D;&#xAC00;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		var drawSettings = new DrawRendererSettings(
-			camera, new ShaderPassName("ForwardBase")
+			camera, new ShaderPassName(&quot;ForwardBase&quot;)
 		);
-		<ins>drawSettings.SetShaderPassName(1, new ShaderPassName("PrepassBase"));</ins>
-		<ins>drawSettings.SetShaderPassName(2, new ShaderPassName("Always"));</ins>
-		<ins>drawSettings.SetShaderPassName(3, new ShaderPassName("Vertex"));</ins>
-		<ins>drawSettings.SetShaderPassName(4, new ShaderPassName("VertexLMRGBM"));</ins>
-		<ins>drawSettings.SetShaderPassName(5, new ShaderPassName("VertexLM"));</ins>
+		<ins>drawSettings.SetShaderPassName(1, new ShaderPassName(&quot;PrepassBase&quot;));</ins>
+		<ins>drawSettings.SetShaderPassName(2, new ShaderPassName(&quot;Always&quot;));</ins>
+		<ins>drawSettings.SetShaderPassName(3, new ShaderPassName(&quot;Vertex&quot;));</ins>
+		<ins>drawSettings.SetShaderPassName(4, new ShaderPassName(&quot;VertexLMRGBM&quot;));</ins>
+		<ins>drawSettings.SetShaderPassName(5, new ShaderPassName(&quot;VertexLM&quot;));</ins>
 		drawSettings.SetOverrideMaterial(errorMaterial, 0);</pre>
 						
-						<p>That covers all shaders provided by Unity up to this point, which should be sufficient to help point out the use of incorrect materials when creating a scene. But we only need to bother doing this during development, not in a build. So let's only invoke <code>DrawDefaultPipeline</code> in the editor. One way to do this is by adding a <code>Conditional</code> attribute to the method.</p>
+						<p>&#xC5EC;&#xAE30;&#xAE4C;&#xC9C0; &#xC720;&#xB2C8;&#xD2F0;&#xC5D0; &#xC758;&#xD574; &#xC81C;&#xACF5;&#xB418;&#xB294; &#xBAA8;&#xB4E0; &#xC170;&#xC774;&#xB354;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xACE0; &#xC788;&#xC73C;&#xBA70;, &#xC52C; &#xC0DD;&#xC131;&#xC2DC; &#xC798;&#xBABB;&#xB41C; &#xC7AC;&#xC9C8;&#xC758; &#xC0AC;&#xC6A9;&#xC744; &#xC9C0;&#xC801;&#xD558;&#xAE30;&#xC5D0;&#xB294; &#xCDA9;&#xBD84;&#xD560; &#xAC81;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xAC1C;&#xBC1C; &#xACFC;&#xC815;&#xC5D0;&#xC11C;&#xB294; &#xC774; &#xC791;&#xC5C5;&#xC744; &#xD574;&#xC57C;&#xD558;&#xACE0;, &#xBE4C;&#xB4DC;&#xC5D0;&#xC11C;&#xB294; &#xC218;&#xD589;&#xD558;&#xBA74; &#xC548;&#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB2C8; &#xC5D0;&#xB514;&#xD130;&#xC5D0;&#xC11C;&#xB9CC; <code>DrawDefaultPipeline</code> &#xC744; &#xD638;&#xCD9C;&#xD569;&#xC2DC;&#xB2E4;.  &#xC774;&#xB97C; &#xC704;&#xD55C; &#xBC29;&#xBC95; &#xC911;&#xC5D0; &#xD558;&#xB098;&#xB294; <code>Conditional</code> &#xC18D;&#xC131;&#xC744; &#xBA54;&#xC18C;&#xB4DC;&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 					</section>
 					
 					<section>
-						<h3>Conditional Code Execution</h3>
+						<h3>&#xC870;&#xAC74;&#xBD80; &#xCF54;&#xB4DC; &#xC2E4;&#xD589;</h3>
 						
-						<p>The <code>Conditional</code> attribute is defined in the <code>System.Diagnostics</code> namespace. We can use that namespace, but it unfortunately also contains a <code>Debug</code> type, which conflicts with <code>UnityEngine.Debug</code>. As we only need the attribute, we can avoid the conflict by using an alias. Instead of using the entire namespace, we use a specific type and assign it to a valid type name. In this case, we'll define <code>Conditional</code> as an alias for <code>System.Diagnostics.ConditionalAttribute</code>.</p>
+						<p><code>Conditional</code> &#xC18D;&#xC131;&#xC740; <code>System.Diagnostics</code> &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xC815;&#xC758;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC;, &#xBD88;&#xD589;&#xD788;&#xB3C4; &#xAC70;&#xAE30;&#xC5D0;&#xB294; <code>Debug</code> &#xD0C0;&#xC785;&#xB3C4; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC5B4;&#xC11C;, <code>UnityEngine.Debug</code> &#xC640; &#xCDA9;&#xB3CC;&#xD569;&#xB2C8;&#xB2E4;. &#xC6B0;&#xB9AC;&#xB294; &#xD574;&#xB2F9; &#xC18D;&#xC131;&#xB9CC; &#xD544;&#xC694;&#xD558;&#xBBC0;&#xB85C;, &#xBCC4;&#xCE6D;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xCDA9;&#xB3CC;&#xC744; &#xD53C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC804;&#xCCB4; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xB300;&#xC2E0;, &#xD2B9;&#xC815; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xAC70;&#xAC70;&#xC5D0; &#xC720;&#xD6A8;&#xD55C; &#xD0C0;&#xC785; &#xC774;&#xB984;&#xC744; &#xD560;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xACBD;&#xC6B0;, &#xC6B0;&#xB9AC;&#xB294; <code>System.Diagnostics.ConditaionalAttribute</code>&#xC758; &#xBCC4;&#xCE6D;&#xC73C;&#xB85C; <code>Conditional</code> &#xC744; &#xC815;&#xC758;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Experimental.Rendering;
 <ins>using Conditional = System.Diagnostics.ConditionalAttribute;</ins></pre>
 						
-						<p>Add the attribute to our method. It requires a string argument that specifies a symbol. If the symbol is defined during compilation, then the method invocation gets included as normal. But if the symbol is not defined, then the invocation of this method—including all its arguments—are omitted. It would be as if the <code>DrawDefaultPipeline(context, camera);</code> code didn't exist during compilation.</p>
+						<p>&#xC18D;&#xC131;&#xC744; &#xC6B0;&#xB9AC;&#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xC138;&#xC694;. &#xC2EC;&#xBCFC;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xB294; &#xBB38;&#xC790;&#xC5F4; &#xC778;&#xC218;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;. &#xCEF4;&#xD30C;&#xC77C; &#xC911;&#xC5D0; &#xD574;&#xB2F9; &#xC2EC;&#xBCFC;&#xC774; &#xC815;&#xC758;&#xB418;&#xC5B4; &#xC788;&#xC73C;&#xBA74;, &#xBA54;&#xC18C;&#xB4DC; &#xD638;&#xCD9C;&#xC740; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xD3EC;&#xD568;&#xC774; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xB9CC;&#xC57D; &#xC2EC;&#xBCFC;&#xC774; &#xC815;&#xC758;&#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74;, &#xBAA8;&#xB4E0; &#xC778;&#xC790;&#xC640; &#xD568;&#xAED8; &#xC774; &#xBA54;&#xC18C;&#xB4DC;&#xC758; &#xD638;&#xCD9C;&#xC740; &#xC81C;&#xAC70;&#xB429;&#xB2C8;&#xB2E4;. &#xB9C8;&#xCE58; &#xCEF4;&#xD30C;&#xC77C; &#xC911;&#xC5D0; <code>DrawDefaultPipeline(context, camera);</code> &#xCF54;&#xB4DC;&#xAC00; &#xC5C6;&#xC5C8;&#xB358; &#xAC83;&#xACFC; &#xAC19;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>To only include the invocation when compiling for the Unity editor, we have to rely on the <em>UNITY_EDITOR</em> symbol.</p>
+						<p>&#xC720;&#xB2C8;&#xD2F0; &#xC5D0;&#xB514;&#xD130;&#xC6A9;&#xC73C;&#xB85C; &#xCEF4;&#xD30C;&#xC77C;&#xD560; &#xB54C;&#xB9CC; &#xC774; &#xD638;&#xCD9C;&#xC744; &#xD3EC;&#xD568;&#xC2DC;&#xD0A4;&#xB824;&#xBA74;, <em>UNITY_EDITOR</em> &#xC2EC;&#xBCFC;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 						
-						<pre>	<ins>[Conditional("UNITY_EDITOR")]</ins>
+						<pre>	<ins>[Conditional(&quot;UNITY_EDITOR&quot;)]</ins>
 	void DrawDefaultPipeline(ScriptableRenderContext context, Camera camera) {
-		…
+		&#x2026;
 	}</pre>
 						
-						<p>We can go a step further and also include the invocation in development builds, only excluding it from release builds. To do so, add an additional conditional with the <em>DEVELOPMENT_BUILD</em> symbol.</p>
+						<p>&#xD55C; &#xAC78;&#xC744; &#xB354; &#xB098;&#xC544;&#xAC00;&#xC11C; &#xAC1C;&#xBC1C; &#xBE4C;&#xB4DC;&#xC5D0;&#xB3C4; &#xC774; &#xD638;&#xCD9C;&#xC744; &#xD3EC;&#xD568;&#xC2DC;&#xD0AC; &#xC218; &#xC788;&#xC73C;&#xBA70;, &#xC774;&#xB294; &#xB9B4;&#xB9AC;&#xC988; &#xBE4C;&#xB4DC;&#xC5D0;&#xC11C;&#xB9CC; &#xD638;&#xCD9C;&#xC744; &#xC81C;&#xC678;&#xC2DC;&#xD0A4;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB807;&#xAC8C; &#xD558;&#xB824;&#xBA74;, <em>DEVELOPMENT_BUILD</em> &#xC2EC;&#xBCFC;&#xACFC; &#xD568;&#xAED8; &#xCD94;&#xAC00;&#xC801;&#xC778; &#xC870;&#xAC74;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC138;&#xC694;.</p>
 						
-						<pre>	[<ins>Conditional("DEVELOPMENT_BUILD"),</ins> Conditional("UNITY_EDITOR")]
+						<pre>	[<ins>Conditional(&quot;DEVELOPMENT_BUILD&quot;),</ins> Conditional(&quot;UNITY_EDITOR&quot;)]
 	void DrawDefaultPipeline(ScriptableRenderContext context, Camera camera) {
-		…
+		&#x2026;
 	}</pre>
 					</section>
 					
 					<section>
-						<h3>UI in Scene Window</h3>
+						<h3>&#xC52C; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0;&#xC11C;&#xC758; UI</h3>
 						
-						<p>One thing that we haven't considered up to this point is Unity's in-game UI. To test it, add a UI element to the scene, for example a single button, via <em>GameObject / UI / Button</em>. That creates a canvas with a button it it, plus an event system.</p>
+						<p>&#xD55C; &#xAC00;&#xC9C0; &#xC9C0;&#xAE08;&#xAE4C;&#xC9C0; &#xACE0;&#xB824;&#xD558;&#xC9C0; &#xBABB;&#xD55C; &#xAC83;&#xC774; &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xC778;&#xAC8C;&#xC784; UI &#xC785;&#xB2C8;&#xB2E4;. &#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xC704;&#xD574;&#xC11C;, &#xC52C;&#xC5D0; UI &#xC694;&#xC18C;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC138;&#xC694;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4;, <em>GameObject / UI / Button</em> &#xC744; &#xD1B5;&#xD574; &#xBC84;&#xD2BC; &#xD558;&#xB098;&#xB97C; &#xCD94;&#xAC00;&#xD574;&#xBCF4;&#xC138;&#xC694;. &#xBC84;&#xD2BC;&#xC774; &#xB4E4;&#xC5B4;&#xC788;&#xB294; &#xCE94;&#xBC84;&#xC2A4;&#xC640; &#xC774;&#xBCA4;&#xD2B8; &#xC2DC;&#xC2A4;&#xD15C;&#xC774; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>It turns out that the UI gets rendered in the game window, without us having to do anything. Unity takes care of it for us. The frame debugger shows that the UI gets rendered separately, as an overlay.</p>
+						<p>&#xC6B0;&#xB9AC;&#xAC00; &#xC544;&#xBB34;&#xAC83;&#xB3C4; &#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4;, UI&#xAC00; &#xAC8C;&#xC784; &#xC708;&#xB3C4;&#xC6B0;&#xC548;&#xC5D0; &#xB80C;&#xB354;&#xB9C1; &#xB418;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xBC1D;&#xD600;&#xC84C;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC720;&#xB2C8;&#xD2F0;&#xAC00; &#xC54C;&#xC544;&#xC11C; &#xD574;&#xC90D;&#xB2C8;&#xB2E4;. &#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;&#xB294; UI&#xAC00; &#xC624;&#xBC84;&#xB808;&#xC774;&#xB85C;, &#xBCC4;&#xB3C4;&#xB85C; &#xB80C;&#xB354;&#xB9C1;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;. </p>
 						
 						<figure>
 							<img src="polishing/frame-debugger-ui-screen.png" width="250" height="162">
-							<figcaption>UI gets drawn in screen space.</figcaption>
+							<figcaption>UI&#xAC00; &#xC2A4;&#xD06C;&#xB9B0; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xADF8;&#xB824;&#xC9D1;&#xB2C8;&#xB2E4;.</figcaption>
 						</figure>
 						
-						<p>At least, that's the case when the canvas is set to render in screen space. When set to render in world space, the UI gets rendered along with the other transparent objects.</p>
+						<p>&#xC801;&#xC5B4;&#xB3C4;, &#xCE94;&#xBC84;&#xC2A4;&#xAC00; &#xC2A4;&#xD06C;&#xB9B0; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xB80C;&#xB354;&#xB9C1;&#xB418;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xB41C; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;. &#xC6D4;&#xB4DC; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xB80C;&#xB354;&#xB9C1;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xB41C; &#xACBD;&#xC6B0;</p>
 						
 						<figure>
 							<img src="polishing/frame-debugger-ui-world.png" width="286" height="260">
-							<figcaption>UI in world space.</figcaption>
+							<figcaption>&#xC6D4;&#xB4DC; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC758; UI</figcaption>
 						</figure>
 						
-						<p>Although the UI works in the game window, it doesn't show up the scene window. The UI always exists in world space in the scene window, but we have to manually inject it into the scene. Adding the UI is done by invoking the static <code>ScriptableRenderContext.EmitWorldGeometryForSceneView</code> method, with the current camera as an argument. This must be done before culling.</p>
+						<p>UI&#xAC00; &#xAC8C;&#xC784; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0;&#xC11C;&#xB294; &#xB3D9;&#xC791;&#xD558;&#xC9C0;&#xB9CC;, &#xC52C; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0;&#xB294; &#xB098;&#xD0C0;&#xB098;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC52C; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0;&#xC11C; UI&#xB294; &#xD56D;&#xC0C1; &#xC6D4;&#xB4DC; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xC9C0;&#xB9CC;, &#xC218;&#xB3D9;&#xC73C;&#xB85C; &#xC52C;&#xC5D0; &#xC0BD;&#xC785;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. UI&#xB97C; &#xCD94;&#xAC00;&#xB294; &#xD604;&#xC7AC; &#xCE74;&#xBA54;&#xB77C;&#xB97C; &#xC778;&#xC218;&#xB85C; &#xD574;&#xC11C; <code>ScriptableRenderContext.EmitWorldGeometryForSceneView</code> &#xC815;&#xC801; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.  &#xCEEC;&#xB9C1; &#xC804;&#xC5D0; &#xC218;&#xD589;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		if (!CullResults.GetCullingParameters(camera, out cullingParameters)) {
 			return;
@@ -869,13 +904,13 @@ using UnityEngine.Experimental.Rendering;
 
 		CullResults.Cull(ref cullingParameters, context, ref cull);</pre>
 						
-						<p>But this also adds the UI a second time in the game window. To prevent that, we must only emit the UI geometry when rendering the scene window. This is the case when the <code>cameraType</code> of the camera is equal to <code>CameraType.SceneView</code>.</p>
+						<p>&#xADF8;&#xB7EC;&#xB098; &#xC774;&#xAC83;&#xC740; &#xAC8C;&#xC784; &#xC708;&#xB3C4;&#xC6B0;&#xC5D0; UI&#xB97C; &#xB450; &#xBC88; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xBC29;&#xC9C0;&#xD558;&#xB824;&#xBA74;, &#xC52C; &#xC708;&#xB3C4;&#xC6B0;&#xB97C; &#xB80C;&#xB354;&#xB9C1;&#xD560; &#xB54C;&#xB9CC; UI &#xC9C0;&#xC624;&#xBA54;&#xD2B8;&#xB9AC;&#xB97C; &#xB0B4;&#xBCF4;&#xB0B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.  &#xC774;&#xB294; &#xCE74;&#xBA54;&#xB77C;&#xC758; <code>cameraType</code>&#xC774; <code>CameraType.SceneView</code>&#xC640; &#xAC19;&#xC740; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		<ins>if (camera.cameraType == CameraType.SceneView) {</ins>
 			ScriptableRenderContext.EmitWorldGeometryForSceneView(camera);
 		<ins>}</ins></pre>
 						
-						<p>This works, but only in the editor. Conditional compilation makes sure that the <code>EmitWorldGeometryForSceneView</code> doesn't exist when compiling for a build, which means that we now get a compiler error when trying to build. To make it work again, we have to make the code that invokes <code>EmitWorldGeometryForSceneView</code> conditional as well. That is done by putting the code in between <code>#if</code> and <code>#endif</code> statements. The <code>#if</code> statement requires a symbol, just like the <code>Conditional</code> attribute. By using <em>UNITY_EDITOR</em>, the code to only get included when compiling for the editor.</p>
+						<p>&#xC774; &#xCF54;&#xB4DC;&#xB294; &#xB3D9;&#xC791;&#xD558;&#xC9C0;&#xB9CC;, &#xC5D0;&#xB514;&#xD130; &#xC548;&#xC5D0;&#xC11C;&#xB9CC; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;. &#xC870;&#xAC74;&#xBD80; &#xCEF4;&#xD30C;&#xC77C;&#xC5D0; &#xC758;&#xD574;&#xC11C; &#xBE4C;&#xB4DC;&#xC6A9;&#xC73C;&#xB85C; &#xCEF4;&#xD30C;&#xC77C; &#xD560; &#xB54C;&#xB294; <code>EmitWorldGeometryForSceneView</code>&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA70;, &#xC774;&#xC81C; &#xBE4C;&#xB4DC;&#xB97C; &#xD558;&#xB824;&#xACE0; &#xD558;&#xBA74; &#xCEF4;&#xD30C;&#xC77C; &#xC5D0;&#xB7EC;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C;&#xB2E4;&#xB294; &#xC758;&#xBBF8;&#xC785;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC2DC; &#xC791;&#xB3D9;&#xD558;&#xAC8C; &#xD558;&#xB824;&#xBA74;, <code>EmitWorldGeometryForSceneView</code> &#xC5ED;&#xC2DC; &#xC870;&#xAC74;&#xBD80;&#xB85C; &#xD638;&#xCD9C;&#xD558;&#xB3C4;&#xB85D; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xCF54;&#xB4DC;&#xB97C; <code>#if</code>&#xC640; <code>#endif</code> &#xBB38; &#xC0AC;&#xC774;&#xC5D0; &#xB123;&#xC73C;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. <code>#if</code> &#xBB38;&#xC740; <code>Conditional</code> &#xC18D;&#xC131;&#xACFC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C;, &#xC2EC;&#xBCFC;&#xC744; &#xD544;&#xC694;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;. <em>UNITY_EDITOR</em> &#xB97C; &#xC0AC;&#xC6A9;&#xD568;&#xC73C;&#xB85C;&#xC368;, &#xCF54;&#xB4DC;&#xB294; &#xC5D0;&#xB514;&#xD130;&#xC6A9;&#xC73C;&#xB85C; &#xCEF4;&#xD30C;&#xC77C; &#xD560;&#xB54C;&#xB9CC; &#xD3EC;&#xD568;&#xB429;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>	void Render (ScriptableRenderContext context, Camera camera) {
 		ScriptableCullingParameters cullingParameters;
@@ -891,27 +926,27 @@ using UnityEngine.Experimental.Rendering;
 
 		CullResults.Cull(ref cullingParameters, context, ref cull);
 
-		…
+		&#x2026;
 	}</pre>
 						
-						<p>The next tutorial is <a href="../custom-shaders/index.html">Custom Shaders</a>.</p>
+						<p>&#xB2E4;&#xC74C; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; <a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-shaders/">Custom Shader<sup class="codingdad_ext_link">&#x1F517;</sup></a> &#xC785;&#xB2C8;&#xB2E4;.</p>
 					</section>
 					
 					<a href="https://bitbucket.org/catlikecodingunitytutorials/scriptable-render-pipeline-01-custom-pipeline/" class="repository">repository</a>
-					<a href="Custom-Pipeline.pdf" download rel="nofollow">PDF</a>
+					<a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/Custom-Pipeline.pdf/" download="" rel="nofollow">PDF<sup class="codingdad_ext_link">&#x1F517;</sup></a>
 				</section>
 			</article>
 		</main>
 
 		<footer>
-			<p><a href="https://catlikecoding.com/unity/tutorials/">튜토리얼</a>을 즐기고 계세요? 도움이 되나요? Want more?</p>
-			<p><b><a href="https://www.patreon.com/catlikecoding">Patreon에서 저를 지원해주세요!</a></b></p>
-			<p><a href="https://www.patreon.com/catlikecoding"><img src="../../become-a-patron.png" alt="저의 후원자가 되어 주세요!" width="217" height="51"></a></p>
-			<p><b><a href="https://catlikecoding.com/unity/tutorials/donating.html">혹은 직접 기부해 주세요</a>!</b></p>
-			<p><a href="https://catlikecoding.com/jasper-flick/" rel="author">Jasper Flick</a>에 의해 작성되었습니다</p>
+			<p><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/catlikecoding.com/unity/tutorials/">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>&#xC744; &#xC990;&#xAE30;&#xACE0; &#xACC4;&#xC138;&#xC694;? &#xB3C4;&#xC6C0;&#xC774; &#xB418;&#xB098;&#xC694;? &#xB354; &#xC6D0;&#xD558;&#xC138;&#xC694;?</p>
+			<p><b><a href="https://www.patreon.com/catlikecoding/">Patreon&#xC5D0;&#xC11C; &#xC800;&#xB97C; &#xC9C0;&#xC6D0;&#xD574;&#xC8FC;&#xC138;&#xC694;!</a></b></p>
+			<p><a href="https://www.patreon.com/catlikecoding/"><img src="../../become-a-patron.png" alt="&#xC800;&#xC758; &#xD6C4;&#xC6D0;&#xC790;&#xAC00; &#xB418;&#xC5B4; &#xC8FC;&#xC138;&#xC694;!" width="217" height="51"></a></p>
+			<p><b><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/catlikecoding.com/unity/tutorials/donating.html">&#xD639;&#xC740; &#xC9C1;&#xC811; &#xAE30;&#xBD80;&#xD574; &#xC8FC;&#xC138;&#xC694;<sup class="codingdad_ext_link">&#x1F517;</sup></a>!</b></p>
+			<p><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/catlikecoding.com/jasper-flick/" rel="author">Jasper Flick<sup class="codingdad_ext_link">&#x1F517;</sup></a>&#xC5D0; &#xC758;&#xD574; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;</p>
 		</footer>
 		
 		<script src="../../jquery.js"></script>
 		<script src="../../tutorials.js"></script>
-	</body>
-</html>
+	
+</body></html>

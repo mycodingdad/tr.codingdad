@@ -1,0 +1,408 @@
+<!DOCTYPE html><html lang="ko"><head prefix="og: http://ogp.me/ns#">
+		<meta charset="utf-8">
+		<meta property="og:url" content="https://catlikecoding.com/unity/tutorials/">
+		<meta property="og:type" content="website">
+		<meta property="og:image:width" content="1024">
+		<meta property="og:image:height" content="512">
+		<meta property="og:image" content="https://catlikecoding.com/unity/tutorials/hex-map/part-27/tutorial-image.jpg">
+		<meta property="og:title" content="&#xC720;&#xB2C8;&#xD2F0; C# &#xBC0F; &#xC170;&#xC774;&#xB354; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;">
+		<meta property="og:description" content="&#xC720;&#xB2C8;&#xD2F0;&#xB85C; C#&#xACFC; &#xC170;&#xC774;&#xB354; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC744; &#xBC30;&#xC6B0;&#xACE0; &#xC2F6;&#xC740; &#xBD84;&#xB4E4;&#xC744; &#xC704;&#xD55C; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xC5F0;&#xC7AC;&#xC785;&#xB2C8;&#xB2E4;.  &#xCD08;&#xBCF4; &#xBC0F; &#xACBD;&#xB825; &#xAC1C;&#xBC1C;&#xC790; &#xBAA8;&#xB450;&#xC5D0;&#xAC8C; &#xC720;&#xC6A9;&#xD568;.">
+		<meta property="twitter:card" content="summary_large_image">
+		<meta property="twitter:creator" content="@catlikecoding">
+		<meta name="viewport" content="width=768">
+		<title>&#xC720;&#xB2C8;&#xD2F0; C# &#xBC0F; &#xC170;&#xC774;&#xB354; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</title>
+		<link href="tutorials.css" rel="stylesheet">
+		<link rel="publisher" href="https://plus.google.com/+CatlikeCoding">
+		<link rel="manifest" href="../../site.webmanifest">
+		<link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#aa0000">
+
+		<script type="application/ld+json">{
+			"@context": "http://schema.org",
+			"@type": "WebPage",
+			"headline": "Unity C# and Shader Tutorials",
+			"description": "A collection of tutorials for people who want to learn C# and shader programming in Unity. Useful to both novice and experienced developers.",
+			"publisher": { "@type": "Organization", "name": "Catlike Coding", "@id": "https://catlikecoding.com/#organization" },
+			"image": "https://catlikecoding.com/unity/tutorials/hex-map/part-26/tutorial-image.jpg",
+			"breadcrumb": {
+				"@type": "BreadcrumbList",
+				"itemListElement": [
+					{ "@type": "ListItem", "position": 1, "item": { "@id": "https://catlikecoding.com/unity/", "name": "Unity" }}
+				]
+			}
+		}</script>
+	<style class="codingdad_header_css">  .codingdad_header
+  {
+    padding:10px 10px 10px 100px; 
+    background-color:#36c46f; 
+    color:#f4f0f4; 
+    border-radius:15px; 
+    margin:10px;
+  }
+  .codingdad_header a
+  {
+    text-decoration:underline;
+    color:#f4f0f4;
+  }
+  .codingdad_header_title
+  {
+    font-size:25px; 
+    font-weight:bold;
+  }
+  .codingdad_header_desc
+  {
+    font-size:13px; 
+    line-height:1.2em; 
+    margin-top:10px;
+  }
+  .codingdad_header_desc ul
+  {
+    margin-bottom:0px;
+    margin-left:-40px;
+  }</style></head>
+	<body><div class="codingdad_header_html"><div class="codingdad_header"> 
+  <div class="codingdad_header_title">
+    <a href="https://catlikecoding.com/unity/tutorials/">Catlike Coding</a>&#xC758; &#xBA4B;&#xC9C4; &#xAE00;&#xC744; 
+    <a href="undefined/2018/12/25/catlike-rendering-part-1">Coding Dad</a>&#xC774; &#xBC88;&#xC5ED;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.
+  </div>
+  <div class="codingdad_header_desc">
+    <ul>
+      <li>&#xB9C1;&#xD06C;&#xB97C; &#xD1B5;&#xD574; <a href="https://catlikecoding.com/unity/tutorials/">catlikecoding.com</a>&#xC758; &#xC6D0;&#xBCF8;&#xAE00;&#xC744; &#xBCF4;&#xC2DC;&#xAC70;&#xB098;, <a href="undefined/2018/12/25/catlike-rendering-part-1">codingdad.me</a>&#xC5D0;&#xC11C; &#xD53C;&#xB4DC;&#xBC31;&#xC744; &#xB0A8;&#xAE30;&#xC2E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </li>
+      <li>&#xD6C4;&#xC6D0; &#xBC0F; &#xAE30;&#xBD80; &#xB9C1;&#xD06C;&#xB294; Catlike Coding&#xC5D0; &#xC5F0;&#xACB0;&#xB429;&#xB2C8;&#xB2E4;. &#xD6CC;&#xB96D;&#xD55C; &#xAE00;&#xC744; &#xCC3D;&#xC791;&#xD55C; &#xBD84;&#xC5D0;&#xAC8C; &#xAC10;&#xC0AC;&#xC758; &#xB9C8;&#xC74C;&#xC744; &#xC804;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</li>
+    </ul>
+  </div>
+</div></div>
+		<header>
+			<a href="https://catlikecoding.com/unity/tutorials/catlikecoding.com/"><img src="../../catlike-coding-logo.svg" alt="Catlike Coding" width="45" height="45"><sup class="codingdad_ext_link">&#x1F517;</sup></a>
+			<nav>
+				<ol>
+					<li><a href="https://catlikecoding.com/unity/tutorials/catlikecoding.com/">Catlike Coding<sup class="codingdad_ext_link">&#x1F517;</sup></a></li>
+					<li><a href="https://catlikecoding.com/unity/tutorials/catlikecoding.com/unity/">&#xC720;&#xB2C8;&#xD2F0;<sup class="codingdad_ext_link">&#x1F517;</sup></a></li>
+				</ol>
+			</nav>
+		</header>
+		
+		<main>
+			<article>
+				<header>
+					<h1>C# &#xBC0F; &#xC170;&#xC774;&#xB354; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</h1>
+					<p>&#xC720;&#xB2C8;&#xD2F0; &#xC5D4;&#xC9C4;&#xC5D0; &#xB300;&#xD574;&#xC11C;</p>
+				</header>
+				
+				<p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xC720;&#xB2C8;&#xD2F0;&#xB97C; &#xC704;&#xD55C;  C# &#xBC0F; &#xC170;&#xC774;&#xB354; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC744; &#xAC00;&#xB974;&#xCE69;&#xB2C8;&#xB2E4;. &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xB4E4;&#xC740; &#xC11C;&#xB85C;&#xC5D0; &#xAE30;&#xBC18;&#xC744; &#xB450;&#xACE0; &#xC0C8;&#xB85C;&#xC6B4; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xAC1C;&#xB150;, &#xC218;&#xD559;, &#xC54C;&#xACE0;&#xB9AC;&#xC998;, &#xC720;&#xB2C8;&#xD2F0; &#xAE30;&#xB2A5;&#xC744; &#xC18C;&#xAC1C;&#xD569;&#xB2C8;&#xB2E4;. &#xCD08;&#xBCF4; &#xBC0F; &#xACBD;&#xB825; &#xAC1C;&#xBC1C;&#xC790; &#xBAA8;&#xB450;&#xC5D0;&#xAC8C; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+				
+				<figure>
+					<img src="hex-map/part-26/tutorial-image.jpg" width="512" height="256">
+					<figcaption>&#xC720;&#xB2C8;&#xD2F0;&#xB85C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xB294; &#xB9CE;&#xC740; &#xAC83;&#xB4E4; &#xC911; &#xD558;&#xB098;.</figcaption>
+				</figure>
+				
+				<section class="tutorials">
+					<h2>&#xD6C4;&#xC6D0;&#xC790;&#xAC00; &#xB418;&#xC5B4; &#xC8FC;&#xC138;&#xC694;.</h2>
+					
+					<p>&#xC5EC;&#xB7EC;&#xBD84;&#xC758; &#xC9C0;&#xC6D0;&#xC774; &#xC774; &#xD29C;&#xD1A0;&#xC5BC;&#xC744; &#xAC00;&#xB2A5;&#xD558;&#xAC8C; &#xD569;&#xB2C8;&#xB2E4;! &#xC5EC;&#xB7EC;&#xBD84; &#xB9C8;&#xC74C;&#xC5D0; &#xB4E4;&#xACE0; &#xB354; &#xBCF4;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74;, <a href="https://www.patreon.com/catlikecoding/">patreon</a>&#xC744; &#xD1B5;&#xD574;&#xC11C; &#xC800;&#xC758; &#xD6C4;&#xC6D0;&#xC790;&#xAC00; &#xB418;&#xC5B4; &#xC8FC;&#xC138;&#xC694;. &#xC77C;&#xD68C;&#xC131; <a href="https://catlikecoding.com/unity/tutorials/catlikecoding.com/unity/tutorials/donating.html">&#xAE30;&#xBD80;<sup class="codingdad_ext_link">&#x1F517;</sup></a> &#xB3C4; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+					
+					<ol>
+						<li style="background-image: url(patreon-logo.png);"><a href="https://www.patreon.com/catlikecoding/">&#xD6C4;&#xC6D0;&#xC790;&#xAC00; &#xB418;&#xC5B4; &#xC8FC;&#xC138;&#xC694;.</a>
+					</li></ol>
+				</section>
+				
+				<section class="tutorials">
+					<h2>&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</h2>
+					
+					<p>&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xC139;&#xC158;&#xC774; &#xC5EC;&#xB7EC; &#xAC1C; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC21C;&#xCC28;&#xC801;&#xC73C;&#xB85C; &#xC9C4;&#xD589;&#xD560; &#xD544;&#xC694;&#xB294; &#xC5C6;&#xC9C0;&#xB9CC; &#xC77C;&#xBD80;&#xB294; &#xC11C;&#xB85C;&#xB97C; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;.  &#xAE30;&#xBCF8; &#xC139;&#xC158;&#xC740; &#xC720;&#xB2C8;&#xD2F0;&#xC640; C# &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC744; &#xC704;&#xD55C; &#xAE30;&#xCD08;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;. &#xB80C;&#xB354;&#xB9C1; &#xC139;&#xC158;&#xC740; &#xC170;&#xC774;&#xB354; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC758; &#xAE30;&#xCD08;&#xB97C; &#xB2E4;&#xB8E8;&#xACE0; &#xACE0;&#xAE09; &#xB80C;&#xB354;&#xB9C1; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xB85C; &#xC774;&#xC5B4;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
+					
+					<p>&#xC77C;&#xBD80; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xAF64; &#xC624;&#xB798;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBA85;&#xD655;&#xD558;&#xAC8C; &#xC774;&#xC804; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC27D;&#xAC8C; &#xC54C;&#xC544;&#xCC4C; &#xC218; &#xC788;&#xC744; &#xAC81;&#xB2C8;&#xB2E4;. &#xB2E4;&#xB978; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xB354; &#xCD5C;&#xC2E0;&#xC774;&#xC9C0;&#xB9CC; &#xC720;&#xB2C8;&#xD2F0; 5&#xB85C; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5C5;&#xADF8;&#xB808;&#xC774;&#xB4DC; &#xD558;&#xB824;&#xACE0; &#xB178;&#xB825;&#xC911;&#xC785;&#xB2C8;&#xB2E4;. &#xC0C8;&#xB85C;&#xC6B4; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC5D0;&#xC11C;&#xB294; &#xC5B4;&#xB5A4; &#xBC84;&#xC804;&#xC73C;&#xB85C;  &#xC791;&#xC131;&#xB418;&#xC5C8;&#xB294;&#xC9C0; &#xC5B8;&#xAE09;&#xD569;&#xB2C8;&#xB2E4;.</p>
+					
+					<section class="compact">
+						<h3><a href="https://catlikecoding.com/unity/tutorials/basics/">&#xAE30;&#xBCF8;<sup class="codingdad_ext_link">&#x1F517;</sup></a></h3>
+						
+						<p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xC720;&#xB2C8;&#xD2F0;&#xC5D0;&#xC11C; C#&#xC73C;&#xB85C; &#xC791;&#xC5C5;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD574; &#xC18C;&#xAC1C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+						
+						<ol>
+							<li style="background-image: url(basics/game-objects-and-scripts/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/basics/game-objects-and-scripts/">&#xAC8C;&#xC784; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC640; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(basics/building-a-graph/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/basics/building-a-graph/">&#xADF8;&#xB798;&#xD504; &#xC791;&#xC131;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(basics/mathematical-surfaces/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/basics/mathematical-surfaces/">&#xC218;&#xD559;&#xC801;&#xC778; &#xC11C;&#xD53C;&#xC2A4;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(constructing-a-fractal/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/constructing-a-fractal/">&#xD504;&#xB799;&#xD0C8; &#xB9CC;&#xB4E4;&#xAE30;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(frames-per-second/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/frames-per-second/">&#xCD08;&#xB2F9; &#xD504;&#xB808;&#xC784;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+						</li></ol>
+					</section>
+					
+					<section>
+						<h3><a href="https://catlikecoding.com/unity/tutorials/object-management/">&#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xAD00;&#xB9AC;<sup class="codingdad_ext_link">&#x1F517;</sup></a></h3>
+						
+						<p>&#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xC0DD;&#xC131;, &#xAD00;&#xB9AC;, &#xC800;&#xC7A5;, &#xB85C;&#xB529;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xB2E4;&#xB8E8;&#xB294; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xC5F0;&#xC7AC;&#xC785;&#xB2C8;&#xB2E4;.</p>
+						
+						<ol>
+							<li style="background-image: url(object-management/persisting-objects/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/persisting-objects/">&#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC758; &#xC800;&#xC7A5;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(object-management/object-variety/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/object-variety/">&#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xB2E4;&#xC591;&#xC131;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(object-management/reusing-objects/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/reusing-objects/">&#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xC7AC;&#xC0AC;&#xC6A9;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(object-management/multiple-scenes/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/multiple-scenes/">&#xC5EC;&#xB7EC; &#xC52C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(object-management/spawn-zones/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/spawn-zones/">&#xC2A4;&#xD3F0; &#xC9C0;&#xC5ED;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(object-management/more-game-state/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/more-game-state/">&#xB354; &#xB9CE;&#xC740; &#xAC8C;&#xC784; &#xC0C1;&#xD0DC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(object-management/configuring-shapes/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/configuring-shapes/">&#xBAA8;&#xC591; &#xAD6C;&#xC131;&#xD558;&#xAE30;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(object-management/more-factories/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/more-factories/">&#xB354; &#xB9CE;&#xC740; &#xD329;&#xD1A0;&#xB9AC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(object-management/shape-behavior/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/shape-behavior/">&#xBAA8;&#xC591; &#xBE44;&#xD5E4;&#xC774;&#xBDF0;&#xC5B4;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(object-management/satellites/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/satellites/" class="new">&#xC704;&#xC131;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+						</li></ol>
+					</section>
+					
+					<section>
+						<h3><a href="https://catlikecoding.com/unity/tutorials/flow/">&#xD50C;&#xB85C;&#xC6B0;<sup class="codingdad_ext_link">&#x1F517;</sup></a></h3>
+						
+						<p>&#xBB3C; &#xD45C;&#xBA74;&#xACFC; &#xAC19;&#xC774; &#xD750;&#xB974;&#xB294; &#xD6A8;&#xACFC;&#xC758; &#xC0DD;&#xC131;&#xC744; &#xB2E4;&#xB8E8;&#xB294; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xC5F0;&#xC7AC;&#xC785;&#xB2C8;&#xB2E4;.</p>
+						
+						<ol>
+							<li style="background-image: url(flow/texture-distortion/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/flow/texture-distortion/">&#xD14D;&#xC2A4;&#xCCD0; &#xC65C;&#xACE1;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(flow/directional-flow/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/flow/directional-flow/">&#xBC29;&#xD5A5;&#xC131; &#xD50C;&#xB85C;&#xC6B0;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(flow/waves/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/flow/waves/">&#xC6E8;&#xC774;&#xBE0C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(flow/looking-through-water/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/flow/looking-through-water/">&#xBB3C;&#xC18D;&#xC744; &#xB4E4;&#xC5EC;&#xB2E4; &#xBCF4;&#xAE30;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+						</li></ol>
+					</section>
+					
+					<section>
+						<h3>&#xBA54;&#xC2DC; &#xAE30;&#xBCF8; </h3>
+						
+						<p>&#xC808;&#xCC28;&#xC801;&#xC778; &#xBA54;&#xC2DC;&#xC5D0; &#xB300;&#xD55C; &#xC18C;&#xAC1C; &#xAC04;&#xB2E8;&#xD55C; &#xACA9;&#xC790;&#xBD80;&#xD130; &#xBCC0;&#xD615; &#xAC00;&#xB2A5;&#xD55C; &#xACF5;&#xAE4C;&#xC9C0;.</p>
+						
+						<ol>
+							<li style="background-image: url(procedural-grid/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/procedural-grid/">&#xC808;&#xCC28;&#xC801; &#xADF8;&#xB9AC;&#xB4DC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rounded-cube/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rounded-cube/">&#xB465;&#xADFC; &#xD050;&#xBE0C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(cube-sphere/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/cube-sphere/">&#xD050;&#xBE0C; &#xAD6C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(mesh-deformation/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/mesh-deformation/">&#xBA54;&#xC2DC; &#xBCC0;&#xD615;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+						</li></ol>
+					</section>
+					
+					<section>
+						<h3><a href="https://catlikecoding.com/unity/tutorials/catlikecoding.com/unity/tutorials/scriptable-render-pipeline/">&#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;<sup class="codingdad_ext_link">&#x1F517;</sup></a></h3>
+						
+						<p>&#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xB2E4;&#xB8E8;&#xB294; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xC5F0;&#xC7AC;&#xC785;&#xB2C8;&#xB2E4;.</p>
+						
+						<ol>
+							<li style="background-image: url(scriptable-render-pipeline/custom-pipeline/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/">&#xCEE4;&#xC2A4;&#xD140; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(scriptable-render-pipeline/custom-shaders/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-shaders/">&#xCEE4;&#xC2A4;&#xD140; &#xC170;&#xC774;&#xB354;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(scriptable-render-pipeline/lights/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/lights/">&#xB77C;&#xC774;&#xD2B8;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(scriptable-render-pipeline/spotlight-shadows/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/" class="new">&#xC2A4;&#xD3EC;&#xD2B8;&#xB77C;&#xC774;&#xD2B8; &#xADF8;&#xB9BC;&#xC790;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+
+
+						</li></ol>
+					</section>
+					
+					<section>
+						<h3><a href="https://catlikecoding.com/unity/tutorials/rendering/">&#xB80C;&#xB354;&#xB9C1;<sup class="codingdad_ext_link">&#x1F517;</sup></a></h3>
+						
+						<p>&#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xAE30;&#xBCF8; &#xB80C;&#xB354;&#xB9C1; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xC774;&#xD574;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD55C; &#xC5F0;&#xC7AC;. &#xBA54;&#xC2DC;&#xAC00; &#xC2E4;&#xC81C; &#xBB3C;&#xCCB4;&#xCC98;&#xB7FC; &#xBCF4;&#xC774;&#xB294; &#xD53D;&#xC140;&#xB85C; &#xBCC0;&#xD558;&#xB294; &#xBC29;&#xBC95;.</p>
+						
+						<ol>
+							<li style="background-image: url(rendering/part-1/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-1/">&#xD589;&#xB82C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-2/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-2/">&#xC170;&#xC774;&#xB354; &#xAE30;&#xCD08;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-3/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-3/">&#xD14D;&#xC2A4;&#xCCD0; &#xC870;&#xD569;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-4/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-4/">&#xCCAB; &#xBC88;&#xC9F8; &#xB77C;&#xC774;&#xD2B8;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-5/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-5/">&#xC5EC;&#xB7EC; &#xAC1C;&#xC758; &#xB77C;&#xC774;&#xD2B8;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-6/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-6/">&#xC6B8;&#xD241;&#xBD88;&#xD241;&#xD568;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-7/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-7/">&#xADF8;&#xB9BC;&#xC790;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-8/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-8/">&#xBC18;&#xC0AC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-9/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-9/">&#xBCF5;&#xD569; &#xC7AC;&#xC9C8;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-10/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-10/">&#xB354; &#xB9CE;&#xC740; &#xBCF5;&#xC7A1;&#xC131;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-11/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-11/">&#xD22C;&#xBA85;&#xD568;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-12/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-12/">&#xBC18;&#xD22C;&#xBA85; &#xADF8;&#xB9BC;&#xC790;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-13/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-13/">&#xB514;&#xD37C;&#xB4DC;(&#xC9C0;&#xC5F0;&#xB41C;) &#xC170;&#xC774;&#xB529;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-14/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-14/">&#xC548;&#xAC1C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-15/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-15/">&#xB514;&#xD37C;&#xB4DC; &#xB77C;&#xC774;&#xD2B8;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-16/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-16/">&#xC815;&#xC801; &#xB77C;&#xC774;&#xD305;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-17/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-17/">&#xD63C;&#xD569; &#xB77C;&#xC774;&#xD305;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-18/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-18/">&#xC2E4;&#xC2DC;&#xAC04; GI &#xBC0F;  LOD &#xADF8;&#xB8F9;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-19/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-19/">GPU &#xC778;&#xC2A4;&#xD134;&#xC2F1;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(rendering/part-20/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-20/">&#xC2DC;&#xCC28;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+						</li></ol>
+					</section>
+					
+					<section>
+						<h3><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/">&#xACE0;&#xAE09; &#xB80C;&#xB354;&#xB9C1;<sup class="codingdad_ext_link">&#x1F517;</sup></a></h3>
+						
+						<p>&#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xD45C;&#xC900; &#xC170;&#xC774;&#xB354;&#xB97C; &#xB118;&#xC5B4;&#xC11C;&#xB294; &#xB354; &#xBCF5;&#xC7A1;&#xD558;&#xACE0; &#xD2B9;&#xD654;&#xB41C; &#xB80C;&#xB354;&#xB9C1; &#xD14C;&#xD06C;&#xB2C9;&#xC744; &#xB2E4;&#xB8E8;&#xB294; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC785;&#xB2C8;&#xB2E4;. &#xB80C;&#xB354;&#xB9C1; &#xC5F0;&#xC7AC;&#xC5D0;&#xC11C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; &#xC791;&#xC5C5;&#xC744; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+						
+						<ol>
+							<li style="background-image: url(advanced-rendering/flat-and-wireframe-shading/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/flat-and-wireframe-shading/">&#xD50C;&#xB7AB; &#xBC0F; &#xC640;&#xC774;&#xC5B4;&#xD504;&#xB808;&#xC784; &#xC170;&#xC774;&#xB529;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(advanced-rendering/tessellation/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/tessellation/">&#xD14C;&#xC140;&#xB808;&#xC774;&#xC158;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(advanced-rendering/surface-displacement/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/surface-displacement/">&#xC11C;&#xD53C;&#xC2A4; &#xBCC0;&#xC704;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(advanced-rendering/bloom/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/bloom/">&#xBE14;&#xB8F8;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(advanced-rendering/depth-of-field/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/depth-of-field/">&#xD53C;&#xC0AC;&#xACC4; &#xC2EC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(advanced-rendering/fxaa/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/fxaa/">FXAA<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(advanced-rendering/triplanar-mapping/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/triplanar-mapping/">&#xD2B8;&#xB9AC;&#xD50C;&#xB798;&#xB108;(Triplanar) &#xB9E4;&#xD551;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+						</li></ol>
+					</section>
+					
+					<section>
+						<h3><a href="https://catlikecoding.com/unity/tutorials/hex-map/">&#xD5E5;&#xC2A4; &#xB9F5;<sup class="codingdad_ext_link">&#x1F517;</sup></a></h3>
+						
+						<p>&#xC721;&#xAC01;&#xD615; &#xB9F5;&#xC5D0; &#xB300;&#xD55C; &#xC5F0;&#xC7AC;. &#xB9CE;&#xC740; &#xC804;&#xB7B5; &#xAC8C;&#xC784;&#xB4E4;&#xC774; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+						
+						<ol>
+							<li style="background-image: url(hex-map/part-1/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-1/">&#xC721;&#xAC01;&#xD615; &#xACA9;&#xC790; &#xB9CC;&#xB4E4;&#xAE30;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-2/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-2/">&#xC140; &#xC0C9;&#xC0C1; &#xD63C;&#xD569;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-3/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-3/">Elevation and Terraces<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-4/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-4/">&#xBD88;&#xADDC;&#xCE59;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-5/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-5/">&#xB354; &#xD070; &#xC9C0;&#xB3C4;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-6/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-6/">&#xAC15;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-7/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-7/">&#xB3C4;&#xB85C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-8/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-8/">&#xBB3C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-9/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-9/">&#xC9C0;&#xD615; &#xAE30;&#xB2A5;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-10/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-10/">&#xBCBD;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-11/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-11/">&#xCD94;&#xAC00; &#xAE30;&#xB2A5;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-12/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-12/">&#xC800;&#xC7A5;&#xACFC; &#xB85C;&#xB529;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-13/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-13/">&#xB9F5; &#xAD00;&#xB9AC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-14/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-14/">&#xC9C0;&#xD615; &#xD14D;&#xC2A4;&#xCCD0;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-15/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-15/">&#xAC70;&#xB9AC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-16/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-16/">&#xAE38; &#xCC3E;&#xAE30;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-17/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-17/">&#xC81C;&#xD55C;&#xB41C; &#xC774;&#xB3D9;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-18/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-18/">&#xB2E8;&#xC704;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-19/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-19/">&#xC774;&#xB3D9; &#xC560;&#xB2C8;&#xBA54;&#xC774;&#xC158; &#xD558;&#xAE30;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-20/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-20/">&#xC804;&#xC7C1;&#xC758; &#xC548;&#xAC1C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-21/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-21/">&#xD0D0;&#xC0AC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-22/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-22/">&#xACE0;&#xAE09; &#xBE44;&#xC804;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-23/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-23/">&#xD1A0;&#xC9C0; &#xC0DD;&#xC131;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-24/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-24/">&#xC9C0;&#xC5ED; &#xBC0F; &#xCE68;&#xC2DD;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-25/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-25/">&#xBB3C; &#xC21C;&#xD658;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-26/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-26/">&#xC0DD;&#xBB3C;&#xACFC; &#xAC15;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(hex-map/part-27/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-27/">&#xD3EC;&#xC7A5;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+						</li></ol>
+					</section>
+					
+					<section>
+						<h3>&#xB178;&#xC774;&#xC988;</h3>
+						
+						<p>Procedural noise is useful for lots of things. This series shows how to make your own value, Perlin, and simplex noise, including their derivatives.</p>
+						
+						<ol>
+							<li style="background-image: url(noise/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/noise/">&#xB178;&#xC774;&#xC988;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(noise-derivatives/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/noise-derivatives/">&#xB178;&#xC774;&#xC988; &#xD30C;&#xC0DD;?<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(simplex-noise/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/simplex-noise/">&#xC2EC;&#xD50C;&#xB809;&#xC2A4;? &#xB178;&#xC774;&#xC988;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+						</li></ol>
+					</section>
+					
+					<section>
+						<h3>&#xD589;&#xC9C4;&#xD558;&#xB294; &#xC0AC;&#xAC01;&#xD615;</h3>
+						
+						<p>2D &#xACA9;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD55C; &#xBAA8;&#xC591; &#xB4DC;&#xB85C;&#xC789; &#xBC0F; &#xC7AC;&#xAD6C;&#xC131;&#xC5D0; &#xB300;&#xD55C; &#xC5F0;&#xC7AC; &#xC65C; &#xD589;&#xC9C4;&#xD558;&#xB294; &#xD050;&#xBE0C;&#xB294; &#xC548;&#xB418;&#xB098;&#xC694;? 2D&#xC640; 3D&#xBAA8;&#xB450; &#xAC1C;&#xB150;&#xC740; &#xAC19;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xBA70;, 2&#xCC28;&#xC6D0;&#xC744; &#xB2E4;&#xB8E8;&#xB294; &#xAC83;&#xB3C4; &#xC774;&#xBBF8; &#xCDA9;&#xBD84;&#xD788; &#xBCF5;&#xC7A1;&#xD569;&#xB2C8;&#xB2E4;.</p>
+						
+						<ol>
+							<li style="background-image: url(marching-squares/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/marching-squares/">&#xACF5;&#xAC04; &#xBD84;&#xD560;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(marching-squares-2/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/marching-squares-2/">&#xACF5;&#xC720; &#xBC0F; &#xAD50;&#xCC28;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(marching-squares-3/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/marching-squares-3/">&#xB0A0;&#xCE74;&#xB86D;&#xAC8C; &#xBA38;&#xBB34;&#xB974;&#xAE30;?<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(marching-squares-4/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/marching-squares-4/">&#xBCBD; &#xC138;&#xC6B0;&#xAE30;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(marching-squares-5/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/marching-squares-5/">&#xCEEC;&#xB7EC;&#xD480;&#xD558;&#xAC8C;?<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+						</li></ol>
+					</section>
+					
+					<section>
+						<h3>&#xAC8C;&#xC784;</h3>
+						
+						<p>&#xC791;&#xC740; &#xAC8C;&#xC784;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xD560; &#xC218; &#xC788;&#xB294; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</p>
+						
+						<ol>
+							<li style="background-image: url(swirly-pipe/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/swirly-pipe/">&#xC18C;&#xC6A9;&#xB3CC;&#xC774; &#xD30C;&#xC774;&#xD504;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(maze/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/maze/">&#xBBF8;&#xB85C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+						</li></ol>
+					</section>
+				
+					<section>
+						<h3>&#xC774;&#xC804; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</h3>
+
+						<p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xB9E4;&#xC6B0; &#xC624;&#xB798;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC720;&#xB2C8;&#xD2F0; 4&#xC5D0;&#xC11C;&#xB294; &#xB3D9;&#xC791;&#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xD6C4;&#xC758; &#xBC84;&#xC804;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB294; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5EC;&#xC804;&#xD788; &#xAC00;&#xCE58;&#xAC00; &#xC788;&#xC744;&#xC9C0;&#xB3C4; &#xBAA8;&#xB974;&#xC9C0;&#xB9CC;, &#xC5EC;&#xB7EC;&#xBD84; &#xC2A4;&#xC2A4;&#xB85C; &#xC870;&#xC815;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.  <a href="https://catlikecoding.com/unity/tutorials/curves-and-splines/">&#xCEE4;&#xBE0C;&#xC640; &#xC2A4;&#xD50C;&#xB77C;&#xC778;<sup class="codingdad_ext_link">&#x1F517;</sup></a> &#xC740; &#xC608;&#xC678;&#xC785;&#xB2C8;&#xB2E4;. <a href="https://catlikecoding.com/unity/tutorials/basics/">&#xAE30;&#xBCF8;<sup class="codingdad_ext_link">&#x1F517;</sup></a> &#xC5F0;&#xC7AC;&#xC758; &#xC5C5;&#xADF8;&#xB808;&#xC774;&#xB4DC;&#xAC00; &#xB05D;&#xB098;&#xBA74; &#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC744; &#xC5C5;&#xADF8;&#xB808;&#xC774;&#xB4DC; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+						
+						<ol>
+							<li style="background-image: url(curves-and-splines/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/curves-and-splines/">&#xCEE4;&#xBE0C;&#xC640; &#xC2A4;&#xD50C;&#xB77C;&#xC778;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(runner/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/runner/">&#xB2EC;&#xB9AC;&#xB294; &#xC0AC;&#xB78C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(octahedron-sphere/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/octahedron-sphere/">8&#xBA74;&#xCCB4; &#xAD6C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(editor/custom-data/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/editor/custom-data/">&#xCEE4;&#xC2A4;&#xD140; &#xB370;&#xC774;&#xD130;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(editor/custom-list/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/editor/custom-list/">&#xCEE4;&#xC2A4;&#xD140; &#xB9AC;&#xC2A4;&#xD2B8;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							</li><li style="background-image: url(editor/star/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/editor/star/">&#xBCC4;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+						</li></ol>
+					</section>
+				</section>
+				
+				<section>
+					<h2>&#xC9C8;&#xBB38; &amp; &#xB2F5;&#xBCC0;</h2>
+					
+					<p>&#xC9C8;&#xBB38; &#xC788;&#xC73C;&#xC138;&#xC694;? &#xB2E4;&#xC74C;&#xC740; &#xBA87; &#xAC00;&#xC9C0; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xC9C8;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.  &#xC9C8;&#xBB38;&#xC744; &#xD074;&#xB9AD;&#xD558;&#xAC70;&#xB098; &#xD130;&#xCE58;&#xD558;&#xC5EC; &#xB2F5;&#xBCC0;&#xC744; &#xBCF4;&#xC138;&#xC694;. &#xB2E4;&#xC591;&#xD55C; &#xACBD;&#xB85C;&#xB85C; <a href="https://catlikecoding.com/unity/tutorials/catlikecoding.com/jasper-flick/">&#xC800;&#xC5D0;&#xAC8C; &#xC5F0;&#xB77D;<sup class="codingdad_ext_link">&#x1F517;</sup></a> &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+					
+					<aside>
+						<h3>&#xC65C; Patreon&#xC778;&#xAC00;&#xC694;?</h3>
+						<div>
+							<p>&#xACE8;&#xD310;&#xC9C0; &#xC0C1;&#xC790;&#xB294; &#xC804;&#xC6D0; &#xC18C;&#xCF13;&#xACFC; &#xC778;&#xD130;&#xB137; &#xC5F0;&#xACB0;&#xC774; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xADF8; &#xACF3;&#xC5D0; &#xC0B4; &#xC218;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAD76;&#xAC70;&#xB098; &#xC5BC;&#xC5B4;&#xC8FD;&#xB294; &#xAC83;&#xC740; &#xB610;&#xD55C; &#xC0DD;&#xC0B0;&#xC131;&#xC5D0; &#xC704;&#xD611;&#xC774; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; &#xC800;&#xB294; &#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xB370; &#xD544;&#xC694;&#xD55C; &#xC2DC;&#xAC04;&#xACFC; &#xB178;&#xB825;&#xC744; &#xC9C0;&#xC6D0;&#xD560; &#xC218; &#xC788;&#xB294; &#xBC29;&#xBC95;&#xC774; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
+							
+							<p>&#xD6C4;&#xC6D0;&#xC790;&#xC758; &#xAC1C;&#xB150;&#xC774; &#xC88B;&#xC544;&#xC11C; Patreon&#xC744; &#xC120;&#xD0DD;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5EC;&#xB7EC;&#xBD84;&#xC740; <a href="https://www.patreon.com/catlikecoding/">&#xD6C4;&#xC6D0;&#xC790;&#xAC00; &#xB418;&#xC5B4;&#xC11C;</a> &#xC5EC;&#xB7EC;&#xBD84;&#xACFC; &#xB2E4;&#xB978; &#xBAA8;&#xB4E0; &#xC0AC;&#xB78C;&#xC744; &#xC704;&#xD55C; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC744; &#xC81C;&#xAC00; &#xACC4;&#xC18D;&#xD574;&#xC11C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xC9C0;&#xC6D0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5EC;&#xB7EC;&#xBD84;&#xC758; &#xAD00;&#xB300;&#xD568;&#xC73C;&#xB85C; &#xBAA8;&#xB450;&#xAC00; &#xD61C;&#xD0DD;&#xC744; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;!</p>
+						</div>
+					</aside>
+					
+					<aside>
+						<h3>&#xC800;&#xB294; Patreon&#xB294; &#xC2EB;&#xC5B4;&#xC694;. &#xB2E4;&#xB978; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xAE30;&#xBD80;&#xD560; &#xC218; &#xC788;&#xC744;&#xAE4C;&#xC694;?</h3>
+						<div>
+							<p>&#xB124;, &#xD398;&#xC774;&#xD314;&#xC774;&#xB098; &#xBE44;&#xD2B8;&#xCF54;&#xC778; &#xB610;&#xB294; &#xC774;&#xB354;&#xB9AC;&#xC6C0;&#xC744; &#xD1B5;&#xD574;&#xC11C; <a href="https://catlikecoding.com/unity/tutorials/catlikecoding.com/unity/tutorials/donating.html">&#xAE30;&#xBD80;<sup class="codingdad_ext_link">&#x1F517;</sup></a>&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+						</div>
+					</aside>
+					
+					<aside>
+						<h3>&#xC0C8; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC5D0; &#xB300;&#xD55C; &#xD1B5;&#xC9C0;&#xB97C; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC744;&#xAE4C;&#xC694;?</h3>
+						<div>
+							<p>
+<a href="https://www.patreon.com/catlikecoding/">Patreon</a>, <a href="https://twitter.com/catlikecoding/">Twitter</a>, <a href="https://gab.ai/catlikecoding/">Gab</a>, <a href="https://www.facebook.com/unity.c.sharp.tutorials/">Facebook</a>, <a href="https://plus.google.com/+CatlikeCoding/">Google+</a>, <a href="https://connect.unity.com/u/581a3459090915002eeb5067/">Unity Connect</a>, <a href="https://www.linkedin.com/in/jrjflick/">LinkedIn</a>, <a href="https://www.reddit.com/user/catlikecoding/">reddit</a> &#xBC0F; &#xB2E4;&#xB978; &#xACF3;&#xC758; &#xC81C; &#xACC4;&#xC815;&#xC744; &#xD1B5;&#xD574;&#xC11C; &#xC54C;&#xB824;&#xB4DC;&#xB9AC;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
+						</div>
+					</aside>
+					
+					<aside>
+						<h3>&#xC0C1;&#xC6A9; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xCF54;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC744;&#xAE4C;&#xC694;?</h3>
+						<div>
+							<p>&#xB124; &#xAD1C;&#xCC2E;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5B4;&#xB5A4; &#xBAA9;&#xC801;&#xC73C;&#xB85C;&#xB3C4; &#xC6D0;&#xD558;&#xB294; &#xB300;&#xB85C; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xCF54;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC800;&#xB97C; &#xC5B8;&#xAE09;&#xD560; &#xD544;&#xC694;&#xB294; &#xC5C6;&#xC9C0;&#xB9CC;, &#xC815;&#xB9D0; &#xACE0;&#xB9C8;&#xC6B4; &#xC77C;&#xC785;&#xB2C8;&#xB2E4;!</p>
+							
+							<p>&#xC8FC;&#xC758;&#xD558;&#xC138;&#xC694;. &#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5B4;&#xC5D0;&#xC11C; &#xC2E4;&#xC81C; &#xC0C1;&#xC6A9; &#xC81C;&#xD488;&#xC73C;&#xB85C; &#xAC00;&#xB294; &#xAC83;&#xC740; &#xBA3C; &#xAE38;&#xC785;&#xB2C8;&#xB2E4;. </p>
+						</div>
+					</aside>
+					
+					<aside>
+						<h3>&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC744; &#xC7AC;&#xBC30;&#xD3EC; &#xD558;&#xAC70;&#xB098; &#xBC88;&#xC5ED;&#xD574;&#xB3C4; &#xAD1C;&#xCC2E;&#xC744;&#xAE4C;&#xC694;?</h3>
+						<div>
+							<p>&#xB124;, &#xC6D0;&#xBCF8; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC744; &#xB9C1;&#xD06C;&#xD558;&#xACE0; &#xC5EC;&#xB7EC;&#xBD84;&#xC774; &#xC6D0;&#xC791;&#xC790;&#xAC00; &#xC544;&#xB2C8;&#xB77C;&#xB294; &#xAC83;&#xB9CC; &#xBD84;&#xBA85;&#xD788; &#xBC1D;&#xD78C;&#xB2E4;&#xBA74;&#xC694;.</p>
+						</div>
+					</aside>
+					
+					<aside>
+						<h3>&#xC65C; &#xBE44;&#xB514;&#xC624;&#xAC00; &#xC544;&#xB2C8;&#xB77C; &#xD14D;&#xC2A4;&#xD2B8; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC778;&#xAC00;&#xC694;?</h3>
+						<div>
+							<p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xB294; &#xAC83;&#xC5D0; &#xAD00;&#xD55C; &#xAC83;&#xC774;&#xBBC0;&#xB85C; &#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC790;&#xC5F0;&#xC2A4;&#xB7EC;&#xC6CC; &#xBCF4;&#xC785;&#xB2C8;&#xB2E4;.  &#xCF54;&#xB4DC;&#xB97C; &#xC774;&#xD574;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC5EC;&#xB7EC;&#xBD84;&#xC758; &#xC18D;&#xB3C4;&#xC5D0; &#xB9DE;&#xCDB0;&#xC11C; &#xC55E;&#xB4A4;&#xB85C; &#xC810;&#xD504;&#xD558;&#xACE0;, &#xBA48;&#xCD94;&#xACE0;,  &#xCC3E;&#xC544;&#xBCF4;&#xACE0;, &#xC2E4;&#xD5D8;&#xD558;&#xB294; &#xB4F1; &#xB9CE;&#xC740; &#xC77C;&#xC744; &#xD544;&#xC694;&#xB85C; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC774;&#xB97C; &#xC704;&#xD574;&#xC11C;&#xB294; &#xBE44;&#xB514;&#xC624;&#xBCF4;&#xB2E4;&#xB294; &#xD14D;&#xC2A4;&#xD2B8;&#xAC00; &#xB354; &#xD3B8;&#xB9AC;&#xD55C; &#xAC83; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+							
+							<p>&#xB610;&#xD55C; &#xBE44;&#xB514;&#xC624; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC774; &#xAE09;&#xC911;&#xD558;&#xACE0; &#xC788;&#xC9C0;&#xB9CC; &#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xC120;&#xD638;&#xD558;&#xB294; &#xC0AC;&#xB78C;&#xB4E4;&#xC774; &#xCD94;&#xC704;&#xC5D0; &#xB0B4;&#xBC84;&#xB824;&#xC9C0;&#xC9C0; &#xC54A;&#xAE30;&#xB97C; &#xBC14;&#xB78D;&#xB2C8;&#xB2E4;.</p>
+						</div>
+					</aside>
+					
+					<aside>
+						<h3>&#xC65C; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC544;&#xB2C8;&#xACE0; C# &#xC778;&#xAC00;&#xC694;?</h3>
+						<div>
+							<p>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0; &#xBE44;&#xAD50;&#xD558;&#xC5EC;, C#&#xC740; &#xB354; &#xC5C4;&#xACA9;&#xD558;&#xACE0; &#xC790;&#xC138;&#xD55C; &#xAD6C;&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xC5EC;&#xB7EC;&#xBD84;&#xC774; &#xBB34;&#xC5C7;&#xC744; &#xD558;&#xACE0; &#xC788;&#xB294;&#xC9C0; &#xC815;&#xB9D0;&#xB85C; &#xC54C;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74; &#xC774;&#xAC83;&#xC774; &#xB354; &#xC720;&#xC775;&#xD558;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xD569;&#xB2C8;&#xB2E4;. &#xC5C4;&#xACA9;&#xD55C; &#xAC83;&#xC5D0;&#xC11C; &#xC2DC;&#xC791;&#xD574; &#xB098;&#xC911;&#xC5D0; &#xB290;&#xC2A8;&#xD55C; &#xAC83;&#xC73C;&#xB85C; &#xAC00;&#xB294; &#xAC83;&#xC740; &#xC27D;&#xB2C8;&#xB2E4;, &#xADF8; &#xBC18;&#xB300;&#xB294; &#xADF8;&#xB9AC; &#xC27D;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+							
+							<p>&#xB610;&#xD55C;, &#xC720;&#xB2C8;&#xD2F0;&#xC5D0;&#xC11C; C#&#xC740; &#xC9C4;&#xC9DC;&#xC785;&#xB2C8;&#xB2E4;. &#xAC70;&#xC758; &#xC608;&#xC678; &#xC5C6;&#xC774;, C#&#xC740; &#xB2E4;&#xB978; &#xB2F7;&#xB137;&#xC774;&#xB098; &#xBAA8;&#xB178; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; &#xC788;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. C#&#xC5D0; &#xB300;&#xD55C; &#xAC70;&#xC758; &#xBAA8;&#xB4E0; &#xC628;&#xB77C;&#xC778; &#x3141;&#xB204;&#xC11C;&#xB294; &#xC720;&#xC6A9;&#xD558;&#xBA70; &#xD45C;&#xC900; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB294; &#xC0AC;&#xC2E4;&#xC774; &#xC544;&#xB2C8;&#xBA70; &#xC2E4;&#xC81C;&#xB85C;&#xB294; &#xC720;&#xB2C8;&#xD2F0;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC785;&#xB2C8;&#xB2E4;.</p>
+							<p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C;, &#xC720;&#xB2C8;&#xD2F0; &#xD14C;&#xD06C;&#xB180;&#xB85C;&#xC9C0; &#xC790;&#xCCB4;&#xAC00; &#xBAA8;&#xB4E0; &#xCD08;&#xC810;&#xC744; C#&#xC73C;&#xB85C; &#xC804;&#xD658;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; &#xC9C0;&#xC6D0;&#xC774; &#xC911;&#xB2E8;&#xB420; &#xAC81;&#xB2C8;&#xB2E4;.</p>
+						</div>
+					</aside>
+					
+					<aside>
+						<h3>&#xC65C; &#xC88B;&#xC740; OOP &#xC124;&#xACC4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xAE4C;?</h3>
+						<div>
+							<p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xAC1D;&#xCCB4; &#xC9C0;&#xD5A5; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC5D0; &#xB300;&#xD55C; &#xAC83;&#xC774; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;. &#xC720;&#xD2F0;&#xD2F0;&#xB97C; &#xC704;&#xD55C; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC5D0; &#xB300;&#xD55C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xC720;&#xB2C8;&#xD2F0;&#xB97C; &#xC704;&#xD55C; &#xAC1C;&#xBC1C;&#xC740; &#xAC1D;&#xCCB4; &#xC9C0;&#xD5A5;&#xC774; &#xC544;&#xB2C8;&#xB77C; &#xBCF8;&#xC9C8;&#xC801;&#xC73C;&#xB85C; &#xC808;&#xCC28;&#xC801;&#xC778; &#xD070; &#xBD80;&#xBD84;&#xC5D0; &#xB300;&#xD55C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.?? &#xC720;&#xB2C8;&#xD2F0;&#xB294; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8; &#xAE30;&#xBC18;&#xC785;&#xB2C8;&#xB2E4;. &#xBE44;&#xD5E4;&#xC774;&#xBDF0;&#xC5B4;&#xAC00; &#xD3EC;&#xD568;&#xB41C; &#xB370;&#xC774;&#xD130;&#xC758; &#xBAA8;&#xC74C;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC791;&#xC5C5;&#xC744; &#xD569;&#xB2C8;&#xB2E4;. &#xAC1D;&#xCCB4;&#xCC98;&#xB7FC; &#xB4E4;&#xB9AC;&#xC9C0;&#xB9CC;, &#xCEA1;&#xC290;&#xD654;&#xC640; &#xC2E0;&#xC6D0; &#xBCF4;&#xD638;&#xB294; &#xC544;&#xD0A4;&#xD14D;&#xCCD0;&#xC758; &#xC77C;&#xBD80;&#xAC00; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;. &#xC720;&#xB2C8;&#xD2F0;&#xAC00; &#xD56D;&#xC0C1; &#xC5C4;&#xACA9;&#xD55C; OOP &#xD45C;&#xC900;&#xC744; &#xB530;&#xB974;&#xB3C4;&#xB85D; &#xAC15;&#xC81C;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC2E4;&#xC6A9;&#xC801;&#xC774;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+						</div>
+					</aside>
+				</section>
+			</article>
+		</main>
+
+		<footer>
+			<p><a href="https://catlikecoding.com/unity/tutorials/catlikecoding.com/unity/tutorials/">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>&#xC744; &#xC990;&#xAE30;&#xACE0; &#xACC4;&#xC138;&#xC694;? &#xB3C4;&#xC6C0;&#xC774; &#xB418;&#xB098;&#xC694;?</p>
+			<p><b><a href="https://www.patreon.com/catlikecoding/">Patreon&#xC5D0;&#xC11C; &#xC800;&#xB97C; &#xC9C0;&#xC6D0;&#xD574;&#xC8FC;&#xC138;&#xC694;!</a></b></p>
+			<p><a href="https://www.patreon.com/catlikecoding/"><img src="become-a-patron.png" alt="&#xC800;&#xC758; &#xD6C4;&#xC6D0;&#xC790;&#xAC00; &#xB418;&#xC5B4; &#xC8FC;&#xC138;&#xC694;!" width="217" height="51"></a></p>
+			<p><b><a href="https://catlikecoding.com/unity/tutorials/catlikecoding.com/unity/tutorials/donating.html">&#xD639;&#xC740; &#xC9C1;&#xC811; &#xAE30;&#xBD80;&#xD574; &#xC8FC;&#xC138;&#xC694;<sup class="codingdad_ext_link">&#x1F517;</sup></a>!</b></p>
+			<p><a href="https://catlikecoding.com/unity/tutorials/catlikecoding.com/jasper-flick/" rel="author">Jasper Flick<sup class="codingdad_ext_link">&#x1F517;</sup></a>&#xC5D0; &#xC758;&#xD574; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;</p>
+		</footer>
+		
+		<script src="../../jquery2.js"></script>
+		<script src="tutorials.js"></script>
+	
+</body></html>
