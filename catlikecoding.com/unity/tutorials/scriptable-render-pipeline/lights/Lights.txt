@@ -62,4 +62,4 @@ Catlike Coding › Unity › Tutorials › Scriptable Render Pipeline Lights Sin
 
  void Render (ScriptableRenderContext context, Camera camera) {   … 
 
-  if (cull.visibleLights.Count > 0) {    ConfigureLights();   }   else {    cameraBuffer.SetGlobalVector(     lightIndicesOffsetAndCountID, Vector4.zero    );   }   …  } The next tutorial is Spotlight Shadows. repository Enjoying the tutorials? 도움이 되나요? 더 원하세요? Patreon에서 저를 지원해주세요! Or make a direct donation! made by Jasper Flick 
+  if (cull.visibleLights.Count > 0) {    ConfigureLights();   }   else {    cameraBuffer.SetGlobalVector(     lightIndicesOffsetAndCountID, Vector4.zero    );   }   …  } The next tutorial is Spotlight Shadows. repository Enjoying the tutorials? 도움이 되나요? 더 보고 싶으세요? Patreon에서 저를 지원해주세요! Or make a direct donation! made by Jasper Flick 
