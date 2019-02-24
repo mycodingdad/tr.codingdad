@@ -1,18 +1,25 @@
-<!DOCTYPE html>
-<html lang="ko">
-	<head prefix="og: http://ogp.me/ns#">
+<!DOCTYPE html><html lang="ko"><head prefix="og: http://ogp.me/ns#"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128068276-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128068276-6');
+</script>
+
 		<meta charset="utf-8">
 		<meta property="og:url" content="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/">
-		<meta property="og:type" content="글">
+		<meta property="og:type" content="&#xAE00;">
 		<meta property="og:image:width" content="1024">
 		<meta property="og:image:height" content="512">
 		<meta property="og:image" content="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/tutorial-image.jpg">
-		<meta property="og:title" content="커스텀 파이프라인">
-		<meta property="og:description" content="커스텀 파이프라인 생성에 대한 유니티 스크립터블 렌더 파이프라인 튜토리얼">
+		<meta property="og:title" content="&#xCEE4;&#xC2A4;&#xD140; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;">
+		<meta property="og:description" content="&#xCEE4;&#xC2A4;&#xD140; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC0DD;&#xC131;&#xC5D0; &#xB300;&#xD55C; &#xC720;&#xB2C8;&#xD2F0; &#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;">
 		<meta property="twitter:card" content="summary_large_image">
 		<meta property="twitter:creator" content="@catlikecoding">
 		<meta name="viewport" content="width=768">
-		<title>커스텀 파이프라인</title>
+		<title>&#xCEE4;&#xC2A4;&#xD140; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;</title>
 		<link href="../../tutorials.css" rel="stylesheet">
 		<link rel="publisher" href="https://plus.google.com/+CatlikeCoding">
 		<link rel="manifest" href="https://catlikecoding.com/site.webmanifest">
@@ -50,16 +57,56 @@
 				MyPipelineAsset: 1
 			};
 		</script>
-	</head>
-	<body>
+	<style class="codingdad_header_css">  .codingdad_header
+  {
+    padding:10px 10px 10px 100px; 
+    background-color:#36c46f; 
+    color:#f4f0f4; 
+    border-radius:15px; 
+    margin: 10px auto;
+    max-width: 948px;
+  }
+  .codingdad_header a
+  {
+    text-decoration:underline;
+    color:#f4f0f4;
+  }
+  .codingdad_header_title
+  {
+    font-size:25px; 
+    font-weight:bold;
+  }
+  .codingdad_header_desc
+  {
+    font-size:13px; 
+    line-height:1.2em; 
+    margin-top:10px;
+  }
+  .codingdad_header_desc ul
+  {
+    margin-bottom:0px;
+    margin-left:-40px;
+  }</style></head>
+	<body><div class="codingdad_header_html"><div class="codingdad_header"> 
+  <div class="codingdad_header_title">
+    <a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/">Catlike Coding</a>&#xC758; &#xBA4B;&#xC9C4; &#xAE00;&#xC744; 
+    <a href="https://codingdad.me/2019/02/07/CatlikeCoding/">Coding Dad</a>&#xC774; &#xBC88;&#xC5ED;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.
+  </div>
+  <div class="codingdad_header_desc">
+    <ul>
+      <li>&#xC6D0;&#xBB38;&#xC740; <a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/">catlikecoding.com</a>&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBC88;&#xC5ED;&#xC5D0; &#xB300;&#xD55C; &#xD53C;&#xB4DC;&#xBC31;&#xC740; <a href="https://codingdad.me/2019/02/07/CatlikeCoding/">codingdad.me</a>&#xC5D0; &#xB0A8;&#xACA8;&#xC8FC;&#xC138;&#xC694;. &#xC800;&#xC5D0;&#xAC8C; &#xD070; &#xB3C4;&#xC6C0;&#xC774; &#xB429;&#xB2C8;&#xB2E4;. </li>
+      <li>&#xD6C4;&#xC6D0; &#xBC0F; &#xAE30;&#xBD80; &#xB9C1;&#xD06C;&#xB294; Catlike Coding&#xC5D0; &#xC5F0;&#xACB0;&#xB429;&#xB2C8;&#xB2E4;. &#xC6D0;&#xC791;&#xC790;&#xC5D0;&#xAC8C; &#xAC10;&#xC0AC;&#xC758; &#xB9C8;&#xC74C;&#xC744; &#xC804;&#xD574;&#xBCF4;&#xC138;&#xC694; :)</li>
+    </ul>
+  </div>
+</div></div>
 		<header>
-			<a href="https://catlikecoding.com"><img src="../../../../catlike-coding-logo.svg" alt="Catlike Coding" width="45" height="45"></a>
+			<a href="/catlikecoding.com/"><img src="../../../../catlike-coding-logo.svg" alt="Catlike Coding" width="45" height="45"></a>
 			<nav>
 				<ol>
-					<li><a href="https://catlikecoding.com">Catlike Coding</a></li>
-					<li><a href="https://catlikecoding.com/unity/">유니티</a></li>
-					<li><a href="https://catlikecoding.com/unity/tutorials/">튜토리얼</a></li>
-					<li><a href="../index.html">스크립터블 렌더 파이프라인</a></li>
+					<li><a href="/catlikecoding.com/">Catlike Coding</a></li>
+					<li><a href="/catlikecoding.com/unity/">&#xC720;&#xB2C8;&#xD2F0;</a></li>
+					<li><a href="/catlikecoding.com/unity/tutorials/">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</a></li>
+					<li><a href="/catlikecoding.com/unity/tutorials/scriptable-render-pipeline/">&#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;</a></li>
 				</ol>
 			</nav>
 		</header>
@@ -67,83 +114,83 @@
 		<main>
 			<article>
 				<header>
-					<h1>커스텀 파이프라인</h1>
-					<p>렌더링의 제어</p>
+					<h1>&#xCEE4;&#xC2A4;&#xD140; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;</h1>
+					<p>&#xB80C;&#xB354;&#xB9C1;&#xC758; &#xC81C;&#xC5B4;</p>
 					<ul>
-						<li>파이프라인 애셋과 인스턴스를 생성하기.</li>
-						<li>컬링, 필터링, 정렬, 렌더링.</li>
-						<li>메모리를 깨끗하게 유지하기</li>
-						<li>좋은 편집 경험을 제공하기</li>
+						<li>&#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC560;&#xC14B;&#xACFC; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xAE30;.</li>
+						<li>&#xCEEC;&#xB9C1;, &#xD544;&#xD130;&#xB9C1;, &#xC815;&#xB82C;, &#xB80C;&#xB354;&#xB9C1;.</li>
+						<li>&#xBA54;&#xBAA8;&#xB9AC;&#xB97C; &#xAE68;&#xB057;&#xD558;&#xAC8C; &#xC720;&#xC9C0;&#xD558;&#xAE30;</li>
+						<li>&#xC88B;&#xC740; &#xD3B8;&#xC9D1; &#xACBD;&#xD5D8;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xAE30;</li>
 					</ul>
 				</header>
 				
-				<p>유니티의 <a href="../index.html">스크립터블 렌더 파이프라인</a>을 다루는 튜토리얼 연재의 첫 번째 편입니다. 이 튜토리얼은 여러분이 <a href="https://catlikecoding.com/unity/tutorials/basics/">기본</a> 연재와 <a href="https://catlikecoding.com/unity/tutorials/procedural-grid/">절차적 그리드</a> 튜토리얼을 읽었다고 가정합니다. <a href="https://catlikecoding.com/unity/tutorials/rendering/">렌더링</a>의 처음 몇 부분도 유용합니다.
+				<p>&#xC720;&#xB2C8;&#xD2F0;&#xC758; <a href="/catlikecoding.com/unity/tutorials/scriptable-render-pipeline/">&#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;</a>&#xC744; &#xB2E4;&#xB8E8;&#xB294; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xC5F0;&#xC7AC;&#xC758; &#xCCAB; &#xBC88;&#xC9F8; &#xD3B8;&#xC785;&#xB2C8;&#xB2E4;. &#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xC5EC;&#xB7EC;&#xBD84;&#xC774; <a href="https://catlikecoding.com/unity/tutorials/basics/">&#xAE30;&#xBCF8;<sup class="codingdad_ext_link">&#x1F517;</sup></a> &#xC5F0;&#xC7AC;&#xC640; <a href="https://catlikecoding.com/unity/tutorials/procedural-grid/">&#xC808;&#xCC28;&#xC801; &#xADF8;&#xB9AC;&#xB4DC;<sup class="codingdad_ext_link">&#x1F517;</sup></a> &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC744; &#xC77D;&#xC5C8;&#xB2E4;&#xACE0; &#xAC00;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. <a href="https://catlikecoding.com/unity/tutorials/rendering/">&#xB80C;&#xB354;&#xB9C1;<sup class="codingdad_ext_link">&#x1F517;</sup></a>&#xC758; &#xCC98;&#xC74C; &#xBA87; &#xBD80;&#xBD84;&#xB3C4; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.
 				
-				<p>이 튜토리얼은 유니티 2018.3.0f2를 사용하여 작성되었습니다.</p>
+				</p><p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xC720;&#xB2C8;&#xD2F0; 2018.3.0f2&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 				
 				<figure>
 					<img src="tutorial-image.jpg" width="512" height="256">
-					<figcaption>새로운 렌더 파이프라인의 탄생</figcaption>
+					<figcaption>&#xC0C8;&#xB85C;&#xC6B4; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC758; &#xD0C4;&#xC0DD;</figcaption>
 				</figure>
 				
 				<section>
-					<h2>파이프라인 생성하기</h2>
+					<h2>&#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC0DD;&#xC131;&#xD558;&#xAE30;</h2>
 					
-					<p>무엇인가를 그리기 위해서 유니티는 어떤 형체들이 언제, 어디서, 어떤 설정으로 그려질지 결정해야 합니다. 이는 얼마나 많은 효과가 포함되는지에 따라서 매우 복잡해질 수 있습니다. 라이트, 그림자, 투명도, 이미지 이펙트, 볼륨 효과 등을 모두 올바른 순서로 처리해야 최종 이미지에 도달할 수 있습니다. 이 과정은 렌더 파이프라인이라고 알려져 있습니다.</p>
+					<p>&#xBB34;&#xC5C7;&#xC778;&#xAC00;&#xB97C; &#xADF8;&#xB9AC;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xC720;&#xB2C8;&#xD2F0;&#xB294; &#xC5B4;&#xB5A4; &#xD615;&#xCCB4;&#xB4E4;&#xC774; &#xC5B8;&#xC81C;, &#xC5B4;&#xB514;&#xC11C;, &#xC5B4;&#xB5A4; &#xC124;&#xC815;&#xC73C;&#xB85C; &#xADF8;&#xB824;&#xC9C8;&#xC9C0; &#xACB0;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xC5BC;&#xB9C8;&#xB098; &#xB9CE;&#xC740; &#xD6A8;&#xACFC;&#xAC00; &#xD3EC;&#xD568;&#xB418;&#xB294;&#xC9C0;&#xC5D0; &#xB530;&#xB77C;&#xC11C; &#xB9E4;&#xC6B0; &#xBCF5;&#xC7A1;&#xD574;&#xC9C8; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB77C;&#xC774;&#xD2B8;, &#xADF8;&#xB9BC;&#xC790;, &#xD22C;&#xBA85;&#xB3C4;, &#xC774;&#xBBF8;&#xC9C0; &#xC774;&#xD399;&#xD2B8;, &#xBCFC;&#xB968; &#xD6A8;&#xACFC; &#xB4F1;&#xC744; &#xBAA8;&#xB450; &#xC62C;&#xBC14;&#xB978; &#xC21C;&#xC11C;&#xB85C; &#xCC98;&#xB9AC;&#xD574;&#xC57C; &#xCD5C;&#xC885; &#xC774;&#xBBF8;&#xC9C0;&#xC5D0; &#xB3C4;&#xB2EC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774; &#xACFC;&#xC815;&#xC740; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC774;&#xB77C;&#xACE0; &#xC54C;&#xB824;&#xC838; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 					
-					<p>유니티 2017은 두 개의 미리 정의된 렌더 파이프라인을 지원하는데 하나는 포워드 렌더링이고 다른 하나는 디퍼드(지연된) 렌더링입니다. 유니티 5에서 소개되었던 오래된 디퍼드 렌더링도 아직 지원합니다. 이런 파이프라인들은 고정되어 있습니다. 파이프라인의 특정 부분을 활성화, 비활성화, 오버라이드 할 수 있지만, 유니티의 설계에서 크게 벗어날 수는 없습니다. </p>
+					<p>&#xC720;&#xB2C8;&#xD2F0; 2017&#xC740; &#xB450; &#xAC1C;&#xC758; &#xBBF8;&#xB9AC; &#xC815;&#xC758;&#xB41C; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xB294;&#xB370; &#xD558;&#xB098;&#xB294; &#xD3EC;&#xC6CC;&#xB4DC; &#xB80C;&#xB354;&#xB9C1;&#xC774;&#xACE0; &#xB2E4;&#xB978; &#xD558;&#xB098;&#xB294; &#xB514;&#xD37C;&#xB4DC;(&#xC9C0;&#xC5F0;&#xB41C;) &#xB80C;&#xB354;&#xB9C1;&#xC785;&#xB2C8;&#xB2E4;. &#xC720;&#xB2C8;&#xD2F0; 5&#xC5D0;&#xC11C; &#xC18C;&#xAC1C;&#xB418;&#xC5C8;&#xB358; &#xC624;&#xB798;&#xB41C; &#xB514;&#xD37C;&#xB4DC; &#xB80C;&#xB354;&#xB9C1;&#xB3C4; &#xC544;&#xC9C1; &#xC9C0;&#xC6D0;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB7F0; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xB4E4;&#xC740; &#xACE0;&#xC815;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC758; &#xD2B9;&#xC815; &#xBD80;&#xBD84;&#xC744; &#xD65C;&#xC131;&#xD654;, &#xBE44;&#xD65C;&#xC131;&#xD654;, &#xC624;&#xBC84;&#xB77C;&#xC774;&#xB4DC; &#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC;, &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xC124;&#xACC4;&#xC5D0;&#xC11C; &#xD06C;&#xAC8C; &#xBC97;&#xC5B4;&#xB0A0; &#xC218;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 					
-					<p>유니티 2018에서는 스크립터블 렌더 파이프라인을 지원하기 시작하여 밑바닥부터 새로 파이프라인을 설계할 수 있게 하였지만 컬링을 비롯한 여러 개별적인 단계에서는 여전히 유니티에 의존해야 합니다.  유니티 2018에서는 이 방식으로 만들어진 새 파이프라인이 두 가지 소개되었습니다. 경량(lightweight) 파이프라인과 고화질(high-definition) 파이프라인입니다.  두 파이프라인 모두 아직 프리뷰 단계이고 스크립터블 렌더 파이프라인 API도 아직 실험적인 기술로 표시되어 있습니다.  그러나 이 시점에서도 자체적인 파이프라인을 만들기에는 충분히 안정적입니다. </p>
+					<p>&#xC720;&#xB2C8;&#xD2F0; 2018&#xC5D0;&#xC11C;&#xB294; &#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xC9C0;&#xC6D0;&#xD558;&#xAE30; &#xC2DC;&#xC791;&#xD558;&#xC5EC; &#xBC11;&#xBC14;&#xB2E5;&#xBD80;&#xD130; &#xC0C8;&#xB85C; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xC124;&#xACC4;&#xD560; &#xC218; &#xC788;&#xAC8C; &#xD558;&#xC600;&#xC9C0;&#xB9CC; &#xCEEC;&#xB9C1;&#xC744; &#xBE44;&#xB86F;&#xD55C; &#xC5EC;&#xB7EC; &#xAC1C;&#xBCC4;&#xC801;&#xC778; &#xB2E8;&#xACC4;&#xC5D0;&#xC11C;&#xB294; &#xC5EC;&#xC804;&#xD788; &#xC720;&#xB2C8;&#xD2F0;&#xC5D0; &#xC758;&#xC874;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.  &#xC720;&#xB2C8;&#xD2F0; 2018&#xC5D0;&#xC11C;&#xB294; &#xC774; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C4; &#xC0C8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC774; &#xB450; &#xAC00;&#xC9C0; &#xC18C;&#xAC1C;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xACBD;&#xB7C9;(lightweight) &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xACFC; &#xACE0;&#xD654;&#xC9C8;(high-definition) &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC785;&#xB2C8;&#xB2E4;.  &#xB450; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xBAA8;&#xB450; &#xC544;&#xC9C1; &#xD504;&#xB9AC;&#xBDF0; &#xB2E8;&#xACC4;&#xC774;&#xACE0; &#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; API&#xB3C4; &#xC544;&#xC9C1; &#xC2E4;&#xD5D8;&#xC801;&#xC778; &#xAE30;&#xC220;&#xB85C; &#xD45C;&#xC2DC;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xADF8;&#xB7EC;&#xB098; &#xC774; &#xC2DC;&#xC810;&#xC5D0;&#xC11C;&#xB3C4; &#xC790;&#xCCB4;&#xC801;&#xC778; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xB9CC;&#xB4E4;&#xAE30;&#xC5D0;&#xB294; &#xCDA9;&#xBD84;&#xD788; &#xC548;&#xC815;&#xC801;&#xC785;&#xB2C8;&#xB2E4;. </p>
 					
-					<p>이 튜토리얼에서 우리는 라이팅 되지 않은(unlit) 형체들을 그리는 최소한의 렌더 파이프라인을 구성하겠습니다. 일단 파이프라인이 동작하면, 라이팅, 그림자 및 고급 기능들을 넣으면서 이어지는 튜토리얼에서 파이프라인을 확장할 수 있습니다. </p>
+					<p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC5D0;&#xC11C; &#xC6B0;&#xB9AC;&#xB294; &#xB77C;&#xC774;&#xD305; &#xB418;&#xC9C0; &#xC54A;&#xC740;(unlit) &#xD615;&#xCCB4;&#xB4E4;&#xC744; &#xADF8;&#xB9AC;&#xB294; &#xCD5C;&#xC18C;&#xD55C;&#xC758; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xAD6C;&#xC131;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC77C;&#xB2E8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC774; &#xB3D9;&#xC791;&#xD558;&#xBA74;, &#xB77C;&#xC774;&#xD305;, &#xADF8;&#xB9BC;&#xC790; &#xBC0F; &#xACE0;&#xAE09; &#xAE30;&#xB2A5;&#xB4E4;&#xC744; &#xB123;&#xC73C;&#xBA74;&#xC11C; &#xC774;&#xC5B4;&#xC9C0;&#xB294; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC5D0;&#xC11C; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xD655;&#xC7A5;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 					
 					<section>
-						<h3>프로젝트 설정</h3>
+						<h3>&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xC124;&#xC815;</h3>
 						
-						<p>유니티 2018을 열고 새 프로젝트를 만드세요. 저는 유니티 2018.2.9f1을 사용중이지만, 2018.2 버전 이상이라면 잘 동작합니다. 애널리틱스를 비활성화한 표준 3D 프로젝트를 만드세요. 우리는 자체적인인 파이프라인을 만들 예정이니 파이프라인 옵션은 선택하지 마세요.</p>
+						<p>&#xC720;&#xB2C8;&#xD2F0; 2018&#xC744; &#xC5F4;&#xACE0; &#xC0C8; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xB9CC;&#xB4DC;&#xC138;&#xC694;. &#xC800;&#xB294; &#xC720;&#xB2C8;&#xD2F0; 2018.2.9f1&#xC744; &#xC0AC;&#xC6A9;&#xC911;&#xC774;&#xC9C0;&#xB9CC;, 2018.2 &#xBC84;&#xC804; &#xC774;&#xC0C1;&#xC774;&#xB77C;&#xBA74; &#xC798; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;. &#xC560;&#xB110;&#xB9AC;&#xD2F1;&#xC2A4;&#xB97C; &#xBE44;&#xD65C;&#xC131;&#xD654;&#xD55C; &#xD45C;&#xC900; 3D &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xB97C; &#xB9CC;&#xB4DC;&#xC138;&#xC694;. &#xC6B0;&#xB9AC;&#xB294; &#xC790;&#xCCB4;&#xC801;&#xC778;&#xC778; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xB9CC;&#xB4E4; &#xC608;&#xC815;&#xC774;&#xB2C8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC635;&#xC158;&#xC740; &#xC120;&#xD0DD;&#xD558;&#xC9C0; &#xB9C8;&#xC138;&#xC694;.</p>
 						
-						<p>일단 프로젝트가 열리면, <em>Window / Package Manager</em>를 통해 패키지 매니저로 가서 기본으로 포함된 모든 패키지들을 제거하세요. 우리에게는 필요하지 않습니다. <em>Package manager UI</em>만 남겨 두세요. 제거할 수 없습니다.</p>
+						<p>&#xC77C;&#xB2E8; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xAC00; &#xC5F4;&#xB9AC;&#xBA74;, <em>Window / Package Manager</em>&#xB97C; &#xD1B5;&#xD574; &#xD328;&#xD0A4;&#xC9C0; &#xB9E4;&#xB2C8;&#xC800;&#xB85C; &#xAC00;&#xC11C; &#xAE30;&#xBCF8;&#xC73C;&#xB85C; &#xD3EC;&#xD568;&#xB41C; &#xBAA8;&#xB4E0; &#xD328;&#xD0A4;&#xC9C0;&#xB4E4;&#xC744; &#xC81C;&#xAC70;&#xD558;&#xC138;&#xC694;. &#xC6B0;&#xB9AC;&#xC5D0;&#xAC8C;&#xB294; &#xD544;&#xC694;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. <em>Package manager UI</em>&#xB9CC; &#xB0A8;&#xACA8; &#xB450;&#xC138;&#xC694;. &#xC81C;&#xAC70;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<figure>
 							<img src="creating-a-pipeline/project-start.png" width="200" height="88">
-							<figcaption>프로젝트 시작하기.</figcaption>
+							<figcaption>&#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xC2DC;&#xC791;&#xD558;&#xAE30;.</figcaption>
 						</figure>
 						
-						<p>선형 색 공간에서 작업할 예정인데, 유니티 2018은 아직 감마 공간을 기본으로 사용합니다. 그러니 <em>Edit / Project Settings / Player</em>를 통해 플레이어 설정으로 가서 <em>Other Settings</em>의 <em>Color Space</em>를 <em>Linear</em>로 바꾸세요.</p>
+						<p>&#xC120;&#xD615; &#xC0C9; &#xACF5;&#xAC04;&#xC5D0;&#xC11C; &#xC791;&#xC5C5;&#xD560; &#xC608;&#xC815;&#xC778;&#xB370;, &#xC720;&#xB2C8;&#xD2F0; 2018&#xC740; &#xC544;&#xC9C1; &#xAC10;&#xB9C8; &#xACF5;&#xAC04;&#xC744; &#xAE30;&#xBCF8;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB2C8; <em>Edit / Project Settings / Player</em>&#xB97C; &#xD1B5;&#xD574; &#xD50C;&#xB808;&#xC774;&#xC5B4; &#xC124;&#xC815;&#xC73C;&#xB85C; &#xAC00;&#xC11C; <em>Other Settings</em>&#xC758; <em>Color Space</em>&#xB97C; <em>Linear</em>&#xB85C; &#xBC14;&#xAFB8;&#xC138;&#xC694;.</p>
 						
 						<figure>
 							<img src="creating-a-pipeline/linear-color-space.png" width="315" height="68">
-							<figcaption>선형 색 공간</figcaption>
+							<figcaption>&#xC120;&#xD615; &#xC0C9; &#xACF5;&#xAC04;</figcaption>
 						</figure>
 						
-						<p>우리의 파이프라인을 테스트하기 위해서 몇 개의 간단한 재질이 필요하게 될 겁니다. 저는 네 개의 재질을 만들었습니다. 첫 번째, 빨간색의 기본 스탠다드 불투명 재질. 두 번째, 같은 재질이지만 <em>Rendering Mode</em>가 <em>Transparent</em>로 세팅되고 알파를 줄여놓은 파란색 재질. 세 번째, <em>Unlit/Color</em> 쉐이더를 사용하고 색을 노란색으로 지정한 재질. 그리고 마지막으로 아무 변경 없이<em>Unlit/Transparent</em> 쉐이더를 써서, 순수한 흰색으로 보이는 재질. </p>
+						<p>&#xC6B0;&#xB9AC;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xD14C;&#xC2A4;&#xD2B8;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xBA87; &#xAC1C;&#xC758; &#xAC04;&#xB2E8;&#xD55C; &#xC7AC;&#xC9C8;&#xC774; &#xD544;&#xC694;&#xD558;&#xAC8C; &#xB420; &#xAC81;&#xB2C8;&#xB2E4;. &#xC800;&#xB294; &#xB124; &#xAC1C;&#xC758; &#xC7AC;&#xC9C8;&#xC744; &#xB9CC;&#xB4E4;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCCAB; &#xBC88;&#xC9F8;, &#xBE68;&#xAC04;&#xC0C9;&#xC758; &#xAE30;&#xBCF8; &#xC2A4;&#xD0E0;&#xB2E4;&#xB4DC; &#xBD88;&#xD22C;&#xBA85; &#xC7AC;&#xC9C8;. &#xB450; &#xBC88;&#xC9F8;, &#xAC19;&#xC740; &#xC7AC;&#xC9C8;&#xC774;&#xC9C0;&#xB9CC; <em>Rendering Mode</em>&#xAC00; <em>Transparent</em>&#xB85C; &#xC138;&#xD305;&#xB418;&#xACE0; &#xC54C;&#xD30C;&#xB97C; &#xC904;&#xC5EC;&#xB193;&#xC740; &#xD30C;&#xB780;&#xC0C9; &#xC7AC;&#xC9C8;. &#xC138; &#xBC88;&#xC9F8;, <em>Unlit/Color</em> &#xC250;&#xC774;&#xB354;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC0C9;&#xC744; &#xB178;&#xB780;&#xC0C9;&#xC73C;&#xB85C; &#xC9C0;&#xC815;&#xD55C; &#xC7AC;&#xC9C8;. &#xADF8;&#xB9AC;&#xACE0; &#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C; &#xC544;&#xBB34; &#xBCC0;&#xACBD; &#xC5C6;&#xC774;<em>Unlit/Transparent</em> &#xC250;&#xC774;&#xB354;&#xB97C; &#xC368;&#xC11C;, &#xC21C;&#xC218;&#xD55C; &#xD770;&#xC0C9;&#xC73C;&#xB85C; &#xBCF4;&#xC774;&#xB294; &#xC7AC;&#xC9C8;. </p>
 						
 						<figure>
 							<img src="creating-a-pipeline/materials.png" width="200" height="100">
-							<figcaption>테스트 재질들</figcaption>
+							<figcaption>&#xD14C;&#xC2A4;&#xD2B8; &#xC7AC;&#xC9C8;&#xB4E4;</figcaption>
 						</figure>
 						
-						<p>네 개의 재질들 모두를 사용하여 몇 개의 오브젝트로 씬을 채우세요.</p>
+						<p>&#xB124; &#xAC1C;&#xC758; &#xC7AC;&#xC9C8;&#xB4E4; &#xBAA8;&#xB450;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xBA87; &#xAC1C;&#xC758; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB85C; &#xC52C;&#xC744; &#xCC44;&#xC6B0;&#xC138;&#xC694;.</p>
 						
 						<figure>
 							<img src="creating-a-pipeline/scene.jpg" width="360" height="140">
-							<figcaption>네 개의 재질들을 표시하는 씬</figcaption>
+							<figcaption>&#xB124; &#xAC1C;&#xC758; &#xC7AC;&#xC9C8;&#xB4E4;&#xC744; &#xD45C;&#xC2DC;&#xD558;&#xB294; &#xC52C;</figcaption>
 						</figure>
 					</section>
 					
 					<section>
-						<h3>파이프라인 애셋</h3>
+						<h3>&#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC560;&#xC14B;</h3>
 						
-						<p>현재는 유니티가 기본 포워드 렌더링 파이프라인을 사용합니다. 커스텀 파이프라인을 사용하기 위해서는 그래픽스 설정에서 선택해야 합니다. <em>Edit / Project Settings / Graphics</em>를 통해서 찾을 수 있습니다.</p>
+						<p>&#xD604;&#xC7AC;&#xB294; &#xC720;&#xB2C8;&#xD2F0;&#xAC00; &#xAE30;&#xBCF8; &#xD3EC;&#xC6CC;&#xB4DC; &#xB80C;&#xB354;&#xB9C1; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xCEE4;&#xC2A4;&#xD140; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; &#xADF8;&#xB798;&#xD53D;&#xC2A4; &#xC124;&#xC815;&#xC5D0;&#xC11C; &#xC120;&#xD0DD;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. <em>Edit / Project Settings / Graphics</em>&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xCC3E;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<figure>
 							<img src="creating-a-pipeline/default-pipeline.png" width="320" height="98">
-							<figcaption>기본 파이프라인 사용 중</figcaption>
+							<figcaption>&#xAE30;&#xBCF8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC0AC;&#xC6A9; &#xC911;</figcaption>
 						</figure>
 						
-						<p>자체적인 파이프라인을 설정하기 위해서 <em>Scriptable Render Pipeline Settings</em>필드에 파이프라인 애셋을 지정해야 합니다. 그런 애셋들은  <code>ScriptableObject</code> 타입의 <code>RenderPipelineAsset</code>을 확장해야 합니다.</p>
+						<p>&#xC790;&#xCCB4;&#xC801;&#xC778; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xC124;&#xC815;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; <em>Scriptable Render Pipeline Settings</em>&#xD544;&#xB4DC;&#xC5D0; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC560;&#xC14B;&#xC744; &#xC9C0;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7F0; &#xC560;&#xC14B;&#xB4E4;&#xC740;  <code>ScriptableObject</code> &#xD0C0;&#xC785;&#xC758; <code>RenderPipelineAsset</code>&#xC744; &#xD655;&#xC7A5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>우리의 커스텀 파이프라인 애셋을 위한 새 스크립트를 생성하세요. 파이프라인의 이름을 단순하게 <em>My Pipeline</em>이라고 하겠습니다. 따라서 애셋 타입은 <code>MyPipelineAsset</code>이 되고,  <code>UnityEngine.Experimental.Rendering</code> 네임스페이스에 정의된 <code>RenderPipelineAsset</code>을 확장해야 합니다..</p>
+						<p>&#xC6B0;&#xB9AC;&#xC758; &#xCEE4;&#xC2A4;&#xD140; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC560;&#xC14B;&#xC744; &#xC704;&#xD55C; &#xC0C8; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xC138;&#xC694;. &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC758; &#xC774;&#xB984;&#xC744; &#xB2E8;&#xC21C;&#xD558;&#xAC8C; <em>My Pipeline</em>&#xC774;&#xB77C;&#xACE0; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC560;&#xC14B; &#xD0C0;&#xC785;&#xC740; <code>MyPipelineAsset</code>&#xC774; &#xB418;&#xACE0;,  <code>UnityEngine.Experimental.Rendering</code> &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xC815;&#xC758;&#xB41C; <code>RenderPipelineAsset</code>&#xC744; &#xD655;&#xC7A5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;..</p>
 						
 						<pre><ins>using UnityEngine;</ins>
 <ins>using UnityEngine.Experimental.Rendering;</ins>
@@ -151,15 +198,15 @@
 <ins>public class MyPipelineAsset : RenderPipelineAsset {}</ins></pre>
 						
 						<aside>
-							<h3>항상 Experimental 네임스페이스에 포함될까요?</h3>
+							<h3>&#xD56D;&#xC0C1; Experimental &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xD3EC;&#xD568;&#xB420;&#xAE4C;&#xC694;?</h3>
 							<div>
-								<p>어느 시점에는 <code>UnityEngine.Rendering</code> 혹은 다른 네임스페이스로 옮겨질 겁니다. 그 때 API 역시 변경되지 않았다면, 단지 <code>using</code>문만 업데이트 하면 됩니다.</p>
+								<p>&#xC5B4;&#xB290; &#xC2DC;&#xC810;&#xC5D0;&#xB294; <code>UnityEngine.Rendering</code> &#xD639;&#xC740; &#xB2E4;&#xB978; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB85C; &#xC62E;&#xACA8;&#xC9C8; &#xAC81;&#xB2C8;&#xB2E4;. &#xADF8; &#xB54C; API &#xC5ED;&#xC2DC; &#xBCC0;&#xACBD;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xB2E4;&#xBA74;, &#xB2E8;&#xC9C0; <code>using</code>&#xBB38;&#xB9CC; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 						
-						<p>파이프라인 애셋의 주 목적은 유니티에게 렌더링을 담당하는 파이프라인 오브젝트의 인스턴스를 유지할 방법을 제공하는 것입니다.  애셋 자체는 단지 파이프라인 설정을 저장하는 장소이자 핸들입니다. 아직 아무런 설정도 없기 때문에, 유니티에게 파이프라인 오브젝트의 인스턴스를 얻을 방법을 제공해야 합니다. <code>InternalCreatePipeline</code> 메소드를 오버라이드 하면 됩니다. 그러나 아직 파이프라인 오브젝트의 타입을 정의하지 않았으므로, 현재로서는 그냥 <code>null</code>을 리턴하겠습니다.</p>
+						<p>&#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC560;&#xC14B;&#xC758; &#xC8FC; &#xBAA9;&#xC801;&#xC740; &#xC720;&#xB2C8;&#xD2F0;&#xC5D0;&#xAC8C; &#xB80C;&#xB354;&#xB9C1;&#xC744; &#xB2F4;&#xB2F9;&#xD558;&#xB294; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC720;&#xC9C0;&#xD560; &#xBC29;&#xBC95;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.  &#xC560;&#xC14B; &#xC790;&#xCCB4;&#xB294; &#xB2E8;&#xC9C0; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC124;&#xC815;&#xC744; &#xC800;&#xC7A5;&#xD558;&#xB294; &#xC7A5;&#xC18C;&#xC774;&#xC790; &#xD578;&#xB4E4;&#xC785;&#xB2C8;&#xB2E4;. &#xC544;&#xC9C1; &#xC544;&#xBB34;&#xB7F0; &#xC124;&#xC815;&#xB3C4; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xC720;&#xB2C8;&#xD2F0;&#xC5D0;&#xAC8C; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC5BB;&#xC744; &#xBC29;&#xBC95;&#xC744; &#xC81C;&#xACF5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. <code>InternalCreatePipeline</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC624;&#xBC84;&#xB77C;&#xC774;&#xB4DC; &#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xC544;&#xC9C1; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC758; &#xD0C0;&#xC785;&#xC744; &#xC815;&#xC758;&#xD558;&#xC9C0; &#xC54A;&#xC558;&#xC73C;&#xBBC0;&#xB85C;, &#xD604;&#xC7AC;&#xB85C;&#xC11C;&#xB294; &#xADF8;&#xB0E5; <code>null</code>&#xC744; &#xB9AC;&#xD134;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
-						<p><code>InternalCreatePipeline</code>의 반환 타입은 <code>IRenderPipeline</code>입니다. 타입 이름의 <em>I</em> 접두사는 인터페이스 타입임을 나타냅니다.</p>
+						<p><code>InternalCreatePipeline</code>&#xC758; &#xBC18;&#xD658; &#xD0C0;&#xC785;&#xC740; <code>IRenderPipeline</code>&#xC785;&#xB2C8;&#xB2E4;. &#xD0C0;&#xC785; &#xC774;&#xB984;&#xC758; <em>I</em> &#xC811;&#xB450;&#xC0AC;&#xB294; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xD0C0;&#xC785;&#xC784;&#xC744; &#xB098;&#xD0C0;&#xB0C5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>public class MyPipelineAsset : RenderPipelineAsset {
 
@@ -169,75 +216,75 @@
 }</pre>
 						
 						<aside>
-							<h3>인터페이스란 무엇인가요?</h3>
+							<h3>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB780; &#xBB34;&#xC5C7;&#xC778;&#xAC00;&#xC694;?</h3>
 							<div>
-								<p>인터페이스는 클래스와 유사하지만, 구현을 제공하지 않고 기능의 계약을 정의한다는 점만 다릅니다.  프로퍼티, 이벤트, 인덱서 및 메소드 원형만 제공하며, 당연히 모두 퍼블릭이 됩니다. 인터페이스를 확장하는 모든 타입은 인터페이스가 정의한 원형들에 대한 구현을 포함해야만 합니다. 인터페이스 타입의 이름 앞에는 I를 붙이는 것이 관행입니다.</p>
+								<p>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xD074;&#xB798;&#xC2A4;&#xC640; &#xC720;&#xC0AC;&#xD558;&#xC9C0;&#xB9CC;, &#xAD6C;&#xD604;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xAE30;&#xB2A5;&#xC758; &#xACC4;&#xC57D;&#xC744; &#xC815;&#xC758;&#xD55C;&#xB2E4;&#xB294; &#xC810;&#xB9CC; &#xB2E4;&#xB985;&#xB2C8;&#xB2E4;.  &#xD504;&#xB85C;&#xD37C;&#xD2F0;, &#xC774;&#xBCA4;&#xD2B8;, &#xC778;&#xB371;&#xC11C; &#xBC0F; &#xBA54;&#xC18C;&#xB4DC; &#xC6D0;&#xD615;&#xB9CC; &#xC81C;&#xACF5;&#xD558;&#xBA70;, &#xB2F9;&#xC5F0;&#xD788; &#xBAA8;&#xB450; &#xD37C;&#xBE14;&#xB9AD;&#xC774; &#xB429;&#xB2C8;&#xB2E4;. &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xD655;&#xC7A5;&#xD558;&#xB294; &#xBAA8;&#xB4E0; &#xD0C0;&#xC785;&#xC740; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xC815;&#xC758;&#xD55C; &#xC6D0;&#xD615;&#xB4E4;&#xC5D0; &#xB300;&#xD55C; &#xAD6C;&#xD604;&#xC744; &#xD3EC;&#xD568;&#xD574;&#xC57C;&#xB9CC; &#xD569;&#xB2C8;&#xB2E4;. &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4; &#xD0C0;&#xC785;&#xC758; &#xC774;&#xB984; &#xC55E;&#xC5D0;&#xB294; I&#xB97C; &#xBD99;&#xC774;&#xB294; &#xAC83;&#xC774; &#xAD00;&#xD589;&#xC785;&#xB2C8;&#xB2E4;.</p>
 								
-								<p>인터페이스는 구체적인 구현을 포함하지 않기 때문에, 클래스 그리고 구조체도 하나 이상의 인터페이스를 확장할 수 있습니다. 여러 인터페이스가 같은 원형을 정의한 경우, 인터페이스들은 그 기능이 있어야 한다는 것에만 동의합니다.  클래스의 경우에는 추상 클래스라고 하더라도 이것이 불가능합니다. 구현의 충돌로 이어질 수 있기 때문입니다.</p>
+								<p>&#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB294; &#xAD6C;&#xCCB4;&#xC801;&#xC778; &#xAD6C;&#xD604;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xD074;&#xB798;&#xC2A4; &#xADF8;&#xB9AC;&#xACE0; &#xAD6C;&#xC870;&#xCCB4;&#xB3C4; &#xD558;&#xB098; &#xC774;&#xC0C1;&#xC758; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xD655;&#xC7A5;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5EC;&#xB7EC; &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xAC19;&#xC740; &#xC6D0;&#xD615;&#xC744; &#xC815;&#xC758;&#xD55C; &#xACBD;&#xC6B0;, &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xB4E4;&#xC740; &#xADF8; &#xAE30;&#xB2A5;&#xC774; &#xC788;&#xC5B4;&#xC57C; &#xD55C;&#xB2E4;&#xB294; &#xAC83;&#xC5D0;&#xB9CC; &#xB3D9;&#xC758;&#xD569;&#xB2C8;&#xB2E4;.  &#xD074;&#xB798;&#xC2A4;&#xC758; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xCD94;&#xC0C1; &#xD074;&#xB798;&#xC2A4;&#xB77C;&#xACE0; &#xD558;&#xB354;&#xB77C;&#xB3C4; &#xC774;&#xAC83;&#xC774; &#xBD88;&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;. &#xAD6C;&#xD604;&#xC758; &#xCDA9;&#xB3CC;&#xB85C; &#xC774;&#xC5B4;&#xC9C8; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 						
-						<p>이제 이 타입의 애셋을 프로젝트에 추가해야 합니다. 이를 가능하게 하려면 <code>MyPipelineAsset</code> 에 <code>CreateAssetMenu</code> 속성을 추가하세요.</p>
+						<p>&#xC774;&#xC81C; &#xC774; &#xD0C0;&#xC785;&#xC758; &#xC560;&#xC14B;&#xC744; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; &#xCD94;&#xAC00;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xAC00;&#xB2A5;&#xD558;&#xAC8C; &#xD558;&#xB824;&#xBA74; <code>MyPipelineAsset</code> &#xC5D0; <code>CreateAssetMenu</code> &#xC18D;&#xC131;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC138;&#xC694;.</p>
 						
 						<pre><ins>[CreateAssetMenu]</ins>
 public class MyPipelineAsset : RenderPipelineAsset {}</pre>
 						
-						<p>이렇게 하면 <em>Asset / Create</em> 메뉴에 항목이 추가됩니다. 깔끔한 정리를 위해서 <em>Rendering</em> 서브메뉴에 넣으세요. 속성의 <code>nemuName</code> 프로퍼티를 <em>Rendering/My Pipeline</em>으로 설정하면 됩니다. 프로퍼티는 속성 타입 바로 뒤에 둥근 괄호 안에 설정할 수 있습니다.</p>
+						<p>&#xC774;&#xB807;&#xAC8C; &#xD558;&#xBA74; <em>Asset / Create</em> &#xBA54;&#xB274;&#xC5D0; &#xD56D;&#xBAA9;&#xC774; &#xCD94;&#xAC00;&#xB429;&#xB2C8;&#xB2E4;. &#xAE54;&#xB054;&#xD55C; &#xC815;&#xB9AC;&#xB97C; &#xC704;&#xD574;&#xC11C; <em>Rendering</em> &#xC11C;&#xBE0C;&#xBA54;&#xB274;&#xC5D0; &#xB123;&#xC73C;&#xC138;&#xC694;. &#xC18D;&#xC131;&#xC758; <code>nemuName</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; <em>Rendering/My Pipeline</em>&#xC73C;&#xB85C; &#xC124;&#xC815;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB294; &#xC18D;&#xC131; &#xD0C0;&#xC785; &#xBC14;&#xB85C; &#xB4A4;&#xC5D0; &#xB465;&#xADFC; &#xAD04;&#xD638; &#xC548;&#xC5D0; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
-						<pre>[CreateAssetMenu<ins>(menuName = "Rendering/My Pipeline")</ins>]
+						<pre>[CreateAssetMenu<ins>(menuName = &quot;Rendering/My Pipeline&quot;)</ins>]
 public class MyPipelineAsset : RenderPipelineAsset {}</pre>
 						
-						<p>새 메뉴 항목을 사용하여 프로젝트에 애셋을 추가하고, 이름을 <em>My Pipeline</em>으로 하세요.</p>
+						<p>&#xC0C8; &#xBA54;&#xB274; &#xD56D;&#xBAA9;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; &#xC560;&#xC14B;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xACE0;, &#xC774;&#xB984;&#xC744; <em>My Pipeline</em>&#xC73C;&#xB85C; &#xD558;&#xC138;&#xC694;.</p>
 						
 						<figure>
 							<img src="creating-a-pipeline/pipeline-asset.png" width="200" height="86">
-							<figcaption>파이프라인 애셋과 스크립트</figcaption>
+							<figcaption>&#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC560;&#xC14B;&#xACFC; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;</figcaption>
 						</figure>
 						
-						<p>그 다음에 <em>Scriptable Render Pipeline Settings</em>에 지정합니다.</p>
+						<p>&#xADF8; &#xB2E4;&#xC74C;&#xC5D0; <em>Scriptable Render Pipeline Settings</em>&#xC5D0; &#xC9C0;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<figure>
 							<img src="creating-a-pipeline/asset-in-use.png" width="320" height="90">
-							<figcaption>사용중인 애셋</figcaption>
+							<figcaption>&#xC0AC;&#xC6A9;&#xC911;&#xC778; &#xC560;&#xC14B;</figcaption>
 						</figure>
 						
-						<p>이제 기본 파이프라인을 대체했고 이로인해 몇 가지 변경이 일어납니다. 첫째, 그래픽스 설정에서 많은 옵션이 사라지며, 이는 유니티의 정보 패널에도 언급됩니다. 둘째, 유효한 대체물을 제공하지 않고 기본 파이프라인을 건너뛰었기 때문에, 더 이상 아무것도 렌더링되지 않습니다. 게임 윈도, 씬 윈도, 재질 미리보기는 더 이상 동작하지 않고, 씬 윈도만이 스카이박스를 보여줍니다.  <em>Window / Analysis / Frame Debugger</em>을 통해 프레임 디버거를 열고 활성화하면, 게임 윈도에 아무것도 그려지지 않는 것을 알 수 있습니다.</p>
+						<p>&#xC774;&#xC81C; &#xAE30;&#xBCF8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xB300;&#xCCB4;&#xD588;&#xACE0; &#xC774;&#xB85C;&#xC778;&#xD574; &#xBA87; &#xAC00;&#xC9C0; &#xBCC0;&#xACBD;&#xC774; &#xC77C;&#xC5B4;&#xB0A9;&#xB2C8;&#xB2E4;. &#xCCAB;&#xC9F8;, &#xADF8;&#xB798;&#xD53D;&#xC2A4; &#xC124;&#xC815;&#xC5D0;&#xC11C; &#xB9CE;&#xC740; &#xC635;&#xC158;&#xC774; &#xC0AC;&#xB77C;&#xC9C0;&#xBA70;, &#xC774;&#xB294; &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xC815;&#xBCF4; &#xD328;&#xB110;&#xC5D0;&#xB3C4; &#xC5B8;&#xAE09;&#xB429;&#xB2C8;&#xB2E4;. &#xB458;&#xC9F8;, &#xC720;&#xD6A8;&#xD55C; &#xB300;&#xCCB4;&#xBB3C;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xC9C0; &#xC54A;&#xACE0; &#xAE30;&#xBCF8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xAC74;&#xB108;&#xB6F0;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0;, &#xB354; &#xC774;&#xC0C1; &#xC544;&#xBB34;&#xAC83;&#xB3C4; &#xB80C;&#xB354;&#xB9C1;&#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAC8C;&#xC784; &#xC708;&#xB3C4;, &#xC52C; &#xC708;&#xB3C4;, &#xC7AC;&#xC9C8; &#xBBF8;&#xB9AC;&#xBCF4;&#xAE30;&#xB294; &#xB354; &#xC774;&#xC0C1; &#xB3D9;&#xC791;&#xD558;&#xC9C0; &#xC54A;&#xACE0;, &#xC52C; &#xC708;&#xB3C4;&#xB9CC;&#xC774; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xB97C; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;.  <em>Window / Analysis / Frame Debugger</em>&#xC744; &#xD1B5;&#xD574; &#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;&#xB97C; &#xC5F4;&#xACE0; &#xD65C;&#xC131;&#xD654;&#xD558;&#xBA74;, &#xAC8C;&#xC784; &#xC708;&#xB3C4;&#xC5D0; &#xC544;&#xBB34;&#xAC83;&#xB3C4; &#xADF8;&#xB824;&#xC9C0;&#xC9C0; &#xC54A;&#xB294; &#xAC83;&#xC744; &#xC54C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 					</section>
 					
 					<section>
-						<h3>파이프라인 인스턴스</h3>
+						<h3>&#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC778;&#xC2A4;&#xD134;&#xC2A4;</h3>
 						
-						<p>유효한 파이프라인을 만들려면  <code>IRenderPipeline</code>를 구현하고 렌더링 프로세스를 담당하는 오브젝트 인스턴스를 제공해야 합니다.  그러니 그것을 위해서 클래스를 하나 생성하고, 이름을 <code>MyPipeline</code>으로 하세요.</p>
+						<p>&#xC720;&#xD6A8;&#xD55C; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xB9CC;&#xB4E4;&#xB824;&#xBA74;  <code>IRenderPipeline</code>&#xB97C; &#xAD6C;&#xD604;&#xD558;&#xACE0; &#xB80C;&#xB354;&#xB9C1; &#xD504;&#xB85C;&#xC138;&#xC2A4;&#xB97C; &#xB2F4;&#xB2F9;&#xD558;&#xB294; &#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xC81C;&#xACF5;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.  &#xADF8;&#xB7EC;&#xB2C8; &#xADF8;&#xAC83;&#xC744; &#xC704;&#xD574;&#xC11C; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xD558;&#xB098; &#xC0DD;&#xC131;&#xD558;&#xACE0;, &#xC774;&#xB984;&#xC744; <code>MyPipeline</code>&#xC73C;&#xB85C; &#xD558;&#xC138;&#xC694;.</p>
 						
 						<pre><ins>using UnityEngine;</ins>
 <ins>using UnityEngine.Experimental.Rendering;</ins>
 
 <ins>public class MyPipeline : IRenderPipeline {}</ins></pre>
 						
-						<p><code>IRenderPipeline</code>을 직접 구현할 수도 있지만, 대신 <code>RenderPipeline</code> 추상 클래스를 확장하는 것이 더 편리합니다. 이 타입은 이미 <code>IRenderPipeline</code>의 기본적인 구현을 제공하고 있어서 기반으로써 사용할 수 있습니다.</p>
+						<p><code>IRenderPipeline</code>&#xC744; &#xC9C1;&#xC811; &#xAD6C;&#xD604;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC;, &#xB300;&#xC2E0; <code>RenderPipeline</code> &#xCD94;&#xC0C1; &#xD074;&#xB798;&#xC2A4;&#xB97C; &#xD655;&#xC7A5;&#xD558;&#xB294; &#xAC83;&#xC774; &#xB354; &#xD3B8;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xD0C0;&#xC785;&#xC740; &#xC774;&#xBBF8; <code>IRenderPipeline</code>&#xC758; &#xAE30;&#xBCF8;&#xC801;&#xC778; &#xAD6C;&#xD604;&#xC744; &#xC81C;&#xACF5;&#xD558;&#xACE0; &#xC788;&#xC5B4;&#xC11C; &#xAE30;&#xBC18;&#xC73C;&#xB85C;&#xC368; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>public class MyPipeline : <ins>RenderPipeline</ins> {}</pre>
 						
-						<p>이제 <code>InternalCreatePipeline</code>에서 <code>MyPipeline</code>의 새 인스턴스를 반환할 수 있습니다. 비록 아직 아무것도 렌더링 하지 않지만 기술적으로는 우리가 유효한 파이프라인을 가지고 있다는 의미가 됩니다.</p>
+						<p>&#xC774;&#xC81C; <code>InternalCreatePipeline</code>&#xC5D0;&#xC11C; <code>MyPipeline</code>&#xC758; &#xC0C8; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xBC18;&#xD658;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBE44;&#xB85D; &#xC544;&#xC9C1; &#xC544;&#xBB34;&#xAC83;&#xB3C4; &#xB80C;&#xB354;&#xB9C1; &#xD558;&#xC9C0; &#xC54A;&#xC9C0;&#xB9CC; &#xAE30;&#xC220;&#xC801;&#xC73C;&#xB85C;&#xB294; &#xC6B0;&#xB9AC;&#xAC00; &#xC720;&#xD6A8;&#xD55C; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xB294; &#xC758;&#xBBF8;&#xAC00; &#xB429;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>	protected override IRenderPipeline InternalCreatePipeline () {
 		return <ins>new MyPipeline()</ins>;
 	}</pre>
 					</section>
 					
-					<a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/creating-a-pipeline/creating-a-pipeline.unitypackage" download rel="nofollow">유니티 패키지</a>
+					<a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/creating-a-pipeline/creating-a-pipeline.unitypackage/" download="" rel="nofollow">&#xC720;&#xB2C8;&#xD2F0; &#xD328;&#xD0A4;&#xC9C0;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
 				</section>
 				
 				<section>
-					<h2>렌더링</h2>
+					<h2>&#xB80C;&#xB354;&#xB9C1;</h2>
 					
-					<p>파이프라인 오브젝트는 매 프레임 렌더링을 처리합니다. 유니티가 하는 일은 파이프라인의 <code>Render</code> 메소드를 호출하면서 콘텍스트와 활성화된 카메라들을 전달하는 것입니다. 이는 게임 윈도 뿐만 아니라 에디터의 씬 윈도 및 재질 미리보기에서도 수행됩니다. 적절하게 설정을 하고, 무엇을 렌더링할지 파악하고, 모든 일을 올바른 순서로 수행하는 것은 우리에게 달려 있습니다.</p>
+					<p>&#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB294; &#xB9E4; &#xD504;&#xB808;&#xC784; &#xB80C;&#xB354;&#xB9C1;&#xC744; &#xCC98;&#xB9AC;&#xD569;&#xB2C8;&#xB2E4;. &#xC720;&#xB2C8;&#xD2F0;&#xAC00; &#xD558;&#xB294; &#xC77C;&#xC740; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC758; <code>Render</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xBA74;&#xC11C; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xC640; &#xD65C;&#xC131;&#xD654;&#xB41C; &#xCE74;&#xBA54;&#xB77C;&#xB4E4;&#xC744; &#xC804;&#xB2EC;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xAC8C;&#xC784; &#xC708;&#xB3C4; &#xBFD0;&#xB9CC; &#xC544;&#xB2C8;&#xB77C; &#xC5D0;&#xB514;&#xD130;&#xC758; &#xC52C; &#xC708;&#xB3C4; &#xBC0F; &#xC7AC;&#xC9C8; &#xBBF8;&#xB9AC;&#xBCF4;&#xAE30;&#xC5D0;&#xC11C;&#xB3C4; &#xC218;&#xD589;&#xB429;&#xB2C8;&#xB2E4;. &#xC801;&#xC808;&#xD558;&#xAC8C; &#xC124;&#xC815;&#xC744; &#xD558;&#xACE0;, &#xBB34;&#xC5C7;&#xC744; &#xB80C;&#xB354;&#xB9C1;&#xD560;&#xC9C0; &#xD30C;&#xC545;&#xD558;&#xACE0;, &#xBAA8;&#xB4E0; &#xC77C;&#xC744; &#xC62C;&#xBC14;&#xB978; &#xC21C;&#xC11C;&#xB85C; &#xC218;&#xD589;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC6B0;&#xB9AC;&#xC5D0;&#xAC8C; &#xB2EC;&#xB824; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 					
 					<section>
-						<h3>콘텍스트</h3>
+						<h3>&#xCF58;&#xD14D;&#xC2A4;&#xD2B8;</h3>
 						
-						<p><code>RenderPipeline</code>은 <code>IRenderPipeline</code> 인터페이스에 정의된 <code>Render</code> 메소드의 구현을 포함합니다. 첫 번째 인수는 렌더 콘텍스트인데, 이는 <code>ScriptableRenderContext</code> 구조체이며, 네이티브 코드에 대한 파사드(facade) 역할을 합니다. 두 번째 인수는 렌더링이 필요한 모든 카메라를 포함하는 배열입니다.</p>
-						<p><code>RenderPipeline.Render</code>는 아무것도 그리지 않지만, 파이프라인 오브젝트가 렌더링에 사용할 수 있는지 여부를 검사합니다. 그렇지 않다면, 예외를 발생시킵니다. 우리는 이 메소드를 오버라이드 하고 이 검사를 유지하기 위해서 부모의 구현을 호출하겠습니다.</p>
+						<p><code>RenderPipeline</code>&#xC740; <code>IRenderPipeline</code> &#xC778;&#xD130;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xC815;&#xC758;&#xB41C; <code>Render</code> &#xBA54;&#xC18C;&#xB4DC;&#xC758; &#xAD6C;&#xD604;&#xC744; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;. &#xCCAB; &#xBC88;&#xC9F8; &#xC778;&#xC218;&#xB294; &#xB80C;&#xB354; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xC778;&#xB370;, &#xC774;&#xB294; <code>ScriptableRenderContext</code> &#xAD6C;&#xC870;&#xCCB4;&#xC774;&#xBA70;, &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xCF54;&#xB4DC;&#xC5D0; &#xB300;&#xD55C; &#xD30C;&#xC0AC;&#xB4DC;(facade) &#xC5ED;&#xD560;&#xC744; &#xD569;&#xB2C8;&#xB2E4;. &#xB450; &#xBC88;&#xC9F8; &#xC778;&#xC218;&#xB294; &#xB80C;&#xB354;&#xB9C1;&#xC774; &#xD544;&#xC694;&#xD55C; &#xBAA8;&#xB4E0; &#xCE74;&#xBA54;&#xB77C;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xB294; &#xBC30;&#xC5F4;&#xC785;&#xB2C8;&#xB2E4;.</p>
+						<p><code>RenderPipeline.Render</code>&#xB294; &#xC544;&#xBB34;&#xAC83;&#xB3C4; &#xADF8;&#xB9AC;&#xC9C0; &#xC54A;&#xC9C0;&#xB9CC;, &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xAC00; &#xB80C;&#xB354;&#xB9C1;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; &#xAC80;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB807;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74;, &#xC608;&#xC678;&#xB97C; &#xBC1C;&#xC0DD;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;. &#xC6B0;&#xB9AC;&#xB294; &#xC774; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC624;&#xBC84;&#xB77C;&#xC774;&#xB4DC; &#xD558;&#xACE0; &#xC774; &#xAC80;&#xC0AC;&#xB97C; &#xC720;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xBD80;&#xBAA8;&#xC758; &#xAD6C;&#xD604;&#xC744; &#xD638;&#xCD9C;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>public class MyPipeline : RenderPipeline {
 
@@ -248,36 +295,36 @@ public class MyPipelineAsset : RenderPipelineAsset {}</pre>
 	<ins>}</ins>
 }</pre>
 						
-						<p>렌더 콘텍스트를 통해서 유니티 엔진에 명령을 실행하여 사물을 렌더링하고 렌더 스테이트를 제어합니다. 가장 간단한 예제 중 하나는 <code>DrawSkyBox</code> 메소드를 호출하여 skybox를 그리는 것입니다.</p>
+						<p>&#xB80C;&#xB354; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xC720;&#xB2C8;&#xD2F0; &#xC5D4;&#xC9C4;&#xC5D0; &#xBA85;&#xB839;&#xC744; &#xC2E4;&#xD589;&#xD558;&#xC5EC; &#xC0AC;&#xBB3C;&#xC744; &#xB80C;&#xB354;&#xB9C1;&#xD558;&#xACE0; &#xB80C;&#xB354; &#xC2A4;&#xD14C;&#xC774;&#xD2B8;&#xB97C; &#xC81C;&#xC5B4;&#xD569;&#xB2C8;&#xB2E4;. &#xAC00;&#xC7A5; &#xAC04;&#xB2E8;&#xD55C; &#xC608;&#xC81C; &#xC911; &#xD558;&#xB098;&#xB294; <code>DrawSkyBox</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xC5EC; skybox&#xB97C; &#xADF8;&#xB9AC;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		base.Render(renderContext, cameras);
 
 		<ins>renderContext.DrawSkybox();</ins></pre>
 						
-						<p><code>DrawSkybox</code>는 인수로 카메라가 필요합니다. 단순히 <code>cameras</code>의 첫 번째 요소를 사용하겠습니다. </p>
+						<p><code>DrawSkybox</code>&#xB294; &#xC778;&#xC218;&#xB85C; &#xCE74;&#xBA54;&#xB77C;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;. &#xB2E8;&#xC21C;&#xD788; <code>cameras</code>&#xC758; &#xCCAB; &#xBC88;&#xC9F8; &#xC694;&#xC18C;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 						
 						<pre>		renderContext.DrawSkybox(<ins>cameras[0]</ins>);</pre>
 						
-						<p>아직도 게임 윈도에서 스카이박스가 보이지 않습니다. 이는 콘텍스트에 전달한 명령들이 버퍼링 되었기 때문입니다.  실제 작업은 <code>Submit</code> 메소드를 통해 실행을 요청한 후에 발생합니다. </p>
+						<p>&#xC544;&#xC9C1;&#xB3C4; &#xAC8C;&#xC784; &#xC708;&#xB3C4;&#xC5D0;&#xC11C; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xAC00; &#xBCF4;&#xC774;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xC5D0; &#xC804;&#xB2EC;&#xD55C; &#xBA85;&#xB839;&#xB4E4;&#xC774; &#xBC84;&#xD37C;&#xB9C1; &#xB418;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.  &#xC2E4;&#xC81C; &#xC791;&#xC5C5;&#xC740; <code>Submit</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xC2E4;&#xD589;&#xC744; &#xC694;&#xCCAD;&#xD55C; &#xD6C4;&#xC5D0; &#xBC1C;&#xC0DD;&#xD569;&#xB2C8;&#xB2E4;. </p>
 						
 						<pre>		renderContext.DrawSkybox(cameras[0]);
 
 		<ins>renderContext.Submit();</ins></pre>
 						
-						<p>마침내 게임 윈도에 스카이박스가 나타났고, 프레임 디버거에서도 보입니다.</p>
+						<p>&#xB9C8;&#xCE68;&#xB0B4; &#xAC8C;&#xC784; &#xC708;&#xB3C4;&#xC5D0; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xAC00; &#xB098;&#xD0C0;&#xB0AC;&#xACE0;, &#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;&#xC5D0;&#xC11C;&#xB3C4; &#xBCF4;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
 						<figure>
 							<img src="rendering/frame-debugger-skybox.png" width="208" height="34">
-							<figcaption>스카이박스가 그려지는 것을 보여주는 프레임 디버거</figcaption>
+							<figcaption>&#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xAC00; &#xADF8;&#xB824;&#xC9C0;&#xB294; &#xAC83;&#xC744; &#xBCF4;&#xC5EC;&#xC8FC;&#xB294; &#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;</figcaption>
 						</figure>
 					</section>
 					
 					<section>
-						<h3>카메라</h3>
+						<h3>&#xCE74;&#xBA54;&#xB77C;</h3>
 						
-						<p>카메라의 배열이 전달되는 것은, 씬에 렌더링 될 카메라가 여러 개 있을 수 있기 때문입니다. 다중 카메라 설정의 예에는 분할 화면 멀티 플레이어, 미니 맵 및 백미러가 있습니다. 각 카메라는 별도로 처리해야 합니다.</p>
+						<p>&#xCE74;&#xBA54;&#xB77C;&#xC758; &#xBC30;&#xC5F4;&#xC774; &#xC804;&#xB2EC;&#xB418;&#xB294; &#xAC83;&#xC740;, &#xC52C;&#xC5D0; &#xB80C;&#xB354;&#xB9C1; &#xB420; &#xCE74;&#xBA54;&#xB77C;&#xAC00; &#xC5EC;&#xB7EC; &#xAC1C; &#xC788;&#xC744; &#xC218; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC911; &#xCE74;&#xBA54;&#xB77C; &#xC124;&#xC815;&#xC758; &#xC608;&#xC5D0;&#xB294; &#xBD84;&#xD560; &#xD654;&#xBA74; &#xBA40;&#xD2F0; &#xD50C;&#xB808;&#xC774;&#xC5B4;, &#xBBF8;&#xB2C8; &#xB9F5; &#xBC0F; &#xBC31;&#xBBF8;&#xB7EC;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAC01; &#xCE74;&#xBA54;&#xB77C;&#xB294; &#xBCC4;&#xB3C4;&#xB85C; &#xCC98;&#xB9AC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>이 시점에서는 우리의 파이프라인에서 여러 카메라를 지원하는 것은 신경 쓰지 않겠습니다. 단순하게 또 다른 <code>Render</code> 메소드를 만들어서 하나의 카메라에 대해서 동작하게 하겠습니다.  스카이박스를 그리고 서브밋(submit) 하세요. 그래서 우리는 카메라당 한 번씩 서브밋 합니다.</p>
+						<p>&#xC774; &#xC2DC;&#xC810;&#xC5D0;&#xC11C;&#xB294; &#xC6B0;&#xB9AC;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC5D0;&#xC11C; &#xC5EC;&#xB7EC; &#xCE74;&#xBA54;&#xB77C;&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC2E0;&#xACBD; &#xC4F0;&#xC9C0; &#xC54A;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E8;&#xC21C;&#xD558;&#xAC8C; &#xB610; &#xB2E4;&#xB978; <code>Render</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xD558;&#xB098;&#xC758; &#xCE74;&#xBA54;&#xB77C;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xB3D9;&#xC791;&#xD558;&#xAC8C; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xB97C; &#xADF8;&#xB9AC;&#xACE0; &#xC11C;&#xBE0C;&#xBC0B;(submit) &#xD558;&#xC138;&#xC694;. &#xADF8;&#xB798;&#xC11C; &#xC6B0;&#xB9AC;&#xB294; &#xCE74;&#xBA54;&#xB77C;&#xB2F9; &#xD55C; &#xBC88;&#xC529; &#xC11C;&#xBE0C;&#xBC0B; &#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>	<ins>void Render (ScriptableRenderContext context, Camera camera) {</ins>
 		<ins>context.DrawSkybox(camera);</ins>
@@ -285,7 +332,7 @@ public class MyPipelineAsset : RenderPipelineAsset {}</pre>
 		<ins>context.Submit();</ins>
 	<ins>}</ins></pre>
 						
-						<p><code>cameras</code> 배열의 각 요소에 대해서 새 메소드를 호출하세요. 유니티의 파이프라인도 카메라들에 대해서 루프를 돌 때 이 방법을 사용하므로, 저는 이 경우에 <code>foreach</code> 루프를 사용합니다. </p>
+						<p><code>cameras</code> &#xBC30;&#xC5F4;&#xC758; &#xAC01; &#xC694;&#xC18C;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xC0C8; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xC138;&#xC694;. &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xB3C4; &#xCE74;&#xBA54;&#xB77C;&#xB4E4;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xB8E8;&#xD504;&#xB97C; &#xB3CC; &#xB54C; &#xC774; &#xBC29;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xBBC0;&#xB85C;, &#xC800;&#xB294; &#xC774; &#xACBD;&#xC6B0;&#xC5D0; <code>foreach</code> &#xB8E8;&#xD504;&#xB97C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. </p>
 						
 						<pre>	public override void Render (
 		ScriptableRenderContext renderContext, Camera[] cameras
@@ -302,21 +349,21 @@ public class MyPipelineAsset : RenderPipelineAsset {}</pre>
 	}</pre>
 						
 						<aside>
-							<h3><code>foreach</code> 는 어떻게 동작합니까?</h3>
+							<h3><code>foreach</code> &#xB294; &#xC5B4;&#xB5BB;&#xAC8C; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xAE4C;?</h3>
 							<div>
-								<p><code>a</code>가 배열이라고 가정하면, <code>foreach (var e in a) { … }</code> 는 <code>for (int i = 0; i &lt; a.Length; a++) { var e = a[i]; … }</code> 와 같이 동작합니다. 기능적으로 유일하게 다른 점은 이터레이터 변수 <code>i</code>에 접근 할 수 없다는 점입니다.</p>
+								<p><code>a</code>&#xAC00; &#xBC30;&#xC5F4;&#xC774;&#xB77C;&#xACE0; &#xAC00;&#xC815;&#xD558;&#xBA74;, <code>foreach (var e in a) { &#x2026; }</code> &#xB294; <code>for (int i = 0; i &lt; a.Length; a++) { var e = a[i]; &#x2026; }</code> &#xC640; &#xAC19;&#xC774; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;. &#xAE30;&#xB2A5;&#xC801;&#xC73C;&#xB85C; &#xC720;&#xC77C;&#xD558;&#xAC8C; &#xB2E4;&#xB978; &#xC810;&#xC740; &#xC774;&#xD130;&#xB808;&#xC774;&#xD130; &#xBCC0;&#xC218; <code>i</code>&#xC5D0; &#xC811;&#xADFC; &#xD560; &#xC218; &#xC5C6;&#xB2E4;&#xB294; &#xC810;&#xC785;&#xB2C8;&#xB2E4;.</p>
 								
-								<p><code>a</code>가 배열이 아니고 열거 가능한 어떤 것이라면, 반복자(Iterator)가 작동하고 임시 오브젝트가 생성될 수 있는데, 이는 피하는 것이 좋습니다. 그러나 배열과 함께 <code>foreach</code>를 사용하는 것은 안전합니다.</p>
+								<p><code>a</code>&#xAC00; &#xBC30;&#xC5F4;&#xC774; &#xC544;&#xB2C8;&#xACE0; &#xC5F4;&#xAC70; &#xAC00;&#xB2A5;&#xD55C; &#xC5B4;&#xB5A4; &#xAC83;&#xC774;&#xB77C;&#xBA74;, &#xBC18;&#xBCF5;&#xC790;(Iterator)&#xAC00; &#xC791;&#xB3D9;&#xD558;&#xACE0; &#xC784;&#xC2DC; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xAC00; &#xC0DD;&#xC131;&#xB420; &#xC218; &#xC788;&#xB294;&#xB370;, &#xC774;&#xB294; &#xD53C;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xBC30;&#xC5F4;&#xACFC; &#xD568;&#xAED8; <code>foreach</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC548;&#xC804;&#xD569;&#xB2C8;&#xB2E4;.</p>
 								
-								<p>배열 요소 변수를 정의하기 위해서 <code>var</code>를 사용하는 것이 일반적이므로 저도 그렇게 사용합니다.  타입은 <code>a</code>의 요소의 타입이 됩니다.</p>
+								<p>&#xBC30;&#xC5F4; &#xC694;&#xC18C; &#xBCC0;&#xC218;&#xB97C; &#xC815;&#xC758;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; <code>var</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC77C;&#xBC18;&#xC801;&#xC774;&#xBBC0;&#xB85C; &#xC800;&#xB3C4; &#xADF8;&#xB807;&#xAC8C; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.  &#xD0C0;&#xC785;&#xC740; <code>a</code>&#xC758; &#xC694;&#xC18C;&#xC758; &#xD0C0;&#xC785;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 						
-						<p>카메라의 방향은 현재로서 스카이박스의 렌더링에 영향을 주지 않습니다. 카메라를 <code>DrawSkybox</code>에 넘기고 있지만 스카이박스가 그려져야 하는지를 결정하기 위해서 사용될 뿐이며, 이는 카메라의 클리어 플래그를 통해 제어됩니다.</p>
+						<p>&#xCE74;&#xBA54;&#xB77C;&#xC758; &#xBC29;&#xD5A5;&#xC740; &#xD604;&#xC7AC;&#xB85C;&#xC11C; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xC758; &#xB80C;&#xB354;&#xB9C1;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCE74;&#xBA54;&#xB77C;&#xB97C; <code>DrawSkybox</code>&#xC5D0; &#xB118;&#xAE30;&#xACE0; &#xC788;&#xC9C0;&#xB9CC; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xAC00; &#xADF8;&#xB824;&#xC838;&#xC57C; &#xD558;&#xB294;&#xC9C0;&#xB97C; &#xACB0;&#xC815;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xB420; &#xBFD0;&#xC774;&#xBA70;, &#xC774;&#xB294; &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xD074;&#xB9AC;&#xC5B4; &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xD1B5;&#xD574; &#xC81C;&#xC5B4;&#xB429;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>스카이박스와 전체 씬을 올바르게 렌더링하기 위해서 뷰-투영 행렬을 설정해야 합니다. 변환 행렬은 카메라의 위치와 방향 (뷰 행렬)을 카메라의 원근 혹은 직교투영 (투영행렬)과 결합합니다. 이 행렬은 프레임 디버거에서 볼 수 있습니다. <em>unity_MatrixVP</em>가 그것이고, 무언가를 그릴 때 사용되는 셰이더 프로퍼티 중 하나입니다.</p>
+						<p>&#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xC640; &#xC804;&#xCCB4; &#xC52C;&#xC744; &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xB80C;&#xB354;&#xB9C1;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xBDF0;-&#xD22C;&#xC601; &#xD589;&#xB82C;&#xC744; &#xC124;&#xC815;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xBCC0;&#xD658; &#xD589;&#xB82C;&#xC740; &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xC704;&#xCE58;&#xC640; &#xBC29;&#xD5A5; (&#xBDF0; &#xD589;&#xB82C;)&#xC744; &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xC6D0;&#xADFC; &#xD639;&#xC740; &#xC9C1;&#xAD50;&#xD22C;&#xC601; (&#xD22C;&#xC601;&#xD589;&#xB82C;)&#xACFC; &#xACB0;&#xD569;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xD589;&#xB82C;&#xC740; &#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. <em>unity_MatrixVP</em>&#xAC00; &#xADF8;&#xAC83;&#xC774;&#xACE0;, &#xBB34;&#xC5B8;&#xAC00;&#xB97C; &#xADF8;&#xB9B4; &#xB54C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xC170;&#xC774;&#xB354; &#xD504;&#xB85C;&#xD37C;&#xD2F0; &#xC911; &#xD558;&#xB098;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>현재, <em>unity_MatrixVP</em> 행렬은 항상 같습니다. 카메라의 프로퍼티를 <code>SetupCameraProperties</code> 메소드를 통해 콘텍스트에 적용해야 합니다. 이 메소드는 행렬뿐 아니라 다른 프로퍼티들도 설정합니다.</p>
+						<p>&#xD604;&#xC7AC;, <em>unity_MatrixVP</em> &#xD589;&#xB82C;&#xC740; &#xD56D;&#xC0C1; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; <code>SetupCameraProperties</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xC5D0; &#xC801;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xD589;&#xB82C;&#xBFD0; &#xC544;&#xB2C8;&#xB77C; &#xB2E4;&#xB978; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB4E4;&#xB3C4; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>	void Render (ScriptableRenderContext context, Camera camera) {
 		<ins>context.SetupCameraProperties(camera);</ins>
@@ -326,15 +373,15 @@ public class MyPipelineAsset : RenderPipelineAsset {}</pre>
 		context.Submit();
 	}</pre>
 						
-						<p>이제 스카이박스는 카메라의 프로퍼티를 고려하여 게임 윈도와 씬 윈도에 올바르게 렌더링 됩니다.</p>
+						<p>&#xC774;&#xC81C; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xB294; &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xACE0;&#xB824;&#xD558;&#xC5EC; &#xAC8C;&#xC784; &#xC708;&#xB3C4;&#xC640; &#xC52C; &#xC708;&#xB3C4;&#xC5D0; &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xB80C;&#xB354;&#xB9C1; &#xB429;&#xB2C8;&#xB2E4;.</p>
 					</section>
 					
 					<section>
-						<h3>명령 버퍼</h3>
+						<h3>&#xBA85;&#xB839; &#xBC84;&#xD37C;</h3>
 						
-						<p>콘텍스트는 우리가 서브밋할 때까지 실제 렌더링을 지연시킵니다. 서브밋 전에, 나중에 실행할 명령들을 추가하고 콘텍스트를 설정합니다. 스카이박스를 그리는 것과 같은 일부 작업은 전용의 메소드를 통해서 실행할 수 있지만, 다른 명령들은 별도의 명령 버퍼를 통해 간접적으로 전달되어야 합니다.</p>
+						<p>&#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xB294; &#xC6B0;&#xB9AC;&#xAC00; &#xC11C;&#xBE0C;&#xBC0B;&#xD560; &#xB54C;&#xAE4C;&#xC9C0; &#xC2E4;&#xC81C; &#xB80C;&#xB354;&#xB9C1;&#xC744; &#xC9C0;&#xC5F0;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;. &#xC11C;&#xBE0C;&#xBC0B; &#xC804;&#xC5D0;, &#xB098;&#xC911;&#xC5D0; &#xC2E4;&#xD589;&#xD560; &#xBA85;&#xB839;&#xB4E4;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xACE0; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xB97C; &#xADF8;&#xB9AC;&#xB294; &#xAC83;&#xACFC; &#xAC19;&#xC740; &#xC77C;&#xBD80; &#xC791;&#xC5C5;&#xC740; &#xC804;&#xC6A9;&#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xC2E4;&#xD589;&#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC;, &#xB2E4;&#xB978; &#xBA85;&#xB839;&#xB4E4;&#xC740; &#xBCC4;&#xB3C4;&#xC758; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB97C; &#xD1B5;&#xD574; &#xAC04;&#xC811;&#xC801;&#xC73C;&#xB85C; &#xC804;&#xB2EC;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>명령 버퍼는 새로운 <code>CommandBuffer</code> 오브젝트를 생성하여 얻을 수 있으며 <code>UnityEngine.Rendering</code> 네임스페이스에 정의되어 있습니다. 명령 버퍼들은 스크립터블 렌더링 파이프라인이 추가되기 전에 이미 있었기 때문에 실험적인(experimental) 네임스페이스가 아닙니다. 스카이박스를 그리기 전에 버퍼를 생성하세요.</p>
+						<p>&#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB294; &#xC0C8;&#xB85C;&#xC6B4; <code>CommandBuffer</code> &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xC5EC; &#xC5BB;&#xC744; &#xC218; &#xC788;&#xC73C;&#xBA70; <code>UnityEngine.Rendering</code> &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xC815;&#xC758;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB4E4;&#xC740; &#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354;&#xB9C1; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC774; &#xCD94;&#xAC00;&#xB418;&#xAE30; &#xC804;&#xC5D0; &#xC774;&#xBBF8; &#xC788;&#xC5C8;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC2E4;&#xD5D8;&#xC801;&#xC778;(experimental) &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xAC00; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;. &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xB97C; &#xADF8;&#xB9AC;&#xAE30; &#xC804;&#xC5D0; &#xBC84;&#xD37C;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xC138;&#xC694;.</p>
 						
 						<pre>using UnityEngine;
 <ins>using UnityEngine.Rendering;</ins>
@@ -342,7 +389,7 @@ using UnityEngine.Experimental.Rendering;
 
 public class MyPipeline : RenderPipeline {
 
-	…
+	&#x2026;
 
 	void Render (ScriptableRenderContext context, Camera camera) {
 		context.SetupCameraProperties(camera);
@@ -355,34 +402,34 @@ public class MyPipeline : RenderPipeline {
 	}
 }</pre>
 						
-						<p><code>ExecuteCommandBuffer</code> 메소드를 통해서 콘텍스트에게 버퍼를 실행하라고 지시할 수 있습니다. 다시 한번, 이는 명령들을 바로 실행하는 것이 아니라 콘텍스트의 내부 버퍼로 복사합니다.</p>
+						<p><code>ExecuteCommandBuffer</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xC5D0;&#xAC8C; &#xBC84;&#xD37C;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xB77C;&#xACE0; &#xC9C0;&#xC2DC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC2DC; &#xD55C;&#xBC88;, &#xC774;&#xB294; &#xBA85;&#xB839;&#xB4E4;&#xC744; &#xBC14;&#xB85C; &#xC2E4;&#xD589;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC544;&#xB2C8;&#xB77C; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xC758; &#xB0B4;&#xBD80; &#xBC84;&#xD37C;&#xB85C; &#xBCF5;&#xC0AC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		var buffer = new CommandBuffer();
 		<ins>context.ExecuteCommandBuffer(buffer);</ins></pre>
 						
-						<p>명령 버퍼들은 유니티 엔진의 네이티브 수준에서 명령을 저장할 리소스를 요청합니다. 이런 리소스가 더 이상 필요하지 않으면 즉시 리소스를 해제하는 것이 가장 좋습니다. <code>ExecuteCommandBuffer</code>를 호출한 직후에, 버퍼의 <code>Release</code>메소드를 호출하면 됩니다.</p>
+						<p>&#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB4E4;&#xC740; &#xC720;&#xB2C8;&#xD2F0; &#xC5D4;&#xC9C4;&#xC758; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xC218;&#xC900;&#xC5D0;&#xC11C; &#xBA85;&#xB839;&#xC744; &#xC800;&#xC7A5;&#xD560; &#xB9AC;&#xC18C;&#xC2A4;&#xB97C; &#xC694;&#xCCAD;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB7F0; &#xB9AC;&#xC18C;&#xC2A4;&#xAC00; &#xB354; &#xC774;&#xC0C1; &#xD544;&#xC694;&#xD558;&#xC9C0; &#xC54A;&#xC73C;&#xBA74; &#xC989;&#xC2DC; &#xB9AC;&#xC18C;&#xC2A4;&#xB97C; &#xD574;&#xC81C;&#xD558;&#xB294; &#xAC83;&#xC774; &#xAC00;&#xC7A5; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;. <code>ExecuteCommandBuffer</code>&#xB97C; &#xD638;&#xCD9C;&#xD55C; &#xC9C1;&#xD6C4;&#xC5D0;, &#xBC84;&#xD37C;&#xC758; <code>Release</code>&#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		var buffer = new CommandBuffer();
 		context.ExecuteCommandBuffer(buffer);
 		<ins>buffer.Release();</ins></pre>
 						
-						<p>빈 명령 버퍼를 실행하면 아무 일도 하지 않습니다. 이전에 그려진 것에 의해서 렌더링이 영향을 받지 않게, 렌더 타깃을 지울 수 있도록 그것을 추가했습니다.  이는 명령 버퍼를 통해서 가능하지만, 콘텍스트를 통해서 직접적으로는 불가능합니다.</p>
+						<p>&#xBE48; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB97C; &#xC2E4;&#xD589;&#xD558;&#xBA74; &#xC544;&#xBB34; &#xC77C;&#xB3C4; &#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xC804;&#xC5D0; &#xADF8;&#xB824;&#xC9C4; &#xAC83;&#xC5D0; &#xC758;&#xD574;&#xC11C; &#xB80C;&#xB354;&#xB9C1;&#xC774; &#xC601;&#xD5A5;&#xC744; &#xBC1B;&#xC9C0; &#xC54A;&#xAC8C;, &#xB80C;&#xB354; &#xD0C0;&#xAE43;&#xC744; &#xC9C0;&#xC6B8; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xADF8;&#xAC83;&#xC744; &#xCD94;&#xAC00;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC774;&#xB294; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xAC00;&#xB2A5;&#xD558;&#xC9C0;&#xB9CC;, &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xD1B5;&#xD574;&#xC11C; &#xC9C1;&#xC811;&#xC801;&#xC73C;&#xB85C;&#xB294; &#xBD88;&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
-						<p><code>ClearRenderTarget</code>을 호출해서 클리어 명령을 버퍼에 추가할 수 있습니다.  이는 3개의 인수가 필요합니다. 2개의 부울(boolean)과 하나의 색상입니다. 첫 번째 인수는 깊이 정보를 지울지 여부, 두 번째는 색상 정보를 지울지 여부를 제어합니다. 그리고 세 번째는 클리어 색상입니다.  예를 들어, 깊이 데이터를 지우고, 색상 데이터를 무시하고, <code>Color.clear</code>를 클리어 색상으로 사용합시다. </p>
+						<p><code>ClearRenderTarget</code>&#xC744; &#xD638;&#xCD9C;&#xD574;&#xC11C; &#xD074;&#xB9AC;&#xC5B4; &#xBA85;&#xB839;&#xC744; &#xBC84;&#xD37C;&#xC5D0; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC774;&#xB294; 3&#xAC1C;&#xC758; &#xC778;&#xC218;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;. 2&#xAC1C;&#xC758; &#xBD80;&#xC6B8;(boolean)&#xACFC; &#xD558;&#xB098;&#xC758; &#xC0C9;&#xC0C1;&#xC785;&#xB2C8;&#xB2E4;. &#xCCAB; &#xBC88;&#xC9F8; &#xC778;&#xC218;&#xB294; &#xAE4A;&#xC774; &#xC815;&#xBCF4;&#xB97C; &#xC9C0;&#xC6B8;&#xC9C0; &#xC5EC;&#xBD80;, &#xB450; &#xBC88;&#xC9F8;&#xB294; &#xC0C9;&#xC0C1; &#xC815;&#xBCF4;&#xB97C; &#xC9C0;&#xC6B8;&#xC9C0; &#xC5EC;&#xBD80;&#xB97C; &#xC81C;&#xC5B4;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB9AC;&#xACE0; &#xC138; &#xBC88;&#xC9F8;&#xB294; &#xD074;&#xB9AC;&#xC5B4; &#xC0C9;&#xC0C1;&#xC785;&#xB2C8;&#xB2E4;.  &#xC608;&#xB97C; &#xB4E4;&#xC5B4;, &#xAE4A;&#xC774; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC9C0;&#xC6B0;&#xACE0;, &#xC0C9;&#xC0C1; &#xB370;&#xC774;&#xD130;&#xB97C; &#xBB34;&#xC2DC;&#xD558;&#xACE0;, <code>Color.clear</code>&#xB97C; &#xD074;&#xB9AC;&#xC5B4; &#xC0C9;&#xC0C1;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD569;&#xC2DC;&#xB2E4;. </p>
 						
 						<pre>		var buffer = new CommandBuffer();
 		<ins>buffer.ClearRenderTarget(true, false, Color.clear);</ins>
 		context.ExecuteCommandBuffer(buffer);
 		buffer.Release();</pre>
 						
-						<p>프레임 디버거는 이제 명령 버퍼가 실행되어 렌더 타깃을 지우는 것을 보여줍니다. 이 경우, Z와 스텐실이 지워지는 것으로 나타났습니다. Z는 깊이 버퍼를 의미하고, 스텐실 버퍼는 항상 지워집니다.</p>
+						<p>&#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;&#xB294; &#xC774;&#xC81C; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xAC00; &#xC2E4;&#xD589;&#xB418;&#xC5B4; &#xB80C;&#xB354; &#xD0C0;&#xAE43;&#xC744; &#xC9C0;&#xC6B0;&#xB294; &#xAC83;&#xC744; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;. &#xC774; &#xACBD;&#xC6B0;, Z&#xC640; &#xC2A4;&#xD150;&#xC2E4;&#xC774; &#xC9C0;&#xC6CC;&#xC9C0;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xB098;&#xD0C0;&#xB0AC;&#xC2B5;&#xB2C8;&#xB2E4;. Z&#xB294; &#xAE4A;&#xC774; &#xBC84;&#xD37C;&#xB97C; &#xC758;&#xBBF8;&#xD558;&#xACE0;, &#xC2A4;&#xD150;&#xC2E4; &#xBC84;&#xD37C;&#xB294; &#xD56D;&#xC0C1; &#xC9C0;&#xC6CC;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
 						
 						<figure>
 							<img src="rendering/frame-debugger-clear-command.png" width="208" height="52">
-							<figcaption>깊이와 스텐실 버퍼 지우기</figcaption>
+							<figcaption>&#xAE4A;&#xC774;&#xC640; &#xC2A4;&#xD150;&#xC2E4; &#xBC84;&#xD37C; &#xC9C0;&#xC6B0;&#xAE30;</figcaption>
 						</figure>
 						
-						<p>무엇을 지울지는 클리어 플래그와 배경색을 통해서 카메라별로 설정합니다. 렌더 타깃을 어떻게 지울지 하드코딩 하는 대신에 그 정보를 사용할 수 있습니다.</p>
+						<p>&#xBB34;&#xC5C7;&#xC744; &#xC9C0;&#xC6B8;&#xC9C0;&#xB294; &#xD074;&#xB9AC;&#xC5B4; &#xD50C;&#xB798;&#xADF8;&#xC640; &#xBC30;&#xACBD;&#xC0C9;&#xC744; &#xD1B5;&#xD574;&#xC11C; &#xCE74;&#xBA54;&#xB77C;&#xBCC4;&#xB85C; &#xC124;&#xC815;&#xD569;&#xB2C8;&#xB2E4;. &#xB80C;&#xB354; &#xD0C0;&#xAE43;&#xC744; &#xC5B4;&#xB5BB;&#xAC8C; &#xC9C0;&#xC6B8;&#xC9C0; &#xD558;&#xB4DC;&#xCF54;&#xB529; &#xD558;&#xB294; &#xB300;&#xC2E0;&#xC5D0; &#xADF8; &#xC815;&#xBCF4;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		<ins>CameraClearFlags clearFlags = camera.clearFlags;</ins>
 		buffer.ClearRenderTarget(
@@ -392,15 +439,15 @@ public class MyPipeline : RenderPipeline {
 		);</pre>
 						
 						<aside>
-							<h3>클리어 플래그는 어떻게 동작하나요?</h3>
+							<h3>&#xD074;&#xB9AC;&#xC5B4; &#xD50C;&#xB798;&#xADF8;&#xB294; &#xC5B4;&#xB5BB;&#xAC8C; &#xB3D9;&#xC791;&#xD558;&#xB098;&#xC694;?</h3>
 							<div>
-								<p><code>CameraClearFlags</code>는 비트 플래그의 세트로 사용될 수 있는 열거형입니다. 값의 각 비트는 특정 기능을 사용할지 말지를 나타내는 데 사용됩니다.</p>
+								<p><code>CameraClearFlags</code>&#xB294; &#xBE44;&#xD2B8; &#xD50C;&#xB798;&#xADF8;&#xC758; &#xC138;&#xD2B8;&#xB85C; &#xC0AC;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xB294; &#xC5F4;&#xAC70;&#xD615;&#xC785;&#xB2C8;&#xB2E4;. &#xAC12;&#xC758; &#xAC01; &#xBE44;&#xD2B8;&#xB294; &#xD2B9;&#xC815; &#xAE30;&#xB2A5;&#xC744; &#xC0AC;&#xC6A9;&#xD560;&#xC9C0; &#xB9D0;&#xC9C0;&#xB97C; &#xB098;&#xD0C0;&#xB0B4;&#xB294; &#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 								
-								<p>전체 값의 비트 플래그를 추출하려면, 비트단위 AND 연산자 <code>&amp;</code>를 사용해서 해당 값을 원하는 플래그와 결합하세요. 결과가 0이 아니라면, 플래그는 설정된 것입니다.</p>
+								<p>&#xC804;&#xCCB4; &#xAC12;&#xC758; &#xBE44;&#xD2B8; &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xCD94;&#xCD9C;&#xD558;&#xB824;&#xBA74;, &#xBE44;&#xD2B8;&#xB2E8;&#xC704; AND &#xC5F0;&#xC0B0;&#xC790; <code>&amp;</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xD574;&#xB2F9; &#xAC12;&#xC744; &#xC6D0;&#xD558;&#xB294; &#xD50C;&#xB798;&#xADF8;&#xC640; &#xACB0;&#xD569;&#xD558;&#xC138;&#xC694;. &#xACB0;&#xACFC;&#xAC00; 0&#xC774; &#xC544;&#xB2C8;&#xB77C;&#xBA74;, &#xD50C;&#xB798;&#xADF8;&#xB294; &#xC124;&#xC815;&#xB41C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 						
-						<p>명령 버퍼에 이름을 지정하지 않았으므로, 디버거에는 기본 이름인 <em>Unnamed command buffer</em>가 표시됩니다. 대신 카메라의 이름을 버퍼의 <code>name</code> 프로퍼티에 지정해서 사용합시다. 이를 위해서 오브젝트 이니셜라이저 문법을 사용하겠습니다. </p>
+						<p>&#xBA85;&#xB839; &#xBC84;&#xD37C;&#xC5D0; &#xC774;&#xB984;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xC9C0; &#xC54A;&#xC558;&#xC73C;&#xBBC0;&#xB85C;, &#xB514;&#xBC84;&#xAC70;&#xC5D0;&#xB294; &#xAE30;&#xBCF8; &#xC774;&#xB984;&#xC778; <em>Unnamed command buffer</em>&#xAC00; &#xD45C;&#xC2DC;&#xB429;&#xB2C8;&#xB2E4;. &#xB300;&#xC2E0; &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xC774;&#xB984;&#xC744; &#xBC84;&#xD37C;&#xC758; <code>name</code> &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC5D0; &#xC9C0;&#xC815;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xD569;&#xC2DC;&#xB2E4;. &#xC774;&#xB97C; &#xC704;&#xD574;&#xC11C; &#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xC774;&#xB2C8;&#xC15C;&#xB77C;&#xC774;&#xC800; &#xBB38;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 						
 						<pre>		var buffer = new CommandBuffer <ins>{</ins>
 			<ins>name = camera.name</ins>
@@ -408,60 +455,60 @@ public class MyPipeline : RenderPipeline {
 						
 						<figure>
 							<img src="rendering/frame-debugger-camera-name.png" width="208" height="52">
-							<figcaption>명령 버퍼에 카메라 이름 사용하기</figcaption>
+							<figcaption>&#xBA85;&#xB839; &#xBC84;&#xD37C;&#xC5D0; &#xCE74;&#xBA54;&#xB77C; &#xC774;&#xB984; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;</figcaption>
 						</figure>
 						
 						<aside>
-							<h3>오브젝트 이니셜라이저 문법은 어떻게 동작하나요?</h3>
+							<h3>&#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xC774;&#xB2C8;&#xC15C;&#xB77C;&#xC774;&#xC800; &#xBB38;&#xBC95;&#xC740; &#xC5B4;&#xB5BB;&#xAC8C; &#xB3D9;&#xC791;&#xD558;&#xB098;&#xC694;?</h3>
 							<div>
-								<p>우리는 생성자를 호출한 후에 별도 명령문으로 <code>buffer.name = camera.name;</code>과 같이 작성할 수도 있었습니다.  그러나 새 오브젝트를 만들때 생성자의 호출에 코드 블록을 덧붙일 수 있습니다. 그 다음 오브젝트의 인스턴스를 명시적으로 참조할 필요 없이 블록에서 오브젝트의 필드와 프로퍼티를 설정할 수 있습니다. 또한, 이는 인스턴스를 그런 필드와 프로퍼티가 설정된 후에만 사용해야 한다고 명시합니다. 그 외에도, 하나의 명령문만 허용되는 상황에서 다양한 매겨변수를 갖는 생성자들이 없어도 초기화가 가능해집니다.</p>
+								<p>&#xC6B0;&#xB9AC;&#xB294; &#xC0DD;&#xC131;&#xC790;&#xB97C; &#xD638;&#xCD9C;&#xD55C; &#xD6C4;&#xC5D0; &#xBCC4;&#xB3C4; &#xBA85;&#xB839;&#xBB38;&#xC73C;&#xB85C; <code>buffer.name = camera.name;</code>&#xACFC; &#xAC19;&#xC774; &#xC791;&#xC131;&#xD560; &#xC218;&#xB3C4; &#xC788;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xADF8;&#xB7EC;&#xB098; &#xC0C8; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xB9CC;&#xB4E4;&#xB54C; &#xC0DD;&#xC131;&#xC790;&#xC758; &#xD638;&#xCD9C;&#xC5D0; &#xCF54;&#xB4DC; &#xBE14;&#xB85D;&#xC744; &#xB367;&#xBD99;&#xC77C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8; &#xB2E4;&#xC74C; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC758; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xBA85;&#xC2DC;&#xC801;&#xC73C;&#xB85C; &#xCC38;&#xC870;&#xD560; &#xD544;&#xC694; &#xC5C6;&#xC774; &#xBE14;&#xB85D;&#xC5D0;&#xC11C; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC758; &#xD544;&#xB4DC;&#xC640; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xB97C; &#xC124;&#xC815;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C;, &#xC774;&#xB294; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xB97C; &#xADF8;&#xB7F0; &#xD544;&#xB4DC;&#xC640; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xAC00; &#xC124;&#xC815;&#xB41C; &#xD6C4;&#xC5D0;&#xB9CC; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD55C;&#xB2E4;&#xACE0; &#xBA85;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8; &#xC678;&#xC5D0;&#xB3C4;, &#xD558;&#xB098;&#xC758; &#xBA85;&#xB839;&#xBB38;&#xB9CC; &#xD5C8;&#xC6A9;&#xB418;&#xB294; &#xC0C1;&#xD669;&#xC5D0;&#xC11C; &#xB2E4;&#xC591;&#xD55C; &#xB9E4;&#xACA8;&#xBCC0;&#xC218;&#xB97C; &#xAC16;&#xB294; &#xC0DD;&#xC131;&#xC790;&#xB4E4;&#xC774; &#xC5C6;&#xC5B4;&#xB3C4; &#xCD08;&#xAE30;&#xD654;&#xAC00; &#xAC00;&#xB2A5;&#xD574;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
 								
-								<p>생성자 호출시 빈 파라미터 리스트를 생략했는데, 이는 오브젝트 이니셜라이저 문법을 사용할 때 허용됩니다.</p>
+								<p>&#xC0DD;&#xC131;&#xC790; &#xD638;&#xCD9C;&#xC2DC; &#xBE48; &#xD30C;&#xB77C;&#xBBF8;&#xD130; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; &#xC0DD;&#xB7B5;&#xD588;&#xB294;&#xB370;, &#xC774;&#xB294; &#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xC774;&#xB2C8;&#xC15C;&#xB77C;&#xC774;&#xC800; &#xBB38;&#xBC95;&#xC744; &#xC0AC;&#xC6A9;&#xD560; &#xB54C; &#xD5C8;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 					</section>
 					
 					<section>
-						<h3>컬링</h3>
+						<h3>&#xCEEC;&#xB9C1;</h3>
 						
-						<p>스카이박스를 렌더링할 수는 있지만 씬에 넣은 오브젝트들은 아직 렌더링할 수 없습니다. 모든 오브젝트를 렌더링 하는 대신에 카메라가 볼 수 있는 것들만 렌더링하겠습니다. 이는 씬의 모든 렌더러로 시작해서 카메라의 뷰 프러스텀(절두체) 바깥에 있는 객체들을 컬링하는 식으로 수행합니다.</p>
+						<p>&#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xB97C; &#xB80C;&#xB354;&#xB9C1;&#xD560; &#xC218;&#xB294; &#xC788;&#xC9C0;&#xB9CC; &#xC52C;&#xC5D0; &#xB123;&#xC740; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB4E4;&#xC740; &#xC544;&#xC9C1; &#xB80C;&#xB354;&#xB9C1;&#xD560; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBAA8;&#xB4E0; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xB80C;&#xB354;&#xB9C1; &#xD558;&#xB294; &#xB300;&#xC2E0;&#xC5D0; &#xCE74;&#xBA54;&#xB77C;&#xAC00; &#xBCFC; &#xC218; &#xC788;&#xB294; &#xAC83;&#xB4E4;&#xB9CC; &#xB80C;&#xB354;&#xB9C1;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xC52C;&#xC758; &#xBAA8;&#xB4E0; &#xB80C;&#xB354;&#xB7EC;&#xB85C; &#xC2DC;&#xC791;&#xD574;&#xC11C; &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xBDF0; &#xD504;&#xB7EC;&#xC2A4;&#xD140;(&#xC808;&#xB450;&#xCCB4;) &#xBC14;&#xAE65;&#xC5D0; &#xC788;&#xB294; &#xAC1D;&#xCCB4;&#xB4E4;&#xC744; &#xCEEC;&#xB9C1;&#xD558;&#xB294; &#xC2DD;&#xC73C;&#xB85C; &#xC218;&#xD589;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<aside>
-							<h3>렌더러란 무엇인가요?</h3>
+							<h3>&#xB80C;&#xB354;&#xB7EC;&#xB780; &#xBB34;&#xC5C7;&#xC778;&#xAC00;&#xC694;?</h3>
 							<div>
-								<p>게임 오브젝트에 추가되는 컴포넌트로 게임오브젝트를 렌더링할 수 있는 어떤 것으로 바꿉니다. 일반적으로 <code>MeshRenderer</code> 컴포넌트 입니다.</p>
+								<p>&#xAC8C;&#xC784; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC5D0; &#xCD94;&#xAC00;&#xB418;&#xB294; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB85C; &#xAC8C;&#xC784;&#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xB80C;&#xB354;&#xB9C1;&#xD560; &#xC218; &#xC788;&#xB294; &#xC5B4;&#xB5A4; &#xAC83;&#xC73C;&#xB85C; &#xBC14;&#xAFC9;&#xB2C8;&#xB2E4;. &#xC77C;&#xBC18;&#xC801;&#xC73C;&#xB85C; <code>MeshRenderer</code> &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8; &#xC785;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 						
-						<p>어떤 것을 컬링할 수 있을지 알아내려면 여러 카메라 설정과 행렬을 추적해야 하는데, 이를 위해서 <code>ScriptableCullingParameters</code> 구조체를 사용할 수 있습니다. 우리가 직접 채우는 대신에 <code>CullResult.GetCullingParameters</code> 정적 메소드에게 부탁할 수 있습니다.  입력으로 카메라를 받고 출력으로 컬링 파라미터를 생성합니다. 그러나 파라미터 구조체를 반환하지는 않습니다. 대신, 두 번째 파라미터의 앞에 <code>out</code>을 붙여서 출력 파라미터로 넘겨주어야 합니다. </p>
+						<p>&#xC5B4;&#xB5A4; &#xAC83;&#xC744; &#xCEEC;&#xB9C1;&#xD560; &#xC218; &#xC788;&#xC744;&#xC9C0; &#xC54C;&#xC544;&#xB0B4;&#xB824;&#xBA74; &#xC5EC;&#xB7EC; &#xCE74;&#xBA54;&#xB77C; &#xC124;&#xC815;&#xACFC; &#xD589;&#xB82C;&#xC744; &#xCD94;&#xC801;&#xD574;&#xC57C; &#xD558;&#xB294;&#xB370;, &#xC774;&#xB97C; &#xC704;&#xD574;&#xC11C; <code>ScriptableCullingParameters</code> &#xAD6C;&#xC870;&#xCCB4;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC6B0;&#xB9AC;&#xAC00; &#xC9C1;&#xC811; &#xCC44;&#xC6B0;&#xB294; &#xB300;&#xC2E0;&#xC5D0; <code>CullResult.GetCullingParameters</code> &#xC815;&#xC801; &#xBA54;&#xC18C;&#xB4DC;&#xC5D0;&#xAC8C; &#xBD80;&#xD0C1;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC785;&#xB825;&#xC73C;&#xB85C; &#xCE74;&#xBA54;&#xB77C;&#xB97C; &#xBC1B;&#xACE0; &#xCD9C;&#xB825;&#xC73C;&#xB85C; &#xCEEC;&#xB9C1; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xC0DD;&#xC131;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xD30C;&#xB77C;&#xBBF8;&#xD130; &#xAD6C;&#xC870;&#xCCB4;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xC9C0;&#xB294; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB300;&#xC2E0;, &#xB450; &#xBC88;&#xC9F8; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC758; &#xC55E;&#xC5D0; <code>out</code>&#xC744; &#xBD99;&#xC5EC;&#xC11C; &#xCD9C;&#xB825; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB85C; &#xB118;&#xACA8;&#xC8FC;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. </p>
 						
 						<pre>	void Render (ScriptableRenderContext context, Camera camera) {
 		<ins>ScriptableCullingParameters cullingParameters;</ins>
 		<ins>CullResults.GetCullingParameters(camera, out cullingParameters);</ins>
 
-		…
+		&#x2026;
 	}</pre>
 						
 						<aside>
-							<h3>왜 <code>out</code>을 붙여줘야 하나요?</h3>
+							<h3>&#xC65C; <code>out</code>&#xC744; &#xBD99;&#xC5EC;&#xC918;&#xC57C; &#xD558;&#xB098;&#xC694;?</h3>
 							<div>
-								<p>구조체는 값 타입이므로 단순한 값처럼 취급됩니다. 독자적인 오브젝트가 아니며 변수나 필드로 메모리상의 위치에 대한 참조만 가지고 있습니다. 따라서 구조체를 인수로 넘기면 메소드에는 복사본이 전달됩니다. 메소드는 복사본을 변경할 수 있지만 원본에는 아무 영향을 주지 않습니다.</p>
+								<p>&#xAD6C;&#xC870;&#xCCB4;&#xB294; &#xAC12; &#xD0C0;&#xC785;&#xC774;&#xBBC0;&#xB85C; &#xB2E8;&#xC21C;&#xD55C; &#xAC12;&#xCC98;&#xB7FC; &#xCDE8;&#xAE09;&#xB429;&#xB2C8;&#xB2E4;. &#xB3C5;&#xC790;&#xC801;&#xC778; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xAC00; &#xC544;&#xB2C8;&#xBA70; &#xBCC0;&#xC218;&#xB098; &#xD544;&#xB4DC;&#xB85C; &#xBA54;&#xBAA8;&#xB9AC;&#xC0C1;&#xC758; &#xC704;&#xCE58;&#xC5D0; &#xB300;&#xD55C; &#xCC38;&#xC870;&#xB9CC; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xAD6C;&#xC870;&#xCCB4;&#xB97C; &#xC778;&#xC218;&#xB85C; &#xB118;&#xAE30;&#xBA74; &#xBA54;&#xC18C;&#xB4DC;&#xC5D0;&#xB294; &#xBCF5;&#xC0AC;&#xBCF8;&#xC774; &#xC804;&#xB2EC;&#xB429;&#xB2C8;&#xB2E4;. &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xBCF5;&#xC0AC;&#xBCF8;&#xC744; &#xBCC0;&#xACBD;&#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC; &#xC6D0;&#xBCF8;&#xC5D0;&#xB294; &#xC544;&#xBB34; &#xC601;&#xD5A5;&#xC744; &#xC8FC;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 								
-								<p>구조체 파라미터가 출력 파라미터로 정의되면 오브젝트 참조처럼 동작하지만 인수가 존재하는 메모리 스택상의 위치를 가리킵니다. 메소드가 인수를 변경하면 복사본이 아닌 원본에 영향을 줍니다.</p>
+								<p>&#xAD6C;&#xC870;&#xCCB4; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xAC00; &#xCD9C;&#xB825; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB85C; &#xC815;&#xC758;&#xB418;&#xBA74; &#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xCC38;&#xC870;&#xCC98;&#xB7FC; &#xB3D9;&#xC791;&#xD558;&#xC9C0;&#xB9CC; &#xC778;&#xC218;&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xB294; &#xBA54;&#xBAA8;&#xB9AC; &#xC2A4;&#xD0DD;&#xC0C1;&#xC758; &#xC704;&#xCE58;&#xB97C; &#xAC00;&#xB9AC;&#xD0B5;&#xB2C8;&#xB2E4;. &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xC778;&#xC218;&#xB97C; &#xBCC0;&#xACBD;&#xD558;&#xBA74; &#xBCF5;&#xC0AC;&#xBCF8;&#xC774; &#xC544;&#xB2CC; &#xC6D0;&#xBCF8;&#xC5D0; &#xC601;&#xD5A5;&#xC744; &#xC90D;&#xB2C8;&#xB2E4;.</p>
 								
-								<p><code>out</code> 키워드는 메소드가 이전 값을 대체해서 올바른 값을 설정할 책임이 있음을 알려줍니다.</p>
+								<p><code>out</code> &#xD0A4;&#xC6CC;&#xB4DC;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xC774;&#xC804; &#xAC12;&#xC744; &#xB300;&#xCCB4;&#xD574;&#xC11C; &#xC62C;&#xBC14;&#xB978; &#xAC12;&#xC744; &#xC124;&#xC815;&#xD560; &#xCC45;&#xC784;&#xC774; &#xC788;&#xC74C;&#xC744; &#xC54C;&#xB824;&#xC90D;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 						
-						<p>출력 파라미터 외에도 <code>GetCullingParameters</code>는 유효한 파라미터를 생성할 수 있었는지 여부도 반환합니다.  모든 카메라의 설정이 유효하지는 않으므로 컬링에 사용할 수 없는 잘못된 결과가 나올 수 있습니다. 그래서 실패하면 렌더링할 것이 없으므로 <code>Render</code>를 종료할 수 있습니다.</p>
+						<p>&#xCD9C;&#xB825; &#xD30C;&#xB77C;&#xBBF8;&#xD130; &#xC678;&#xC5D0;&#xB3C4; <code>GetCullingParameters</code>&#xB294; &#xC720;&#xD6A8;&#xD55C; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xC0DD;&#xC131;&#xD560; &#xC218; &#xC788;&#xC5C8;&#xB294;&#xC9C0; &#xC5EC;&#xBD80;&#xB3C4; &#xBC18;&#xD658;&#xD569;&#xB2C8;&#xB2E4;.  &#xBAA8;&#xB4E0; &#xCE74;&#xBA54;&#xB77C;&#xC758; &#xC124;&#xC815;&#xC774; &#xC720;&#xD6A8;&#xD558;&#xC9C0;&#xB294; &#xC54A;&#xC73C;&#xBBC0;&#xB85C; &#xCEEC;&#xB9C1;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC5C6;&#xB294; &#xC798;&#xBABB;&#xB41C; &#xACB0;&#xACFC;&#xAC00; &#xB098;&#xC62C; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; &#xC2E4;&#xD328;&#xD558;&#xBA74; &#xB80C;&#xB354;&#xB9C1;&#xD560; &#xAC83;&#xC774; &#xC5C6;&#xC73C;&#xBBC0;&#xB85C; <code>Render</code>&#xB97C; &#xC885;&#xB8CC;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		<ins>if (!</ins>CullResults.GetCullingParameters(camera, out cullingParameters)<ins>) {</ins>
 			<ins>return;</ins>
 		<ins>}</ins></pre>
 						
-						<p>일단 컬링 파라미터를 구했다면 컬링에 사용할 수 있습니다. 컬링 파라미터와 콘텍스트를 인수로 <code>CullResults.Cull</code> 정적 메소드를 호출하면 됩니다.  결과는 <code>CullResults</code> 구조체이며 무엇이 보이는지에 대한 정보를 갖습니다.</p>
+						<p>&#xC77C;&#xB2E8; &#xCEEC;&#xB9C1; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xAD6C;&#xD588;&#xB2E4;&#xBA74; &#xCEEC;&#xB9C1;&#xC5D0; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCEEC;&#xB9C1; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC640; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xC778;&#xC218;&#xB85C; <code>CullResults.Cull</code> &#xC815;&#xC801; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.  &#xACB0;&#xACFC;&#xB294; <code>CullResults</code> &#xAD6C;&#xC870;&#xCCB4;&#xC774;&#xBA70; &#xBB34;&#xC5C7;&#xC774; &#xBCF4;&#xC774;&#xB294;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC815;&#xBCF4;&#xB97C; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>이 경우, 컬링 파라미터를 참조 파라미터로 넘겨야 하므로 앞에 <code>ref</code>를 붙입니다.</p>
+						<p>&#xC774; &#xACBD;&#xC6B0;, &#xCEEC;&#xB9C1; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xCC38;&#xC870; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB85C; &#xB118;&#xACA8;&#xC57C; &#xD558;&#xBBC0;&#xB85C; &#xC55E;&#xC5D0; <code>ref</code>&#xB97C; &#xBD99;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		if (!CullResults.GetCullingParameters(camera, out cullingParameters)) {
 			return;
@@ -470,25 +517,25 @@ public class MyPipeline : RenderPipeline {
 		<ins>CullResults cull = CullResults.Cull(ref cullingParameters, context);</ins></pre>
 						
 						<aside>
-							<h3>왜 <code>ref</code>를 붙여야 하나요?</h3>
+							<h3>&#xC65C; <code>ref</code>&#xB97C; &#xBD99;&#xC5EC;&#xC57C; &#xD558;&#xB098;&#xC694;?</h3>
 							<div>
-								<p><code>out</code>과 동일하게 동작하지만 이 경우에는 메소드가 어떤 값을 할당할 필요가 없다는 점이 다릅니다. 메소드를 호출하는 쪽에서 먼저 값을 올바르게 초기화 할 책임을 갖습니다. 따라서 입력을 위해 사용될 수도 있고 선택적으로 출력을 위해서 사용될 수 있습니다.</p>
+								<p><code>out</code>&#xACFC; &#xB3D9;&#xC77C;&#xD558;&#xAC8C; &#xB3D9;&#xC791;&#xD558;&#xC9C0;&#xB9CC; &#xC774; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xC5B4;&#xB5A4; &#xAC12;&#xC744; &#xD560;&#xB2F9;&#xD560; &#xD544;&#xC694;&#xAC00; &#xC5C6;&#xB2E4;&#xB294; &#xC810;&#xC774; &#xB2E4;&#xB985;&#xB2C8;&#xB2E4;. &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xCABD;&#xC5D0;&#xC11C; &#xBA3C;&#xC800; &#xAC12;&#xC744; &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xCD08;&#xAE30;&#xD654; &#xD560; &#xCC45;&#xC784;&#xC744; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB530;&#xB77C;&#xC11C; &#xC785;&#xB825;&#xC744; &#xC704;&#xD574; &#xC0AC;&#xC6A9;&#xB420; &#xC218;&#xB3C4; &#xC788;&#xACE0; &#xC120;&#xD0DD;&#xC801;&#xC73C;&#xB85C; &#xCD9C;&#xB825;&#xC744; &#xC704;&#xD574;&#xC11C; &#xC0AC;&#xC6A9;&#xB420; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 						
 						
 						<aside>
-							<h3>왜 <code>ScripatableCullingParameters</code>는 구조체인가요?</h3>
+							<h3>&#xC65C; <code>ScripatableCullingParameters</code>&#xB294; &#xAD6C;&#xC870;&#xCCB4;&#xC778;&#xAC00;&#xC694;?</h3>
 							<div>
-								<p>아마도 최적화를 위한 것으로 메모리 할당에 대해서 걱정할 필요 없이 여러 파라미터 구조체를 만들 수 있게 하려는 생각이었을 겁니다. 그러나, <code>ScriptableCullingParameters</code>는 구조체로 만들기에는 매우 큽니다. 그래서 또 한 번 성능상의 이유로 여기서는 참조 파라미터로 사용됩니다. 어쩌면 처음에는 작았는데 점점 더 커다란 구조체가 되었을지도 모릅니다. 재사용 가능한 오브젝트 인스턴스가 더 나은 접근방식일 수도 있지만 우리는 유니티가 결정한 방식으로 작업을 할 수 밖에 없습니다.</p>
+								<p>&#xC544;&#xB9C8;&#xB3C4; &#xCD5C;&#xC801;&#xD654;&#xB97C; &#xC704;&#xD55C; &#xAC83;&#xC73C;&#xB85C; &#xBA54;&#xBAA8;&#xB9AC; &#xD560;&#xB2F9;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xAC71;&#xC815;&#xD560; &#xD544;&#xC694; &#xC5C6;&#xC774; &#xC5EC;&#xB7EC; &#xD30C;&#xB77C;&#xBBF8;&#xD130; &#xAD6C;&#xC870;&#xCCB4;&#xB97C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xAC8C; &#xD558;&#xB824;&#xB294; &#xC0DD;&#xAC01;&#xC774;&#xC5C8;&#xC744; &#xAC81;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098;, <code>ScriptableCullingParameters</code>&#xB294; &#xAD6C;&#xC870;&#xCCB4;&#xB85C; &#xB9CC;&#xB4E4;&#xAE30;&#xC5D0;&#xB294; &#xB9E4;&#xC6B0; &#xD07D;&#xB2C8;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; &#xB610; &#xD55C; &#xBC88; &#xC131;&#xB2A5;&#xC0C1;&#xC758; &#xC774;&#xC720;&#xB85C; &#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xCC38;&#xC870; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB85C; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;. &#xC5B4;&#xCA4C;&#xBA74; &#xCC98;&#xC74C;&#xC5D0;&#xB294; &#xC791;&#xC558;&#xB294;&#xB370; &#xC810;&#xC810; &#xB354; &#xCEE4;&#xB2E4;&#xB780; &#xAD6C;&#xC870;&#xCCB4;&#xAC00; &#xB418;&#xC5C8;&#xC744;&#xC9C0;&#xB3C4; &#xBAA8;&#xB985;&#xB2C8;&#xB2E4;. &#xC7AC;&#xC0AC;&#xC6A9; &#xAC00;&#xB2A5;&#xD55C; &#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xC778;&#xC2A4;&#xD134;&#xC2A4;&#xAC00; &#xB354; &#xB098;&#xC740; &#xC811;&#xADFC;&#xBC29;&#xC2DD;&#xC77C; &#xC218;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC; &#xC6B0;&#xB9AC;&#xB294; &#xC720;&#xB2C8;&#xD2F0;&#xAC00; &#xACB0;&#xC815;&#xD55C; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xC791;&#xC5C5;&#xC744; &#xD560; &#xC218; &#xBC16;&#xC5D0; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 							</div>
 						</aside>
 					</section>
 					
 					<section>
-						<h3>드로잉</h3>
+						<h3>&#xB4DC;&#xB85C;&#xC789;</h3>
 						
-						<p>무엇이 보이는지 알았다면 그 형체들을 렌더링할 수 있습니다. 어떤 렌더러를 사용할지 알려주기 위해서 인수로 <code>cull.visibleRenderers</code>를 넘겨서 콘텍스트의 <code>DrawRenders</code>을 호출하면 됩니다. 그 외에도, 드로잉 설정과 필터 설정을 제공해야합니다. <code>DrawRendererSettings</code>와 <code>FilterRenderersSettings</code> 둘 다 구조체입니다. 처음에는 기본값을 사용하겠습니다. 드로잉 설정은 참조로 전달해야 합니다.</p>
+						<p>&#xBB34;&#xC5C7;&#xC774; &#xBCF4;&#xC774;&#xB294;&#xC9C0; &#xC54C;&#xC558;&#xB2E4;&#xBA74; &#xADF8; &#xD615;&#xCCB4;&#xB4E4;&#xC744; &#xB80C;&#xB354;&#xB9C1;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5B4;&#xB5A4; &#xB80C;&#xB354;&#xB7EC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560;&#xC9C0; &#xC54C;&#xB824;&#xC8FC;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xC778;&#xC218;&#xB85C; <code>cull.visibleRenderers</code>&#xB97C; &#xB118;&#xACA8;&#xC11C; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xC758; <code>DrawRenders</code>&#xC744; &#xD638;&#xCD9C;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8; &#xC678;&#xC5D0;&#xB3C4;, &#xB4DC;&#xB85C;&#xC789; &#xC124;&#xC815;&#xACFC; &#xD544;&#xD130; &#xC124;&#xC815;&#xC744; &#xC81C;&#xACF5;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;. <code>DrawRendererSettings</code>&#xC640; <code>FilterRenderersSettings</code> &#xB458; &#xB2E4; &#xAD6C;&#xC870;&#xCCB4;&#xC785;&#xB2C8;&#xB2E4;. &#xCC98;&#xC74C;&#xC5D0;&#xB294; &#xAE30;&#xBCF8;&#xAC12;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB4DC;&#xB85C;&#xC789; &#xC124;&#xC815;&#xC740; &#xCC38;&#xC870;&#xB85C; &#xC804;&#xB2EC;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		buffer.Release();
 
@@ -503,39 +550,39 @@ public class MyPipeline : RenderPipeline {
 		context.DrawSkybox(camera);</pre>
 						
 						<aside>
-							<h3>왜 <code>FilterRendererSettings</code>가 아니라 <code>FilterRenderersSettings</code> 인가요?</h3>
+							<h3>&#xC65C; <code>FilterRendererSettings</code>&#xAC00; &#xC544;&#xB2C8;&#xB77C; <code>FilterRenderersSettings</code> &#xC778;&#xAC00;&#xC694;?</h3>
 							<div>
-								<p>모르겠습니다. 어쩌면 오타일 수도 있습니다. </p>
+								<p>&#xBAA8;&#xB974;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5B4;&#xCA4C;&#xBA74; &#xC624;&#xD0C0;&#xC77C; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 							</div>
 						</aside>
 						
-						<p>기본 필터 설정에는 아무것도 포함되어 있지 않으므로 아직은 아무런 오브젝트도 볼 수 없습니다. 대신 <code>FilterRenderersSettings</code> 생성자의 인수로 <code>true</code>를 제공함으로써 모든 것을 포함할 수 있습니다. 이는 모든 것을 포함하도록 초기화하라고 지시합니다.</p>
+						<p>&#xAE30;&#xBCF8; &#xD544;&#xD130; &#xC124;&#xC815;&#xC5D0;&#xB294; &#xC544;&#xBB34;&#xAC83;&#xB3C4; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C; &#xC544;&#xC9C1;&#xC740; &#xC544;&#xBB34;&#xB7F0; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB3C4; &#xBCFC; &#xC218; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB300;&#xC2E0; <code>FilterRenderersSettings</code> &#xC0DD;&#xC131;&#xC790;&#xC758; &#xC778;&#xC218;&#xB85C; <code>true</code>&#xB97C; &#xC81C;&#xACF5;&#xD568;&#xC73C;&#xB85C;&#xC368; &#xBAA8;&#xB4E0; &#xAC83;&#xC744; &#xD3EC;&#xD568;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xBAA8;&#xB4E0; &#xAC83;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB3C4;&#xB85D; &#xCD08;&#xAE30;&#xD654;&#xD558;&#xB77C;&#xACE0; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		var filterSettings = new FilterRenderersSettings(<ins>true</ins>);</pre>
 						
-						<p>또한 카메라와 셰이더 패스를 생성자의 인수로 제공하여 드로잉 설정을 해야 합니다. 카메라는 정렬 및 컬링 레이어 설정에 사용되는 반면, 패스는 렌더링에 어떤 셰이더 패스를 사용할지 제어합니다.</p>
+						<p>&#xB610;&#xD55C; &#xCE74;&#xBA54;&#xB77C;&#xC640; &#xC170;&#xC774;&#xB354; &#xD328;&#xC2A4;&#xB97C; &#xC0DD;&#xC131;&#xC790;&#xC758; &#xC778;&#xC218;&#xB85C; &#xC81C;&#xACF5;&#xD558;&#xC5EC; &#xB4DC;&#xB85C;&#xC789; &#xC124;&#xC815;&#xC744; &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xCE74;&#xBA54;&#xB77C;&#xB294; &#xC815;&#xB82C; &#xBC0F; &#xCEEC;&#xB9C1; &#xB808;&#xC774;&#xC5B4; &#xC124;&#xC815;&#xC5D0; &#xC0AC;&#xC6A9;&#xB418;&#xB294; &#xBC18;&#xBA74;, &#xD328;&#xC2A4;&#xB294; &#xB80C;&#xB354;&#xB9C1;&#xC5D0; &#xC5B4;&#xB5A4; &#xC170;&#xC774;&#xB354; &#xD328;&#xC2A4;&#xB97C; &#xC0AC;&#xC6A9;&#xD560;&#xC9C0; &#xC81C;&#xC5B4;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>셰이더 패스는 문자열을 통해 구별되고 <code>ShaderPassName</code>  구조체에 래핑되어야 합니다. 우리 파이프라인은 언릿 재질만 지원하므로 <em>SRPDefaultUnlit</em>으로 식별되는 유니티의 기본 언릿 패스를 사용하겠습니다.</p>
+						<p>&#xC170;&#xC774;&#xB354; &#xD328;&#xC2A4;&#xB294; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xD1B5;&#xD574; &#xAD6C;&#xBCC4;&#xB418;&#xACE0; <code>ShaderPassName</code>  &#xAD6C;&#xC870;&#xCCB4;&#xC5D0; &#xB798;&#xD551;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xC6B0;&#xB9AC; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC740; &#xC5B8;&#xB9BF; &#xC7AC;&#xC9C8;&#xB9CC; &#xC9C0;&#xC6D0;&#xD558;&#xBBC0;&#xB85C; <em>SRPDefaultUnlit</em>&#xC73C;&#xB85C; &#xC2DD;&#xBCC4;&#xB418;&#xB294; &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xAE30;&#xBCF8; &#xC5B8;&#xB9BF; &#xD328;&#xC2A4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		var drawSettings = new DrawRendererSettings(
-			<ins>camera, new ShaderPassName("SRPDefaultUnlit")</ins>
+			<ins>camera, new ShaderPassName(&quot;SRPDefaultUnlit&quot;)</ins>
 		);</pre>
 						
 						<figure>
 							<img src="rendering/opaque-only.jpg" width="250" height="90">
-							<figcaption>불투명한 구가 보임</figcaption>
+							<figcaption>&#xBD88;&#xD22C;&#xBA85;&#xD55C; &#xAD6C;&#xAC00; &#xBCF4;&#xC784;</figcaption>
 						</figure>
 						
-						<p>불투명한 언릿 형체들은 보이기 시작하지만 투명한 것들은 보이지 않습니다. 그러나, 프레임 디버거는 그 언릿 형체들도 그려지고 있다고 표시합니다.</p>
+						<p>&#xBD88;&#xD22C;&#xBA85;&#xD55C; &#xC5B8;&#xB9BF; &#xD615;&#xCCB4;&#xB4E4;&#xC740; &#xBCF4;&#xC774;&#xAE30; &#xC2DC;&#xC791;&#xD558;&#xC9C0;&#xB9CC; &#xD22C;&#xBA85;&#xD55C; &#xAC83;&#xB4E4;&#xC740; &#xBCF4;&#xC774;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098;, &#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;&#xB294; &#xADF8; &#xC5B8;&#xB9BF; &#xD615;&#xCCB4;&#xB4E4;&#xB3C4; &#xADF8;&#xB824;&#xC9C0;&#xACE0; &#xC788;&#xB2E4;&#xACE0; &#xD45C;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<figure>
 							<img src="rendering/frame-debugger-draw.png" width="250" height="130">
-							<figcaption>모든 언릿 렌더러가 그려짐</figcaption>
+							<figcaption>&#xBAA8;&#xB4E0; &#xC5B8;&#xB9BF; &#xB80C;&#xB354;&#xB7EC;&#xAC00; &#xADF8;&#xB824;&#xC9D0;</figcaption>
 						</figure>
 						
-						<p>그려지고는 있지만 투명 셰이더 패스에서 깊이 버퍼에 쓰지 않기 때문에 스카이박스에 의해서 덮어서 그려지게 됩니다. 해결 방법은 스카이박스가 그려질 때까지 투명한 렌더러의 드로잉을 지연시키는 것입니다.</p>
+						<p>&#xADF8;&#xB824;&#xC9C0;&#xACE0;&#xB294; &#xC788;&#xC9C0;&#xB9CC; &#xD22C;&#xBA85; &#xC170;&#xC774;&#xB354; &#xD328;&#xC2A4;&#xC5D0;&#xC11C; &#xAE4A;&#xC774; &#xBC84;&#xD37C;&#xC5D0; &#xC4F0;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xC5D0; &#xC758;&#xD574;&#xC11C; &#xB36E;&#xC5B4;&#xC11C; &#xADF8;&#xB824;&#xC9C0;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. &#xD574;&#xACB0; &#xBC29;&#xBC95;&#xC740; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xAC00; &#xADF8;&#xB824;&#xC9C8; &#xB54C;&#xAE4C;&#xC9C0; &#xD22C;&#xBA85;&#xD55C; &#xB80C;&#xB354;&#xB7EC;&#xC758; &#xB4DC;&#xB85C;&#xC789;&#xC744; &#xC9C0;&#xC5F0;&#xC2DC;&#xD0A4;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>우선, 스카이박스 앞쪽의 드로잉을 불투명한 렌더러로 제한하세요. 필터 설정의 <code>renderQueueRange</code>를 <code>RenderQueueRange.opaque</code>로 설정하면 되며, 이는 0에서 2500 까지의 렌더 큐를 포함합니다. </p>
+						<p>&#xC6B0;&#xC120;, &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4; &#xC55E;&#xCABD;&#xC758; &#xB4DC;&#xB85C;&#xC789;&#xC744; &#xBD88;&#xD22C;&#xBA85;&#xD55C; &#xB80C;&#xB354;&#xB7EC;&#xB85C; &#xC81C;&#xD55C;&#xD558;&#xC138;&#xC694;. &#xD544;&#xD130; &#xC124;&#xC815;&#xC758; <code>renderQueueRange</code>&#xB97C; <code>RenderQueueRange.opaque</code>&#xB85C; &#xC124;&#xC815;&#xD558;&#xBA74; &#xB418;&#xBA70;, &#xC774;&#xB294; 0&#xC5D0;&#xC11C; 2500 &#xAE4C;&#xC9C0;&#xC758; &#xB80C;&#xB354; &#xD050;&#xB97C; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;. </p>
 						
 						<pre>		var filterSettings = new FilterRenderersSettings(true) <ins>{</ins>
 			<ins>renderQueueRange = RenderQueueRange.opaque</ins>
@@ -543,10 +590,10 @@ public class MyPipeline : RenderPipeline {
 						
 						<figure>
 							<img src="rendering/frame-debugger-opaque.png" width="250" height="98">
-							<figcaption>불투명한 렌더러만 그려짐.</figcaption>
+							<figcaption>&#xBD88;&#xD22C;&#xBA85;&#xD55C; &#xB80C;&#xB354;&#xB7EC;&#xB9CC; &#xADF8;&#xB824;&#xC9D0;.</figcaption>
 						</figure>
 						
-						<p>다음으로, 스카이박스를 렌더링한 후에 큐의 범위를  <code>RenderQueueRange.transparent</code> (2501에서 5000까지) 로 바꿔서 다시 렌더링합니다.</p>
+						<p>&#xB2E4;&#xC74C;&#xC73C;&#xB85C;, &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;&#xB97C; &#xB80C;&#xB354;&#xB9C1;&#xD55C; &#xD6C4;&#xC5D0; &#xD050;&#xC758; &#xBC94;&#xC704;&#xB97C;  <code>RenderQueueRange.transparent</code> (2501&#xC5D0;&#xC11C; 5000&#xAE4C;&#xC9C0;) &#xB85C; &#xBC14;&#xAFD4;&#xC11C; &#xB2E4;&#xC2DC; &#xB80C;&#xB354;&#xB9C1;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		var filterSettings = new FilterRenderersSettings(true) {
 			renderQueueRange = RenderQueueRange.opaque
@@ -564,23 +611,23 @@ public class MyPipeline : RenderPipeline {
 		<ins>);</ins></pre>
 						
 						<figure>
-							<img src="rendering/opaque-then-transparent.jpg" width="250" height="100" alt="씬"><br>
-							<img src="rendering/frame-debugger-transparent.png" width="250" height="146" alt="프레임 디버거">
-							<figcaption>불투명, 스카이박스, 그리고 나서 투명.</figcaption>
+							<img src="rendering/opaque-then-transparent.jpg" width="250" height="100" alt="&#xC52C;"><br>
+							<img src="rendering/frame-debugger-transparent.png" width="250" height="146" alt="&#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;">
+							<figcaption>&#xBD88;&#xD22C;&#xBA85;, &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4;, &#xADF8;&#xB9AC;&#xACE0; &#xB098;&#xC11C; &#xD22C;&#xBA85;.</figcaption>
 						</figure>
 						
-						<p>오버드로우를 방지하기 위해서 스카이박스 앞에 불투명한 렌더러들을 그립니다. 형체들이 항상 스카이박스 앞에 있기 때문에 형체들을 먼저 그림으로써 오버드로우를 피합니다.  이는 불투명한 셰이더 패스가 깊이 버퍼에 쓰기 때문이며 깊이 버퍼는 나중에 그려지는 더 멀리 있는 것들을 건너뛰는데 사용됩니다.</p>
+						<p>&#xC624;&#xBC84;&#xB4DC;&#xB85C;&#xC6B0;&#xB97C; &#xBC29;&#xC9C0;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4; &#xC55E;&#xC5D0; &#xBD88;&#xD22C;&#xBA85;&#xD55C; &#xB80C;&#xB354;&#xB7EC;&#xB4E4;&#xC744; &#xADF8;&#xB9BD;&#xB2C8;&#xB2E4;. &#xD615;&#xCCB4;&#xB4E4;&#xC774; &#xD56D;&#xC0C1; &#xC2A4;&#xCE74;&#xC774;&#xBC15;&#xC2A4; &#xC55E;&#xC5D0; &#xC788;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xD615;&#xCCB4;&#xB4E4;&#xC744; &#xBA3C;&#xC800; &#xADF8;&#xB9BC;&#xC73C;&#xB85C;&#xC368; &#xC624;&#xBC84;&#xB4DC;&#xB85C;&#xC6B0;&#xB97C; &#xD53C;&#xD569;&#xB2C8;&#xB2E4;.  &#xC774;&#xB294; &#xBD88;&#xD22C;&#xBA85;&#xD55C; &#xC170;&#xC774;&#xB354; &#xD328;&#xC2A4;&#xAC00; &#xAE4A;&#xC774; &#xBC84;&#xD37C;&#xC5D0; &#xC4F0;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xBA70; &#xAE4A;&#xC774; &#xBC84;&#xD37C;&#xB294; &#xB098;&#xC911;&#xC5D0; &#xADF8;&#xB824;&#xC9C0;&#xB294; &#xB354; &#xBA40;&#xB9AC; &#xC788;&#xB294; &#xAC83;&#xB4E4;&#xC744; &#xAC74;&#xB108;&#xB6F0;&#xB294;&#xB370; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>하늘 일부를 가리는 것 외에도 불투명한 렌더러들은 서로를 가리게 될 수도 있습니다. 이상적으로는, 프레임 버퍼의 각 프래그먼트에 대해서 카메라에서 가장 가까운 것들만 그려집니다. 오버드로우를 최대한 줄이려면 가장 가까운 형체를 먼저 그려야 합니다. 드로잉 전에 렌더러들을 정렬하는 방법으로 가능하고, 이는 정렬 플래그를 통해 제어됩니다.</p>
+						<p>&#xD558;&#xB298; &#xC77C;&#xBD80;&#xB97C; &#xAC00;&#xB9AC;&#xB294; &#xAC83; &#xC678;&#xC5D0;&#xB3C4; &#xBD88;&#xD22C;&#xBA85;&#xD55C; &#xB80C;&#xB354;&#xB7EC;&#xB4E4;&#xC740; &#xC11C;&#xB85C;&#xB97C; &#xAC00;&#xB9AC;&#xAC8C; &#xB420; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xC0C1;&#xC801;&#xC73C;&#xB85C;&#xB294;, &#xD504;&#xB808;&#xC784; &#xBC84;&#xD37C;&#xC758; &#xAC01; &#xD504;&#xB798;&#xADF8;&#xBA3C;&#xD2B8;&#xC5D0; &#xB300;&#xD574;&#xC11C; &#xCE74;&#xBA54;&#xB77C;&#xC5D0;&#xC11C; &#xAC00;&#xC7A5; &#xAC00;&#xAE4C;&#xC6B4; &#xAC83;&#xB4E4;&#xB9CC; &#xADF8;&#xB824;&#xC9D1;&#xB2C8;&#xB2E4;. &#xC624;&#xBC84;&#xB4DC;&#xB85C;&#xC6B0;&#xB97C; &#xCD5C;&#xB300;&#xD55C; &#xC904;&#xC774;&#xB824;&#xBA74; &#xAC00;&#xC7A5; &#xAC00;&#xAE4C;&#xC6B4; &#xD615;&#xCCB4;&#xB97C; &#xBA3C;&#xC800; &#xADF8;&#xB824;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xB4DC;&#xB85C;&#xC789; &#xC804;&#xC5D0; &#xB80C;&#xB354;&#xB7EC;&#xB4E4;&#xC744; &#xC815;&#xB82C;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xAC00;&#xB2A5;&#xD558;&#xACE0;, &#xC774;&#xB294; &#xC815;&#xB82C; &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xD1B5;&#xD574; &#xC81C;&#xC5B4;&#xB429;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>드로잉 설정은 <code>DrawRendererSortSettings</code> 타입의 <code>sorting</code> 구조체를 포함하고, 이는 정렬 플래그를 포함합니다. 불투명한 형체들을 그리기 전에 <code>SortFlags.CommonOpaque</code>로 설정하세요.  이는 유니티가 렌더러들을 거리 (앞에서 뒤로) 및 추가적인 몇 가지 기준에 의해서 정렬하도록 지시합니다.</p>
+						<p>&#xB4DC;&#xB85C;&#xC789; &#xC124;&#xC815;&#xC740; <code>DrawRendererSortSettings</code> &#xD0C0;&#xC785;&#xC758; <code>sorting</code> &#xAD6C;&#xC870;&#xCCB4;&#xB97C; &#xD3EC;&#xD568;&#xD558;&#xACE0;, &#xC774;&#xB294; &#xC815;&#xB82C; &#xD50C;&#xB798;&#xADF8;&#xB97C; &#xD3EC;&#xD568;&#xD569;&#xB2C8;&#xB2E4;. &#xBD88;&#xD22C;&#xBA85;&#xD55C; &#xD615;&#xCCB4;&#xB4E4;&#xC744; &#xADF8;&#xB9AC;&#xAE30; &#xC804;&#xC5D0; <code>SortFlags.CommonOpaque</code>&#xB85C; &#xC124;&#xC815;&#xD558;&#xC138;&#xC694;.  &#xC774;&#xB294; &#xC720;&#xB2C8;&#xD2F0;&#xAC00; &#xB80C;&#xB354;&#xB7EC;&#xB4E4;&#xC744; &#xAC70;&#xB9AC; (&#xC55E;&#xC5D0;&#xC11C; &#xB4A4;&#xB85C;) &#xBC0F; &#xCD94;&#xAC00;&#xC801;&#xC778; &#xBA87; &#xAC00;&#xC9C0; &#xAE30;&#xC900;&#xC5D0; &#xC758;&#xD574;&#xC11C; &#xC815;&#xB82C;&#xD558;&#xB3C4;&#xB85D; &#xC9C0;&#xC2DC;&#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		var drawSettings = new DrawRendererSettings(
-			camera, new ShaderPassName("SRPDefaultUnlit")
+			camera, new ShaderPassName(&quot;SRPDefaultUnlit&quot;)
 		);
 		<ins>drawSettings.sorting.flags = SortFlags.CommonOpaque;</ins></pre>
 						
-						<p>그러나 투명한 렌더링은 다르게 작동합니다. 이전에 그려진 색과 지금 그려지는 색을 결합해서 결과가 투명하게 나타납니다. 이는 뒤에서 앞으로 반대의 순서로 그리는 것을 필요로 합니다. 이를 위해 <code>SortFlags.CommonTransparent</code>를 사용할 수 있습니다.</p>
+						<p>&#xADF8;&#xB7EC;&#xB098; &#xD22C;&#xBA85;&#xD55C; &#xB80C;&#xB354;&#xB9C1;&#xC740; &#xB2E4;&#xB974;&#xAC8C; &#xC791;&#xB3D9;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xC804;&#xC5D0; &#xADF8;&#xB824;&#xC9C4; &#xC0C9;&#xACFC; &#xC9C0;&#xAE08; &#xADF8;&#xB824;&#xC9C0;&#xB294; &#xC0C9;&#xC744; &#xACB0;&#xD569;&#xD574;&#xC11C; &#xACB0;&#xACFC;&#xAC00; &#xD22C;&#xBA85;&#xD558;&#xAC8C; &#xB098;&#xD0C0;&#xB0A9;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xB4A4;&#xC5D0;&#xC11C; &#xC55E;&#xC73C;&#xB85C; &#xBC18;&#xB300;&#xC758; &#xC21C;&#xC11C;&#xB85C; &#xADF8;&#xB9AC;&#xB294; &#xAC83;&#xC744; &#xD544;&#xC694;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xC704;&#xD574; <code>SortFlags.CommonTransparent</code>&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		context.DrawSkybox(camera);
 
@@ -590,106 +637,106 @@ public class MyPipeline : RenderPipeline {
 			cull.visibleRenderers, ref drawSettings, filterSettings
 		);</pre>
 						
-						<p>우리의 파이프라인은 이제 불투명 및 투명 언릿 오브젝트를 제대로 렌더링할 수 있습니다.</p>
+						<p>&#xC6B0;&#xB9AC;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC740; &#xC774;&#xC81C; &#xBD88;&#xD22C;&#xBA85; &#xBC0F; &#xD22C;&#xBA85; &#xC5B8;&#xB9BF; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xC81C;&#xB300;&#xB85C; &#xB80C;&#xB354;&#xB9C1;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 					</section>
 					
-					<a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/rendering/rendering.unitypackage" download rel="nofollow">유니티 패키지</a>
+					<a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/rendering/rendering.unitypackage/" download="" rel="nofollow">&#xC720;&#xB2C8;&#xD2F0; &#xD328;&#xD0A4;&#xC9C0;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
 				</section>
 				
 				<section>
-					<h2>다듬기</h2>
+					<h2>&#xB2E4;&#xB4EC;&#xAE30;</h2>
 					
-					<p>올바르게 렌더링할 수 있다는 것은 온전하게 동작하는 파이프라인의 일부일 뿐입니다.  충분히 빠른지, 불필요한 임시 오브젝트를 할당하지 않는지, 유니티 에디터와 잘 통합돠는지 등 고려해야 할 것이 더 있습니다. </p>
+					<p>&#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xB80C;&#xB354;&#xB9C1;&#xD560; &#xC218; &#xC788;&#xB2E4;&#xB294; &#xAC83;&#xC740; &#xC628;&#xC804;&#xD558;&#xAC8C; &#xB3D9;&#xC791;&#xD558;&#xB294; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC758; &#xC77C;&#xBD80;&#xC77C; &#xBFD0;&#xC785;&#xB2C8;&#xB2E4;.  &#xCDA9;&#xBD84;&#xD788; &#xBE60;&#xB978;&#xC9C0;, &#xBD88;&#xD544;&#xC694;&#xD55C; &#xC784;&#xC2DC; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xD560;&#xB2F9;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xC9C0;, &#xC720;&#xB2C8;&#xD2F0; &#xC5D0;&#xB514;&#xD130;&#xC640; &#xC798; &#xD1B5;&#xD569;&#xB3E0;&#xB294;&#xC9C0; &#xB4F1; &#xACE0;&#xB824;&#xD574;&#xC57C; &#xD560; &#xAC83;&#xC774; &#xB354; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 					
 					<section>
-						<h3>메모리 할당</h3>
+						<h3>&#xBA54;&#xBAA8;&#xB9AC; &#xD560;&#xB2F9;</h3>
 						
-						<p>우리의 파이프라인이 메모리 관리 측면에서 잘 작동하는지, 또는 매 프레임 메모리를 할당해서 가비지 컬렉션이 자주 발생하는지 확인해 봅시다. <em>Window / Analysis / Profiler</em>를 통해 프로파일러를 열고 <em>Hierarchy</em> 모드에서 <em>CPU Usage</em> 데이터를 점검하면 됩니다.  에디터에서 플레이 모드로 할 수도 있지만, 개발 빌드를 만들고 프로파일러에 자동으로 연결하게 해서, 빌드를 프로파일 하는 것도 좋은 생각입니다. 다만 이 경우 딥 프로파일링은 불가능합니다. (역자 주: 2017.3부터는 안드로이드에서 딥 프로파일링이 가능합니다. https://unity3d.com/learn/tutorials/topics/best-practices/unity-profiler)</p>
+						<p>&#xC6B0;&#xB9AC;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC774; &#xBA54;&#xBAA8;&#xB9AC; &#xAD00;&#xB9AC; &#xCE21;&#xBA74;&#xC5D0;&#xC11C; &#xC798; &#xC791;&#xB3D9;&#xD558;&#xB294;&#xC9C0;, &#xB610;&#xB294; &#xB9E4; &#xD504;&#xB808;&#xC784; &#xBA54;&#xBAA8;&#xB9AC;&#xB97C; &#xD560;&#xB2F9;&#xD574;&#xC11C; &#xAC00;&#xBE44;&#xC9C0; &#xCEEC;&#xB809;&#xC158;&#xC774; &#xC790;&#xC8FC; &#xBC1C;&#xC0DD;&#xD558;&#xB294;&#xC9C0; &#xD655;&#xC778;&#xD574; &#xBD05;&#xC2DC;&#xB2E4;. <em>Window / Analysis / Profiler</em>&#xB97C; &#xD1B5;&#xD574; &#xD504;&#xB85C;&#xD30C;&#xC77C;&#xB7EC;&#xB97C; &#xC5F4;&#xACE0; <em>Hierarchy</em> &#xBAA8;&#xB4DC;&#xC5D0;&#xC11C; <em>CPU Usage</em> &#xB370;&#xC774;&#xD130;&#xB97C; &#xC810;&#xAC80;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.  &#xC5D0;&#xB514;&#xD130;&#xC5D0;&#xC11C; &#xD50C;&#xB808;&#xC774; &#xBAA8;&#xB4DC;&#xB85C; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC9C0;&#xB9CC;, &#xAC1C;&#xBC1C; &#xBE4C;&#xB4DC;&#xB97C; &#xB9CC;&#xB4E4;&#xACE0; &#xD504;&#xB85C;&#xD30C;&#xC77C;&#xB7EC;&#xC5D0; &#xC790;&#xB3D9;&#xC73C;&#xB85C; &#xC5F0;&#xACB0;&#xD558;&#xAC8C; &#xD574;&#xC11C;, &#xBE4C;&#xB4DC;&#xB97C; &#xD504;&#xB85C;&#xD30C;&#xC77C; &#xD558;&#xB294; &#xAC83;&#xB3C4; &#xC88B;&#xC740; &#xC0DD;&#xAC01;&#xC785;&#xB2C8;&#xB2E4;. &#xB2E4;&#xB9CC; &#xC774; &#xACBD;&#xC6B0; &#xB525; &#xD504;&#xB85C;&#xD30C;&#xC77C;&#xB9C1;&#xC740; &#xBD88;&#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;. (&#xC5ED;&#xC790; &#xC8FC;: 2017.3&#xBD80;&#xD130;&#xB294; &#xC548;&#xB4DC;&#xB85C;&#xC774;&#xB4DC;&#xC5D0;&#xC11C; &#xB525; &#xD504;&#xB85C;&#xD30C;&#xC77C;&#xB9C1;&#xC774; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;. https://unity3d.com/learn/tutorials/topics/best-practices/unity-profiler)</p>
 						
-						<p><em>GC Alloc</em>을 기준으로 정렬하면 메모리가 실제로 매 프레임 할당되는 것을 볼 수 있습니다.  그중 일부는 우리가 제어할 수 없지만, 꽤 많은 바이트가 우리 파이프라인의 <code>Render</code> 메소드 안에서 할당됩니다.</p>
+						<p><em>GC Alloc</em>&#xC744; &#xAE30;&#xC900;&#xC73C;&#xB85C; &#xC815;&#xB82C;&#xD558;&#xBA74; &#xBA54;&#xBAA8;&#xB9AC;&#xAC00; &#xC2E4;&#xC81C;&#xB85C; &#xB9E4; &#xD504;&#xB808;&#xC784; &#xD560;&#xB2F9;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xADF8;&#xC911; &#xC77C;&#xBD80;&#xB294; &#xC6B0;&#xB9AC;&#xAC00; &#xC81C;&#xC5B4;&#xD560; &#xC218; &#xC5C6;&#xC9C0;&#xB9CC;, &#xAF64; &#xB9CE;&#xC740; &#xBC14;&#xC774;&#xD2B8;&#xAC00; &#xC6B0;&#xB9AC; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC758; <code>Render</code> &#xBA54;&#xC18C;&#xB4DC; &#xC548;&#xC5D0;&#xC11C; &#xD560;&#xB2F9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>컬링이 대부분의 메모리를 할당하는 것으로 밝혀졌습니다. 그 이유는 <code>CullResults</code>가 구조체이지만 3개의 리스트를 가졌고, 이 리스트들이 오브젝트이기 때문입니다. 매번 우리가 새로운 컬링 결과를 요구할 때마다 새 리스트들을 위해서 메모리를 할당하게 됩니다. 그래서 <code>CullResults</code>가 구조체이기 때문에 얻는 이점이 크지 않습니다.</p>
+						<p>&#xCEEC;&#xB9C1;&#xC774; &#xB300;&#xBD80;&#xBD84;&#xC758; &#xBA54;&#xBAA8;&#xB9AC;&#xB97C; &#xD560;&#xB2F9;&#xD558;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xBC1D;&#xD600;&#xC84C;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8; &#xC774;&#xC720;&#xB294; <code>CullResults</code>&#xAC00; &#xAD6C;&#xC870;&#xCCB4;&#xC774;&#xC9C0;&#xB9CC; 3&#xAC1C;&#xC758; &#xB9AC;&#xC2A4;&#xD2B8;&#xB97C; &#xAC00;&#xC84C;&#xACE0;, &#xC774; &#xB9AC;&#xC2A4;&#xD2B8;&#xB4E4;&#xC774; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;. &#xB9E4;&#xBC88; &#xC6B0;&#xB9AC;&#xAC00; &#xC0C8;&#xB85C;&#xC6B4; &#xCEEC;&#xB9C1; &#xACB0;&#xACFC;&#xB97C; &#xC694;&#xAD6C;&#xD560; &#xB54C;&#xB9C8;&#xB2E4; &#xC0C8; &#xB9AC;&#xC2A4;&#xD2B8;&#xB4E4;&#xC744; &#xC704;&#xD574;&#xC11C; &#xBA54;&#xBAA8;&#xB9AC;&#xB97C; &#xD560;&#xB2F9;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; <code>CullResults</code>&#xAC00; &#xAD6C;&#xC870;&#xCCB4;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC5BB;&#xB294; &#xC774;&#xC810;&#xC774; &#xD06C;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>다행히도, <code>CullResults</code>는 대체 가능한 <code>Cull</code> 메소드가 있으며 이 메소드는 새 구조체를 반환하는 대신에 참조 파라미터로 구조체를 받습니다.  이렇게 하면 리스트들의 재사용이 가능해집니다. <code>cull</code> 을 필드로 바꾸고, 그것에 대입하는 대신에 <code>CullResults.Cull</code>의 인수로 추가해 주기만 하면 됩니다.</p>
+						<p>&#xB2E4;&#xD589;&#xD788;&#xB3C4;, <code>CullResults</code>&#xB294; &#xB300;&#xCCB4; &#xAC00;&#xB2A5;&#xD55C; <code>Cull</code> &#xBA54;&#xC18C;&#xB4DC;&#xAC00; &#xC788;&#xC73C;&#xBA70; &#xC774; &#xBA54;&#xC18C;&#xB4DC;&#xB294; &#xC0C8; &#xAD6C;&#xC870;&#xCCB4;&#xB97C; &#xBC18;&#xD658;&#xD558;&#xB294; &#xB300;&#xC2E0;&#xC5D0; &#xCC38;&#xC870; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB85C; &#xAD6C;&#xC870;&#xCCB4;&#xB97C; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC774;&#xB807;&#xAC8C; &#xD558;&#xBA74; &#xB9AC;&#xC2A4;&#xD2B8;&#xB4E4;&#xC758; &#xC7AC;&#xC0AC;&#xC6A9;&#xC774; &#xAC00;&#xB2A5;&#xD574;&#xC9D1;&#xB2C8;&#xB2E4;. <code>cull</code> &#xC744; &#xD544;&#xB4DC;&#xB85C; &#xBC14;&#xAFB8;&#xACE0;, &#xADF8;&#xAC83;&#xC5D0; &#xB300;&#xC785;&#xD558;&#xB294; &#xB300;&#xC2E0;&#xC5D0; <code>CullResults.Cull</code>&#xC758; &#xC778;&#xC218;&#xB85C; &#xCD94;&#xAC00;&#xD574; &#xC8FC;&#xAE30;&#xB9CC; &#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>	<ins>CullResults cull;</ins>
 
-	…
+	&#x2026;
 
 	void Render (ScriptableRenderContext context, Camera camera) {
-		…
+		&#x2026;
 
 		<del>//CullResults cull = CullResults.Cull(ref cullingParameters, context);</del>
 		<ins>CullResults.Cull(ref cullingParameters, context, ref cull);</ins>
 		
-		…
+		&#x2026;
 	}</pre>
 						
-						<p>연속적인 메모리 할당의 또 다른 원인은 카메라 이름 프로퍼티의 사용에 있습니다. 매번 그 값을 얻을 때마다 네이티브 코드에서 이름을 가져오므로 새 문자열을 생성해야 하고, 문자열은 오브젝트입니다. 그러니 대신에 <em>Render Camera</em>를 우리의 명령 버퍼의 이름으로 사용합시다.</p>
+						<p>&#xC5F0;&#xC18D;&#xC801;&#xC778; &#xBA54;&#xBAA8;&#xB9AC; &#xD560;&#xB2F9;&#xC758; &#xB610; &#xB2E4;&#xB978; &#xC6D0;&#xC778;&#xC740; &#xCE74;&#xBA54;&#xB77C; &#xC774;&#xB984; &#xD504;&#xB85C;&#xD37C;&#xD2F0;&#xC758; &#xC0AC;&#xC6A9;&#xC5D0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9E4;&#xBC88; &#xADF8; &#xAC12;&#xC744; &#xC5BB;&#xC744; &#xB54C;&#xB9C8;&#xB2E4; &#xB124;&#xC774;&#xD2F0;&#xBE0C; &#xCF54;&#xB4DC;&#xC5D0;&#xC11C; &#xC774;&#xB984;&#xC744; &#xAC00;&#xC838;&#xC624;&#xBBC0;&#xB85C; &#xC0C8; &#xBB38;&#xC790;&#xC5F4;&#xC744; &#xC0DD;&#xC131;&#xD574;&#xC57C; &#xD558;&#xACE0;, &#xBB38;&#xC790;&#xC5F4;&#xC740; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB2C8; &#xB300;&#xC2E0;&#xC5D0; <em>Render Camera</em>&#xB97C; &#xC6B0;&#xB9AC;&#xC758; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xC758; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xC0AC;&#xC6A9;&#xD569;&#xC2DC;&#xB2E4;.</p>
 						
 						<pre>		var buffer = new CommandBuffer() {
-			name = <ins>"Render Camera"</ins>
+			name = <ins>&quot;Render Camera&quot;</ins>
 		};</pre>
 						
 						<figure>
 							<img src="polishing/constant-buffer-name.png" width="250" height="82">
-							<figcaption>고정된 버퍼 이름 사용</figcaption>
+							<figcaption>&#xACE0;&#xC815;&#xB41C; &#xBC84;&#xD37C; &#xC774;&#xB984; &#xC0AC;&#xC6A9;</figcaption>
 						</figure>
 						
-						<p>마지막으로, 명령 버퍼 자체도 오브젝트 입니다. 다행히, 명령 버퍼를 한 번 만들어서 재사용할 수 있습니다. 지역 변수를 <code>cameraBuffer</code> 필드로 교체하세요. 오브젝트 초기화 문법 덕분에 이름있는 명령 버퍼를 기본값으로 만들 수 있습니다. 마지막 변경사항은 명령 버퍼를 해제하는 대신 <code>Clear</code> 메소드를 사용해 지워주는 것입니다.</p>
+						<p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C;, &#xBA85;&#xB839; &#xBC84;&#xD37C; &#xC790;&#xCCB4;&#xB3C4; &#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xC785;&#xB2C8;&#xB2E4;. &#xB2E4;&#xD589;&#xD788;, &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB97C; &#xD55C; &#xBC88; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xC7AC;&#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC9C0;&#xC5ED; &#xBCC0;&#xC218;&#xB97C; <code>cameraBuffer</code> &#xD544;&#xB4DC;&#xB85C; &#xAD50;&#xCCB4;&#xD558;&#xC138;&#xC694;. &#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xCD08;&#xAE30;&#xD654; &#xBB38;&#xBC95; &#xB355;&#xBD84;&#xC5D0; &#xC774;&#xB984;&#xC788;&#xB294; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB97C; &#xAE30;&#xBCF8;&#xAC12;&#xC73C;&#xB85C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xB9C8;&#xC9C0;&#xB9C9; &#xBCC0;&#xACBD;&#xC0AC;&#xD56D;&#xC740; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB97C; &#xD574;&#xC81C;&#xD558;&#xB294; &#xB300;&#xC2E0; <code>Clear</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD574; &#xC9C0;&#xC6CC;&#xC8FC;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>	<ins>CommandBuffer cameraBuffer = new CommandBuffer {</ins>
-		<ins>name = "Render Camera"</ins>
+		<ins>name = &quot;Render Camera&quot;</ins>
 	<ins>};</ins>
 
-	…
+	&#x2026;
 
 	void Render (ScriptableRenderContext context, Camera camera) {
-		…
+		&#x2026;
 
 		<del>//var buffer = new CommandBuffer() {</del>
-		<del>//	name = "Render Camera"</del>
+		<del>//	name = &quot;Render Camera&quot;</del>
 		<del>//};</del>
 		<ins>cameraBuffer</ins>.ClearRenderTarget(true, false, Color.clear);
 		context.ExecuteCommandBuffer(<ins>cameraBuffer</ins>);
 		<del>//buffer.Release();</del>
 		<ins>cameraBuffer.Clear();</ins>
 
-		…
+		&#x2026;
 	}</pre>
 						
-						<p>이런 변경 후에 우리의 파이프라인은 더 이상 매 프레임에 임시 오브젝트를 생성하지 않습니다.</p>
+						<p>&#xC774;&#xB7F0; &#xBCC0;&#xACBD; &#xD6C4;&#xC5D0; &#xC6B0;&#xB9AC;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC740; &#xB354; &#xC774;&#xC0C1; &#xB9E4; &#xD504;&#xB808;&#xC784;&#xC5D0; &#xC784;&#xC2DC; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xC0DD;&#xC131;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 					</section>
 					
 					<section>
-						<h3>프레임 디버거 샘플링</h3>
+						<h3>&#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70; &#xC0D8;&#xD50C;&#xB9C1;</h3>
 						
-						<p>우리가 더 해볼 수 있는 것은 프레임 디버거에 표시되는 데이터를 개선하는 것입니다. 유니티의 파이프라인은 이벤트의 중첩된 계층 구조를 보여주지만, 우리의 파이프라인은 모두 최상위 단계에 있습니다.   명령 버퍼를 사용해서 프로파일러 샘플을 시작하고 끝내는 방식으로 계층 구조를 만들 수 있습니다.</p>
+						<p>&#xC6B0;&#xB9AC;&#xAC00; &#xB354; &#xD574;&#xBCFC; &#xC218; &#xC788;&#xB294; &#xAC83;&#xC740; &#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;&#xC5D0; &#xD45C;&#xC2DC;&#xB418;&#xB294; &#xB370;&#xC774;&#xD130;&#xB97C; &#xAC1C;&#xC120;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC740; &#xC774;&#xBCA4;&#xD2B8;&#xC758; &#xC911;&#xCCA9;&#xB41C; &#xACC4;&#xCE35; &#xAD6C;&#xC870;&#xB97C; &#xBCF4;&#xC5EC;&#xC8FC;&#xC9C0;&#xB9CC;, &#xC6B0;&#xB9AC;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC740; &#xBAA8;&#xB450; &#xCD5C;&#xC0C1;&#xC704; &#xB2E8;&#xACC4;&#xC5D0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.   &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB97C; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xD504;&#xB85C;&#xD30C;&#xC77C;&#xB7EC; &#xC0D8;&#xD50C;&#xC744; &#xC2DC;&#xC791;&#xD558;&#xACE0; &#xB05D;&#xB0B4;&#xB294; &#xBC29;&#xC2DD;&#xC73C;&#xB85C; &#xACC4;&#xCE35; &#xAD6C;&#xC870;&#xB97C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
-						<p><code>ClearRenderTarget</code> 바로 앞에서 <code>BeginSample</code>을 호출하는 것으로 시작해서, 곧 바로<code>EndSample</code>을 호출합시다. 모든 샘플은 시작과 끝을 가져야 하며 둘 다 정확히 같은 이름으로 제공되어야 합니다.  이 외에도, 샘플링을 정의하는 명령 버퍼와 동일한 이름을 사용하는 것이 가장 좋습니다.  명령 버퍼의 이름은 종종 사용됩니다.</p>
+						<p><code>ClearRenderTarget</code> &#xBC14;&#xB85C; &#xC55E;&#xC5D0;&#xC11C; <code>BeginSample</code>&#xC744; &#xD638;&#xCD9C;&#xD558;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xC2DC;&#xC791;&#xD574;&#xC11C;, &#xACE7; &#xBC14;&#xB85C;<code>EndSample</code>&#xC744; &#xD638;&#xCD9C;&#xD569;&#xC2DC;&#xB2E4;. &#xBAA8;&#xB4E0; &#xC0D8;&#xD50C;&#xC740; &#xC2DC;&#xC791;&#xACFC; &#xB05D;&#xC744; &#xAC00;&#xC838;&#xC57C; &#xD558;&#xBA70; &#xB458; &#xB2E4; &#xC815;&#xD655;&#xD788; &#xAC19;&#xC740; &#xC774;&#xB984;&#xC73C;&#xB85C; &#xC81C;&#xACF5;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.  &#xC774; &#xC678;&#xC5D0;&#xB3C4;, &#xC0D8;&#xD50C;&#xB9C1;&#xC744; &#xC815;&#xC758;&#xD558;&#xB294; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xC640; &#xB3D9;&#xC77C;&#xD55C; &#xC774;&#xB984;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xAC00;&#xC7A5; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xC758; &#xC774;&#xB984;&#xC740; &#xC885;&#xC885; &#xC0AC;&#xC6A9;&#xB429;&#xB2C8;&#xB2E4;.</p>
 						
-						<pre>		<ins>cameraBuffer.BeginSample("Render Camera");</ins>
+						<pre>		<ins>cameraBuffer.BeginSample(&quot;Render Camera&quot;);</ins>
 		cameraBuffer.ClearRenderTarget(true, false, Color.clear);
-		<ins>cameraBuffer.EndSample("Render Camera");</ins>
+		<ins>cameraBuffer.EndSample(&quot;Render Camera&quot;);</ins>
 		context.ExecuteCommandBuffer(cameraBuffer);
 		cameraBuffer.Clear();</pre>
 						
 						<figure>
 							<img src="polishing/sampling.png" width="250" height="98">
-							<figcaption>샘플링이 계층 구조를  만듭니다.</figcaption>
+							<figcaption>&#xC0D8;&#xD50C;&#xB9C1;&#xC774; &#xACC4;&#xCE35; &#xAD6C;&#xC870;&#xB97C;  &#xB9CC;&#xB4ED;&#xB2C8;&#xB2E4;.</figcaption>
 						</figure>
 						
-						<p><em>Render Camera</em> 단계가 명령 버퍼의 기존 <em>Render Camera</em> 안쪽으로 들어가 있고, 이어서 지우기 연산이 그 안으로 들어간 것을 볼 수 있습니다.  그러나 한 단계 더 나아가서 카메라와 관련된 모든 동작도 그 안에 넣을 수 있습니다. 이를 위해서는 콘텍스트를 서브밋 하기 직전까지 샘플의 종료를 지연해야 합니다. 그래서 그 시점에 추가로 샘플을 끝내는 명령만을 포함한 <code>ExecuteCommandBuffer</code>를 넣어야 합니다. 같은 명령 버퍼를 사용하고 작업이 끝난 후 다시 지우세요.</p>
+						<p><em>Render Camera</em> &#xB2E8;&#xACC4;&#xAC00; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xC758; &#xAE30;&#xC874; <em>Render Camera</em> &#xC548;&#xCABD;&#xC73C;&#xB85C; &#xB4E4;&#xC5B4;&#xAC00; &#xC788;&#xACE0;, &#xC774;&#xC5B4;&#xC11C; &#xC9C0;&#xC6B0;&#xAE30; &#xC5F0;&#xC0B0;&#xC774; &#xADF8; &#xC548;&#xC73C;&#xB85C; &#xB4E4;&#xC5B4;&#xAC04; &#xAC83;&#xC744; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xADF8;&#xB7EC;&#xB098; &#xD55C; &#xB2E8;&#xACC4; &#xB354; &#xB098;&#xC544;&#xAC00;&#xC11C; &#xCE74;&#xBA54;&#xB77C;&#xC640; &#xAD00;&#xB828;&#xB41C; &#xBAA8;&#xB4E0; &#xB3D9;&#xC791;&#xB3C4; &#xADF8; &#xC548;&#xC5D0; &#xB123;&#xC744; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xC704;&#xD574;&#xC11C;&#xB294; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xC11C;&#xBE0C;&#xBC0B; &#xD558;&#xAE30; &#xC9C1;&#xC804;&#xAE4C;&#xC9C0; &#xC0D8;&#xD50C;&#xC758; &#xC885;&#xB8CC;&#xB97C; &#xC9C0;&#xC5F0;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; &#xADF8; &#xC2DC;&#xC810;&#xC5D0; &#xCD94;&#xAC00;&#xB85C; &#xC0D8;&#xD50C;&#xC744; &#xB05D;&#xB0B4;&#xB294; &#xBA85;&#xB839;&#xB9CC;&#xC744; &#xD3EC;&#xD568;&#xD55C; <code>ExecuteCommandBuffer</code>&#xB97C; &#xB123;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xAC19;&#xC740; &#xBA85;&#xB839; &#xBC84;&#xD37C;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xC791;&#xC5C5;&#xC774; &#xB05D;&#xB09C; &#xD6C4; &#xB2E4;&#xC2DC; &#xC9C0;&#xC6B0;&#xC138;&#xC694;.</p>
 						
-						<pre>		cameraBuffer.BeginSample("Render Camera");
+						<pre>		cameraBuffer.BeginSample(&quot;Render Camera&quot;);
 		cameraBuffer.ClearRenderTarget(true, false, Color.clear);
-		<del>//cameraBuffer.EndSample("Render Camera");</del>
+		<del>//cameraBuffer.EndSample(&quot;Render Camera&quot;);</del>
 		context.ExecuteCommandBuffer(cameraBuffer);
 		cameraBuffer.Clear();
 
-		…
+		&#x2026;
 
-		<ins>cameraBuffer.EndSample("Render Camera");</ins>
+		<ins>cameraBuffer.EndSample(&quot;Render Camera&quot;);</ins>
 		<ins>context.ExecuteCommandBuffer(cameraBuffer);</ins>
 		<ins>cameraBuffer.Clear();</ins>
 
@@ -697,30 +744,30 @@ public class MyPipeline : RenderPipeline {
 						
 						<figure>
 							<img src="polishing/nested-sampling.png" width="250" height="98">
-							<figcaption>중첩된 샘플링</figcaption>
+							<figcaption>&#xC911;&#xCCA9;&#xB41C; &#xC0D8;&#xD50C;&#xB9C1;</figcaption>
 						</figure>
 						
-						<p>다른 모든 동작은 최상위 단계의 바로 밑에 있는 반면에 지우기 동작만 중복되는 <em>Render Camera</em> 단계의 안쪽에 포함되는 점을 제외하면 좋아 보입니다.  왜 이런 일이 발생하는지 확신할 수 없지만 지운 후에 샘플을 시작하는 것으로 이 문제를 피할 수 있습니다. </p>
+						<p>&#xB2E4;&#xB978; &#xBAA8;&#xB4E0; &#xB3D9;&#xC791;&#xC740; &#xCD5C;&#xC0C1;&#xC704; &#xB2E8;&#xACC4;&#xC758; &#xBC14;&#xB85C; &#xBC11;&#xC5D0; &#xC788;&#xB294; &#xBC18;&#xBA74;&#xC5D0; &#xC9C0;&#xC6B0;&#xAE30; &#xB3D9;&#xC791;&#xB9CC; &#xC911;&#xBCF5;&#xB418;&#xB294; <em>Render Camera</em> &#xB2E8;&#xACC4;&#xC758; &#xC548;&#xCABD;&#xC5D0; &#xD3EC;&#xD568;&#xB418;&#xB294; &#xC810;&#xC744; &#xC81C;&#xC678;&#xD558;&#xBA74; &#xC88B;&#xC544; &#xBCF4;&#xC785;&#xB2C8;&#xB2E4;.  &#xC65C; &#xC774;&#xB7F0; &#xC77C;&#xC774; &#xBC1C;&#xC0DD;&#xD558;&#xB294;&#xC9C0; &#xD655;&#xC2E0;&#xD560; &#xC218; &#xC5C6;&#xC9C0;&#xB9CC; &#xC9C0;&#xC6B4; &#xD6C4;&#xC5D0; &#xC0D8;&#xD50C;&#xC744; &#xC2DC;&#xC791;&#xD558;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xC774; &#xBB38;&#xC81C;&#xB97C; &#xD53C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
 						
-						<pre>		<del>//cameraBuffer.BeginSample("Render Camera");</del>
+						<pre>		<del>//cameraBuffer.BeginSample(&quot;Render Camera&quot;);</del>
 		cameraBuffer.ClearRenderTarget(true, false, Color.clear);
-		<ins>cameraBuffer.BeginSample("Render Camera");</ins>
+		<ins>cameraBuffer.BeginSample(&quot;Render Camera&quot;);</ins>
 		context.ExecuteCommandBuffer(cameraBuffer);
 		cameraBuffer.Clear();</pre>
 						
 						<figure>
 							<img src="polishing/without-redundancy.png" width="250" height="84">
-							<figcaption>반복되는 중첩이 없음. </figcaption>
+							<figcaption>&#xBC18;&#xBCF5;&#xB418;&#xB294; &#xC911;&#xCCA9;&#xC774; &#xC5C6;&#xC74C;. </figcaption>
 						</figure>
 					</section>
 					
 					<section>
-						<h3>기본 파이프라인의 렌더링</h3>
+						<h3>&#xAE30;&#xBCF8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC758; &#xB80C;&#xB354;&#xB9C1;</h3>
 						
-						<p>우리의 파이프라인은 언릿 셰이더만 지원하기 때문에 다른 셰이더를 사용하는 오브젝트는 렌더링 되지 않으므로 그 오브젝트들이 보이지 않게 됩니다.  올바른 동작이지만, 이는 일부 오브젝트가 잘못된 셰이더를 사용한다는 사실을 숨깁니다. 유니티의 에러 셰이더로 그러한 오브젝트를 시각화해서 명백히 잘못된 마젠타 형체로 나타나게 된다면 좋을 것 같습니다. 이를 위해 콘텍스트와 카메라 파라미터를 사용하여 전용의 <code>DrawDefaultPipeline</code> 메소드를 추가해 보겠습니다. 투명한 형체들을 그린 후에 마지막에 호출하겠습니다.</p>
+						<p>&#xC6B0;&#xB9AC;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC740; &#xC5B8;&#xB9BF; &#xC170;&#xC774;&#xB354;&#xB9CC; &#xC9C0;&#xC6D0;&#xD558;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xB2E4;&#xB978; &#xC170;&#xC774;&#xB354;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB294; &#xB80C;&#xB354;&#xB9C1; &#xB418;&#xC9C0; &#xC54A;&#xC73C;&#xBBC0;&#xB85C; &#xADF8; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB4E4;&#xC774; &#xBCF4;&#xC774;&#xC9C0; &#xC54A;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;.  &#xC62C;&#xBC14;&#xB978; &#xB3D9;&#xC791;&#xC774;&#xC9C0;&#xB9CC;, &#xC774;&#xB294; &#xC77C;&#xBD80; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xAC00; &#xC798;&#xBABB;&#xB41C; &#xC170;&#xC774;&#xB354;&#xB97C; &#xC0AC;&#xC6A9;&#xD55C;&#xB2E4;&#xB294; &#xC0AC;&#xC2E4;&#xC744; &#xC228;&#xAE41;&#xB2C8;&#xB2E4;. &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xC5D0;&#xB7EC; &#xC170;&#xC774;&#xB354;&#xB85C; &#xADF8;&#xB7EC;&#xD55C; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xC2DC;&#xAC01;&#xD654;&#xD574;&#xC11C; &#xBA85;&#xBC31;&#xD788; &#xC798;&#xBABB;&#xB41C; &#xB9C8;&#xC820;&#xD0C0; &#xD615;&#xCCB4;&#xB85C; &#xB098;&#xD0C0;&#xB098;&#xAC8C; &#xB41C;&#xB2E4;&#xBA74; &#xC88B;&#xC744; &#xAC83; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xC704;&#xD574; &#xCF58;&#xD14D;&#xC2A4;&#xD2B8;&#xC640; &#xCE74;&#xBA54;&#xB77C; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC804;&#xC6A9;&#xC758; <code>DrawDefaultPipeline</code> &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xCD94;&#xAC00;&#xD574; &#xBCF4;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. &#xD22C;&#xBA85;&#xD55C; &#xD615;&#xCCB4;&#xB4E4;&#xC744; &#xADF8;&#xB9B0; &#xD6C4;&#xC5D0; &#xB9C8;&#xC9C0;&#xB9C9;&#xC5D0; &#xD638;&#xCD9C;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>	void Render (ScriptableRenderContext context, Camera camera) {
-		…
+		&#x2026;
 
 		drawSettings.sorting.flags = SortFlags.CommonTransparent;
 		filterSettings.renderQueueRange = RenderQueueRange.transparent;
@@ -730,7 +777,7 @@ public class MyPipeline : RenderPipeline {
 
 		<ins>DrawDefaultPipeline(context, camera);</ins>
 
-		cameraBuffer.EndSample("Render Camera");
+		cameraBuffer.EndSample(&quot;Render Camera&quot;);
 		context.ExecuteCommandBuffer(cameraBuffer);
 		cameraBuffer.Clear();
 
@@ -739,11 +786,11 @@ public class MyPipeline : RenderPipeline {
 
 	<ins>void DrawDefaultPipeline(ScriptableRenderContext context, Camera camera) {}</ins></pre>
 						
-						<p>유니티의 기본 서피스 셰이더는 첫 번째 포워드 렌더링 패스로 사용되는 <em>ForwardBase</em> 패스를 갖습니다.  이를 활용해서 오브젝트가 기본 파이프라인과 함께 작동하는 재질을 가졌는지 식별할 수 있습니다.  새로운 드로잉 설정을 통해서 해당 패스를 선택하고 렌더링을 위해 새로운 기본 필터 설정과 함께 사용하세요. 정렬이나 투명과 불투명 렌더러를 구분하는 것은 신경쓰지 않습니다. 어차피 올바르지 않은 경우이기 때문입니다.</p>
+						<p>&#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xAE30;&#xBCF8; &#xC11C;&#xD53C;&#xC2A4; &#xC170;&#xC774;&#xB354;&#xB294; &#xCCAB; &#xBC88;&#xC9F8; &#xD3EC;&#xC6CC;&#xB4DC; &#xB80C;&#xB354;&#xB9C1; &#xD328;&#xC2A4;&#xB85C; &#xC0AC;&#xC6A9;&#xB418;&#xB294; <em>ForwardBase</em> &#xD328;&#xC2A4;&#xB97C; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC774;&#xB97C; &#xD65C;&#xC6A9;&#xD574;&#xC11C; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xAC00; &#xAE30;&#xBCF8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xACFC; &#xD568;&#xAED8; &#xC791;&#xB3D9;&#xD558;&#xB294; &#xC7AC;&#xC9C8;&#xC744; &#xAC00;&#xC84C;&#xB294;&#xC9C0; &#xC2DD;&#xBCC4;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC0C8;&#xB85C;&#xC6B4; &#xB4DC;&#xB85C;&#xC789; &#xC124;&#xC815;&#xC744; &#xD1B5;&#xD574;&#xC11C; &#xD574;&#xB2F9; &#xD328;&#xC2A4;&#xB97C; &#xC120;&#xD0DD;&#xD558;&#xACE0; &#xB80C;&#xB354;&#xB9C1;&#xC744; &#xC704;&#xD574; &#xC0C8;&#xB85C;&#xC6B4; &#xAE30;&#xBCF8; &#xD544;&#xD130; &#xC124;&#xC815;&#xACFC; &#xD568;&#xAED8; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;. &#xC815;&#xB82C;&#xC774;&#xB098; &#xD22C;&#xBA85;&#xACFC; &#xBD88;&#xD22C;&#xBA85; &#xB80C;&#xB354;&#xB7EC;&#xB97C; &#xAD6C;&#xBD84;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC2E0;&#xACBD;&#xC4F0;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5B4;&#xCC28;&#xD53C; &#xC62C;&#xBC14;&#xB974;&#xC9C0; &#xC54A;&#xC740; &#xACBD;&#xC6B0;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>	void DrawDefaultPipeline(ScriptableRenderContext context, Camera camera) {
 		<ins>var drawSettings = new DrawRendererSettings(</ins>
-			<ins>camera, new ShaderPassName("ForwardBase")</ins>
+			<ins>camera, new ShaderPassName(&quot;ForwardBase&quot;)</ins>
 		<ins>);</ins>
 		
 		<ins>var filterSettings = new FilterRenderersSettings(true);</ins>
@@ -755,109 +802,109 @@ public class MyPipeline : RenderPipeline {
 						
 						<figure>
 							<img src="polishing/forward-base-pass.jpg" width="250" height="98">
-							<figcaption>포워드 베이스 패스의 렌더링</figcaption>
+							<figcaption>&#xD3EC;&#xC6CC;&#xB4DC; &#xBCA0;&#xC774;&#xC2A4; &#xD328;&#xC2A4;&#xC758; &#xB80C;&#xB354;&#xB9C1;</figcaption>
 						</figure>
 						
-						<p>이제 기본 셰이더를 사용하는 오브젝트가 나타납니다. 프레임 디버거에서도 보입니다.</p>
+						<p>&#xC774;&#xC81C; &#xAE30;&#xBCF8; &#xC170;&#xC774;&#xB354;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xAC00; &#xB098;&#xD0C0;&#xB0A9;&#xB2C8;&#xB2E4;. &#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;&#xC5D0;&#xC11C;&#xB3C4; &#xBCF4;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
 						<figure>
 							<img src="polishing/frame-debugger-forward-base.png" width="288" height="210">
-							<figcaption>모든 것이 그려집니다.</figcaption>
+							<figcaption>&#xBAA8;&#xB4E0; &#xAC83;&#xC774; &#xADF8;&#xB824;&#xC9D1;&#xB2C8;&#xB2E4;.</figcaption>
 						</figure>
 						
-						<p>우리의 파이프라인은 포워드 베이스 패스를 지원하지 않기 때문에 올바르게 렌더링 되지 않습니다.  필요한 데이터가 설정되지 않았으므로 라이팅에 의존하는 모든 것이 검은색이 되어 버립니다. 대신, 에러 셰이더를 사용해 렌더링 해야 합니다.  이렇게 하려면 에러 재질이 필요합니다. 그것을 위해서 필드를 추가하세요. 그 다음, <code>DrawDefaultPipeline</code>의 시작 부분에서 에러 재질이 아직 존재하지 않는다면 에러 재질을 생성하세요. <code>Shader.Find</code>를 통해 <em>Hidden/InternalErrorShader</em>를 얻은 다음에 그 셰이더로 새 재질을 만들면 됩니다. 또한, 재질의 숨김 플래그를 <code>HideFlags.HideAndDontSave</code>로 만들어서 프로젝트 윈도에도 보이지 않고 다른 모든 애셋과 함께 저장되지 않도록 하세요.</p>
+						<p>&#xC6B0;&#xB9AC;&#xC758; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC740; &#xD3EC;&#xC6CC;&#xB4DC; &#xBCA0;&#xC774;&#xC2A4; &#xD328;&#xC2A4;&#xB97C; &#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC62C;&#xBC14;&#xB974;&#xAC8C; &#xB80C;&#xB354;&#xB9C1; &#xB418;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xD544;&#xC694;&#xD55C; &#xB370;&#xC774;&#xD130;&#xAC00; &#xC124;&#xC815;&#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC73C;&#xBBC0;&#xB85C; &#xB77C;&#xC774;&#xD305;&#xC5D0; &#xC758;&#xC874;&#xD558;&#xB294; &#xBAA8;&#xB4E0; &#xAC83;&#xC774; &#xAC80;&#xC740;&#xC0C9;&#xC774; &#xB418;&#xC5B4; &#xBC84;&#xB9BD;&#xB2C8;&#xB2E4;. &#xB300;&#xC2E0;, &#xC5D0;&#xB7EC; &#xC170;&#xC774;&#xB354;&#xB97C; &#xC0AC;&#xC6A9;&#xD574; &#xB80C;&#xB354;&#xB9C1; &#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.  &#xC774;&#xB807;&#xAC8C; &#xD558;&#xB824;&#xBA74; &#xC5D0;&#xB7EC; &#xC7AC;&#xC9C8;&#xC774; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;. &#xADF8;&#xAC83;&#xC744; &#xC704;&#xD574;&#xC11C; &#xD544;&#xB4DC;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC138;&#xC694;. &#xADF8; &#xB2E4;&#xC74C;, <code>DrawDefaultPipeline</code>&#xC758; &#xC2DC;&#xC791; &#xBD80;&#xBD84;&#xC5D0;&#xC11C; &#xC5D0;&#xB7EC; &#xC7AC;&#xC9C8;&#xC774; &#xC544;&#xC9C1; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xB294;&#xB2E4;&#xBA74; &#xC5D0;&#xB7EC; &#xC7AC;&#xC9C8;&#xC744; &#xC0DD;&#xC131;&#xD558;&#xC138;&#xC694;. <code>Shader.Find</code>&#xB97C; &#xD1B5;&#xD574; <em>Hidden/InternalErrorShader</em>&#xB97C; &#xC5BB;&#xC740; &#xB2E4;&#xC74C;&#xC5D0; &#xADF8; &#xC170;&#xC774;&#xB354;&#xB85C; &#xC0C8; &#xC7AC;&#xC9C8;&#xC744; &#xB9CC;&#xB4E4;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. &#xB610;&#xD55C;, &#xC7AC;&#xC9C8;&#xC758; &#xC228;&#xAE40; &#xD50C;&#xB798;&#xADF8;&#xB97C; <code>HideFlags.HideAndDontSave</code>&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC11C; &#xD504;&#xB85C;&#xC81D;&#xD2B8; &#xC708;&#xB3C4;&#xC5D0;&#xB3C4; &#xBCF4;&#xC774;&#xC9C0; &#xC54A;&#xACE0; &#xB2E4;&#xB978; &#xBAA8;&#xB4E0; &#xC560;&#xC14B;&#xACFC; &#xD568;&#xAED8; &#xC800;&#xC7A5;&#xB418;&#xC9C0; &#xC54A;&#xB3C4;&#xB85D; &#xD558;&#xC138;&#xC694;.</p>
 						
 						<pre>	<ins>Material errorMaterial;</ins>
 
-	…
+	&#x2026;
 
 	void DrawDefaultPipeline(ScriptableRenderContext context, Camera camera) {
 		<ins>if (errorMaterial == null) {</ins>
-			<ins>Shader errorShader = Shader.Find("Hidden/InternalErrorShader");</ins>
+			<ins>Shader errorShader = Shader.Find(&quot;Hidden/InternalErrorShader&quot;);</ins>
 			<ins>errorMaterial = new Material(errorShader) {</ins>
 				<ins>hideFlags = HideFlags.HideAndDontSave</ins>
 			<ins>};</ins>
 		<ins>}</ins>
 		
-		…
+		&#x2026;
 	}</pre>
 						
-						<p>드로잉 설정에는 <code>SetOverrideMaterial</code>을 호출해서 렌더링에 사용될 재질을 재정의하는 옵션이 있습니다. 첫 번째 파라미터는 사용할 재질입니다. 두 번째 파라미터는 렌더링에 사용될 재질의 셰이더 패스의 인덱스입니다. 에러 셰이더는 단일 패스만 가지므로 0을 사용하세요.</p>
+						<p>&#xB4DC;&#xB85C;&#xC789; &#xC124;&#xC815;&#xC5D0;&#xB294; <code>SetOverrideMaterial</code>&#xC744; &#xD638;&#xCD9C;&#xD574;&#xC11C; &#xB80C;&#xB354;&#xB9C1;&#xC5D0; &#xC0AC;&#xC6A9;&#xB420; &#xC7AC;&#xC9C8;&#xC744; &#xC7AC;&#xC815;&#xC758;&#xD558;&#xB294; &#xC635;&#xC158;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCCAB; &#xBC88;&#xC9F8; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294; &#xC0AC;&#xC6A9;&#xD560; &#xC7AC;&#xC9C8;&#xC785;&#xB2C8;&#xB2E4;. &#xB450; &#xBC88;&#xC9F8; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294; &#xB80C;&#xB354;&#xB9C1;&#xC5D0; &#xC0AC;&#xC6A9;&#xB420; &#xC7AC;&#xC9C8;&#xC758; &#xC170;&#xC774;&#xB354; &#xD328;&#xC2A4;&#xC758; &#xC778;&#xB371;&#xC2A4;&#xC785;&#xB2C8;&#xB2E4;. &#xC5D0;&#xB7EC; &#xC170;&#xC774;&#xB354;&#xB294; &#xB2E8;&#xC77C; &#xD328;&#xC2A4;&#xB9CC; &#xAC00;&#xC9C0;&#xBBC0;&#xB85C; 0&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xC138;&#xC694;.</p>
 						
 						<pre>		var drawSettings = new DrawRendererSettings(
-			camera, new ShaderPassName("ForwardBase")
+			camera, new ShaderPassName(&quot;ForwardBase&quot;)
 		);
 		<ins>drawSettings.SetOverrideMaterial(errorMaterial, 0);</ins></pre>
 						
 						<figure>
 							<img src="polishing/error-material.jpg" width="250" height="98">
-							<figcaption>에러 셰이더의 사용</figcaption>
+							<figcaption>&#xC5D0;&#xB7EC; &#xC170;&#xC774;&#xB354;&#xC758; &#xC0AC;&#xC6A9;</figcaption>
 						</figure>
 						
-						<p>지원하지 않는 재질을 사용하는 오브젝트들은 이제 확실히 잘못된 것처럼 보입니다. 그러나 이는 쉐이더들이 <code>ForwardBase</code> 패스를 갖는 유니티의 기본 파이프라인의 재질들에만 해당합니다. 다른 패스로 식별할 수 있는 내장 셰이더가 있습니다.  특별히 <em>PrepassBase</em>, <em>Always</em>, <em>Vertex</em>, <em>VertexLMRGBM</em>, <em>VertexLM</em>등이 있습니다.</p>
+						<p>&#xC9C0;&#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xB294; &#xC7AC;&#xC9C8;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB4E4;&#xC740; &#xC774;&#xC81C; &#xD655;&#xC2E4;&#xD788; &#xC798;&#xBABB;&#xB41C; &#xAC83;&#xCC98;&#xB7FC; &#xBCF4;&#xC785;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xC774;&#xB294; &#xC250;&#xC774;&#xB354;&#xB4E4;&#xC774; <code>ForwardBase</code> &#xD328;&#xC2A4;&#xB97C; &#xAC16;&#xB294; &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xAE30;&#xBCF8; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC758; &#xC7AC;&#xC9C8;&#xB4E4;&#xC5D0;&#xB9CC; &#xD574;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;. &#xB2E4;&#xB978; &#xD328;&#xC2A4;&#xB85C; &#xC2DD;&#xBCC4;&#xD560; &#xC218; &#xC788;&#xB294; &#xB0B4;&#xC7A5; &#xC170;&#xC774;&#xB354;&#xAC00; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xD2B9;&#xBCC4;&#xD788; <em>PrepassBase</em>, <em>Always</em>, <em>Vertex</em>, <em>VertexLMRGBM</em>, <em>VertexLM</em>&#xB4F1;&#xC774; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>다행히도, <code>SetShaderPassName</code>을 호출해서 드로잉 설정에 여러 패스를 추가할 수 있습니다. 이름은 이 메소드의 두 번째 파라미터입니다. 첫 번째 파라미터는 해당 패스가 그려지는 순서를 제어하는 인덱스입니다. 어떤 순서로 그려지든 상관이 없으므로 아무 순서나 넣어도 좋습니다. 생성자를 통해 제공된 패스는 언제나 인덱스 0을 갖습니다. 추가적인 패스를 위해 인덱스를 하나씩 증가시킵니다.</p>
+						<p>&#xB2E4;&#xD589;&#xD788;&#xB3C4;, <code>SetShaderPassName</code>&#xC744; &#xD638;&#xCD9C;&#xD574;&#xC11C; &#xB4DC;&#xB85C;&#xC789; &#xC124;&#xC815;&#xC5D0; &#xC5EC;&#xB7EC; &#xD328;&#xC2A4;&#xB97C; &#xCD94;&#xAC00;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB984;&#xC740; &#xC774; &#xBA54;&#xC18C;&#xB4DC;&#xC758; &#xB450; &#xBC88;&#xC9F8; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xC785;&#xB2C8;&#xB2E4;. &#xCCAB; &#xBC88;&#xC9F8; &#xD30C;&#xB77C;&#xBBF8;&#xD130;&#xB294; &#xD574;&#xB2F9; &#xD328;&#xC2A4;&#xAC00; &#xADF8;&#xB824;&#xC9C0;&#xB294; &#xC21C;&#xC11C;&#xB97C; &#xC81C;&#xC5B4;&#xD558;&#xB294; &#xC778;&#xB371;&#xC2A4;&#xC785;&#xB2C8;&#xB2E4;. &#xC5B4;&#xB5A4; &#xC21C;&#xC11C;&#xB85C; &#xADF8;&#xB824;&#xC9C0;&#xB4E0; &#xC0C1;&#xAD00;&#xC774; &#xC5C6;&#xC73C;&#xBBC0;&#xB85C; &#xC544;&#xBB34; &#xC21C;&#xC11C;&#xB098; &#xB123;&#xC5B4;&#xB3C4; &#xC88B;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC0DD;&#xC131;&#xC790;&#xB97C; &#xD1B5;&#xD574; &#xC81C;&#xACF5;&#xB41C; &#xD328;&#xC2A4;&#xB294; &#xC5B8;&#xC81C;&#xB098; &#xC778;&#xB371;&#xC2A4; 0&#xC744; &#xAC16;&#xC2B5;&#xB2C8;&#xB2E4;. &#xCD94;&#xAC00;&#xC801;&#xC778; &#xD328;&#xC2A4;&#xB97C; &#xC704;&#xD574; &#xC778;&#xB371;&#xC2A4;&#xB97C; &#xD558;&#xB098;&#xC529; &#xC99D;&#xAC00;&#xC2DC;&#xD0B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		var drawSettings = new DrawRendererSettings(
-			camera, new ShaderPassName("ForwardBase")
+			camera, new ShaderPassName(&quot;ForwardBase&quot;)
 		);
-		<ins>drawSettings.SetShaderPassName(1, new ShaderPassName("PrepassBase"));</ins>
-		<ins>drawSettings.SetShaderPassName(2, new ShaderPassName("Always"));</ins>
-		<ins>drawSettings.SetShaderPassName(3, new ShaderPassName("Vertex"));</ins>
-		<ins>drawSettings.SetShaderPassName(4, new ShaderPassName("VertexLMRGBM"));</ins>
-		<ins>drawSettings.SetShaderPassName(5, new ShaderPassName("VertexLM"));</ins>
+		<ins>drawSettings.SetShaderPassName(1, new ShaderPassName(&quot;PrepassBase&quot;));</ins>
+		<ins>drawSettings.SetShaderPassName(2, new ShaderPassName(&quot;Always&quot;));</ins>
+		<ins>drawSettings.SetShaderPassName(3, new ShaderPassName(&quot;Vertex&quot;));</ins>
+		<ins>drawSettings.SetShaderPassName(4, new ShaderPassName(&quot;VertexLMRGBM&quot;));</ins>
+		<ins>drawSettings.SetShaderPassName(5, new ShaderPassName(&quot;VertexLM&quot;));</ins>
 		drawSettings.SetOverrideMaterial(errorMaterial, 0);</pre>
 						
-						<p>이 정도면 지금까지 유니티에 의해 제공된 모든 셰이더를 포함할 수 있고, 씬 생성시 잘못된 재질의 사용을 지적하기에는 충분할 겁니다. 그러나 개발 과정에서만 이 작업이 필요한 것이지 빌드에서는 필요하지 않습니다. 그러니 에디터에서만 <code>DrawDefaultPipeline</code>을 호출합시다.  이를 위한 방법의 하나는 <code>Conditional</code> 속성을 메소드에 추가하는 것입니다.</p>
+						<p>&#xC774; &#xC815;&#xB3C4;&#xBA74; &#xC9C0;&#xAE08;&#xAE4C;&#xC9C0; &#xC720;&#xB2C8;&#xD2F0;&#xC5D0; &#xC758;&#xD574; &#xC81C;&#xACF5;&#xB41C; &#xBAA8;&#xB4E0; &#xC170;&#xC774;&#xB354;&#xB97C; &#xD3EC;&#xD568;&#xD560; &#xC218; &#xC788;&#xACE0;, &#xC52C; &#xC0DD;&#xC131;&#xC2DC; &#xC798;&#xBABB;&#xB41C; &#xC7AC;&#xC9C8;&#xC758; &#xC0AC;&#xC6A9;&#xC744; &#xC9C0;&#xC801;&#xD558;&#xAE30;&#xC5D0;&#xB294; &#xCDA9;&#xBD84;&#xD560; &#xAC81;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xAC1C;&#xBC1C; &#xACFC;&#xC815;&#xC5D0;&#xC11C;&#xB9CC; &#xC774; &#xC791;&#xC5C5;&#xC774; &#xD544;&#xC694;&#xD55C; &#xAC83;&#xC774;&#xC9C0; &#xBE4C;&#xB4DC;&#xC5D0;&#xC11C;&#xB294; &#xD544;&#xC694;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB2C8; &#xC5D0;&#xB514;&#xD130;&#xC5D0;&#xC11C;&#xB9CC; <code>DrawDefaultPipeline</code>&#xC744; &#xD638;&#xCD9C;&#xD569;&#xC2DC;&#xB2E4;.  &#xC774;&#xB97C; &#xC704;&#xD55C; &#xBC29;&#xBC95;&#xC758; &#xD558;&#xB098;&#xB294; <code>Conditional</code> &#xC18D;&#xC131;&#xC744; &#xBA54;&#xC18C;&#xB4DC;&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xB294; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.</p>
 					</section>
 					
 					<section>
-						<h3>조건부 코드 실행</h3>
+						<h3>&#xC870;&#xAC74;&#xBD80; &#xCF54;&#xB4DC; &#xC2E4;&#xD589;</h3>
 						
-						<p><code>Conditional</code> 속성은 <code>System.Diagnostics</code> 네임스페이스에 정의되어 있습니다. 그 네임스페이스를 사용할 수 있지만 불행히도 거기에는 <code>Debug</code> 타입도 포함되어 있어서 <code>UnityEngine.Debug</code>와 충돌합니다. 우리는 해당 속성만 필요하므로 별칭을 사용해서 충돌을 피할 수 있습니다. 전체 네임스페이스를 사용하는 대신 특정 타입을 사용하고 그 타입에 유효한 이름을 할당합니다. 이 경우, 우리는 <code>System.Diagnostics.ConditaionalAttribute</code>의 별칭으로 <code>Conditional</code>을 정의하겠습니다.</p>
+						<p><code>Conditional</code> &#xC18D;&#xC131;&#xC740; <code>System.Diagnostics</code> &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xC815;&#xC758;&#xB418;&#xC5B4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xADF8; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC9C0;&#xB9CC; &#xBD88;&#xD589;&#xD788;&#xB3C4; &#xAC70;&#xAE30;&#xC5D0;&#xB294; <code>Debug</code> &#xD0C0;&#xC785;&#xB3C4; &#xD3EC;&#xD568;&#xB418;&#xC5B4; &#xC788;&#xC5B4;&#xC11C; <code>UnityEngine.Debug</code>&#xC640; &#xCDA9;&#xB3CC;&#xD569;&#xB2C8;&#xB2E4;. &#xC6B0;&#xB9AC;&#xB294; &#xD574;&#xB2F9; &#xC18D;&#xC131;&#xB9CC; &#xD544;&#xC694;&#xD558;&#xBBC0;&#xB85C; &#xBCC4;&#xCE6D;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC11C; &#xCDA9;&#xB3CC;&#xC744; &#xD53C;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC804;&#xCCB4; &#xB124;&#xC784;&#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xB300;&#xC2E0; &#xD2B9;&#xC815; &#xD0C0;&#xC785;&#xC744; &#xC0AC;&#xC6A9;&#xD558;&#xACE0; &#xADF8; &#xD0C0;&#xC785;&#xC5D0; &#xC720;&#xD6A8;&#xD55C; &#xC774;&#xB984;&#xC744; &#xD560;&#xB2F9;&#xD569;&#xB2C8;&#xB2E4;. &#xC774; &#xACBD;&#xC6B0;, &#xC6B0;&#xB9AC;&#xB294; <code>System.Diagnostics.ConditaionalAttribute</code>&#xC758; &#xBCC4;&#xCE6D;&#xC73C;&#xB85C; <code>Conditional</code>&#xC744; &#xC815;&#xC758;&#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Experimental.Rendering;
 <ins>using Conditional = System.Diagnostics.ConditionalAttribute;</ins></pre>
 						
-						<p>속성을 우리의 메소드에 추가하세요. 심볼을 지정하는 문자열 인수가 필요합니다. 컴파일 중에 해당 심볼이 정의되어 있으면 메소드 호출은 정상적으로 포함이 됩니다. 그러나 만약 심볼이 정의되어 있지 않다면 모든 인자와 함께 이 메소드의 호출은 제거됩니다. 마치 컴파일 중에 <code>DrawDefaultPipeline(context, camera);</code> 코드가 없었던 것과 같이 됩니다.</p>
+						<p>&#xC18D;&#xC131;&#xC744; &#xC6B0;&#xB9AC;&#xC758; &#xBA54;&#xC18C;&#xB4DC;&#xC5D0; &#xCD94;&#xAC00;&#xD558;&#xC138;&#xC694;. &#xC2EC;&#xBCFC;&#xC744; &#xC9C0;&#xC815;&#xD558;&#xB294; &#xBB38;&#xC790;&#xC5F4; &#xC778;&#xC218;&#xAC00; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;. &#xCEF4;&#xD30C;&#xC77C; &#xC911;&#xC5D0; &#xD574;&#xB2F9; &#xC2EC;&#xBCFC;&#xC774; &#xC815;&#xC758;&#xB418;&#xC5B4; &#xC788;&#xC73C;&#xBA74; &#xBA54;&#xC18C;&#xB4DC; &#xD638;&#xCD9C;&#xC740; &#xC815;&#xC0C1;&#xC801;&#xC73C;&#xB85C; &#xD3EC;&#xD568;&#xC774; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB7EC;&#xB098; &#xB9CC;&#xC57D; &#xC2EC;&#xBCFC;&#xC774; &#xC815;&#xC758;&#xB418;&#xC5B4; &#xC788;&#xC9C0; &#xC54A;&#xB2E4;&#xBA74; &#xBAA8;&#xB4E0; &#xC778;&#xC790;&#xC640; &#xD568;&#xAED8; &#xC774; &#xBA54;&#xC18C;&#xB4DC;&#xC758; &#xD638;&#xCD9C;&#xC740; &#xC81C;&#xAC70;&#xB429;&#xB2C8;&#xB2E4;. &#xB9C8;&#xCE58; &#xCEF4;&#xD30C;&#xC77C; &#xC911;&#xC5D0; <code>DrawDefaultPipeline(context, camera);</code> &#xCF54;&#xB4DC;&#xAC00; &#xC5C6;&#xC5C8;&#xB358; &#xAC83;&#xACFC; &#xAC19;&#xC774; &#xB429;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>유니티 에디터용으로 컴파일할 때만 이 호출을 포함하려면 <em>UNITY_EDITOR</em> 심볼을 사용해야 합니다.</p>
+						<p>&#xC720;&#xB2C8;&#xD2F0; &#xC5D0;&#xB514;&#xD130;&#xC6A9;&#xC73C;&#xB85C; &#xCEF4;&#xD30C;&#xC77C;&#xD560; &#xB54C;&#xB9CC; &#xC774; &#xD638;&#xCD9C;&#xC744; &#xD3EC;&#xD568;&#xD558;&#xB824;&#xBA74; <em>UNITY_EDITOR</em> &#xC2EC;&#xBCFC;&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 						
-						<pre>	<ins>[Conditional("UNITY_EDITOR")]</ins>
+						<pre>	<ins>[Conditional(&quot;UNITY_EDITOR&quot;)]</ins>
 	void DrawDefaultPipeline(ScriptableRenderContext context, Camera camera) {
-		…
+		&#x2026;
 	}</pre>
 						
-						<p>한 걸음 더 나아가서 개발 빌드에도 이 호출을 포함할 수 있으며 이는 릴리즈 빌드에서만 호출을 제외하게 됩니다. 그렇게 하려면, <em>DEVELOPMENT_BUILD</em> 심볼과 함께 추가적인 조건을 추가하세요.</p>
+						<p>&#xD55C; &#xAC78;&#xC74C; &#xB354; &#xB098;&#xC544;&#xAC00;&#xC11C; &#xAC1C;&#xBC1C; &#xBE4C;&#xB4DC;&#xC5D0;&#xB3C4; &#xC774; &#xD638;&#xCD9C;&#xC744; &#xD3EC;&#xD568;&#xD560; &#xC218; &#xC788;&#xC73C;&#xBA70; &#xC774;&#xB294; &#xB9B4;&#xB9AC;&#xC988; &#xBE4C;&#xB4DC;&#xC5D0;&#xC11C;&#xB9CC; &#xD638;&#xCD9C;&#xC744; &#xC81C;&#xC678;&#xD558;&#xAC8C; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB807;&#xAC8C; &#xD558;&#xB824;&#xBA74;, <em>DEVELOPMENT_BUILD</em> &#xC2EC;&#xBCFC;&#xACFC; &#xD568;&#xAED8; &#xCD94;&#xAC00;&#xC801;&#xC778; &#xC870;&#xAC74;&#xC744; &#xCD94;&#xAC00;&#xD558;&#xC138;&#xC694;.</p>
 						
-						<pre>	[<ins>Conditional("DEVELOPMENT_BUILD"),</ins> Conditional("UNITY_EDITOR")]
+						<pre>	[<ins>Conditional(&quot;DEVELOPMENT_BUILD&quot;),</ins> Conditional(&quot;UNITY_EDITOR&quot;)]
 	void DrawDefaultPipeline(ScriptableRenderContext context, Camera camera) {
-		…
+		&#x2026;
 	}</pre>
 					</section>
 					
 					<section>
-						<h3>씬 윈도에서의 UI</h3>
+						<h3>&#xC52C; &#xC708;&#xB3C4;&#xC5D0;&#xC11C;&#xC758; UI</h3>
 						
-						<p>한 가지 지금까지 고려하지 못한 것은 유니티의 인게임 UI 입니다. 테스트를 위해서 씬에 UI 요소를 추가하세요. 예를 들어, <em>GameObject / UI / Button</em>을 통해 버튼 하나를 추가해보세요. 버튼이 들어있는 캔버스와 이벤트 시스템이 만들어집니다.</p>
+						<p>&#xD55C; &#xAC00;&#xC9C0; &#xC9C0;&#xAE08;&#xAE4C;&#xC9C0; &#xACE0;&#xB824;&#xD558;&#xC9C0; &#xBABB;&#xD55C; &#xAC83;&#xC740; &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xC778;&#xAC8C;&#xC784; UI &#xC785;&#xB2C8;&#xB2E4;. &#xD14C;&#xC2A4;&#xD2B8;&#xB97C; &#xC704;&#xD574;&#xC11C; &#xC52C;&#xC5D0; UI &#xC694;&#xC18C;&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xC138;&#xC694;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4;, <em>GameObject / UI / Button</em>&#xC744; &#xD1B5;&#xD574; &#xBC84;&#xD2BC; &#xD558;&#xB098;&#xB97C; &#xCD94;&#xAC00;&#xD574;&#xBCF4;&#xC138;&#xC694;. &#xBC84;&#xD2BC;&#xC774; &#xB4E4;&#xC5B4;&#xC788;&#xB294; &#xCE94;&#xBC84;&#xC2A4;&#xC640; &#xC774;&#xBCA4;&#xD2B8; &#xC2DC;&#xC2A4;&#xD15C;&#xC774; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
 						
-						<p>우리가 아무것도 하지 않아도 UI가 게임 윈도안에 렌더링 되는 것으로 밝혀졌습니다.  유니티가 알아서 해줍니다. 프레임 디버거는 UI가 오버레이로 별도로 렌더링되는 것을 보여줍니다. </p>
+						<p>&#xC6B0;&#xB9AC;&#xAC00; &#xC544;&#xBB34;&#xAC83;&#xB3C4; &#xD558;&#xC9C0; &#xC54A;&#xC544;&#xB3C4; UI&#xAC00; &#xAC8C;&#xC784; &#xC708;&#xB3C4;&#xC548;&#xC5D0; &#xB80C;&#xB354;&#xB9C1; &#xB418;&#xB294; &#xAC83;&#xC73C;&#xB85C; &#xBC1D;&#xD600;&#xC84C;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC720;&#xB2C8;&#xD2F0;&#xAC00; &#xC54C;&#xC544;&#xC11C; &#xD574;&#xC90D;&#xB2C8;&#xB2E4;. &#xD504;&#xB808;&#xC784; &#xB514;&#xBC84;&#xAC70;&#xB294; UI&#xAC00; &#xC624;&#xBC84;&#xB808;&#xC774;&#xB85C; &#xBCC4;&#xB3C4;&#xB85C; &#xB80C;&#xB354;&#xB9C1;&#xB418;&#xB294; &#xAC83;&#xC744; &#xBCF4;&#xC5EC;&#xC90D;&#xB2C8;&#xB2E4;. </p>
 						
 						<figure>
 							<img src="polishing/frame-debugger-ui-screen.png" width="250" height="162">
-							<figcaption>UI가 스크린 스페이스에 그려집니다.</figcaption>
+							<figcaption>UI&#xAC00; &#xC2A4;&#xD06C;&#xB9B0; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xADF8;&#xB824;&#xC9D1;&#xB2C8;&#xB2E4;.</figcaption>
 						</figure>
 						
-						<p>적어도, 캔버스가 스크린 스페이스에 렌더링되도록 설정된 경우입니다. 월드 스페이스에 렌더링하도록 설정된 경우, UI가 다른 투명한 오브젝트들과 함께 렌더링됩니다.</p>
+						<p>&#xC801;&#xC5B4;&#xB3C4;, &#xCE94;&#xBC84;&#xC2A4;&#xAC00; &#xC2A4;&#xD06C;&#xB9B0; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xB80C;&#xB354;&#xB9C1;&#xB418;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xB41C; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;. &#xC6D4;&#xB4DC; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xB80C;&#xB354;&#xB9C1;&#xD558;&#xB3C4;&#xB85D; &#xC124;&#xC815;&#xB41C; &#xACBD;&#xC6B0;, UI&#xAC00; &#xB2E4;&#xB978; &#xD22C;&#xBA85;&#xD55C; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB4E4;&#xACFC; &#xD568;&#xAED8; &#xB80C;&#xB354;&#xB9C1;&#xB429;&#xB2C8;&#xB2E4;.</p>
 						
 						<figure>
 							<img src="polishing/frame-debugger-ui-world.png" width="286" height="260">
-							<figcaption>월드 스페이스의 UI</figcaption>
+							<figcaption>&#xC6D4;&#xB4DC; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC758; UI</figcaption>
 						</figure>
 						
-						<p>UI가 게임 윈도에서는 동작하지만 씬 윈도에는 나타나지 않습니다. 씬 윈도에서 UI는 항상 월드 스페이스에 존재하지만 수동으로 씬에 삽입해야 합니다. UI를 추가하기 위해서는 현재 카메라를 인수로 해서 <code>ScriptableRenderContext.EmitWorldGeometryForSceneView</code> 정적 메소드를 호출하면 됩니다.  컬링 전에 수행되어야 합니다.</p>
+						<p>UI&#xAC00; &#xAC8C;&#xC784; &#xC708;&#xB3C4;&#xC5D0;&#xC11C;&#xB294; &#xB3D9;&#xC791;&#xD558;&#xC9C0;&#xB9CC; &#xC52C; &#xC708;&#xB3C4;&#xC5D0;&#xB294; &#xB098;&#xD0C0;&#xB098;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC52C; &#xC708;&#xB3C4;&#xC5D0;&#xC11C; UI&#xB294; &#xD56D;&#xC0C1; &#xC6D4;&#xB4DC; &#xC2A4;&#xD398;&#xC774;&#xC2A4;&#xC5D0; &#xC874;&#xC7AC;&#xD558;&#xC9C0;&#xB9CC; &#xC218;&#xB3D9;&#xC73C;&#xB85C; &#xC52C;&#xC5D0; &#xC0BD;&#xC785;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. UI&#xB97C; &#xCD94;&#xAC00;&#xD558;&#xAE30; &#xC704;&#xD574;&#xC11C;&#xB294; &#xD604;&#xC7AC; &#xCE74;&#xBA54;&#xB77C;&#xB97C; &#xC778;&#xC218;&#xB85C; &#xD574;&#xC11C; <code>ScriptableRenderContext.EmitWorldGeometryForSceneView</code> &#xC815;&#xC801; &#xBA54;&#xC18C;&#xB4DC;&#xB97C; &#xD638;&#xCD9C;&#xD558;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;.  &#xCEEC;&#xB9C1; &#xC804;&#xC5D0; &#xC218;&#xD589;&#xB418;&#xC5B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		if (!CullResults.GetCullingParameters(camera, out cullingParameters)) {
 			return;
@@ -867,13 +914,13 @@ using UnityEngine.Experimental.Rendering;
 
 		CullResults.Cull(ref cullingParameters, context, ref cull);</pre>
 						
-						<p>그러나 이것은 게임 윈도에 UI를 두 번 추가합니다. 이를 방지하려면, 씬 윈도를 렌더링할 때만 UI 지오메트리를 내보내야 합니다.  이는 카메라의 <code>cameraType</code>이 <code>CameraType.SceneView</code>와 같은 경우입니다.</p>
+						<p>&#xADF8;&#xB7EC;&#xB098; &#xC774;&#xAC83;&#xC740; &#xAC8C;&#xC784; &#xC708;&#xB3C4;&#xC5D0; UI&#xB97C; &#xB450; &#xBC88; &#xCD94;&#xAC00;&#xD569;&#xB2C8;&#xB2E4;. &#xC774;&#xB97C; &#xBC29;&#xC9C0;&#xD558;&#xB824;&#xBA74;, &#xC52C; &#xC708;&#xB3C4;&#xB97C; &#xB80C;&#xB354;&#xB9C1;&#xD560; &#xB54C;&#xB9CC; UI &#xC9C0;&#xC624;&#xBA54;&#xD2B8;&#xB9AC;&#xB97C; &#xB0B4;&#xBCF4;&#xB0B4;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;.  &#xC774;&#xB294; &#xCE74;&#xBA54;&#xB77C;&#xC758; <code>cameraType</code>&#xC774; <code>CameraType.SceneView</code>&#xC640; &#xAC19;&#xC740; &#xACBD;&#xC6B0;&#xC785;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>		<ins>if (camera.cameraType == CameraType.SceneView) {</ins>
 			ScriptableRenderContext.EmitWorldGeometryForSceneView(camera);
 		<ins>}</ins></pre>
 						
-						<p>이 코드는 동작하기는 하지만 에디터 안에서만 동작합니다. 조건부 컴파일에 의해서 빌드용으로 컴파일할 때는 <code>EmitWorldGeometryForSceneView</code>가 존재하지 않게 되고, 이제 빌드를 하려고 하면 컴파일 에러가 발생한다는 의미입니다. 다시 작동하게 하려면 <code>EmitWorldGeometryForSceneView</code> 역시 조건부로 호출하도록 코드를 작성해야 합니다. 코드를 <code>#if</code>와 <code>#endif</code>문 사이에 넣으면 됩니다. <code>#if</code> 문은 <code>Conditional</code> 속성과 마찬가지로 심볼을 필요로 합니다. <em>UNITY_EDITOR</em> 를 사용함으로써 코드는 에디터용으로 컴파일할 때만 포함됩니다.</p>
+						<p>&#xC774; &#xCF54;&#xB4DC;&#xB294; &#xB3D9;&#xC791;&#xD558;&#xAE30;&#xB294; &#xD558;&#xC9C0;&#xB9CC; &#xC5D0;&#xB514;&#xD130; &#xC548;&#xC5D0;&#xC11C;&#xB9CC; &#xB3D9;&#xC791;&#xD569;&#xB2C8;&#xB2E4;. &#xC870;&#xAC74;&#xBD80; &#xCEF4;&#xD30C;&#xC77C;&#xC5D0; &#xC758;&#xD574;&#xC11C; &#xBE4C;&#xB4DC;&#xC6A9;&#xC73C;&#xB85C; &#xCEF4;&#xD30C;&#xC77C;&#xD560; &#xB54C;&#xB294; <code>EmitWorldGeometryForSceneView</code>&#xAC00; &#xC874;&#xC7AC;&#xD558;&#xC9C0; &#xC54A;&#xAC8C; &#xB418;&#xACE0;, &#xC774;&#xC81C; &#xBE4C;&#xB4DC;&#xB97C; &#xD558;&#xB824;&#xACE0; &#xD558;&#xBA74; &#xCEF4;&#xD30C;&#xC77C; &#xC5D0;&#xB7EC;&#xAC00; &#xBC1C;&#xC0DD;&#xD55C;&#xB2E4;&#xB294; &#xC758;&#xBBF8;&#xC785;&#xB2C8;&#xB2E4;. &#xB2E4;&#xC2DC; &#xC791;&#xB3D9;&#xD558;&#xAC8C; &#xD558;&#xB824;&#xBA74; <code>EmitWorldGeometryForSceneView</code> &#xC5ED;&#xC2DC; &#xC870;&#xAC74;&#xBD80;&#xB85C; &#xD638;&#xCD9C;&#xD558;&#xB3C4;&#xB85D; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD574;&#xC57C; &#xD569;&#xB2C8;&#xB2E4;. &#xCF54;&#xB4DC;&#xB97C; <code>#if</code>&#xC640; <code>#endif</code>&#xBB38; &#xC0AC;&#xC774;&#xC5D0; &#xB123;&#xC73C;&#xBA74; &#xB429;&#xB2C8;&#xB2E4;. <code>#if</code> &#xBB38;&#xC740; <code>Conditional</code> &#xC18D;&#xC131;&#xACFC; &#xB9C8;&#xCC2C;&#xAC00;&#xC9C0;&#xB85C; &#xC2EC;&#xBCFC;&#xC744; &#xD544;&#xC694;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;. <em>UNITY_EDITOR</em> &#xB97C; &#xC0AC;&#xC6A9;&#xD568;&#xC73C;&#xB85C;&#xC368; &#xCF54;&#xB4DC;&#xB294; &#xC5D0;&#xB514;&#xD130;&#xC6A9;&#xC73C;&#xB85C; &#xCEF4;&#xD30C;&#xC77C;&#xD560; &#xB54C;&#xB9CC; &#xD3EC;&#xD568;&#xB429;&#xB2C8;&#xB2E4;.</p>
 						
 						<pre>	void Render (ScriptableRenderContext context, Camera camera) {
 		ScriptableCullingParameters cullingParameters;
@@ -889,27 +936,27 @@ using UnityEngine.Experimental.Rendering;
 
 		CullResults.Cull(ref cullingParameters, context, ref cull);
 
-		…
+		&#x2026;
 	}</pre>
 						
-						<p>다음 튜토리얼은 <a href="../custom-shaders/index.html">커스텀 쉐이더</a>입니다.</p>
+						<p>&#xB2E4;&#xC74C; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; <a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-shaders/">&#xCEE4;&#xC2A4;&#xD140; &#xC250;&#xC774;&#xB354;<sup class="codingdad_ext_link">&#x1F517;</sup></a>&#xC785;&#xB2C8;&#xB2E4;.</p>
 					</section>
 					
 					<a href="https://bitbucket.org/catlikecodingunitytutorials/scriptable-render-pipeline-01-custom-pipeline/" class="repository">repository</a>
-					<a href="Custom-Pipeline.pdf" download rel="nofollow">PDF</a>
+					<a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/Custom-Pipeline.pdf/" download="" rel="nofollow">PDF<sup class="codingdad_ext_link">&#x1F517;</sup></a>
 				</section>
 			</article>
 		</main>
 
 		<footer>
-			<p><a href="https://catlikecoding.com/unity/tutorials/">튜토리얼</a>을 즐기고 계세요? 유용한가요? 더 보고 싶으세요?</p>
-			<p><b><a href="https://www.patreon.com/catlikecoding">Patreon에서 저를 지원해주세요!</a></b></p>
-			<p><a href="https://www.patreon.com/catlikecoding"><img src="../../become-a-patron.png" alt="저의 후원자가 되어 주세요!" width="217" height="51"></a></p>
-			<p><b><a href="https://catlikecoding.com/unity/tutorials/donating.html">혹은 직접 기부해 주세요</a>!</b></p>
-			<p><a href="https://catlikecoding.com/jasper-flick/" rel="author">Jasper Flick</a>에 의해 작성되었습니다</p>
+			<p><a href="/catlikecoding.com/unity/tutorials/">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</a>&#xC744; &#xC990;&#xAE30;&#xACE0; &#xACC4;&#xC138;&#xC694;? &#xC720;&#xC6A9;&#xD55C;&#xAC00;&#xC694;? &#xB354; &#xBCF4;&#xACE0; &#xC2F6;&#xC73C;&#xC138;&#xC694;?</p>
+			<p><b><a href="https://www.patreon.com/catlikecoding/">Patreon&#xC5D0;&#xC11C; &#xC800;&#xB97C; &#xC9C0;&#xC6D0;&#xD574;&#xC8FC;&#xC138;&#xC694;!</a></b></p>
+			<p><a href="https://www.patreon.com/catlikecoding/"><img src="../../become-a-patron.png" alt="&#xC800;&#xC758; &#xD6C4;&#xC6D0;&#xC790;&#xAC00; &#xB418;&#xC5B4; &#xC8FC;&#xC138;&#xC694;!" width="217" height="51"></a></p>
+			<p><b><a href="/catlikecoding.com/unity/tutorials/donating.html">&#xD639;&#xC740; &#xC9C1;&#xC811; &#xAE30;&#xBD80;&#xD574; &#xC8FC;&#xC138;&#xC694;</a>!</b></p>
+			<p><a href="/catlikecoding.com/jasper-flick/" rel="author">Jasper Flick</a>&#xC5D0; &#xC758;&#xD574; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;</p>
 		</footer>
 		
 		<script src="../../jquery.js"></script>
 		<script src="../../tutorials.js"></script>
-	</body>
-</html>
+	
+</body></html>
