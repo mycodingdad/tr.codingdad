@@ -1,25 +1,18 @@
-<!DOCTYPE html><html lang="ko"><head prefix="og: http://ogp.me/ns#"><!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128068276-6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-128068276-6');
-</script>
-
+<!DOCTYPE html>
+<html lang="ko">
+	<head prefix="og: http://ogp.me/ns#">
 		<meta charset="utf-8">
 		<meta property="og:url" content="https://catlikecoding.com/unity/tutorials/">
 		<meta property="og:type" content="website">
 		<meta property="og:image:width" content="1024">
 		<meta property="og:image:height" content="512">
 		<meta property="og:image" content="https://catlikecoding.com/unity/tutorials/hex-map/part-27/tutorial-image.jpg">
-		<meta property="og:title" content="&#xC720;&#xB2C8;&#xD2F0; C# &#xBC0F; &#xC170;&#xC774;&#xB354; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;">
-		<meta property="og:description" content="&#xC720;&#xB2C8;&#xD2F0;&#xB85C; C#&#xACFC; &#xC170;&#xC774;&#xB354; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC744; &#xBC30;&#xC6B0;&#xACE0; &#xC2F6;&#xC740; &#xBD84;&#xB4E4;&#xC744; &#xC704;&#xD55C; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xC5F0;&#xC7AC;&#xC785;&#xB2C8;&#xB2E4;.  &#xCD08;&#xBCF4; &#xBC0F; &#xACBD;&#xB825; &#xAC1C;&#xBC1C;&#xC790; &#xBAA8;&#xB450;&#xC5D0;&#xAC8C; &#xC720;&#xC6A9;&#xD568;.">
+		<meta property="og:title" content="유니티 C# 및 셰이더 튜토리얼">
+		<meta property="og:description" content="유니티로 C#과 셰이더 프로그래밍을 배우고 싶은 분들을 위한 튜토리얼 연재입니다.  초보 및 경력 개발자 모두에게 유용함.">
 		<meta property="twitter:card" content="summary_large_image">
 		<meta property="twitter:creator" content="@catlikecoding">
 		<meta name="viewport" content="width=768">
-		<title>&#xC720;&#xB2C8;&#xD2F0; C# &#xBC0F; &#xC170;&#xC774;&#xB354; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</title>
+		<title>유니티 C# 및 셰이더 튜토리얼</title>
 		<link href="tutorials.css" rel="stylesheet">
 		<link rel="publisher" href="https://plus.google.com/+CatlikeCoding">
 		<link rel="manifest" href="../../site.webmanifest">
@@ -39,54 +32,14 @@
 				]
 			}
 		}</script>
-	<style class="codingdad_header_css">  .codingdad_header
-  {
-    padding:10px 10px 10px 100px; 
-    background-color:#36c46f; 
-    color:#f4f0f4; 
-    border-radius:15px; 
-    margin: 10px auto;
-    max-width: 948px;
-  }
-  .codingdad_header a
-  {
-    text-decoration:underline;
-    color:#f4f0f4;
-  }
-  .codingdad_header_title
-  {
-    font-size:25px; 
-    font-weight:bold;
-  }
-  .codingdad_header_desc
-  {
-    font-size:13px; 
-    line-height:1.2em; 
-    margin-top:10px;
-  }
-  .codingdad_header_desc ul
-  {
-    margin-bottom:0px;
-    margin-left:-40px;
-  }</style></head>
-	<body><div class="codingdad_header_html"><div class="codingdad_header"> 
-  <div class="codingdad_header_title">
-    <a href="https://catlikecoding.com/unity/tutorials/">Catlike Coding</a>&#xC758; &#xBA4B;&#xC9C4; &#xAE00;&#xC744; 
-    <a href="https://codingdad.me/2019/02/07/CatlikeCoding/">Coding Dad</a>&#xC774; &#xBC88;&#xC5ED;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.
-  </div>
-  <div class="codingdad_header_desc">
-    <ul>
-      <li>&#xC6D0;&#xBB38;&#xC740; <a href="https://catlikecoding.com/unity/tutorials/">catlikecoding.com</a>&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBC88;&#xC5ED;&#xC5D0; &#xB300;&#xD55C; &#xD53C;&#xB4DC;&#xBC31;&#xC740; <a href="https://codingdad.me/2019/02/07/CatlikeCoding/">codingdad.me</a>&#xC5D0; &#xB0A8;&#xACA8;&#xC8FC;&#xC138;&#xC694;. &#xC800;&#xC5D0;&#xAC8C; &#xD070; &#xB3C4;&#xC6C0;&#xC774; &#xB429;&#xB2C8;&#xB2E4;. </li>
-      <li>&#xD6C4;&#xC6D0; &#xBC0F; &#xAE30;&#xBD80; &#xB9C1;&#xD06C;&#xB294; Catlike Coding&#xC5D0; &#xC5F0;&#xACB0;&#xB429;&#xB2C8;&#xB2E4;. &#xC6D0;&#xC791;&#xC790;&#xC5D0;&#xAC8C; &#xAC10;&#xC0AC;&#xC758; &#xB9C8;&#xC74C;&#xC744; &#xC804;&#xD574;&#xBCF4;&#xC138;&#xC694; :)</li>
-    </ul>
-  </div>
-</div></div>
+	</head>
+	<body>
 		<header>
-			<a href="/catlikecoding.com/"><img src="../../catlike-coding-logo.svg" alt="Catlike Coding" width="45" height="45"></a>
+			<a href="../../index.html"><img src="../../catlike-coding-logo.svg" alt="Catlike Coding" width="45" height="45"></a>
 			<nav>
 				<ol>
-					<li><a href="/catlikecoding.com/">Catlike Coding</a></li>
-					<li><a href="/catlikecoding.com/unity/">&#xC720;&#xB2C8;&#xD2F0;</a></li>
+					<li><a href="../../index.html">Catlike Coding</a></li>
+					<li><a href="../index.html">유니티</a></li>
 				</ol>
 			</nav>
 		</header>
@@ -94,310 +47,310 @@
 		<main>
 			<article>
 				<header>
-					<h1>C# &#xBC0F; &#xC170;&#xC774;&#xB354; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</h1>
-					<p>&#xC720;&#xB2C8;&#xD2F0; &#xC5D4;&#xC9C4;&#xC5D0; &#xB300;&#xD574;&#xC11C;</p>
+					<h1>C# 및 셰이더 튜토리얼</h1>
+					<p>유니티 엔진에 대해서</p>
 				</header>
 				
-				<p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xC720;&#xB2C8;&#xD2F0;&#xB97C; &#xC704;&#xD55C;  C# &#xBC0F; &#xC170;&#xC774;&#xB354; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC744; &#xAC00;&#xB974;&#xCE69;&#xB2C8;&#xB2E4;. &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xB4E4;&#xC740; &#xC11C;&#xB85C;&#xC5D0; &#xAE30;&#xBC18;&#xC744; &#xB450;&#xACE0; &#xC0C8;&#xB85C;&#xC6B4; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D; &#xAC1C;&#xB150;, &#xC218;&#xD559;, &#xC54C;&#xACE0;&#xB9AC;&#xC998;, &#xC720;&#xB2C8;&#xD2F0; &#xAE30;&#xB2A5;&#xC744; &#xC18C;&#xAC1C;&#xD569;&#xB2C8;&#xB2E4;. &#xCD08;&#xBCF4; &#xBC0F; &#xACBD;&#xB825; &#xAC1C;&#xBC1C;&#xC790; &#xBAA8;&#xB450;&#xC5D0;&#xAC8C; &#xC720;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+				<p>이 튜토리얼은 유니티를 위한  C# 및 셰이더 프로그래밍을 가르칩니다. 튜토리얼들은 서로에 기반을 두고 새로운 프로그래밍 개념, 수학, 알고리즘, 유니티 기능을 소개합니다. 초보 및 경력 개발자 모두에게 유용합니다.</p>
 				
 				<figure>
 					<img src="hex-map/part-26/tutorial-image.jpg" width="512" height="256">
-					<figcaption>&#xC720;&#xB2C8;&#xD2F0;&#xB85C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xB294; &#xB9CE;&#xC740; &#xAC83;&#xB4E4; &#xC911; &#xD558;&#xB098;.</figcaption>
+					<figcaption>유니티로 만들 수 있는 많은 것들 중 하나.</figcaption>
 				</figure>
 				
 				<section class="tutorials">
-					<h2>&#xD6C4;&#xC6D0;&#xC790;&#xAC00; &#xB418;&#xC5B4; &#xC8FC;&#xC138;&#xC694;.</h2>
+					<h2>후원자가 되어 주세요.</h2>
 					
-					<p>&#xC5EC;&#xB7EC;&#xBD84;&#xC758; &#xC9C0;&#xC6D0;&#xC774; &#xC774; &#xD29C;&#xD1A0;&#xC5BC;&#xC744; &#xAC00;&#xB2A5;&#xD558;&#xAC8C; &#xD569;&#xB2C8;&#xB2E4;! &#xC5EC;&#xB7EC;&#xBD84; &#xB9C8;&#xC74C;&#xC5D0; &#xB4E4;&#xACE0; &#xB354; &#xBCF4;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74;, <a href="https://www.patreon.com/catlikecoding/">patreon</a>&#xC744; &#xD1B5;&#xD574;&#xC11C; &#xC800;&#xC758; &#xD6C4;&#xC6D0;&#xC790;&#xAC00; &#xB418;&#xC5B4; &#xC8FC;&#xC138;&#xC694;. &#xC77C;&#xD68C;&#xC131; <a href="/catlikecoding.com/unity/tutorials/donating.html">&#xAE30;&#xBD80;</a> &#xB3C4; &#xAC00;&#xB2A5;&#xD569;&#xB2C8;&#xB2E4;.</p>
+					<p>여러분의 지원이 이 튜토얼을 가능하게 합니다! 여러분 마음에 들고 더 보고 싶다면, <a href="https://www.patreon.com/catlikecoding">patreon</a>을 통해서 저의 후원자가 되어 주세요. 일회성 <a href="donating.html">기부</a> 도 가능합니다.</p>
 					
 					<ol>
-						<li style="background-image: url(patreon-logo.png);"><a href="https://www.patreon.com/catlikecoding/">&#xD6C4;&#xC6D0;&#xC790;&#xAC00; &#xB418;&#xC5B4; &#xC8FC;&#xC138;&#xC694;.</a>
+						<li style="background-image: url(patreon-logo.png);"><a href="https://www.patreon.com/catlikecoding">후원자가 되어 주세요.</a>
 					</li></ol>
 				</section>
 				
 				<section class="tutorials">
-					<h2>&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</h2>
+					<h2>튜토리얼</h2>
 					
-					<p>&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xC139;&#xC158;&#xC774; &#xC5EC;&#xB7EC; &#xAC1C; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC21C;&#xCC28;&#xC801;&#xC73C;&#xB85C; &#xC9C4;&#xD589;&#xD560; &#xD544;&#xC694;&#xB294; &#xC5C6;&#xC9C0;&#xB9CC; &#xC77C;&#xBD80;&#xB294; &#xC11C;&#xB85C;&#xB97C; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;.  &#xAE30;&#xBCF8; &#xC139;&#xC158;&#xC740; &#xC720;&#xB2C8;&#xD2F0;&#xC640; C# &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC744; &#xC704;&#xD55C; &#xAE30;&#xCD08;&#xB97C; &#xC81C;&#xACF5;&#xD569;&#xB2C8;&#xB2E4;. &#xB80C;&#xB354;&#xB9C1; &#xC139;&#xC158;&#xC740; &#xC170;&#xC774;&#xB354; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC758; &#xAE30;&#xCD08;&#xB97C; &#xB2E4;&#xB8E8;&#xACE0; &#xACE0;&#xAE09; &#xB80C;&#xB354;&#xB9C1; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xB85C; &#xC774;&#xC5B4;&#xC9D1;&#xB2C8;&#xB2E4;.</p>
+					<p>튜토리얼 섹션이 여러 개 있습니다. 순차적으로 진행할 필요는 없지만 일부는 서로를 기반으로 합니다.  기본 섹션은 유니티와 C# 프로그래밍을 위한 기초를 제공합니다. 렌더링 섹션은 셰이더 프로그래밍의 기초를 다루고 고급 렌더링 튜토리얼로 이어집니다.</p>
 					
-					<p>&#xC77C;&#xBD80; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xAF64; &#xC624;&#xB798;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBA85;&#xD655;&#xD558;&#xAC8C; &#xC774;&#xC804; &#xB808;&#xC774;&#xC544;&#xC6C3;&#xC774;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xC27D;&#xAC8C; &#xC54C;&#xC544;&#xCC4C; &#xC218; &#xC788;&#xC744; &#xAC81;&#xB2C8;&#xB2E4;. &#xB2E4;&#xB978; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xB354; &#xCD5C;&#xC2E0;&#xC774;&#xC9C0;&#xB9CC; &#xC720;&#xB2C8;&#xD2F0; 5&#xB85C; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5C5;&#xADF8;&#xB808;&#xC774;&#xB4DC; &#xD558;&#xB824;&#xACE0; &#xB178;&#xB825;&#xC911;&#xC785;&#xB2C8;&#xB2E4;. &#xC0C8;&#xB85C;&#xC6B4; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC5D0;&#xC11C;&#xB294; &#xC5B4;&#xB5A4; &#xBC84;&#xC804;&#xC73C;&#xB85C;  &#xC791;&#xC131;&#xB418;&#xC5C8;&#xB294;&#xC9C0; &#xC5B8;&#xAE09;&#xD569;&#xB2C8;&#xB2E4;.</p>
+					<p>일부 튜토리얼은 꽤 오래되었습니다. 명확하게 이전 레이아웃이기 때문에 쉽게 알아챌 수 있을 겁니다. 다른 튜토리얼은 더 최신이지만 유니티 5로 작성되었습니다. 업그레이드 하려고 노력중입니다. 새로운 튜토리얼에서는 어떤 버전으로  작성되었는지 언급합니다.</p>
 					
 					<section class="compact">
-						<h3><a href="https://catlikecoding.com/unity/tutorials/basics/">&#xAE30;&#xBCF8;<sup class="codingdad_ext_link">&#x1F517;</sup></a></h3>
+						<h3><a href="https://catlikecoding.com/unity/tutorials/basics/">기본</a></h3>
 						
-						<p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xC720;&#xB2C8;&#xD2F0;&#xC5D0;&#xC11C; C#&#xC73C;&#xB85C; &#xC791;&#xC5C5;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD574; &#xC18C;&#xAC1C;&#xD569;&#xB2C8;&#xB2E4;.</p>
+						<p>이 튜토리얼은 유니티에서 C#으로 작업하는 방법에 대해 소개합니다.</p>
 						
 						<ol>
-							<li style="background-image: url(basics/game-objects-and-scripts/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/basics/game-objects-and-scripts/">&#xAC8C;&#xC784; &#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC640; &#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(basics/building-a-graph/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/basics/building-a-graph/">&#xADF8;&#xB798;&#xD504; &#xC791;&#xC131;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(basics/mathematical-surfaces/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/basics/mathematical-surfaces/">&#xC218;&#xD559;&#xC801;&#xC778; &#xC11C;&#xD53C;&#xC2A4;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(constructing-a-fractal/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/constructing-a-fractal/">&#xD504;&#xB799;&#xD0C8; &#xB9CC;&#xB4E4;&#xAE30;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(frames-per-second/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/frames-per-second/">&#xCD08;&#xB2F9; &#xD504;&#xB808;&#xC784;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							<li style="background-image: url(basics/game-objects-and-scripts/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/basics/game-objects-and-scripts/">게임 오브젝트와 스크립트</a>
+							</li><li style="background-image: url(basics/building-a-graph/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/basics/building-a-graph/">그래프 작성</a>
+							</li><li style="background-image: url(basics/mathematical-surfaces/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/basics/mathematical-surfaces/">수학적인 서피스</a>
+							</li><li style="background-image: url(constructing-a-fractal/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/constructing-a-fractal/">프랙탈 만들기</a>
+							</li><li style="background-image: url(frames-per-second/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/frames-per-second/">초당 프레임</a>
 						</li></ol>
 					</section>
 					
 					<section>
-						<h3><a href="https://catlikecoding.com/unity/tutorials/object-management/">&#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xAD00;&#xB9AC;<sup class="codingdad_ext_link">&#x1F517;</sup></a></h3>
+						<h3><a href="https://catlikecoding.com/unity/tutorials/object-management/">오브젝트 관리</a></h3>
 						
-						<p>&#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xB97C; &#xC0DD;&#xC131;, &#xAD00;&#xB9AC;, &#xC800;&#xC7A5;, &#xB85C;&#xB529;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC744; &#xB2E4;&#xB8E8;&#xB294; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xC5F0;&#xC7AC;&#xC785;&#xB2C8;&#xB2E4;.</p>
+						<p>오브젝트를 생성, 관리, 저장, 로딩하는 방법을 다루는 튜토리얼 연재입니다.</p>
 						
 						<ol>
-							<li style="background-image: url(object-management/persisting-objects/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/persisting-objects/">&#xC624;&#xBE0C;&#xC81D;&#xD2B8;&#xC758; &#xC800;&#xC7A5;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(object-management/object-variety/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/object-variety/">&#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xB2E4;&#xC591;&#xC131;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(object-management/reusing-objects/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/reusing-objects/">&#xC624;&#xBE0C;&#xC81D;&#xD2B8; &#xC7AC;&#xC0AC;&#xC6A9;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(object-management/multiple-scenes/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/multiple-scenes/">&#xC5EC;&#xB7EC; &#xC52C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(object-management/spawn-zones/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/spawn-zones/">&#xC2A4;&#xD3F0; &#xC9C0;&#xC5ED;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(object-management/more-game-state/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/more-game-state/">&#xB354; &#xB9CE;&#xC740; &#xAC8C;&#xC784; &#xC0C1;&#xD0DC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(object-management/configuring-shapes/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/configuring-shapes/">&#xD615;&#xCCB4; &#xAD6C;&#xC131;&#xD558;&#xAE30;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(object-management/more-factories/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/more-factories/">&#xB354; &#xB9CE;&#xC740; &#xD329;&#xD1A0;&#xB9AC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(object-management/shape-behavior/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/shape-behavior/">&#xD615;&#xCCB4; &#xBE44;&#xD5E4;&#xC774;&#xBDF0;&#xC5B4;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(object-management/satellites/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/satellites/" class="new">&#xC704;&#xC131;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							<li style="background-image: url(object-management/persisting-objects/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/persisting-objects/">오브젝트의 저장</a>
+							</li><li style="background-image: url(object-management/object-variety/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/object-variety/">오브젝트 다양성</a>
+							</li><li style="background-image: url(object-management/reusing-objects/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/reusing-objects/">오브젝트 재사용</a>
+							</li><li style="background-image: url(object-management/multiple-scenes/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/multiple-scenes/">여러 씬</a>
+							</li><li style="background-image: url(object-management/spawn-zones/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/spawn-zones/">스폰 지역</a>
+							</li><li style="background-image: url(object-management/more-game-state/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/more-game-state/">더 많은 게임 상태</a>
+							</li><li style="background-image: url(object-management/configuring-shapes/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/configuring-shapes/">형체 구성하기</a>
+							</li><li style="background-image: url(object-management/more-factories/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/more-factories/">더 많은 팩토리</a>
+							</li><li style="background-image: url(object-management/shape-behavior/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/shape-behavior/">형체 비헤이뷰어</a>
+							</li><li style="background-image: url(object-management/satellites/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/object-management/satellites/" class="new">위성</a>
 						</li></ol>
 					</section>
 					
 					<section>
-						<h3><a href="https://catlikecoding.com/unity/tutorials/flow/">&#xD50C;&#xB85C;&#xC6B0;<sup class="codingdad_ext_link">&#x1F517;</sup></a></h3>
+						<h3><a href="https://catlikecoding.com/unity/tutorials/flow/">플로우</a></h3>
 						
-						<p>&#xBB3C; &#xD45C;&#xBA74;&#xACFC; &#xAC19;&#xC774; &#xD750;&#xB974;&#xB294; &#xD6A8;&#xACFC;&#xC758; &#xC0DD;&#xC131;&#xC744; &#xB2E4;&#xB8E8;&#xB294; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xC5F0;&#xC7AC;&#xC785;&#xB2C8;&#xB2E4;.</p>
+						<p>물 표면과 같이 흐르는 효과의 생성을 다루는 튜토리얼 연재입니다.</p>
 						
 						<ol>
-							<li style="background-image: url(flow/texture-distortion/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/flow/texture-distortion/">&#xD14D;&#xC2A4;&#xCCD0; &#xC65C;&#xACE1;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(flow/directional-flow/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/flow/directional-flow/">&#xBC29;&#xD5A5;&#xC131; &#xD50C;&#xB85C;&#xC6B0;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(flow/waves/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/flow/waves/">&#xC6E8;&#xC774;&#xBE0C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(flow/looking-through-water/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/flow/looking-through-water/">&#xBB3C;&#xC18D;&#xC744; &#xB4E4;&#xC5EC;&#xB2E4; &#xBCF4;&#xAE30;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							<li style="background-image: url(flow/texture-distortion/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/flow/texture-distortion/">텍스쳐 왜곡</a>
+							</li><li style="background-image: url(flow/directional-flow/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/flow/directional-flow/">방향성 플로우</a>
+							</li><li style="background-image: url(flow/waves/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/flow/waves/">웨이브</a>
+							</li><li style="background-image: url(flow/looking-through-water/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/flow/looking-through-water/">물속을 들여다 보기</a>
 						</li></ol>
 					</section>
 					
 					<section>
-						<h3>&#xBA54;&#xC2DC; &#xAE30;&#xBCF8; </h3>
+						<h3>메시 기본 </h3>
 						
-						<p>&#xC808;&#xCC28;&#xC801;&#xC778; &#xBA54;&#xC2DC;&#xC5D0; &#xB300;&#xD55C; &#xC18C;&#xAC1C; &#xAC04;&#xB2E8;&#xD55C; &#xACA9;&#xC790;&#xBD80;&#xD130; &#xBCC0;&#xD615; &#xAC00;&#xB2A5;&#xD55C; &#xACF5;&#xAE4C;&#xC9C0;.</p>
+						<p>절차적인 메시에 대한 소개 간단한 격자부터 변형 가능한 공까지.</p>
 						
 						<ol>
-							<li style="background-image: url(procedural-grid/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/procedural-grid/">&#xC808;&#xCC28;&#xC801; &#xADF8;&#xB9AC;&#xB4DC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rounded-cube/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rounded-cube/">&#xB465;&#xADFC; &#xD050;&#xBE0C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(cube-sphere/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/cube-sphere/">&#xD050;&#xBE0C; &#xAD6C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(mesh-deformation/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/mesh-deformation/">&#xBA54;&#xC2DC; &#xBCC0;&#xD615;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							<li style="background-image: url(procedural-grid/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/procedural-grid/">절차적 그리드</a>
+							</li><li style="background-image: url(rounded-cube/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rounded-cube/">둥근 큐브</a>
+							</li><li style="background-image: url(cube-sphere/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/cube-sphere/">큐브 구</a>
+							</li><li style="background-image: url(mesh-deformation/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/mesh-deformation/">메시 변형</a>
 						</li></ol>
 					</section>
 					
 					<section>
-						<h3><a href="/catlikecoding.com/unity/tutorials/scriptable-render-pipeline/">&#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;</a></h3>
+						<h3><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/">스크립터블 렌더 파이프라인</a></h3>
 						
-						<p>&#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xB2E4;&#xB8E8;&#xB294; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xC5F0;&#xC7AC;&#xC785;&#xB2C8;&#xB2E4;.</p>
+						<p>스크립터블 렌더 파이프라인을 다루는 튜토리얼 연재입니다.</p>
 						
 						<ol>
-							<li style="background-image: url(scriptable-render-pipeline/custom-pipeline/tutorial-banner.jpg);"><a href="/catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/">&#xCEE4;&#xC2A4;&#xD140; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;</a>
-							</li><li style="background-image: url(scriptable-render-pipeline/custom-shaders/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-shaders/">&#xCEE4;&#xC2A4;&#xD140; &#xC170;&#xC774;&#xB354;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(scriptable-render-pipeline/lights/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/lights/">&#xB77C;&#xC774;&#xD2B8;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(scriptable-render-pipeline/spotlight-shadows/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/" class="new">&#xC2A4;&#xD3EC;&#xD2B8;&#xB77C;&#xC774;&#xD2B8; &#xADF8;&#xB9BC;&#xC790;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							<li style="background-image: url(scriptable-render-pipeline/custom-pipeline/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-pipeline/">커스텀 파이프라인</a>
+							</li><li style="background-image: url(scriptable-render-pipeline/custom-shaders/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/custom-shaders/">커스텀 셰이더</a>
+							</li><li style="background-image: url(scriptable-render-pipeline/lights/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/lights/">라이트</a>
+							</li><li style="background-image: url(scriptable-render-pipeline/spotlight-shadows/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/" class="new">스포트라이트 그림자</a>
 
 
 						</li></ol>
 					</section>
 					
 					<section>
-						<h3><a href="https://catlikecoding.com/unity/tutorials/rendering/">&#xB80C;&#xB354;&#xB9C1;<sup class="codingdad_ext_link">&#x1F517;</sup></a></h3>
+						<h3><a href="https://catlikecoding.com/unity/tutorials/rendering/">렌더링</a></h3>
 						
-						<p>&#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xAE30;&#xBCF8; &#xB80C;&#xB354;&#xB9C1; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;&#xC744; &#xC774;&#xD574;&#xD558;&#xB294; &#xBC29;&#xBC95;&#xC5D0; &#xB300;&#xD55C; &#xC5F0;&#xC7AC;. &#xBA54;&#xC2DC;&#xAC00; &#xC2E4;&#xC81C; &#xBB3C;&#xCCB4;&#xCC98;&#xB7FC; &#xBCF4;&#xC774;&#xB294; &#xD53D;&#xC140;&#xB85C; &#xBCC0;&#xD558;&#xB294; &#xBC29;&#xBC95;.</p>
+						<p>유니티의 기본 렌더링 파이프라인을 이해하는 방법에 대한 연재. 메시가 실제 물체처럼 보이는 픽셀로 변하는 방법.</p>
 						
 						<ol>
-							<li style="background-image: url(rendering/part-1/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-1/">&#xD589;&#xB82C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-2/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-2/">&#xC170;&#xC774;&#xB354; &#xAE30;&#xCD08;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-3/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-3/">&#xD14D;&#xC2A4;&#xCCD0; &#xC870;&#xD569;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-4/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-4/">&#xCCAB; &#xBC88;&#xC9F8; &#xB77C;&#xC774;&#xD2B8;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-5/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-5/">&#xC5EC;&#xB7EC; &#xAC1C;&#xC758; &#xB77C;&#xC774;&#xD2B8;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-6/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-6/">&#xC6B8;&#xD241;&#xBD88;&#xD241;&#xD568;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-7/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-7/">&#xADF8;&#xB9BC;&#xC790;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-8/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-8/">&#xBC18;&#xC0AC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-9/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-9/">&#xBCF5;&#xD569; &#xC7AC;&#xC9C8;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-10/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-10/">&#xB354; &#xB9CE;&#xC740; &#xBCF5;&#xC7A1;&#xC131;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-11/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-11/">&#xD22C;&#xBA85;&#xD568;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-12/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-12/">&#xBC18;&#xD22C;&#xBA85; &#xADF8;&#xB9BC;&#xC790;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-13/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-13/">&#xB514;&#xD37C;&#xB4DC;(&#xC9C0;&#xC5F0;&#xB41C;) &#xC170;&#xC774;&#xB529;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-14/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-14/">&#xC548;&#xAC1C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-15/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-15/">&#xB514;&#xD37C;&#xB4DC; &#xB77C;&#xC774;&#xD2B8;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-16/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-16/">&#xC815;&#xC801; &#xB77C;&#xC774;&#xD305;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-17/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-17/">&#xD63C;&#xD569; &#xB77C;&#xC774;&#xD305;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-18/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-18/">&#xC2E4;&#xC2DC;&#xAC04; GI &#xBC0F;  LOD &#xADF8;&#xB8F9;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-19/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-19/">GPU &#xC778;&#xC2A4;&#xD134;&#xC2F1;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(rendering/part-20/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-20/">&#xC2DC;&#xCC28;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							<li style="background-image: url(rendering/part-1/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-1/">행렬</a>
+							</li><li style="background-image: url(rendering/part-2/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-2/">셰이더 기초</a>
+							</li><li style="background-image: url(rendering/part-3/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-3/">텍스쳐 조합</a>
+							</li><li style="background-image: url(rendering/part-4/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-4/">첫 번째 라이트</a>
+							</li><li style="background-image: url(rendering/part-5/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-5/">여러 개의 라이트</a>
+							</li><li style="background-image: url(rendering/part-6/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-6/">울퉁불퉁함</a>
+							</li><li style="background-image: url(rendering/part-7/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-7/">그림자</a>
+							</li><li style="background-image: url(rendering/part-8/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-8/">반사</a>
+							</li><li style="background-image: url(rendering/part-9/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-9/">복합 재질</a>
+							</li><li style="background-image: url(rendering/part-10/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-10/">더 많은 복잡성</a>
+							</li><li style="background-image: url(rendering/part-11/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-11/">투명함</a>
+							</li><li style="background-image: url(rendering/part-12/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-12/">반투명 그림자</a>
+							</li><li style="background-image: url(rendering/part-13/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-13/">디퍼드(지연된) 셰이딩</a>
+							</li><li style="background-image: url(rendering/part-14/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-14/">안개</a>
+							</li><li style="background-image: url(rendering/part-15/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-15/">디퍼드 라이트</a>
+							</li><li style="background-image: url(rendering/part-16/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-16/">정적 라이팅</a>
+							</li><li style="background-image: url(rendering/part-17/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-17/">혼합 라이팅</a>
+							</li><li style="background-image: url(rendering/part-18/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-18/">실시간 GI 및  LOD 그룹</a>
+							</li><li style="background-image: url(rendering/part-19/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-19/">GPU 인스턴싱</a>
+							</li><li style="background-image: url(rendering/part-20/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/rendering/part-20/">시차</a>
 						</li></ol>
 					</section>
 					
 					<section>
-						<h3><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/">&#xACE0;&#xAE09; &#xB80C;&#xB354;&#xB9C1;<sup class="codingdad_ext_link">&#x1F517;</sup></a></h3>
+						<h3><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/">고급 렌더링</a></h3>
 						
-						<p>&#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xD45C;&#xC900; &#xC170;&#xC774;&#xB354;&#xB97C; &#xB118;&#xC5B4;&#xC11C;&#xB294; &#xB354; &#xBCF5;&#xC7A1;&#xD558;&#xACE0; &#xD2B9;&#xD654;&#xB41C; &#xB80C;&#xB354;&#xB9C1; &#xD14C;&#xD06C;&#xB2C9;&#xC744; &#xB2E4;&#xB8E8;&#xB294; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC785;&#xB2C8;&#xB2E4;. &#xB80C;&#xB354;&#xB9C1; &#xC5F0;&#xC7AC;&#xC5D0;&#xC11C; &#xC774;&#xB8E8;&#xC5B4;&#xC9C4; &#xC791;&#xC5C5;&#xC744; &#xAE30;&#xBC18;&#xC73C;&#xB85C; &#xD569;&#xB2C8;&#xB2E4;.</p>
+						<p>유니티의 표준 셰이더를 넘어서는 더 복잡하고 특화된 렌더링 테크닉을 다루는 튜토리얼입니다. 렌더링 연재에서 이루어진 작업을 기반으로 합니다.</p>
 						
 						<ol>
-							<li style="background-image: url(advanced-rendering/flat-and-wireframe-shading/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/flat-and-wireframe-shading/">&#xD50C;&#xB7AB; &#xBC0F; &#xC640;&#xC774;&#xC5B4;&#xD504;&#xB808;&#xC784; &#xC170;&#xC774;&#xB529;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(advanced-rendering/tessellation/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/tessellation/">&#xD14C;&#xC140;&#xB808;&#xC774;&#xC158;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(advanced-rendering/surface-displacement/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/surface-displacement/">&#xC11C;&#xD53C;&#xC2A4; &#xBCC0;&#xC704;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(advanced-rendering/bloom/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/bloom/">&#xBE14;&#xB8F8;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(advanced-rendering/depth-of-field/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/depth-of-field/">&#xD53C;&#xC0AC;&#xACC4; &#xC2EC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(advanced-rendering/fxaa/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/fxaa/">FXAA<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(advanced-rendering/triplanar-mapping/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/triplanar-mapping/">&#xD2B8;&#xB9AC;&#xD50C;&#xB798;&#xB108;(Triplanar) &#xB9E4;&#xD551;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							<li style="background-image: url(advanced-rendering/flat-and-wireframe-shading/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/flat-and-wireframe-shading/">플랫 및 와이어프레임 셰이딩</a>
+							</li><li style="background-image: url(advanced-rendering/tessellation/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/tessellation/">테셀레이션</a>
+							</li><li style="background-image: url(advanced-rendering/surface-displacement/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/surface-displacement/">서피스 변위</a>
+							</li><li style="background-image: url(advanced-rendering/bloom/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/bloom/">블룸</a>
+							</li><li style="background-image: url(advanced-rendering/depth-of-field/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/depth-of-field/">피사계 심</a>
+							</li><li style="background-image: url(advanced-rendering/fxaa/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/fxaa/">FXAA</a>
+							</li><li style="background-image: url(advanced-rendering/triplanar-mapping/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/triplanar-mapping/">트리플래너(Triplanar) 매핑</a>
 						</li></ol>
 					</section>
 					
 					<section>
-						<h3><a href="https://catlikecoding.com/unity/tutorials/hex-map/">&#xD5E5;&#xC2A4; &#xB9F5;<sup class="codingdad_ext_link">&#x1F517;</sup></a></h3>
+						<h3><a href="https://catlikecoding.com/unity/tutorials/hex-map/">헥스 맵</a></h3>
 						
-						<p>&#xC721;&#xAC01;&#xD615; &#xB9F5;&#xC5D0; &#xB300;&#xD55C; &#xC5F0;&#xC7AC;. &#xB9CE;&#xC740; &#xC804;&#xB7B5; &#xAC8C;&#xC784;&#xB4E4;&#xC774; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;.</p>
+						<p>육각형 맵에 대한 연재. 많은 전략 게임들이 사용합니다.</p>
 						
 						<ol>
-							<li style="background-image: url(hex-map/part-1/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-1/">&#xC721;&#xAC01;&#xD615; &#xACA9;&#xC790; &#xB9CC;&#xB4E4;&#xAE30;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-2/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-2/">&#xC140; &#xC0C9;&#xC0C1; &#xD63C;&#xD569;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-3/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-3/">Elevation and Terraces<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-4/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-4/">&#xBD88;&#xADDC;&#xCE59;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-5/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-5/">&#xB354; &#xD070; &#xC9C0;&#xB3C4;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-6/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-6/">&#xAC15;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-7/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-7/">&#xB3C4;&#xB85C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-8/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-8/">&#xBB3C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-9/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-9/">&#xC9C0;&#xD615; &#xAE30;&#xB2A5;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-10/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-10/">&#xBCBD;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-11/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-11/">&#xCD94;&#xAC00; &#xAE30;&#xB2A5;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-12/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-12/">&#xC800;&#xC7A5;&#xACFC; &#xB85C;&#xB529;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-13/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-13/">&#xB9F5; &#xAD00;&#xB9AC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-14/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-14/">&#xC9C0;&#xD615; &#xD14D;&#xC2A4;&#xCCD0;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-15/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-15/">&#xAC70;&#xB9AC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-16/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-16/">&#xAE38; &#xCC3E;&#xAE30;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-17/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-17/">&#xC81C;&#xD55C;&#xB41C; &#xC774;&#xB3D9;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-18/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-18/">&#xB2E8;&#xC704;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-19/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-19/">&#xC774;&#xB3D9; &#xC560;&#xB2C8;&#xBA54;&#xC774;&#xC158; &#xD558;&#xAE30;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-20/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-20/">&#xC804;&#xC7C1;&#xC758; &#xC548;&#xAC1C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-21/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-21/">&#xD0D0;&#xC0AC;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-22/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-22/">&#xACE0;&#xAE09; &#xBE44;&#xC804;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-23/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-23/">&#xD1A0;&#xC9C0; &#xC0DD;&#xC131;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-24/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-24/">&#xC9C0;&#xC5ED; &#xBC0F; &#xCE68;&#xC2DD;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-25/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-25/">&#xBB3C; &#xC21C;&#xD658;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-26/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-26/">&#xC0DD;&#xBB3C;&#xACFC; &#xAC15;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(hex-map/part-27/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-27/">&#xD3EC;&#xC7A5;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							<li style="background-image: url(hex-map/part-1/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-1/">육각형 격자 만들기</a>
+							</li><li style="background-image: url(hex-map/part-2/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-2/">셀 색상 혼합</a>
+							</li><li style="background-image: url(hex-map/part-3/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-3/">Elevation and Terraces</a>
+							</li><li style="background-image: url(hex-map/part-4/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-4/">불규칙</a>
+							</li><li style="background-image: url(hex-map/part-5/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-5/">더 큰 지도</a>
+							</li><li style="background-image: url(hex-map/part-6/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-6/">강</a>
+							</li><li style="background-image: url(hex-map/part-7/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-7/">도로</a>
+							</li><li style="background-image: url(hex-map/part-8/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-8/">물</a>
+							</li><li style="background-image: url(hex-map/part-9/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-9/">지형 기능</a>
+							</li><li style="background-image: url(hex-map/part-10/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-10/">벽</a>
+							</li><li style="background-image: url(hex-map/part-11/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-11/">추가 기능</a>
+							</li><li style="background-image: url(hex-map/part-12/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-12/">저장과 로딩</a>
+							</li><li style="background-image: url(hex-map/part-13/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-13/">맵 관리</a>
+							</li><li style="background-image: url(hex-map/part-14/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-14/">지형 텍스쳐</a>
+							</li><li style="background-image: url(hex-map/part-15/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-15/">거리</a>
+							</li><li style="background-image: url(hex-map/part-16/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-16/">길 찾기</a>
+							</li><li style="background-image: url(hex-map/part-17/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-17/">제한된 이동</a>
+							</li><li style="background-image: url(hex-map/part-18/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-18/">단위</a>
+							</li><li style="background-image: url(hex-map/part-19/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-19/">이동 애니메이션 하기</a>
+							</li><li style="background-image: url(hex-map/part-20/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-20/">전쟁의 안개</a>
+							</li><li style="background-image: url(hex-map/part-21/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-21/">탐사</a>
+							</li><li style="background-image: url(hex-map/part-22/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-22/">고급 비전</a>
+							</li><li style="background-image: url(hex-map/part-23/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-23/">토지 생성</a>
+							</li><li style="background-image: url(hex-map/part-24/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-24/">지역 및 침식</a>
+							</li><li style="background-image: url(hex-map/part-25/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-25/">물 순환</a>
+							</li><li style="background-image: url(hex-map/part-26/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-26/">생물과 강</a>
+							</li><li style="background-image: url(hex-map/part-27/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/hex-map/part-27/">포장</a>
 						</li></ol>
 					</section>
 					
 					<section>
-						<h3>&#xB178;&#xC774;&#xC988;</h3>
+						<h3>노이즈</h3>
 						
 						<p>Procedural noise is useful for lots of things. This series shows how to make your own value, Perlin, and simplex noise, including their derivatives.</p>
 						
 						<ol>
-							<li style="background-image: url(noise/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/noise/">&#xB178;&#xC774;&#xC988;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(noise-derivatives/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/noise-derivatives/">&#xB178;&#xC774;&#xC988; &#xD30C;&#xC0DD;?<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(simplex-noise/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/simplex-noise/">&#xC2EC;&#xD50C;&#xB809;&#xC2A4;? &#xB178;&#xC774;&#xC988;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							<li style="background-image: url(noise/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/noise/">노이즈</a>
+							</li><li style="background-image: url(noise-derivatives/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/noise-derivatives/">노이즈 파생?</a>
+							</li><li style="background-image: url(simplex-noise/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/simplex-noise/">심플렉스? 노이즈</a>
 						</li></ol>
 					</section>
 					
 					<section>
-						<h3>&#xD589;&#xC9C4;&#xD558;&#xB294; &#xC0AC;&#xAC01;&#xD615;</h3>
+						<h3>행진하는 사각형</h3>
 						
-						<p>2D &#xACA9;&#xC790;&#xB97C; &#xC0AC;&#xC6A9;&#xD55C; &#xD615;&#xCCB4; &#xB4DC;&#xB85C;&#xC789; &#xBC0F; &#xC7AC;&#xAD6C;&#xC131;&#xC5D0; &#xB300;&#xD55C; &#xC5F0;&#xC7AC; &#xC65C; &#xD589;&#xC9C4;&#xD558;&#xB294; &#xD050;&#xBE0C;&#xB294; &#xC548;&#xB418;&#xB098;&#xC694;? 2D&#xC640; 3D&#xBAA8;&#xB450; &#xAC1C;&#xB150;&#xC740; &#xAC19;&#xAE30; &#xB54C;&#xBB38;&#xC774;&#xBA70;, 2&#xCC28;&#xC6D0;&#xC744; &#xB2E4;&#xB8E8;&#xB294; &#xAC83;&#xB3C4; &#xC774;&#xBBF8; &#xCDA9;&#xBD84;&#xD788; &#xBCF5;&#xC7A1;&#xD569;&#xB2C8;&#xB2E4;.</p>
+						<p>2D 격자를 사용한 형체 드로잉 및 재구성에 대한 연재 왜 행진하는 큐브는 안되나요? 2D와 3D모두 개념은 같기 때문이며, 2차원을 다루는 것도 이미 충분히 복잡합니다.</p>
 						
 						<ol>
-							<li style="background-image: url(marching-squares/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/marching-squares/">&#xACF5;&#xAC04; &#xBD84;&#xD560;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(marching-squares-2/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/marching-squares-2/">&#xACF5;&#xC720; &#xBC0F; &#xAD50;&#xCC28;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(marching-squares-3/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/marching-squares-3/">&#xB0A0;&#xCE74;&#xB86D;&#xAC8C; &#xBA38;&#xBB34;&#xB974;&#xAE30;?<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(marching-squares-4/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/marching-squares-4/">&#xBCBD; &#xC138;&#xC6B0;&#xAE30;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(marching-squares-5/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/marching-squares-5/">&#xCEEC;&#xB7EC;&#xD480;&#xD558;&#xAC8C;?<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							<li style="background-image: url(marching-squares/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/marching-squares/">공간 분할</a>
+							</li><li style="background-image: url(marching-squares-2/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/marching-squares-2/">공유 및 교차</a>
+							</li><li style="background-image: url(marching-squares-3/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/marching-squares-3/">날카롭게 머무르기?</a>
+							</li><li style="background-image: url(marching-squares-4/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/marching-squares-4/">벽 세우기</a>
+							</li><li style="background-image: url(marching-squares-5/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/marching-squares-5/">컬러풀하게?</a>
 						</li></ol>
 					</section>
 					
 					<section>
-						<h3>&#xAC8C;&#xC784;</h3>
+						<h3>게임</h3>
 						
-						<p>&#xC791;&#xC740; &#xAC8C;&#xC784;&#xC73C;&#xB85C; &#xAC04;&#xC8FC;&#xD560; &#xC218; &#xC788;&#xB294; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</p>
+						<p>작은 게임으로 간주할 수 있는 튜토리얼</p>
 						
 						<ol>
-							<li style="background-image: url(swirly-pipe/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/swirly-pipe/">&#xC18C;&#xC6A9;&#xB3CC;&#xC774; &#xD30C;&#xC774;&#xD504;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(maze/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/maze/">&#xBBF8;&#xB85C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							<li style="background-image: url(swirly-pipe/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/swirly-pipe/">소용돌이 파이프</a>
+							</li><li style="background-image: url(maze/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/maze/">미로</a>
 						</li></ol>
 					</section>
 				
 					<section>
-						<h3>&#xC774;&#xC804; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</h3>
+						<h3>이전 튜토리얼</h3>
 
-						<p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xB9E4;&#xC6B0; &#xC624;&#xB798;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC720;&#xB2C8;&#xD2F0; 4&#xC5D0;&#xC11C;&#xB294; &#xB3D9;&#xC791;&#xD558;&#xC9C0;&#xB9CC; &#xC774;&#xD6C4;&#xC758; &#xBC84;&#xC804;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB294; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xB418;&#xC9C0; &#xC54A;&#xC558;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5EC;&#xC804;&#xD788; &#xAC00;&#xCE58;&#xAC00; &#xC788;&#xC744;&#xC9C0;&#xB3C4; &#xBAA8;&#xB974;&#xC9C0;&#xB9CC;, &#xC5EC;&#xB7EC;&#xBD84; &#xC2A4;&#xC2A4;&#xB85C; &#xC870;&#xC815;&#xD574;&#xC57C;&#xD569;&#xB2C8;&#xB2E4;.  <a href="https://catlikecoding.com/unity/tutorials/curves-and-splines/">&#xCEE4;&#xBE0C;&#xC640; &#xC2A4;&#xD50C;&#xB77C;&#xC778;<sup class="codingdad_ext_link">&#x1F517;</sup></a> &#xC740; &#xC608;&#xC678;&#xC785;&#xB2C8;&#xB2E4;. <a href="https://catlikecoding.com/unity/tutorials/basics/">&#xAE30;&#xBCF8;<sup class="codingdad_ext_link">&#x1F517;</sup></a> &#xC5F0;&#xC7AC;&#xC758; &#xC5C5;&#xADF8;&#xB808;&#xC774;&#xB4DC;&#xAC00; &#xB05D;&#xB098;&#xBA74; &#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC744; &#xC5C5;&#xADF8;&#xB808;&#xC774;&#xB4DC; &#xD558;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+						<p>이 튜토리얼은 매우 오래되었습니다. 유니티 4에서는 동작하지만 이후의 버전에 대해서는 업데이트 되지 않았습니다. 여전히 가치가 있을지도 모르지만, 여러분 스스로 조정해야합니다.  <a href="https://catlikecoding.com/unity/tutorials/curves-and-splines/">커브와 스플라인</a> 은 예외입니다. <a href="https://catlikecoding.com/unity/tutorials/basics/">기본</a> 연재의 업그레이드가 끝나면 이 튜토리얼을 업그레이드 하겠습니다.</p>
 						
 						<ol>
-							<li style="background-image: url(curves-and-splines/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/curves-and-splines/">&#xCEE4;&#xBE0C;&#xC640; &#xC2A4;&#xD50C;&#xB77C;&#xC778;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(runner/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/runner/">&#xB2EC;&#xB9AC;&#xB294; &#xC0AC;&#xB78C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(octahedron-sphere/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/octahedron-sphere/">8&#xBA74;&#xCCB4; &#xAD6C;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(editor/custom-data/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/editor/custom-data/">&#xCEE4;&#xC2A4;&#xD140; &#xB370;&#xC774;&#xD130;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(editor/custom-list/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/editor/custom-list/">&#xCEE4;&#xC2A4;&#xD140; &#xB9AC;&#xC2A4;&#xD2B8;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
-							</li><li style="background-image: url(editor/star/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/editor/star/">&#xBCC4;<sup class="codingdad_ext_link">&#x1F517;</sup></a>
+							<li style="background-image: url(curves-and-splines/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/curves-and-splines/">커브와 스플라인</a>
+							</li><li style="background-image: url(runner/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/runner/">달리는 사람</a>
+							</li><li style="background-image: url(octahedron-sphere/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/octahedron-sphere/">8면체 구</a>
+							</li><li style="background-image: url(editor/custom-data/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/editor/custom-data/">커스텀 데이터</a>
+							</li><li style="background-image: url(editor/custom-list/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/editor/custom-list/">커스텀 리스트</a>
+							</li><li style="background-image: url(editor/star/tutorial-banner.jpg);"><a href="https://catlikecoding.com/unity/tutorials/editor/star/">별</a>
 						</li></ol>
 					</section>
 				</section>
 				
 				<section>
-					<h2>&#xC9C8;&#xBB38; &amp; &#xB2F5;&#xBCC0;</h2>
+					<h2>질문 &amp; 답변</h2>
 					
-					<p>&#xC9C8;&#xBB38; &#xC788;&#xC73C;&#xC138;&#xC694;? &#xB2E4;&#xC74C;&#xC740; &#xBA87; &#xAC00;&#xC9C0; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xC9C8;&#xBB38;&#xC785;&#xB2C8;&#xB2E4;.  &#xC9C8;&#xBB38;&#xC744; &#xD074;&#xB9AD;&#xD558;&#xAC70;&#xB098; &#xD130;&#xCE58;&#xD558;&#xC5EC; &#xB2F5;&#xBCC0;&#xC744; &#xBCF4;&#xC138;&#xC694;. &#xB2E4;&#xC591;&#xD55C; &#xACBD;&#xB85C;&#xB85C; <a href="/catlikecoding.com/jasper-flick/">&#xC800;&#xC5D0;&#xAC8C; &#xC5F0;&#xB77D;</a> &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+					<p>질문 있으세요? 다음은 몇 가지 일반적인 질문입니다.  질문을 클릭하거나 터치하여 답변을 보세요. 다양한 경로로 <a href="../../jasper-flick/index.html">저에게 연락</a> 할 수도 있습니다.</p>
 					
 					<aside>
-						<h3>&#xC65C; Patreon&#xC778;&#xAC00;&#xC694;?</h3>
+						<h3>왜 Patreon인가요?</h3>
 						<div>
-							<p>&#xACE8;&#xD310;&#xC9C0; &#xC0C1;&#xC790;&#xB294; &#xC804;&#xC6D0; &#xC18C;&#xCF13;&#xACFC; &#xC778;&#xD130;&#xB137; &#xC5F0;&#xACB0;&#xC774; &#xC5C6;&#xAE30; &#xB54C;&#xBB38;&#xC5D0; &#xADF8; &#xACF3;&#xC5D0; &#xC0B4; &#xC218;&#xB294; &#xC5C6;&#xC2B5;&#xB2C8;&#xB2E4;. &#xAD76;&#xAC70;&#xB098; &#xC5BC;&#xC5B4;&#xC8FD;&#xB294; &#xAC83;&#xC740; &#xB610;&#xD55C; &#xC0DD;&#xC0B0;&#xC131;&#xC5D0; &#xC704;&#xD611;&#xC774; &#xB429;&#xB2C8;&#xB2E4;. &#xADF8;&#xB798;&#xC11C; &#xC800;&#xB294; &#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC744; &#xB9CC;&#xB4DC;&#xB294; &#xB370; &#xD544;&#xC694;&#xD55C; &#xC2DC;&#xAC04;&#xACFC; &#xB178;&#xB825;&#xC744; &#xC9C0;&#xC6D0;&#xD560; &#xC218; &#xC788;&#xB294; &#xBC29;&#xBC95;&#xC774; &#xD544;&#xC694;&#xD569;&#xB2C8;&#xB2E4;.</p>
+							<p>골판지 상자는 전원 소켓과 인터넷 연결이 없기 때문에 그 곳에 살 수는 없습니다. 굶거나 얼어죽는 것은 또한 생산성에 위협이 됩니다. 그래서 저는 이 튜토리얼을 만드는 데 필요한 시간과 노력을 지원할 수 있는 방법이 필요합니다.</p>
 							
-							<p>&#xD6C4;&#xC6D0;&#xC790;&#xC758; &#xAC1C;&#xB150;&#xC774; &#xC88B;&#xC544;&#xC11C; Patreon&#xC744; &#xC120;&#xD0DD;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5EC;&#xB7EC;&#xBD84;&#xC740; <a href="https://www.patreon.com/catlikecoding/">&#xD6C4;&#xC6D0;&#xC790;&#xAC00; &#xB418;&#xC5B4;&#xC11C;</a> &#xC5EC;&#xB7EC;&#xBD84;&#xACFC; &#xB2E4;&#xB978; &#xBAA8;&#xB4E0; &#xC0AC;&#xB78C;&#xC744; &#xC704;&#xD55C; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC744; &#xC81C;&#xAC00; &#xACC4;&#xC18D;&#xD574;&#xC11C; &#xB9CC;&#xB4E4; &#xC218; &#xC788;&#xB3C4;&#xB85D; &#xC9C0;&#xC6D0;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5EC;&#xB7EC;&#xBD84;&#xC758; &#xAD00;&#xB300;&#xD568;&#xC73C;&#xB85C; &#xBAA8;&#xB450;&#xAC00; &#xD61C;&#xD0DD;&#xC744; &#xBC1B;&#xC2B5;&#xB2C8;&#xB2E4;!</p>
+							<p>후원자의 개념이 좋아서 Patreon을 선택했습니다. 여러분은 <a href="https://www.patreon.com/catlikecoding">후원자가 되어서</a> 여러분과 다른 모든 사람을 위한 튜토리얼을 제가 계속해서 만들 수 있도록 지원할 수 있습니다. 여러분의 관대함으로 모두가 혜택을 받습니다!</p>
 						</div>
 					</aside>
 					
 					<aside>
-						<h3>&#xC800;&#xB294; Patreon&#xB294; &#xC2EB;&#xC5B4;&#xC694;. &#xB2E4;&#xB978; &#xBC29;&#xBC95;&#xC73C;&#xB85C; &#xAE30;&#xBD80;&#xD560; &#xC218; &#xC788;&#xC744;&#xAE4C;&#xC694;?</h3>
+						<h3>저는 Patreon는 싫어요. 다른 방법으로 기부할 수 있을까요?</h3>
 						<div>
-							<p>&#xB124;, &#xD398;&#xC774;&#xD314;&#xC774;&#xB098; &#xBE44;&#xD2B8;&#xCF54;&#xC778; &#xB610;&#xB294; &#xC774;&#xB354;&#xB9AC;&#xC6C0;&#xC744; &#xD1B5;&#xD574;&#xC11C; <a href="/catlikecoding.com/unity/tutorials/donating.html">&#xAE30;&#xBD80;</a>&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+							<p>네, 페이팔이나 비트코인 또는 이더리움을 통해서 <a href="donating.html">기부</a>할 수 있습니다.</p>
 						</div>
 					</aside>
 					
 					<aside>
-						<h3>&#xC0C8; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC5D0; &#xB300;&#xD55C; &#xD1B5;&#xC9C0;&#xB97C; &#xBC1B;&#xC744; &#xC218; &#xC788;&#xC744;&#xAE4C;&#xC694;?</h3>
+						<h3>새 튜토리얼에 대한 통지를 받을 수 있을까요?</h3>
 						<div>
 							<p>
-<a href="https://www.patreon.com/catlikecoding/">Patreon</a>, <a href="https://twitter.com/catlikecoding/">Twitter</a>, <a href="https://gab.ai/catlikecoding/">Gab</a>, <a href="https://www.facebook.com/unity.c.sharp.tutorials/">Facebook</a>, <a href="https://plus.google.com/+CatlikeCoding/">Google+</a>, <a href="https://connect.unity.com/u/581a3459090915002eeb5067/">Unity Connect</a>, <a href="https://www.linkedin.com/in/jrjflick/">LinkedIn</a>, <a href="https://www.reddit.com/user/catlikecoding/">reddit</a> &#xBC0F; &#xB2E4;&#xB978; &#xACF3;&#xC758; &#xC81C; &#xACC4;&#xC815;&#xC744; &#xD1B5;&#xD574;&#xC11C; &#xC54C;&#xB824;&#xB4DC;&#xB9AC;&#xACA0;&#xC2B5;&#xB2C8;&#xB2E4;. </p>
+<a href="https://www.patreon.com/catlikecoding">Patreon</a>, <a href="http://twitter.com/catlikecoding">Twitter</a>, <a href="https://gab.ai/catlikecoding">Gab</a>, <a href="http://www.facebook.com/unity.c.sharp.tutorials">Facebook</a>, <a href="http://plus.google.com/+CatlikeCoding">Google+</a>, <a href="https://connect.unity.com/u/581a3459090915002eeb5067">Unity Connect</a>, <a href="http://www.linkedin.com/in/jrjflick">LinkedIn</a>, <a href="https://www.reddit.com/user/catlikecoding">reddit</a> 및 다른 곳의 제 계정을 통해서 알려드리겠습니다. </p>
 						</div>
 					</aside>
 					
 					<aside>
-						<h3>&#xC0C1;&#xC6A9; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xCF54;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC744;&#xAE4C;&#xC694;?</h3>
+						<h3>상용 프로젝트에 튜토리얼 코드를 사용할 수 있을까요?</h3>
 						<div>
-							<p>&#xB124; &#xAD1C;&#xCC2E;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC5B4;&#xB5A4; &#xBAA9;&#xC801;&#xC73C;&#xB85C;&#xB3C4; &#xC6D0;&#xD558;&#xB294; &#xB300;&#xB85C; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC; &#xCF54;&#xB4DC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC800;&#xB97C; &#xC5B8;&#xAE09;&#xD560; &#xD544;&#xC694;&#xB294; &#xC5C6;&#xC9C0;&#xB9CC;, &#xC815;&#xB9D0; &#xACE0;&#xB9C8;&#xC6B4; &#xC77C;&#xC785;&#xB2C8;&#xB2E4;!</p>
+							<p>네 괜찮습니다. 어떤 목적으로도 원하는 대로 튜토리얼 코드를 사용할 수 있습니다.  저를 언급할 필요는 없지만, 정말 고마운 일입니다!</p>
 							
-							<p>&#xC8FC;&#xC758;&#xD558;&#xC138;&#xC694;. &#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5B4;&#xC5D0;&#xC11C; &#xC2E4;&#xC81C; &#xC0C1;&#xC6A9; &#xC81C;&#xD488;&#xC73C;&#xB85C; &#xAC00;&#xB294; &#xAC83;&#xC740; &#xBA3C; &#xAE38;&#xC785;&#xB2C8;&#xB2E4;. </p>
+							<p>주의하세요. 이 튜토리어에서 실제 상용 제품으로 가는 것은 먼 길입니다. </p>
 						</div>
 					</aside>
 					
 					<aside>
-						<h3>&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC744; &#xC7AC;&#xBC30;&#xD3EC; &#xD558;&#xAC70;&#xB098; &#xBC88;&#xC5ED;&#xD574;&#xB3C4; &#xAD1C;&#xCC2E;&#xC744;&#xAE4C;&#xC694;?</h3>
+						<h3>튜토리얼을 재배포 하거나 번역해도 괜찮을까요?</h3>
 						<div>
-							<p>&#xB124;, &#xC6D0;&#xBCF8; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC744; &#xB9C1;&#xD06C;&#xD558;&#xACE0; &#xC5EC;&#xB7EC;&#xBD84;&#xC774; &#xC6D0;&#xC791;&#xC790;&#xAC00; &#xC544;&#xB2C8;&#xB77C;&#xB294; &#xAC83;&#xB9CC; &#xBD84;&#xBA85;&#xD788; &#xBC1D;&#xD78C;&#xB2E4;&#xBA74;&#xC694;.</p>
+							<p>네, 원본 튜토리얼을 링크하고 여러분이 원작자가 아니라는 것만 분명히 밝힌다면요.</p>
 						</div>
 					</aside>
 					
 					<aside>
-						<h3>&#xC65C; &#xBE44;&#xB514;&#xC624;&#xAC00; &#xC544;&#xB2C8;&#xB77C; &#xD14D;&#xC2A4;&#xD2B8; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC778;&#xAC00;&#xC694;?</h3>
+						<h3>왜 비디오가 아니라 텍스트 튜토리얼인가요?</h3>
 						<div>
-							<p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xCF54;&#xB4DC;&#xB97C; &#xC791;&#xC131;&#xD558;&#xB294; &#xAC83;&#xC5D0; &#xAD00;&#xD55C; &#xAC83;&#xC774;&#xBBC0;&#xB85C; &#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xB294; &#xAC83;&#xC774; &#xC790;&#xC5F0;&#xC2A4;&#xB7EC;&#xC6CC; &#xBCF4;&#xC785;&#xB2C8;&#xB2E4;.  &#xCF54;&#xB4DC;&#xB97C; &#xC774;&#xD574;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC5EC;&#xB7EC;&#xBD84;&#xC758; &#xC18D;&#xB3C4;&#xC5D0; &#xB9DE;&#xCDB0;&#xC11C; &#xC55E;&#xB4A4;&#xB85C; &#xC810;&#xD504;&#xD558;&#xACE0;, &#xBA48;&#xCD94;&#xACE0;,  &#xCC3E;&#xC544;&#xBCF4;&#xACE0;, &#xC2E4;&#xD5D8;&#xD558;&#xB294; &#xB4F1; &#xB9CE;&#xC740; &#xC77C;&#xC744; &#xD544;&#xC694;&#xB85C; &#xD560; &#xC218;&#xB3C4; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;.  &#xC774;&#xB97C; &#xC704;&#xD574;&#xC11C;&#xB294; &#xBE44;&#xB514;&#xC624;&#xBCF4;&#xB2E4;&#xB294; &#xD14D;&#xC2A4;&#xD2B8;&#xAC00; &#xB354; &#xD3B8;&#xB9AC;&#xD55C; &#xAC83; &#xAC19;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+							<p>이 튜토리얼은 코드를 작성하는 것에 관한 것이므로 텍스트를 사용하는 것이 자연스러워 보입니다.  코드를 이해하는 것은 여러분의 속도에 맞춰서 앞뒤로 점프하고, 멈추고,  찾아보고, 실험하는 등 많은 일을 필요로 할 수도 있습니다.  이를 위해서는 비디오보다는 텍스트가 더 편리한 것 같습니다.</p>
 							
-							<p>&#xB610;&#xD55C; &#xBE44;&#xB514;&#xC624; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC774; &#xAE09;&#xC911;&#xD558;&#xACE0; &#xC788;&#xC9C0;&#xB9CC; &#xD14D;&#xC2A4;&#xD2B8;&#xB97C; &#xC120;&#xD638;&#xD558;&#xB294; &#xC0AC;&#xB78C;&#xB4E4;&#xC774; &#xCD94;&#xC704;&#xC5D0; &#xB0B4;&#xBC84;&#xB824;&#xC9C0;&#xC9C0; &#xC54A;&#xAE30;&#xB97C; &#xBC14;&#xB78D;&#xB2C8;&#xB2E4;.</p>
+							<p>또한 비디오 튜토리얼이 급중하고 있지만 텍스트를 선호하는 사람들이 추위에 내버려지지 않기를 바랍니다.</p>
 						</div>
 					</aside>
 					
 					<aside>
-						<h3>&#xC65C; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xAC00; &#xC544;&#xB2C8;&#xACE0; C# &#xC778;&#xAC00;&#xC694;?</h3>
+						<h3>왜 자바스크립트가 아니고 C# 인가요?</h3>
 						<div>
-							<p>&#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0; &#xBE44;&#xAD50;&#xD558;&#xC5EC;, C#&#xC740; &#xB354; &#xC5C4;&#xACA9;&#xD558;&#xACE0; &#xC790;&#xC138;&#xD55C; &#xAD6C;&#xBB38;&#xC744; &#xC0AC;&#xC6A9;&#xD569;&#xB2C8;&#xB2E4;. &#xC5EC;&#xB7EC;&#xBD84;&#xC774; &#xBB34;&#xC5C7;&#xC744; &#xD558;&#xACE0; &#xC788;&#xB294;&#xC9C0; &#xC815;&#xB9D0;&#xB85C; &#xC54C;&#xACE0; &#xC2F6;&#xB2E4;&#xBA74; &#xC774;&#xAC83;&#xC774; &#xB354; &#xC720;&#xC775;&#xD558;&#xB2E4;&#xACE0; &#xC0DD;&#xAC01;&#xD569;&#xB2C8;&#xB2E4;. &#xC5C4;&#xACA9;&#xD55C; &#xAC83;&#xC5D0;&#xC11C; &#xC2DC;&#xC791;&#xD574; &#xB098;&#xC911;&#xC5D0; &#xB290;&#xC2A8;&#xD55C; &#xAC83;&#xC73C;&#xB85C; &#xAC00;&#xB294; &#xAC83;&#xC740; &#xC27D;&#xB2C8;&#xB2E4;, &#xADF8; &#xBC18;&#xB300;&#xB294; &#xADF8;&#xB9AC; &#xC27D;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+							<p>자바스크립트에 비교하여, C#은 더 엄격하고 자세한 구문을 사용합니다. 여러분이 무엇을 하고 있는지 정말로 알고 싶다면 이것이 더 유익하다고 생각합니다. 엄격한 것에서 시작해 나중에 느슨한 것으로 가는 것은 쉽니다, 그 반대는 그리 쉽지 않습니다.</p>
 							
-							<p>&#xB610;&#xD55C;, &#xC720;&#xB2C8;&#xD2F0;&#xC5D0;&#xC11C; C#&#xC740; &#xC9C4;&#xC9DC;&#xC785;&#xB2C8;&#xB2E4;. &#xAC70;&#xC758; &#xC608;&#xC678; &#xC5C6;&#xC774;, C#&#xC740; &#xB2E4;&#xB978; &#xB2F7;&#xB137;&#xC774;&#xB098; &#xBAA8;&#xB178; &#xD504;&#xB85C;&#xC81D;&#xD2B8;&#xC5D0; &#xC788;&#xC744; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. C#&#xC5D0; &#xB300;&#xD55C; &#xAC70;&#xC758; &#xBAA8;&#xB4E0; &#xC628;&#xB77C;&#xC778; &#x3141;&#xB204;&#xC11C;&#xB294; &#xC720;&#xC6A9;&#xD558;&#xBA70; &#xD45C;&#xC900; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC;&#xB97C; &#xC0AC;&#xC6A9;&#xD560; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC774;&#xB294; &#xC720;&#xB2C8;&#xD2F0;&#xC758; &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xC5D0; &#xB300;&#xD574;&#xC11C;&#xB294; &#xC0AC;&#xC2E4;&#xC774; &#xC544;&#xB2C8;&#xBA70; &#xC2E4;&#xC81C;&#xB85C;&#xB294; &#xC720;&#xB2C8;&#xD2F0;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8; &#xC785;&#xB2C8;&#xB2E4;.</p>
-							<p>&#xB9C8;&#xC9C0;&#xB9C9;&#xC73C;&#xB85C;, &#xC720;&#xB2C8;&#xD2F0; &#xD14C;&#xD06C;&#xB180;&#xB85C;&#xC9C0; &#xC790;&#xCCB4;&#xAC00; &#xBAA8;&#xB4E0; &#xCD08;&#xC810;&#xC744; C#&#xC73C;&#xB85C; &#xC804;&#xD658;&#xD558;&#xACE0; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xC790;&#xBC14;&#xC2A4;&#xD06C;&#xB9BD;&#xD2B8;&#xB294; &#xC9C0;&#xC6D0;&#xC774; &#xC911;&#xB2E8;&#xB420; &#xAC81;&#xB2C8;&#xB2E4;.</p>
+							<p>또한, 유니티에서 C#은 진짜입니다. 거의 예외 없이, C#은 다른 닷넷이나 모노 프로젝트에 있을 것입니다. C#에 대한 거의 모든 온라인 ㅁ누서는 유용하며 표준 라이브러리를 사용할 수 있습니다. 이는 유니티의 자바스크립트에 대해서는 사실이 아니며 실제로는 유니티스크립트 입니다.</p>
+							<p>마지막으로, 유니티 테크놀로지 자체가 모든 초점을 C#으로 전환하고 있습니다. 자바스크립트는 지원이 중단될 겁니다.</p>
 						</div>
 					</aside>
 					
 					<aside>
-						<h3>&#xC65C; &#xC88B;&#xC740; OOP &#xC124;&#xACC4;&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xAE4C;?</h3>
+						<h3>왜 좋은 OOP 설계를 사용하지 않습니까?</h3>
 						<div>
-							<p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xC77C;&#xBC18;&#xC801;&#xC778; &#xAC1D;&#xCCB4; &#xC9C0;&#xD5A5; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC5D0; &#xB300;&#xD55C; &#xAC83;&#xC774; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;. &#xC720;&#xD2F0;&#xD2F0;&#xB97C; &#xC704;&#xD55C; &#xD504;&#xB85C;&#xADF8;&#xB798;&#xBC0D;&#xC5D0; &#xB300;&#xD55C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;. &#xC720;&#xB2C8;&#xD2F0;&#xB97C; &#xC704;&#xD55C; &#xAC1C;&#xBC1C;&#xC740; &#xAC1D;&#xCCB4; &#xC9C0;&#xD5A5;&#xC774; &#xC544;&#xB2C8;&#xB77C; &#xBCF8;&#xC9C8;&#xC801;&#xC73C;&#xB85C; &#xC808;&#xCC28;&#xC801;&#xC778; &#xD070; &#xBD80;&#xBD84;&#xC5D0; &#xB300;&#xD55C; &#xAC83;&#xC785;&#xB2C8;&#xB2E4;.?? &#xC720;&#xB2C8;&#xD2F0;&#xB294; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8; &#xAE30;&#xBC18;&#xC785;&#xB2C8;&#xB2E4;. &#xBE44;&#xD5E4;&#xC774;&#xBDF0;&#xC5B4;&#xAC00; &#xD3EC;&#xD568;&#xB41C; &#xB370;&#xC774;&#xD130;&#xC758; &#xBAA8;&#xC74C;&#xC744; &#xAC00;&#xC9C0;&#xACE0; &#xC791;&#xC5C5;&#xC744; &#xD569;&#xB2C8;&#xB2E4;. &#xAC1D;&#xCCB4;&#xCC98;&#xB7FC; &#xB4E4;&#xB9AC;&#xC9C0;&#xB9CC;, &#xCEA1;&#xC290;&#xD654;&#xC640; &#xC2E0;&#xC6D0; &#xBCF4;&#xD638;&#xB294; &#xC544;&#xD0A4;&#xD14D;&#xCCD0;&#xC758; &#xC77C;&#xBD80;&#xAC00; &#xC544;&#xB2D9;&#xB2C8;&#xB2E4;. &#xC720;&#xB2C8;&#xD2F0;&#xAC00; &#xD56D;&#xC0C1; &#xC5C4;&#xACA9;&#xD55C; OOP &#xD45C;&#xC900;&#xC744; &#xB530;&#xB974;&#xB3C4;&#xB85D; &#xAC15;&#xC81C;&#xD558;&#xB294; &#xAC83;&#xC740; &#xC2E4;&#xC6A9;&#xC801;&#xC774;&#xC9C0; &#xC54A;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
+							<p>이 튜토리얼은 일반적인 객체 지향 프로그래밍에 대한 것이 아닙니다. 유티티를 위한 프로그래밍에 대한 것입니다. 유니티를 위한 개발은 객체 지향이 아니라 본질적으로 절차적인 큰 부분에 대한 것입니다.?? 유니티는 컴포넌트 기반입니다. 비헤이뷰어가 포함된 데이터의 모음을 가지고 작업을 합니다. 객체처럼 들리지만, 캡슐화와 신원 보호는 아키텍쳐의 일부가 아닙니다. 유니티가 항상 엄격한 OOP 표준을 따르도록 강제하는 것은 실용적이지 않습니다.</p>
 						</div>
 					</aside>
 				</section>
@@ -405,14 +358,14 @@
 		</main>
 
 		<footer>
-			<p><a href="/catlikecoding.com/unity/tutorials/">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</a>&#xC744; &#xC990;&#xAE30;&#xACE0; &#xACC4;&#xC138;&#xC694;? &#xC720;&#xC6A9;&#xD55C;&#xAC00;&#xC694;?</p>
-			<p><b><a href="https://www.patreon.com/catlikecoding/">Patreon&#xC5D0;&#xC11C; &#xC800;&#xB97C; &#xC9C0;&#xC6D0;&#xD574;&#xC8FC;&#xC138;&#xC694;!</a></b></p>
-			<p><a href="https://www.patreon.com/catlikecoding/"><img src="become-a-patron.png" alt="&#xC800;&#xC758; &#xD6C4;&#xC6D0;&#xC790;&#xAC00; &#xB418;&#xC5B4; &#xC8FC;&#xC138;&#xC694;!" width="217" height="51"></a></p>
-			<p><b><a href="/catlikecoding.com/unity/tutorials/donating.html">&#xD639;&#xC740; &#xC9C1;&#xC811; &#xAE30;&#xBD80;&#xD574; &#xC8FC;&#xC138;&#xC694;</a>!</b></p>
-			<p><a href="/catlikecoding.com/jasper-flick/" rel="author">Jasper Flick</a>&#xC5D0; &#xC758;&#xD574; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;</p>
+			<p><a href="index.html">튜토리얼</a>을 즐기고 계세요? 유용한가요?</p>
+			<p><b><a href="https://www.patreon.com/catlikecoding">Patreon에서 저를 지원해주세요!</a></b></p>
+			<p><a href="https://www.patreon.com/catlikecoding"><img src="become-a-patron.png" alt="저의 후원자가 되어 주세요!" width="217" height="51"></a></p>
+			<p><b><a href="donating.html">혹은 직접 기부해 주세요</a>!</b></p>
+			<p><a href="../../jasper-flick/index.html" rel="author">Jasper Flick</a>에 의해 작성되었습니다</p>
 		</footer>
 		
 		<script src="../../jquery2.js"></script>
 		<script src="tutorials.js"></script>
-	
-</body></html>
+	</body>
+</html>
