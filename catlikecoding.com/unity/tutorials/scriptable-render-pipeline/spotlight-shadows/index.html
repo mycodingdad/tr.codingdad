@@ -1,4 +1,13 @@
-<!DOCTYPE html><html lang="ko"><head prefix="og: http://ogp.me/ns#">
+<!DOCTYPE html><html lang="ko"><head prefix="og: http://ogp.me/ns#"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128068276-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-128068276-6');
+</script>
+
 		<meta charset="utf-8">
 		<meta property="og:url" content="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/">
 		<meta property="og:type" content="&#xAE00;">
@@ -50,19 +59,70 @@
 				ShadowMapSize: 1
 			};
 		</script>
-	</head>
-	<body>
-		<div style="text-align:center;padding:10px 0px;background-color:gray;"><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/">[catlikecoding.com&#xC758; &#xC6D0;&#xBCF8; &#xD3EC;&#xC2A4;&#xD305; &#xBCF4;&#xAE30;]</a> <a href="https://codingdad.me/2018/12/25/catlike-rendering-part-1">[codingdad.me&#xC5D0; &#xD53C;&#xB4DC;&#xBC31; &#xB0A8;&#xAE30;&#xAE30;]</a><br>&#xC800;&#xC790;&#xC758; &#xB3D9;&#xC758;&#xB97C; &#xC5BB;&#xAE30; &#xC704;&#xD55C; &#xC784;&#xC2DC; &#xC0AC;&#xC774;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. &#xB0B4;&#xC6A9;&#xC0C1;&#xC758; &#xBAA8;&#xB4E0; &#xC624;&#xD0C0;&#xB294; &#xBC88;&#xC5ED;&#xC790;&#xC758; &#xC798;&#xBABB;&#xC774;&#xBA70;, &#xAE30;&#xBD80; &#xBC0F; &#xD6C4;&#xC6D0; &#xB9C1;&#xD06C;&#xB294; &#xC6D0;&#xC791;&#xC790;&#xC5D0;&#xAC8C; &#xC5F0;&#xACB0;&#xB429;&#xB2C8;&#xB2E4;.</div>
-		<div style="text-align:center;padding:10px 0px;background-color:gray;"><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/">[catlikecoding.com&#xC758; &#xC6D0;&#xBCF8; &#xD3EC;&#xC2A4;&#xD305; &#xBCF4;&#xAE30;]<sup>&#x1F517;</sup></a> <a href="https://codingdad.me/2018/12/25/catlike-rendering-part-1">[codingdad.me&#xC5D0; &#xD53C;&#xB4DC;&#xBC31; &#xB0A8;&#xAE30;&#xAE30;]</a><br>&#xC800;&#xC790;&#xC758; &#xB3D9;&#xC758;&#xB97C; &#xC5BB;&#xAE30; &#xC704;&#xD55C; &#xC784;&#xC2DC; &#xC0AC;&#xC774;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. &#xB0B4;&#xC6A9;&#xC0C1;&#xC758; &#xBAA8;&#xB4E0; &#xC624;&#xD0C0;&#xB294; &#xBC88;&#xC5ED;&#xC790;&#xC758; &#xC798;&#xBABB;&#xC774;&#xBA70;, &#xAE30;&#xBD80; &#xBC0F; &#xD6C4;&#xC6D0; &#xB9C1;&#xD06C;&#xB294; &#xC6D0;&#xC791;&#xC790;&#xC5D0;&#xAC8C; &#xC5F0;&#xACB0;&#xB429;&#xB2C8;&#xB2E4;.</div>
-		<div style="text-align:center;padding:10px 0px;background-color:gray;"><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/">[catlikecoding.com&#xC758; &#xC6D0;&#xBCF8; &#xD3EC;&#xC2A4;&#xD305; &#xBCF4;&#xAE30;]<sup>&#x1F517;</sup><sup>&#x1F517;</sup></a> <a href="https://codingdad.me/2018/12/25/catlike-rendering-part-1">[codingdad.me&#xC5D0; &#xD53C;&#xB4DC;&#xBC31; &#xB0A8;&#xAE30;&#xAE30;]</a><br>&#xC800;&#xC790;&#xC758; &#xB3D9;&#xC758;&#xB97C; &#xC5BB;&#xAE30; &#xC704;&#xD55C; &#xC784;&#xC2DC; &#xC0AC;&#xC774;&#xD2B8;&#xC785;&#xB2C8;&#xB2E4;. &#xB0B4;&#xC6A9;&#xC0C1;&#xC758; &#xBAA8;&#xB4E0; &#xC624;&#xD0C0;&#xB294; &#xBC88;&#xC5ED;&#xC790;&#xC758; &#xC798;&#xBABB;&#xC774;&#xBA70;, &#xAE30;&#xBD80; &#xBC0F; &#xD6C4;&#xC6D0; &#xB9C1;&#xD06C;&#xB294; &#xC6D0;&#xC791;&#xC790;&#xC5D0;&#xAC8C; &#xC5F0;&#xACB0;&#xB429;&#xB2C8;&#xB2E4;.</div>
+	<style class="codingdad_header_css">  .codingdad_header
+  {
+    padding:10px 10px 10px 100px; 
+    color:#f4f0f4; 
+    border-radius:15px; 
+    margin: 10px auto;
+    max-width: 948px;
+    background-color:#36c46f; 
+    /*
+    background-image:url("/logo-white.svg");
+    background-repeat: no-repeat;
+    background-size: 100px 50px;
+    */
+  }
+  .codingdad_header a
+  {
+    text-decoration:underline;
+    color:#f4f0f4;
+  }
+
+  .codingdad_header img
+  {
+    vertical-align: text-bottom;
+    width: 220px;
+  }
+  
+
+  .codingdad_header_title
+  {
+    font-size:25px; 
+    font-weight:bold;
+  }
+  .codingdad_header_desc
+  {
+    font-size:13px; 
+    line-height:1.2em; 
+    margin-top:10px;
+  }
+  .codingdad_header_desc ul
+  {
+    margin-bottom:0px;
+    margin-left:-40px;
+  }</style></head>
+	<body><div class="codingdad_header_html"><div class="codingdad_header"> 
+  <div class="codingdad_header_title">
+    <a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/">Catlike Coding</a>&#xC758; &#xBA4B;&#xC9C4; &#xAE00;&#xC744; 
+    <!-- <a href="https://codingdad.me/2019/02/07/CatlikeCoding/">Coding Dad</a>이 번역했습니다. -->
+    <a href="https://codingdad.me/2019/02/07/CatlikeCoding/"><img src="/logo-black.svg"></a>&#xC774; &#xBC88;&#xC5ED;&#xD588;&#xC2B5;&#xB2C8;&#xB2E4;.
+  </div>
+  <div class="codingdad_header_desc">
+    <ul>
+      <li>&#xC6D0;&#xBB38;&#xC740; <a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/">catlikecoding.com</a>&#xC5D0;&#xC11C; &#xBCFC; &#xC218; &#xC788;&#xC2B5;&#xB2C8;&#xB2E4;. &#xBC88;&#xC5ED;&#xC5D0; &#xB300;&#xD55C; &#xD53C;&#xB4DC;&#xBC31;&#xC740; <a href="https://codingdad.me/2019/02/07/CatlikeCoding/">codingdad.me</a>&#xC5D0; &#xB0A8;&#xACA8;&#xC8FC;&#xC138;&#xC694;. &#xC800;&#xC5D0;&#xAC8C; &#xD070; &#xB3C4;&#xC6C0;&#xC774; &#xB429;&#xB2C8;&#xB2E4;. </li>
+      <li>&#xD6C4;&#xC6D0; &#xBC0F; &#xAE30;&#xBD80; &#xB9C1;&#xD06C;&#xB294; Catlike Coding&#xC5D0; &#xC5F0;&#xACB0;&#xB429;&#xB2C8;&#xB2E4;. &#xC6D0;&#xC791;&#xC790;&#xC5D0;&#xAC8C; &#xAC10;&#xC0AC;&#xC758; &#xB9C8;&#xC74C;&#xC744; &#xC804;&#xD574;&#xBCF4;&#xC138;&#xC694; :)</li>
+    </ul>
+  </div>
+</div></div>
 		<header>
-			<a href="https://catlikecoding.com"><img src="../../../../catlike-coding-logo.svg" alt="Catlike Coding" width="45" height="45"><sup>&#x1F517;</sup><sup>&#x1F517;</sup><sup>&#x1F517;</sup></a>
+			<a href="/catlikecoding.com/"><img src="../../../../catlike-coding-logo.svg" alt="Catlike Coding" width="45" height="45"></a>
 			<nav>
 				<ol>
-					<li><a href="https://catlikecoding.com">Catlike Coding<sup>&#x1F517;</sup><sup>&#x1F517;</sup><sup>&#x1F517;</sup></a></li>
-					<li><a href="https://catlikecoding.com/unity/">&#xC720;&#xB2C8;&#xD2F0;<sup>&#x1F517;</sup><sup>&#x1F517;</sup><sup>&#x1F517;</sup></a></li>
-					<li><a href="https://catlikecoding.com/unity/tutorials/">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;<sup>&#x1F517;</sup><sup>&#x1F517;</sup><sup>&#x1F517;</sup></a></li>
-					<li><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/catlikecoding.com/unity/tutorials/scriptable-render-pipeline/">&#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;<sup>&#x1F517;</sup><sup>&#x1F517;</sup></a></li>
+					<li><a href="/catlikecoding.com/">Catlike Coding</a></li>
+					<li><a href="/catlikecoding.com/unity/">&#xC720;&#xB2C8;&#xD2F0;</a></li>
+					<li><a href="/catlikecoding.com/unity/tutorials/">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</a></li>
+					<li><a href="/catlikecoding.com/unity/tutorials/scriptable-render-pipeline/">&#xC2A4;&#xD06C;&#xB9BD;&#xD130;&#xBE14; &#xB80C;&#xB354; &#xD30C;&#xC774;&#xD504;&#xB77C;&#xC778;</a></li>
 				</ol>
 			</nav>
 		</header>
@@ -82,7 +142,7 @@
 					</ul>
 				</header>
 				
-				<p>This is the fourth installment of a tutorial series covering Unity&apos;s <a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/catlikecoding.com/unity/tutorials/scriptable-render-pipeline/">scriptable render pipeline<sup>&#x1F517;</sup><sup>&#x1F517;</sup></a>. In it, we&apos;ll add support for up to sixteen spotlights with shadows.</p>
+				<p>This is the fourth installment of a tutorial series covering Unity&apos;s <a href="/catlikecoding.com/unity/tutorials/scriptable-render-pipeline/">scriptable render pipeline</a>. In it, we&apos;ll add support for up to sixteen spotlights with shadows.</p>
 				
 				<p>&#xC774; &#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;&#xC740; &#xC720;&#xB2C8;&#xD2F0; 2018.3.0f2&#xB97C; &#xC0AC;&#xC6A9;&#xD558;&#xC5EC; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;.</p>
 				
@@ -96,7 +156,7 @@
 					
 					<p>Shadows are very important, both to increase realism and to make the spatial relationship between objects more obvious. Without shadows, it can be hard to tell whether something floats about a surface or sits on top of it.</p>
 					
-					<p>The <a href="https://catlikecoding.com/unity/tutorials/rendering/part-7/">Rendering 7, Shadows<sup>&#x1F517;</sup><sup>&#x1F517;</sup><sup>&#x1F517;</sup></a> tutorial explains how shadows work in Unity&apos;s default render pipeline, but that exact same approach doesn&apos;t work for our single-pass forward renderer. It is still useful to skim to get the gist of shadow maps though. In this tutorial we&apos;ll limit ourselves to shadows for spotlights, are they&apos;re the least complicated.</p>
+					<p>The <a href="https://catlikecoding.com/unity/tutorials/rendering/part-7/">Rendering 7, Shadows<sup class="codingdad_ext_link">&#x1F517;</sup></a> tutorial explains how shadows work in Unity&apos;s default render pipeline, but that exact same approach doesn&apos;t work for our single-pass forward renderer. It is still useful to skim to get the gist of shadow maps though. In this tutorial we&apos;ll limit ourselves to shadows for spotlights, are they&apos;re the least complicated.</p>
 					
 					<p>We start with supporting exactly one shadowed light, so make a scene that contains a few objects and a single spotlight. A plane object is useful to receive shadows. All objects should use our <em>Lit Opaque</em> material.</p>
 					
@@ -670,7 +730,7 @@ SAMPLER_CMP(sampler_ShadowMap);
 					<section>
 						<h3>Shadow Bias</h3>
 						
-						<p>Shadow acne is caused by texels of the shadow map poking out of surfaces. For a more detailed explanation, see <a href="https://catlikecoding.com/unity/tutorials/rendering/part-7/">Rendering 7, Shadows<sup>&#x1F517;</sup><sup>&#x1F517;</sup><sup>&#x1F517;</sup></a>. We&apos;ll support the simplest way to mitigate acne, which is by adding a small depth offset when rendering to the shadow map. This shadow bias is configured per light, so we must send it to the GPU. We&apos;ll do that via a <em>_ShadowBias</em> shader property, so keep track of its identifier.</p>
+						<p>Shadow acne is caused by texels of the shadow map poking out of surfaces. For a more detailed explanation, see <a href="https://catlikecoding.com/unity/tutorials/rendering/part-7/">Rendering 7, Shadows<sup class="codingdad_ext_link">&#x1F517;</sup></a>. We&apos;ll support the simplest way to mitigate acne, which is by adding a small depth offset when rendering to the shadow map. This shadow bias is configured per light, so we must send it to the GPU. We&apos;ll do that via a <em>_ShadowBias</em> shader property, so keep track of its identifier.</p>
 						
 						<pre>	<ins>static int shadowBiasId = Shader.PropertyToID(&quot;_ShadowBias&quot;);</ins></pre>
 						
@@ -770,7 +830,7 @@ float ShadowAttenuation (float3 worldPos) {
 						<aside>
 							<h3>How does a tent filter work?</h3>
 							<div>
-								<p>The <a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/bloom/">Bloom<sup>&#x1F517;</sup><sup>&#x1F517;</sup><sup>&#x1F517;</sup></a> tutorial covers filter kernels that take advantage of bilinear texture sampling, while the <a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/depth-of-field/">Depth of Field<sup>&#x1F517;</sup><sup>&#x1F517;</sup><sup>&#x1F517;</sup></a> tutorial contains an example of a 3&#xD7;3 tent filter.</p>
+								<p>The <a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/bloom/">Bloom<sup class="codingdad_ext_link">&#x1F517;</sup></a> tutorial covers filter kernels that take advantage of bilinear texture sampling, while the <a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/depth-of-field/">Depth of Field<sup class="codingdad_ext_link">&#x1F517;</sup></a> tutorial contains an example of a 3&#xD7;3 tent filter.</p>
 							</div>
 						</aside>
 						
@@ -1501,22 +1561,22 @@ float ShadowAttenuation (int index, float3 worldPos) {
 			<ins>cameraBuffer.DisableShaderKeyword(shadowsSoftKeyword);</ins>
 		}</pre>
 					
-					<p>We now support spotlight shadows. The next tutorial will move on to directional shadows. Want to know when it is released? Keep tabs on my <a href="https://www.patreon.com/catlikecoding">Patreon</a> page!</p>
+					<p>We now support spotlight shadows. The next tutorial will move on to directional shadows. Want to know when it is released? Keep tabs on my <a href="https://www.patreon.com/catlikecoding/">Patreon</a> page!</p>
 					</section>
 					
 					<a href="https://bitbucket.org/catlikecodingunitytutorials/scriptable-render-pipeline-04-spotlight-shadows/" class="repository">repository</a>
-					<a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/Spotlight-Shadows.pdf" download="" rel="nofollow">PDF<sup>&#x1F517;</sup><sup>&#x1F517;</sup><sup>&#x1F517;</sup></a>
+					<a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/Spotlight-Shadows.pdf/" download="" rel="nofollow">PDF<sup class="codingdad_ext_link">&#x1F517;</sup></a>
 				</section>
 				
 			</article>
 		</main>
 
 		<footer>
-			<p><a href="https://catlikecoding.com/unity/tutorials/">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;<sup>&#x1F517;</sup><sup>&#x1F517;</sup><sup>&#x1F517;</sup></a>&#xC744; &#xC990;&#xAE30;&#xACE0; &#xACC4;&#xC138;&#xC694;? &#xB3C4;&#xC6C0;&#xC774; &#xB418;&#xB098;&#xC694;? &#xB354; &#xC6D0;&#xD558;&#xC138;&#xC694;?</p>
-			<p><b><a href="https://www.patreon.com/catlikecoding">Patreon&#xC5D0;&#xC11C; &#xC800;&#xB97C; &#xC9C0;&#xC6D0;&#xD574;&#xC8FC;&#xC138;&#xC694;!</a></b></p>
-			<p><a href="https://www.patreon.com/catlikecoding"><img src="../../become-a-patron.png" alt="&#xC800;&#xC758; &#xD6C4;&#xC6D0;&#xC790;&#xAC00; &#xB418;&#xC5B4; &#xC8FC;&#xC138;&#xC694;!" width="217" height="51"></a></p>
-			<p><b><a href="https://catlikecoding.com/unity/tutorials/scriptable-render-pipeline/spotlight-shadows/catlikecoding.com/unity/tutorials/donating.html">&#xD639;&#xC740; &#xC9C1;&#xC811; &#xAE30;&#xBD80;&#xD574; &#xC8FC;&#xC138;&#xC694;<sup>&#x1F517;</sup><sup>&#x1F517;</sup></a>!</b></p>
-			<p><a href="https://catlikecoding.com/jasper-flick/" rel="author">Jasper Flick<sup>&#x1F517;</sup><sup>&#x1F517;</sup><sup>&#x1F517;</sup></a>&#xC5D0; &#xC758;&#xD574; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;</p>
+			<p><a href="/catlikecoding.com/unity/tutorials/">&#xD29C;&#xD1A0;&#xB9AC;&#xC5BC;</a>&#xC744; &#xC990;&#xAE30;&#xACE0; &#xACC4;&#xC138;&#xC694;? &#xC720;&#xC6A9;&#xD55C;&#xAC00;&#xC694;? &#xB354; &#xBCF4;&#xACE0; &#xC2F6;&#xC73C;&#xC138;&#xC694;?</p>
+			<p><b><a href="https://www.patreon.com/catlikecoding/">Patreon&#xC5D0;&#xC11C; &#xC800;&#xB97C; &#xC9C0;&#xC6D0;&#xD574;&#xC8FC;&#xC138;&#xC694;!</a></b></p>
+			<p><a href="https://www.patreon.com/catlikecoding/"><img src="../../become-a-patron.png" alt="&#xC800;&#xC758; &#xD6C4;&#xC6D0;&#xC790;&#xAC00; &#xB418;&#xC5B4; &#xC8FC;&#xC138;&#xC694;!" width="217" height="51"></a></p>
+			<p><b><a href="/catlikecoding.com/unity/tutorials/donating.html">&#xD639;&#xC740; &#xC9C1;&#xC811; &#xAE30;&#xBD80;&#xD574; &#xC8FC;&#xC138;&#xC694;</a>!</b></p>
+			<p><a href="/catlikecoding.com/jasper-flick/" rel="author">Jasper Flick</a>&#xC5D0; &#xC758;&#xD574; &#xC791;&#xC131;&#xB418;&#xC5C8;&#xC2B5;&#xB2C8;&#xB2E4;</p>
 		</footer>
 		
 		<script src="../../jquery.js"></script>
